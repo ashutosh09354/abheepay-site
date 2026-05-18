@@ -1,36 +1,48 @@
-import React from 'react';
+// src/components/Footer.js
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const productLinks = [
+    { name: "Bill Payments Solution", link: "/services/bbps" },
+    { name: "Pos Machine", link: "/services/pos-android-pos-devices" },
+    { name: "Aeps Abheepay", link: "/services/aeps-cash-withdrawal-balance-inquiry-mini-statement" },
+    { name: "Micro Atm Services", link: "/services/micro-atm-matm-services" },
+    { name: "Credit Card", link: "/services/credit-card-bill-payments" },
+    { name: "Insurance", link: "/services/insurance-solutions" },
+  ];
+
   return (
-    <section className="relative bg-gray-900 text-white overflow-hidden  pt-10 ">
-      <div className="absolute top-0 w-full">
-        <svg className="w-full h-10 rotate-180" viewBox="0 0 240 24" preserveAspectRatio="none">
-          <path fill="#fff" d="M119.849,0C47.861,0,0,24,0,24h240C240,24,191.855,0.021,119.849,0z"></path>
-        </svg>
-      </div>
+    <section
+      className="relative bg-[#222836] text-white overflow-hidden"
+      style={{
+        fontFamily:
+          'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif',
+      }}
+    >
+      {/* ✅ TOP WAVE REMOVED (ONLY CHANGE) */}
 
       <div className="mx-auto sm:px-6 lg:px-5 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 px-10 pt-10">
-          {/* Quick Links */}
-          <div className="mt-3">
-            <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center">
+          {/* Company Info - Logo centered */}
+          <div className="mt-3 text-center">
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-4 flex justify-center items-center">
               <img
-                src="/assets/image/logo/logo1.png"
+                src="/assets/image/logo/logos.png"
                 alt="logo"
                 loading="lazy"
                 width="60"
                 height="60"
-                className="w-20 h-10"
-                style={{ color: 'transparent' }}
+                className="w-28 h-24 object-contain"
               />
             </h3>
             <p className="text-sm sm:text-base mb-3 sm:mb-4">
-          Tycod Autotech was established in 2021. Earlier known as brand KU has been acquired by Tycod. KU brand is well established in the field of high-pressure die casting and machining since 1984. KU was supplying many aluminium components to major O.E.Ms like Tata Motors, Honda(HSMI), Maruti, Hero MotoCorp and many more.
-
+              AbheePay delivers secure fintech, payments, and digital financial
+              solutions.
             </p>
-            <a
-              href="about"
-              className="inline-flex items-center text-sm sm:text-base text-[#B80600] hover:text-[#B80600] transition-colors font-medium group"
+            <Link
+              to="/about"
+              className="inline-flex items-center text-sm sm:text-base text-[#00BCB7] hover:text-[#00BCB7]/80 transition-colors font-medium group"
             >
               Read more
               <svg
@@ -38,74 +50,25 @@ const Footer = () => {
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
-            </a>
-
-            {/* Social Links */}
-            <div className="mt-5 sm:mt-6">
-              <h4 className="font-semibold text-gray-200 mb-2 sm:mb-3 text-sm sm:text-base">Follow Us</h4>
-              <div className="flex space-x-3 sm:space-x-4">
-                <a
-                  href="https://www.facebook.com/polypackenterpriseofficial/"
-                  className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-[#B80600] transition-colors group"
-                >
-                  <svg
-                    className="w-4 h-4 text-gray-300 group-hover:text-white"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
-                    />
-                  </svg>
-                </a>
-                <a
-                  href="https://www.instagram.com/polypackenterprise/"
-                  className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-[#B80600] transition-colors group"
-                >
-                  <svg
-                    className="w-4 h-4 text-gray-300 group-hover:text-white"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
-                    />
-                  </svg>
-                </a>
-                <a
-                  href="https://www.linkedin.com/company/polypack-enterprises/"
-                  className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-[#B80600] transition-colors group"
-                >
-                  <svg
-                    className="w-4 h-4 text-gray-300 group-hover:text-white"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M19 0h-14C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zm-11 19H5V9h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75S5.53 4.22 6.5 4.22 8.25 5 8.25 5.97s-.78 1.75-1.75 1.75zM20 19h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97V19h-3V9h2.89v1.37h.04c.4-.76 1.38-1.56 2.85-1.56 3.05 0 3.61 2.01 3.61 4.63V19z"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
+            </Link>
           </div>
 
-          {/* Quick Link */}
+          {/* Quick Links */}
           <div className="mt-3">
             <h3 className="text-xl font-bold mb-4 sm:text-3xl text-white sm:mb-7 flex items-center">
               <svg
-                className="w-5 h-5 mr-2 text-[#B80600]"
+                className="w-5 h-5 mr-2 text-[#00BCB7]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   strokeLinecap="round"
@@ -116,20 +79,31 @@ const Footer = () => {
               </svg>
               Quick link
             </h3>
-            <ul className="space-y-2 text-sm flex flex-col gap-4">
-              {['About Us', 'Blogs', 'Gallery', 'Contact Us'].map((item, index) => (
-                <li key={index} className="border-b border-gray-500 group overflow-hidden">
-                  <a
-                    href={item.toLowerCase().replace(' ', '')}
-                    className="text-[18px] text-white flex items-center hover:text-[#B80600] transition-all duration-300 ease-in-out"
+            <ul className="space-y-2 text-sm flex flex-col gap-2">
+              {[
+                { text: "Home", to: "/" },
+                { text: "About Us", to: "/about" },
+                { text: "Join as Retailer", to: "/join-as-retailer" },
+                { text: "Join as Distributor", to: "/" },
+                { text: "Privacy Policy", to: "/privacy-policy" },
+                { text: "Terms & Conditions", to: "/term-condition" },
+                { text: "ACCOUNT DELETE", to: "/account-delete" },
+              ].map((item, index) => (
+                <li
+                  key={index}
+                  className="border-b border-gray-500 group overflow-hidden"
+                >
+                  <Link
+                    to={item.to}
+                    className="text-[18px] text-white flex items-center hover:text-[#00BCB7] transition-all duration-300 ease-in-out"
                   >
-                    <span className="absolute opacity-0 transform -translate-x-4.5 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-in-out">
+                    <span className="inline-block w-6 text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       ➤
                     </span>
-                    <span className="pl-0 group-hover:pl-4 group-hover:translate-x-1 transition-all duration-300 ease-in-out">
-                      {item}
+                    <span className="pl-4 transition-all duration-300 ease-in-out group-hover:pl-2">
+                      {item.text}
                     </span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -139,11 +113,10 @@ const Footer = () => {
           <div className="mt-3">
             <h3 className="text-xl font-bold mb-4 sm:text-3xl text-white sm:mb-7 flex items-center">
               <svg
-                className="w-5 h-5 mr-2 text-[#B80600]"
+                className="w-5 h-5 mr-2 text-[#00BCB7]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   strokeLinecap="round"
@@ -152,49 +125,41 @@ const Footer = () => {
                   d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
                 />
               </svg>
-              Our Products
+              Our Services
             </h3>
             <ul className="space-y-2 text-sm flex flex-col gap-2">
-              {[
-                'Red Hero Honda',
-                'Activa 6G',
-                'Rbd Activa New Model',
-                'Fbd Hero Honda ',
-                'Scooty Pep',
-                'Rbd Yamaha',
-                'Fbd Yamaha',
-                'Fbd Super Splender',
-              ].map((item, index) => (
-                <li key={index} className="border-b border-gray-500 group overflow-hidden">
-                  <a
-                    href={item.toLowerCase().replace(/\s+/g, '-')}
-                    className="text-[18px] text-white flex items-center hover:text-[#B80600] transition-all duration-300 ease-in-out"
+              {productLinks.map((item, index) => (
+                <li
+                  key={index}
+                  className="border-b border-gray-500 group overflow-hidden"
+                >
+                  <Link
+                    to={item.link}
+                    className="text-[18px] text-white flex items-center hover:text-[#00BCB7] transition-all duration-300 ease-in-out"
                   >
-                    <span className="absolute opacity-0 transform -translate-x-4.5 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-in-out">
+                    <span className="inline-block w-6 text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       ➤
                     </span>
-                    <span className="pl-0 group-hover:pl-4 group-hover:translate-x-1 transition-all duration-300 ease-in-out">
-                      {item}
+                    <span className="pl-4 transition-all duration-300 ease-in-out group-hover:pl-2">
+                      {item.name}
                     </span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Info (UNCHANGED) */}
           <div className="mt-3">
             <h3 className="text-3xl font-semibold mb-7">Contact Us</h3>
             <div className="space-y-3 sm:space-y-4">
-              {/* Phone Number Section */}
               <div className="flex items-start group">
                 <div className="flex-shrink-0 pt-1">
                   <svg
-                    className="w-5 h-5 text-[#B80600] group-hover:animate-bounce"
+                    className="w-5 h-5 text-[#00BCB7] group-hover:animate-bounce"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
                       strokeLinecap="round"
@@ -205,25 +170,22 @@ const Footer = () => {
                   </svg>
                 </div>
                 <div className="ml-3">
-                  <h4 className="font-semibold text-gray-200 text-sm sm:text-base">Call Us</h4>
-                  <p className="mt-1 hover:text-[#B80600] transition-colors text-sm sm:text-base">
-                    <a href="tel:+9990698236">+91 9990698236</a>
+                  <h4 className="font-semibold text-gray-200 text-sm sm:text-base">
+                    Call Us
+                  </h4>
+                  <p className="mt-1 hover:text-[#00BCB7] transition-colors text-sm sm:text-base">
+                    <a href="tel:+918860037218">+91 88600 37218</a>
                   </p>
-                  {/* <p className="mt-1 hover:text-[#B80600] transition-colors text-sm sm:text-base">
-                    <a href="tel:+919810997795">+91 9810997795</a>
-                  </p> */}
                 </div>
               </div>
 
-              {/* Email Section */}
               <div className="flex items-start group">
                 <div className="flex-shrink-0 pt-1">
                   <svg
-                    className="w-5 h-5 text-[#B80600] group-hover:animate-bounce"
+                    className="w-5 h-5 text-[#00BCB7] group-hover:animate-bounce"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
                       strokeLinecap="round"
@@ -234,25 +196,22 @@ const Footer = () => {
                   </svg>
                 </div>
                 <div className="ml-3">
-                  <h4 className="font-semibold text-gray-200 text-sm sm:text-base">Email Us</h4>
-                  <p className="mt-1 hover:text-[#B80600] transition-colors text-sm sm:text-base">
-                    <a href="mailto:daksh@tycod.in ">daksh@tycod.in </a>
+                  <h4 className="font-semibold text-gray-200 text-sm sm:text-base">
+                    Email Us
+                  </h4>
+                  <p className="mt-1 hover:text-[#00BCB7] transition-colors text-sm sm:text-base">
+                    <a href="mailto:care@abheepay.com">care@abheepay.com</a>
                   </p>
-                  {/* <p className="mt-1 hover:text-[#B80600] transition-colors text-sm sm:text-base">
-                    <a href="mailto:info@polypackenterprises.com"></a>
-                  </p> */}
                 </div>
               </div>
 
-              {/* Address Section */}
               <div className="flex items-start group">
                 <div className="flex-shrink-0 pt-1">
                   <svg
-                    className="w-5 h-5 text-[#B80600] group-hover:animate-bounce"
+                    className="w-5 h-5 text-[#00BCB7] group-hover:animate-bounce"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
                       strokeLinecap="round"
@@ -269,9 +228,12 @@ const Footer = () => {
                   </svg>
                 </div>
                 <div className="ml-3">
-                  <h4 className="font-semibold text-gray-200 text-sm sm:text-base">Visit Us</h4>
+                  <h4 className="font-semibold text-gray-200 text-sm sm:text-base">
+                    Visit Us
+                  </h4>
                   <p className="mt-1 text-sm sm:text-base">
-                    Plot No-34, Sector -11, Sidcul, Rudrapur, Udham Singh Nagar, 
+                    2nd Floor, Plot No - 3, KH. NO. 33/6 AMBERHAI, SECTOR-19,
+                    DWARKA, NEW DELHI- 110043
                   </p>
                 </div>
               </div>
@@ -281,17 +243,28 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom */}
-      <div className="border-t border-gray-700 mt-12 pt-6 pb-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between text-sm text-gray-400">
-          <p>© 2025 Tycod Autotech Pvt Ltd. All rights reserved.</p>
-          <p>
-            © 2025 Designed & Developed By{' '}
-            <a href="https://www.jaikviktechnology.com/" target="_blank" className="text-[#B80600] hover:underline">
-              Jaikvik Technology India Pvt Ltd
-            </a>
-          </p>
+      <div className="border-t border-gray-700 mt-4 pt-4 pb-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-400 py-0.2">
+          <p>© 2025 AbheePay. All rights reserved.</p>
         </div>
       </div>
+
+      {/* WhatsApp Button (UNCHANGED) */}
+      <a
+        href="https://wa.me/918860037218"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-5 left-5 z-50 bg-[#0CC143] text-white rounded-full shadow-lg p-3 transition-transform duration-300 hover:scale-110"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          className="w-7 h-7"
+        >
+          <path d="M20.52 3.48A11.93 11.93 0 0012 0a11.93 11.93 0 00-8.52 3.48A11.93 11.93 0 000 12c0 2.1.54 4.16 1.56 5.98L0 24l6.15-1.6A11.93 11.93 0 0012 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22a9.93 9.93 0 01-5.07-1.39l-.36-.21-3.64.95.97-3.54-.24-.37A9.92 9.92 0 012 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10zm5.43-7.18c-.3-.15-1.77-.88-2.04-.98-.27-.1-.47-.15-.67.15-.2.3-.77.98-.94 1.18-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.46-.89-.79-1.49-1.76-1.67-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.91-2.21-.24-.59-.48-.5-.67-.51-.17 0-.37 0-.57 0s-.52.07-.8.37c-.27.3-1.04 1.01-1.04 2.46s1.07 2.86 1.22 3.06c.15.2 2.1 3.2 5.08 4.48.71.3 1.26.48 1.69.62.71.22 1.36.19 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z" />
+        </svg>
+      </a>
     </section>
   );
 };
