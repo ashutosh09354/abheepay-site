@@ -87,7 +87,6 @@ const Footer = () => {
                 { text: "Join as Distributor", to: "/" },
                 { text: "Privacy Policy", to: "/privacy-policy" },
                 { text: "Terms & Conditions", to: "/term-condition" },
-                { text: "ACCOUNT DELETE", to: "/account-delete" },
               ].map((item, index) => (
                 <li
                   key={index}
