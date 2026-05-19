@@ -1,7 +1,7 @@
 // BlogPage.jsx (React JSX + Tailwind CSS) ✅ FULL UPDATED
 import React from "react";
 import { Link } from "react-router-dom";
-import posts from "./BlogData.json";
+import posts from "./Blogdata.json";
 
 export default function BlogPage() {
   return (
