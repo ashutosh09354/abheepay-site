@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import servicesData from "./servicesdata.json";
+import servicesData from "./Servicesdata.json";
 import EnquiryPopup from "../../components/Enquiryform";
 
 const ServicesDetail = () => {

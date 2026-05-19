@@ -19,7 +19,7 @@ import {
   Zap,
 } from "lucide-react";
 
-import servicesData from "./servicesdata.json";
+import servicesData from "./Servicesdata.json";
 
 const iconMap = {
   qr: QrCode,
