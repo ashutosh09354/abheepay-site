@@ -18,38 +18,26 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SSH_KEY }}
           port: 22
+          script_stop: true
 
           script: |
+            set -e
+
             export NVM_DIR="$HOME/.nvm"
             source "$NVM_DIR/nvm.sh"
 
             nvm use 22
 
-            echo "Node Version:"
-            node -v
-
-            echo "NPM Version:"
-            npm -v
-
             cd /opt/github/abheepay-main-site
 
-            echo "Pulling latest code..."
             git pull origin main
 
-            echo "Installing dependencies..."
             npm install
 
-            echo "Building application..."
             npm run build
 
-            echo "Deploying build..."
-            sudo rm -rf /var/www/abheepay.com/*
-            sudo cp -r dist/* /var/www/abheepay.com/
+            find /var/www/abheepay.com/ -mindepth 1 -delete
 
-            echo "Setting permissions..."
-            sudo chown -R www-data:www-data /var/www/abheepay.com
-
-            echo "Restarting Apache..."
-            sudo systemctl restart apache2
+            cp -rv dist/* /var/www/abheepay.com/
 
             echo "Deployment completed successfully!"
