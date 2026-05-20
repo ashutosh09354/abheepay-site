@@ -139,7 +139,7 @@ const AboutPage = () => {
               </h4>
               <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-serif font-medium leading-tight sm:leading-[1.1] text-slate-800">
                 Powering Digital Finance for <br className="hidden sm:block" />
-                <span className="font-bold">Modern Indian Businesses.</span>
+                <span className="font-bold">Next-Gen Modern Indian Businesses</span>
               </h2>
             </div>
 
