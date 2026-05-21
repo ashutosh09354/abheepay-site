@@ -46,7 +46,7 @@ const router = createBrowserRouter([
         element: <AboutPage />,
       },
       {
-        path: "/insurance",
+        path: "/insurance-solutions",
         element: <InsurancePage />,
       },
       {

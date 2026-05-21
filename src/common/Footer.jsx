@@ -9,7 +9,7 @@ const Footer = () => {
     { name: "AEPS", link: "/services/aeps-cash-withdrawal-balance-inquiry-mini-statement" },
     { name: "Micro ATM Services", link: "/services/micro-atm-matm-services" },
     { name: "Credit Card", link: "/services/credit-card-bill-payments" },
-    { name: "Insurance Solutions", link: "/insurance" },
+    { name: "Insurance Solutions", link: "/insurance-solutions" },
   ];
 
   return (
