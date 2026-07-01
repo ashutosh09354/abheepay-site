@@ -220,15 +220,7 @@ const BecomePartner = () => {
         </div>
       </div>
 
-      <style>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-14px); }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
-        }
-      `}</style>
+      <style>{`\n        @keyframes float {\n          0%, 100% { transform: translateY(0px); }\n          50% { transform: translateY(-14px); }\n        }\n        @media (prefers-reduced-motion: reduce) {\n          * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }\n        }\n      `}</style>
     </section>
   );
 };
