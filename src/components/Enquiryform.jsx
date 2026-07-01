@@ -55,7 +55,7 @@ const EnquiryPopup = forwardRef(({ autoOpen = false, delay = 8000 }, ref) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           // Yahan z-50 ko z-[9999] kar diya hai taaki ye Navbar ke upar aaye
-          className="fixed inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm z-[9999] p-4"
+          className="fixed inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm z-[9999] p-2"
         >
           <motion.div className="absolute inset-0" onClick={handleClose} />
 
@@ -64,15 +64,15 @@ const EnquiryPopup = forwardRef(({ autoOpen = false, delay = 8000 }, ref) => {
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.8, opacity: 0, y: -50 }}
             transition={{ type: "spring", duration: 0.6, bounce: 0.3 }}
-            className="relative bg-white rounded-2xl shadow-2xl w-full max-w-sm overflow-hidden border border-gray-200"
+            className="relative bg-white rounded-xl shadow-2xl w-full max-w-[300px] overflow-hidden border border-gray-200"
           >
-            <div className="h-1.5 w-full bg-gradient-to-r from-[#00BBB5] to-[#00E0D0]" />
+            <div className="h-0.5 w-full bg-gradient-to-r from-[#00BBB5] to-[#00E0D0]" />
 
             <motion.button
               whileHover={{ scale: 1.1, rotate: 90 }}
               whileTap={{ scale: 0.9 }}
               onClick={handleClose}
-              className="absolute top-3 right-3 w-7 h-7 flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-full text-gray-600 hover:text-[#00BBB5] transition-all duration-200 z-10 shadow-sm text-sm"
+              className="absolute top-2 right-2 w-5 h-5 flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-full text-gray-600 hover:text-[#00BBB5] transition-all duration-200 z-10 shadow-sm text-[9px]"
             >
               X
             </motion.button>
@@ -81,15 +81,15 @@ const EnquiryPopup = forwardRef(({ autoOpen = false, delay = 8000 }, ref) => {
               initial={{ y: -10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="text-center px-4 pt-4 pb-2"
+              className="text-center px-3 pt-0.5 pb-0.5"
             >
               <motion.div
                 variants={floatingAnimation}
                 animate="animate"
-                className="w-12 h-12 bg-gradient-to-br from-[#00BBB5] to-[#00E0D0] rounded-full flex items-center justify-center mx-auto mb-2 shadow-md"
+                className="w-7 h-7 bg-gradient-to-br from-[#00BBB5] to-[#00E0D0] rounded-full flex items-center justify-center mx-auto mb-0.5 shadow-md"
               >
                 <svg
-                  className="w-6 h-6 text-white"
+                  className="w-3.5 h-3.5 text-white"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -103,11 +103,11 @@ const EnquiryPopup = forwardRef(({ autoOpen = false, delay = 8000 }, ref) => {
                 </svg>
               </motion.div>
 
-              <h2 className="text-xl font-bold bg-gradient-to-r from-gray-800 to-[#00BBB5] bg-clip-text text-transparent mb-1">
+              <h2 className="text-xs font-bold bg-gradient-to-r from-gray-800 to-[#00BBB5] bg-clip-text text-transparent leading-tight">
                 Enquiry
               </h2>
-              <p className="text-gray-600 text-xs">
-                We'd love to hear from you! Fill out the form below.
+              <p className="text-gray-600 text-[7px] leading-tight">
+                We'd love to hear from you.
               </p>
             </motion.div>
 
@@ -116,14 +116,14 @@ const EnquiryPopup = forwardRef(({ autoOpen = false, delay = 8000 }, ref) => {
               action="https://formsubmit.co/care@abheepay.com"
               method="POST"
               target="_blank"
-              className="px-4 pb-4 space-y-2"
+              className="px-3 pb-1 space-y-0.5"
             >
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_subject" value="New Enquiry Received" />
 
               <div>
-                <label className="block text-xs font-semibold text-gray-700 mb-1">
+                <label className="block text-[8px] font-semibold text-gray-700 leading-tight">
                   Your Name
                 </label>
                 <div className="relative">
@@ -134,10 +134,10 @@ const EnquiryPopup = forwardRef(({ autoOpen = false, delay = 8000 }, ref) => {
                     onChange={handleInputChange}
                     placeholder="Enter your name"
                     required
-                    className="w-full border border-gray-300 rounded-lg p-2 pl-9 text-sm focus:ring-2 focus:ring-[#00BBB5] outline-none"
+                    className="w-full border border-gray-300 rounded-md py-0.5 pr-2 pl-7 text-[9px] leading-tight focus:ring-2 focus:ring-[#00BBB5] outline-none"
                   />
                   <svg
-                    className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"
+                    className="absolute left-2 top-1/2 -translate-y-1/2 w-3 h-3 text-gray-400"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -153,7 +153,7 @@ const EnquiryPopup = forwardRef(({ autoOpen = false, delay = 8000 }, ref) => {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-gray-700 mb-1">
+                <label className="block text-[8px] font-semibold text-gray-700 leading-tight">
                   City Name
                 </label>
                 <div className="relative">
@@ -163,10 +163,10 @@ const EnquiryPopup = forwardRef(({ autoOpen = false, delay = 8000 }, ref) => {
                     value={formData.company}
                     onChange={handleInputChange}
                     placeholder="Enter your city name"
-                    className="w-full border border-gray-300 rounded-lg p-2 pl-9 text-sm focus:ring-2 focus:ring-[#00BBB5] outline-none"
+                    className="w-full border border-gray-300 rounded-md py-0.5 pr-2 pl-7 text-[9px] leading-tight focus:ring-2 focus:ring-[#00BBB5] outline-none"
                   />
                   <svg
-                    className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"
+                    className="absolute left-2 top-1/2 -translate-y-1/2 w-3 h-3 text-gray-400"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -182,7 +182,7 @@ const EnquiryPopup = forwardRef(({ autoOpen = false, delay = 8000 }, ref) => {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-gray-700 mb-1">
+                <label className="block text-[8px] font-semibold text-gray-700 leading-tight">
                   Email Address
                 </label>
                 <div className="relative">
@@ -193,10 +193,10 @@ const EnquiryPopup = forwardRef(({ autoOpen = false, delay = 8000 }, ref) => {
                     onChange={handleInputChange}
                     placeholder="Enter your email"
                     required
-                    className="w-full border border-gray-300 rounded-lg p-2 pl-9 text-sm focus:ring-2 focus:ring-[#00BBB5] outline-none"
+                    className="w-full border border-gray-300 rounded-md py-0.5 pr-2 pl-7 text-[9px] leading-tight focus:ring-2 focus:ring-[#00BBB5] outline-none"
                   />
                   <svg
-                    className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"
+                    className="absolute left-2 top-1/2 -translate-y-1/2 w-3 h-3 text-gray-400"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -212,7 +212,7 @@ const EnquiryPopup = forwardRef(({ autoOpen = false, delay = 8000 }, ref) => {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-gray-700 mb-1">
+                <label className="block text-[8px] font-semibold text-gray-700 leading-tight">
                   Mobile Number
                 </label>
                 <div className="relative">
@@ -223,10 +223,10 @@ const EnquiryPopup = forwardRef(({ autoOpen = false, delay = 8000 }, ref) => {
                     onChange={handleInputChange}
                     placeholder="Enter your mobile number"
                     required
-                    className="w-full border border-gray-300 rounded-lg p-2 pl-9 text-sm focus:ring-2 focus:ring-[#00BBB5] outline-none"
+                    className="w-full border border-gray-300 rounded-md py-0.5 pr-2 pl-7 text-[9px] leading-tight focus:ring-2 focus:ring-[#00BBB5] outline-none"
                   />
                   <svg
-                    className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"
+                    className="absolute left-2 top-1/2 -translate-y-1/2 w-3 h-3 text-gray-400"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -242,21 +242,21 @@ const EnquiryPopup = forwardRef(({ autoOpen = false, delay = 8000 }, ref) => {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-gray-700 mb-1">
+                <label className="block text-[8px] font-semibold text-gray-700 leading-tight">
                   Message
                 </label>
                 <div className="relative">
                   <textarea
-                    rows={2}
+                    rows={1}
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
                     placeholder="Your message..."
                     required
-                    className="w-full border border-gray-300 rounded-lg p-2 pl-9 text-sm focus:ring-2 focus:ring-[#00BBB5] outline-none resize-none"
+                    className="w-full border border-gray-300 rounded-md py-0.5 pr-2 pl-7 text-[9px] leading-tight focus:ring-2 focus:ring-[#00BBB5] outline-none resize-none"
                   />
                   <svg
-                    className="absolute left-2.5 top-2.5 w-4 h-4 text-gray-400"
+                    className="absolute left-2 top-1.5 w-3 h-3 text-gray-400"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -273,13 +273,13 @@ const EnquiryPopup = forwardRef(({ autoOpen = false, delay = 8000 }, ref) => {
 
               <motion.button
                 type="submit"
-                className="w-full bg-gradient-to-r from-[#00BBB5] to-[#00E0D0] hover:from-[#009c99] hover:to-[#00c2b8] text-white py-2 rounded-lg text-sm font-semibold transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-1"
+                className="w-full bg-gradient-to-r from-[#00BBB5] to-[#00E0D0] hover:from-[#009c99] hover:to-[#00c2b8] text-white py-0.5 rounded-md text-[9px] font-semibold transition-all duration-300 shadow-sm hover:shadow-md flex items-center justify-center gap-1"
               >
                 Send
                 <motion.svg
                   initial={{ x: -5, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
-                  className="w-4 h-4"
+                  className="w-3 h-3"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

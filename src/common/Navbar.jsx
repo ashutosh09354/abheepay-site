@@ -178,44 +178,27 @@ const Navbar = () => {
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 w-full z-[100] transition-all duration-300 overflow-visible ${
-        scrolled ? "bg-black/70 shadow-lg" : "bg-black/20"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+    <header className="fixed top-0 left-0 right-0 w-full z-[100] bg-white border-b border-gray-100 shadow-sm transition-all duration-300 overflow-visible">
+      <div className="max-w-5xl mx-auto px-4 sm:px-4 lg:px-6 ">
+        <div className="flex items-center justify-between h-12">
           <div className="flex-shrink-0">
             <Link to="/">
-              <img src="/assets/image/logo/logos.png" alt="Logo" className="h-20 w-24 object-contain" />
+              <img src="/assets/image/logo/logos.png" alt="AbheePay" className="h-3 w-20 object-contain" />
             </Link>
           </div>
 
-          <nav className="hidden lg:flex flex-1 justify-center items-center gap-10 text-white">
-            <Link
-              to="/"
-              className="relative text-sm font-semibold tracking-wide after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#00D3CD] after:transition-all after:duration-300 hover:after:w-full hover:text-[#00D3CD]"
-            >
-              HOME
-            </Link>
-            <Link
-              to="/about"
-              className="relative text-sm font-semibold tracking-wide after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#00D3CD] after:transition-all after:duration-300 hover:after:w-full hover:text-[#00D3CD]"
-            >
-              ABOUT US
-            </Link>
-
+          <nav className="hidden lg:flex flex-1 justify-center items-center gap-5 text-gray-700">
             <div className="relative inline-block" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <Link
                 to="/services"
-                className="relative text-sm font-semibold tracking-wide after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#00D3CD] after:transition-all after:duration-300 hover:after:w-full hover:text-[#00D3CD]"
+                className="text-sm font-semibold transition-colors hover:text-[#00C4C7]"
               >
-                SERVICES
+                Services
               </Link>
 
               {/* ✅ CHANGE #1: absolute → fixed (live clipping issue fix) */}
               <div
-                className={`fixed top-20 left-1/2 -translate-x-1/2  w-[950px] max-w-[95vw] transition-all duration-200 ease-out z-[9999] lg:block
+                className={`fixed top-16 left-1/2 -translate-x-1/2  w-[950px] max-w-[95vw] transition-all duration-200 ease-out z-[9999] lg:block
                   ${
                     servicesDropdownOpen
                       ? "opacity-100 visible translate-y-0"
@@ -326,35 +309,42 @@ const Navbar = () => {
 
             <Link
               to="/join-as-retailer"
-              className="relative text-sm font-semibold tracking-wide after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#00D3CD] after:transition-all after:duration-300 hover:after:w-full hover:text-[#00D3CD]"
+              className="text-xs font-semibold transition-colors hover:text-[#00C4C7]"
             >
-              JOIN US
+              Solutions
             </Link>
-
-            <Link to="/blog" className="relative text-sm font-semibold tracking-wide hover:text-[#00D3CD]">
-              BLOGS
+            <Link to="/join-as-retailer" className="text-xs font-semibold transition-colors hover:text-[#00C4C7]">
+              Partners
             </Link>
-            <Link to="/account-delete" className="relative text-sm font-semibold tracking-wide hover:text-[#00D3CD]">
-              ACCOUNT DELETE
+            <Link to="/about" className="text-xs font-semibold transition-colors hover:text-[#00C4C7]">
+              About Us
             </Link>
-
-            <Link to="/contact" className="relative text-sm font-semibold tracking-wide hover:text-[#00D3CD]">
-              CONTACT US
+            <Link to="/contact" className="text-xs font-semibold transition-colors hover:text-[#00C4C7]">
+              Contact
             </Link>
-            <a href="https://partner.abheepay.com/backend/customer/login" className="relative text-sm font-semibold tracking-wide hover:text-[#00D3CD]">
-              LOGIN
-            </a>
           </nav>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
+            <a
+              href="https://partner.abheepay.com/backend/customer/login"
+              className="hidden sm:inline-flex items-center justify-center rounded-lg border-2 border-[#00C4C7] px-2 py-0.5 text-xs font-semibold text-[#00AEB2] transition-colors hover:bg-[#00C4C7] hover:text-white"
+            >
+              Login
+            </a>
+            <Link
+              to="/join-as-retailer"
+              className="hidden sm:inline-flex items-center justify-center rounded-lg bg-[#00C4C7] px-2 py-1 text-xs font-semibold text-white shadow-sm transition-colors hover:bg-[#00AEB2]"
+            >
+              Get Started
+            </Link>
             <button
               onClick={() => setOpenSearch(true)}
-              className="p-2 rounded-full hover:bg-gray-700/50 text-white transition-colors"
+              className="hidden p-2 rounded-full text-gray-600 transition-colors hover:bg-gray-100 hover:text-[#00C4C7]"
             >
               <Search size={20} />
             </button>
             <button
-              className="lg:hidden text-white p-2 rounded-md hover:bg-gray-700/50"
+              className="lg:hidden text-gray-800 p-2 rounded-md hover:bg-gray-100"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}

@@ -181,43 +181,27 @@ const Navbar = () => {
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 w-full z-[100] transition-all duration-300 overflow-visible ${scrolled ? "bg-black/70 shadow-lg" : "bg-black/20"
-        }`}
-    >
+    <header className="fixed top-0 left-0 right-0 w-full z-[100] bg-white border-b border-gray-100 shadow-sm transition-all duration-300 overflow-visible">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <Link to="/">
-              <img src="/assets/image/logo/logos.png" alt="Logo" className="h-20 w-24 object-contain" />
+              <img src="/assets/image/logo/logos.png" alt="AbheePay" className="h-12 w-36 object-contain" />
             </Link>
           </div>
 
-          <nav className="hidden lg:flex flex-1 justify-center items-center gap-10 text-white">
-            <Link
-              to="/"
-              className="relative text-sm font-semibold tracking-wide after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#00D3CD] after:transition-all after:duration-300 hover:after:w-full hover:text-[#00D3CD]"
-            >
-              HOME
-            </Link>
-            <Link
-              to="/about"
-              className="relative text-sm font-semibold tracking-wide after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#00D3CD] after:transition-all after:duration-300 hover:after:w-full hover:text-[#00D3CD]"
-            >
-              ABOUT US
-            </Link>
-
+          <nav className="hidden lg:flex flex-1 justify-center items-center gap-8 text-gray-700">
             <div className="relative inline-block" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <Link
                 to="/services"
-                className="relative text-sm font-semibold tracking-wide after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#00D3CD] after:transition-all after:duration-300 hover:after:w-full hover:text-[#00D3CD]"
+                className="text-sm font-semibold transition-colors hover:text-[#00C4C7]"
               >
-                SERVICES
+                Services
               </Link>
 
               {/* ✅ CHANGE #1: absolute → fixed (live clipping issue fix) */}
               <div
-                className={`fixed top-20 left-1/2 -translate-x-1/2  w-[950px] max-w-[95vw] transition-all duration-200 ease-out z-[9999] lg:block
+                className={`fixed top-16 left-1/2 -translate-x-1/2  w-[950px] max-w-[95vw] transition-all duration-200 ease-out z-[9999] lg:block
                   ${servicesDropdownOpen
                     ? "opacity-100 visible translate-y-0"
                     : "opacity-0 invisible -translate-y-2 pointer-events-none"

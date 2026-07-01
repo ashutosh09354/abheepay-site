@@ -5,10 +5,10 @@ const AboutSection = () => {
   return (
     <section className="bg-white py-10 px-5 sm:px-8 md:px-12 lg:px-20 font-sans">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 md:gap-12 lg:gap-16">
-    
+
         <div className="relative w-full lg:w-1/2 flex justify-center">
           <div className="relative w-64 h-64 xs:w-72 xs:h-72 sm:w-80 sm:h-80 md:w-[420px] md:h-[420px] lg:w-[450px] lg:h-[450px]">
-   
+
             <div
               className="absolute inset-0 rounded-full 
                 border-[5px] sm:border-[6px] border-[#2DD4BF] 
@@ -16,7 +16,7 @@ const AboutSection = () => {
                 -rotate-12 z-0"
             ></div>
 
-          
+
             <div
               className="absolute inset-[6px] sm:inset-[8px] rounded-full 
                 overflow-hidden border-4 border-white 
@@ -29,10 +29,10 @@ const AboutSection = () => {
               />
             </div>
 
-         
+
             <div className="absolute -top-3 -left-3 sm:-top-4 sm:-left-4 w-16 h-16 sm:w-20 sm:h-20 bg-[radial-gradient(circle,#2DD4BF_20%,transparent_20%)] [background-size:10px_10px] opacity-20 hidden md:block"></div>
 
-          
+
             <div
               className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 
                 md:bottom-10 md:right-3 lg:bottom-16 lg:right-2 
@@ -49,21 +49,12 @@ const AboutSection = () => {
           </div>
         </div>
 
-      
+
         <div className="w-full lg:w-1/2 text-center lg:text-left mt-2 lg:mt-0">
           <h2 className="text-3xl xs:text-4xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-5 sm:mb-6">
             About Us
           </h2>
-          <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 px-2 sm:px-0">
-            <span className="font-semibold text-gray-900">AbheePay</span> is a
-            technology-driven fintech and digital financial services company
-            delivering secure, scalable, and compliance-ready solutions across
-            payments, banking, credit, insurance, travel, and API-led financial
-            services in India. Designed to serve merchants, MSMEs, enterprises,
-            partners, and consumers, AbheePay combines robust financial
-            infrastructure with innovation-led technology to simplify
-            transactions and enable sustainable business growth.
-          </p>
+
 
           <Link to="/about">
             <button
