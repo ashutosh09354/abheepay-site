@@ -564,8 +564,8 @@ const Whatwedo = () => {
           <h2 className="text-xl md:text-xl font-bold text-white mb-1">
             What we do
           </h2>
-          <p className="text-slate-400 max-w-xl mx-auto text-[8px] md:text-xs leading-relaxed">
-            One connected platform for payments, banking, travel and lending —
+          <p className="text-slate-400 max-w-xl mx-auto text-[11px] md:text-xs leading-relaxed">
+            One connected platform for payments, banking, travel and lending
             built for merchants and distributors.
           </p>
           <div className="w-16 h-[3px] rounded-full bg-gradient-to-r from-[#00C4C7] to-[#4DD9DB] mx-auto mt-3" />

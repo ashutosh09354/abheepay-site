@@ -85,48 +85,41 @@ const AboutPage = () => {
   return (
     <div className="font-sans text-gray-800 min-h-screen">
     
-      <section
-        className="relative h-[320px] sm:h-[500px] flex items-center justify-center bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80')",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="relative text-center text-white z-10 px-4">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-2">About Us</h1>
+      <section className="relative h-[100px] sm:h-[100px] flex items-center justify-center bg-gray-50">
+        <div className="relative text-center text-slate-800 z-5 px-2">
+          <h1 className="text-2xl sm:text-2xl font-bold mb-1">About Us</h1>
         </div>
       </section>
 
     
-      <section className="py-10 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
-         
+      <section className="py-6 sm:py-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+
           <div className="relative mx-auto md:mx-0 max-w-md md:max-w-none">
-            <div className="w-full sm:w-10/12 overflow-hidden rounded-[40px] shadow-lg mx-auto md:mx-0">
+            <div className="w-full sm:w-10/12 overflow-hidden rounded-2xl shadow-md mx-auto md:mx-0">
               <img
                 src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80"
                 alt="Digital financial services"
-                className="w-full h-[380px] sm:h-[450px] object-cover"
+                className="w-full h-[260px] sm:h-[320px] object-cover"
               />
             </div>
 
-            <div className="absolute -bottom-8 sm:-bottom-10 right-4 sm:right-1 w-8/12 sm:w-6/12 rounded-[40px] overflow-hidden shadow-md">
+            <div className="absolute -bottom-6 sm:-bottom-8 right-4 sm:right-1 w-9/12 sm:w-5/12 rounded-2xl overflow-hidden shadow-sm">
               <img
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80"
                 alt="Merchant empowerment"
-                className="w-full h-48 sm:h-64 object-cover"
+                className="w-full h-36 sm:h-48 object-cover"
               />
             </div>
 
             <div
-              className="absolute top-6 sm:top-10 right-2 sm:right-4 bg-[#00D3CD] text-white p-5 sm:p-8 rounded-2xl shadow-lg min-w-[120px] sm:min-w-[150px] text-center"
+              className="absolute top-4 sm:top-6 right-2 sm:right-4 bg-[#00D3CD] text-white p-3 sm:p-4 rounded-lg shadow-md min-w-[100px] sm:min-w-[120px] text-center"
               style={{
                 clipPath: "polygon(0 0, 100% 0, 100% 82%, 18% 100%, 0 100%)",
               }}
             >
-              <h3 className="text-3xl sm:text-4xl font-bold">30K+</h3>
-              <p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] mt-1">
+              <h3 className="text-2xl sm:text-3xl font-bold">30K+</h3>
+              <p className="text-[10px] font-bold uppercase tracking-[0.18em] mt-1">
                 Active <br /> Partners
               </p>
             </div>
@@ -175,8 +168,8 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className="bg-[#00D3CD] py-10 sm:py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-[#00D3CD] py-6 sm:py-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 text-white text-center">
             {[
               { icon: <Briefcase />, count: "1000+", label: "Partner Retailers" },
@@ -206,7 +199,7 @@ const AboutPage = () => {
       </section>
 
  
-      <section className="py-10 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-6 sm:py-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <div className="grid md:grid-cols-2 gap-10 lg:gap-12 items-center">
           <div className="space-y-6 text-center md:text-left">
             <h4 className="text-[#00D3CD] font-bold uppercase text-sm tracking-wide">
@@ -258,10 +251,10 @@ const AboutPage = () => {
       </section>
 
      
-      <section className="py-10 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-10 sm:mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3 sm:mb-4">
+      <section className="py-6 sm:py-10 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-6 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3 sm:mb-4">
               Our Core Values
             </h2>
             <p className="text-slate-500 text-sm sm:text-base max-w-2xl mx-auto">
@@ -269,18 +262,18 @@ const AboutPage = () => {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {values.map((item, i) => (
               <div
                 key={i}
-                className={`relative p-6 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] transition-all duration-300 hover:-translate-y-2 cursor-pointer shadow-sm ${item.style}`}
+                className={`relative p-4 sm:p-6 rounded-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer shadow-sm ${item.style}`}
               >
                 <div
-                  className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl ${item.iconBg} flex items-center justify-center mb-6 sm:mb-8 shadow-sm`}
+                  className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl ${item.iconBg} flex items-center justify-center mb-4 sm:mb-6 shadow-sm`}
                 >
                   {item.icon}
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">{item.title}</h3>
+                <h3 className="text-lg sm:text-xl font-bold mb-2">{item.title}</h3>
                 <p className="text-sm leading-relaxed text-slate-500">
                   {item.desc}
                 </p>

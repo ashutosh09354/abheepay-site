@@ -52,19 +52,19 @@ const ServicesDetail = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="bg-white min-h-screen font-sans text-gray-800 py-12 px-6 md:px-20"
+      className="bg-white min-h-screen font-sans text-gray-800 py-8 px-4 md:px-12"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         {/* HEADER */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-10">
           <motion.div variants={fadeInUp} className="md:w-1/2">
             {/* ❌ Category removed */}
 
-            <h1 className="text-4xl md:text-6xl font-black text-gray-900 mt-6 leading-tight">
+            <h1 className="text-3xl md:text-4xl font-black text-gray-900 mt-6 leading-tight">
               {service.name}
             </h1>
 
-            <div className="flex items-center gap-3 mt-6 text-gray-500 text-sm">
+            <div className="flex items-center gap-3 mt-4 text-gray-500 text-sm">
               <motion.span
                 initial={{ width: 0 }}
                 animate={{ width: 32 }}
@@ -91,11 +91,11 @@ const ServicesDetail = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.4 }}
-              className="absolute -top-4 -left-4 w-full h-[280px] sm:h-[350px] md:h-[380px] border-2 border-[#00D3CD] rounded-lg -z-10"
+              className="absolute -top-4 -left-4 w-full h-[220px] sm:h-[280px] md:h-[320px] border-2 border-[#00D3CD] rounded-lg -z-10"
             />
 
             {/* IMAGE BOX */}
-            <div className="w-full h-[280px] sm:h-[350px] md:h-[380px] overflow-hidden rounded-lg shadow-2xl bg-white p-4">
+            <div className="w-full h-[220px] sm:h-[280px] md:h-[320px] overflow-hidden rounded-lg shadow-xl bg-white p-3">
               <motion.img
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
@@ -108,11 +108,11 @@ const ServicesDetail = () => {
         </div>
 
         {/* CONTENT */}
-        <div className="grid md:grid-cols-3 gap-12 mt-20">
-          <div className="md:col-span-2 space-y-10">
+        <div className="grid md:grid-cols-3 gap-6 mt-12">
+          <div className="md:col-span-2 space-y-6">
             <motion.p
               variants={fadeInUp}
-              className="text-xl text-gray-600 leading-relaxed max-w-2xl"
+              className="text-base text-gray-600 leading-relaxed max-w-2xl"
             >
               {service.longDescription || service.description}
             </motion.p>
@@ -130,7 +130,7 @@ const ServicesDetail = () => {
                     color: "#ffffff",
                     transition: { duration: 0.2 },
                   }}
-                  className="p-8 border-b md:border-r border-gray-100 flex items-center gap-4 bg-white text-gray-900 transition-colors cursor-default"
+                  className="p-4 border-b md:border-r border-gray-100 flex items-center gap-3 bg-white text-gray-900 transition-colors cursor-default"
                 >
                   <span className="text-[#00D3CD] font-bold text-xl">→</span>
                   <span className="font-bold text-lg">{text}</span>
@@ -145,13 +145,13 @@ const ServicesDetail = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-[#00D3CD] p-10 flex flex-col min-h-[450px] shadow-lg relative overflow-hidden"
+            className="bg-[#00D3CD] p-6 flex flex-col min-h-[320px] shadow-lg relative overflow-hidden"
           >
-            <h2 className="text-2xl font-black mb-10 tracking-tighter text-black">
+            <h2 className="text-xl font-black mb-6 tracking-tighter text-black">
               BENEFITS
             </h2>
 
-            <div className="space-y-8">
+            <div className="space-y-5">
               {highlights.map((benefit, idx) => (
                 <motion.div
                   key={idx}
@@ -159,7 +159,7 @@ const ServicesDetail = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.05 }}
                 >
-                  <p className="text-black font-bold text-lg leading-tight uppercase">
+                  <p className="text-black font-bold text-base leading-tight uppercase">
                     {benefit}
                   </p>
 
@@ -175,11 +175,11 @@ const ServicesDetail = () => {
         {/* FOOTER CTA */}
         <motion.div
           variants={fadeInUp}
-          className="mt-20 flex flex-col md:flex-row items-center justify-between border-t border-gray-200 pt-10 gap-6"
+          className="mt-12 flex flex-col md:flex-row items-center justify-between border-t border-gray-200 pt-6 gap-4"
         >
           <Link
             to="/services"
-            className="text-sm font-bold border border-black px-10 py-3 hover:bg-black hover:text-white transition-all duration-300 uppercase tracking-widest"
+            className="text-sm font-bold border border-black px-6 py-2 hover:bg-black hover:text-white transition-all duration-300 uppercase tracking-widest"
           >
             — BACK TO SERVICES
           </Link>
@@ -188,7 +188,7 @@ const ServicesDetail = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => popupRef.current?.openPopup()}
-            className="bg-[#00D3CD] text-white font-bold px-12 py-4 rounded-full shadow-[0_10px_20px_rgba(0,211,205,0.3)] hover:shadow-[0_15px_40px_rgba(0,211,205,0.5)] transition-all"
+            className="bg-[#00D3CD] text-white font-bold px-8 py-3 rounded-full shadow-[0_8px_16px_rgba(0,211,205,0.25)] hover:shadow-[0_12px_30px_rgba(0,211,205,0.4)] transition-all"
           >
             ENQUIRE NOW
           </motion.button>
