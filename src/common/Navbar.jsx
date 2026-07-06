@@ -210,7 +210,9 @@ const Navbar = () => {
                   <div className="grid grid-cols-3 gap-5 bg-white p-5 rounded-2xl shadow-xl border border-gray-100 max-h-[85vh] overflow-y-auto">
                     {/* API COLUMN */}
                     <div className="bg-[#F6FAFF] rounded-xl p-5">
-                      <h3 className="text-xl font-semibold mb-4 text-gray-800">API</h3>
+                      <div className="w-full flex justify-center">
+                        <h3 className="text-xl font-semibold mb-4 text-[#00C6C9]">API</h3>
+                      </div>
                       <div className="space-y-3">
                         {allServices.slice(0, 7).map((s, i) => (
                           <div key={i} className="group/item">
@@ -248,7 +250,9 @@ const Navbar = () => {
 
                     {/* BANKING COLUMN */}
                     <div className="bg-[#F5FBF6] rounded-xl p-5">
-                      <h3 className="text-xl font-semibold mb-4 text-gray-800">Banking</h3>
+                      <div className="w-full flex justify-center">
+                        <h3 className="text-xl font-semibold mb-4 text-[#00C6C9]">Banking</h3>
+                      </div>
                       <div className="space-y-3">
                         {allServices.slice(0, 7).map((s, i) => (
                           <div key={i} className="group/item">
@@ -286,7 +290,9 @@ const Navbar = () => {
 
                     {/* DEVELOPMENT COLUMN */}
                     <div className="bg-[#FFF7ED] rounded-xl p-5">
-                      <h3 className="text-xl font-semibold mb-4 text-gray-800">Development</h3>
+                      <div className="w-full flex justify-center">
+                        <h3 className="text-xl font-semibold mb-4 text-[#00C6C9]">Development</h3>
+                      </div>
                       <div className="space-y-3">
                         {allServices.slice(7).map((s, i) => (
                           <div key={i} className="group/item">

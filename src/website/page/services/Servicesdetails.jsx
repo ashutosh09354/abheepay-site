@@ -25,7 +25,7 @@ const ServicesDetail = () => {
   // ✅ IMAGE FIX (public/ auto remove)
   const mainImg = (service.imageUrl ||
     service.image ||
-    "/assets/fallback-service.png"
+    "#"
   ).replace(/^public\//, "/");
 
   const features = service.features || [];

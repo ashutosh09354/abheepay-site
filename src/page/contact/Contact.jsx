@@ -422,7 +422,7 @@ const ContactUs = () => {
                   type="text"
                   name="name"
                   id="name"
-                  className="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 focus:border-[#2dd4bf] focus:ring-2 focus:ring-[#2dd4bf]/30 outline-none transition"
+                  className="w-full px-3 py-2 text-sm rounded-lg border border-gray-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-[#2dd4bf] focus:ring-2 focus:ring-[#2dd4bf]/30 outline-none transition"
                   placeholder="Enter your name"
                   required
                 />
@@ -439,7 +439,7 @@ const ContactUs = () => {
                   type="email"
                   name="email"
                   id="email"
-                  className="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 focus:border-[#2dd4bf] focus:ring-2 focus:ring-[#2dd4bf]/30 outline-none transition"
+                  className="w-full px-3 py-2 text-sm rounded-lg border border-gray-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-[#2dd4bf] focus:ring-2 focus:ring-[#2dd4bf]/30 outline-none transition"
                   placeholder="Enter your email"
                   required
                 />
@@ -456,7 +456,7 @@ const ContactUs = () => {
                   type="tel"
                   name="phone"
                   id="phone"
-                  className="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 focus:border-[#2dd4bf] focus:ring-2 focus:ring-[#2dd4bf]/30 outline-none transition"
+                  className="w-full px-3 py-2 text-sm rounded-lg border border-gray-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-[#2dd4bf] focus:ring-2 focus:ring-[#2dd4bf]/30 outline-none transition"
                   placeholder="Enter your number"
                   required
                 />
@@ -473,7 +473,7 @@ const ContactUs = () => {
                   name="message"
                   id="message"
                   rows={4}
-                  className="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 focus:border-[#2dd4bf] focus:ring-2 focus:ring-[#2dd4bf]/30 outline-none transition resize-none"
+                  className="w-full px-3 py-2 text-sm rounded-lg border border-gray-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-[#2dd4bf] focus:ring-2 focus:ring-[#2dd4bf]/30 outline-none transition resize-none"
                   placeholder="How can we assist you?"
                   required
                 />
