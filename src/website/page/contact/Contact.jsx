@@ -45,25 +45,12 @@ const ContactUs = () => {
     <div className="min-h-screen bg-gray-100">
  
 
-      <div
-        className="relative w-full py-16 sm:py-24 md:py-32 lg:py-48 overflow-hidden bg-cover bg-no-repeat hidden md:block"
-        style={{
-          backgroundImage:
-            "url('https://www.polypackenterprises.com/assets/new-images/images/banner/new-contact-us.jpg')",
-          backgroundPosition: "14% center",
-        }}
-      />
+      <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pt-8 sm:pt-10 md:pt-12">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+          Contact Us
+        </h1>
+      </div>
 
-      <div
-        className="relative w-full py-36 sm:py-16 md:py-20 overflow-hidden bg-cover bg-no-repeat block md:hidden"
-        style={{
-          backgroundImage:
-            "url('https://www.polypackenterprises.com/assets/new-images/images/banner/mobile-view-contact-us.jpg')", // ← change this URL
-          backgroundPosition: "center center",
-        }}
-      />
-
-   
       <div className="py-10 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-start">
           

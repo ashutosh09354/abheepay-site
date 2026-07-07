@@ -43,7 +43,7 @@
 
 //   return (
 //     <div className="min-h-screen bg-gray-100">
- 
+
 
 //       <div
 //         className="relative w-full py-16 sm:py-24 md:py-32 lg:py-48 overflow-hidden bg-cover bg-no-repeat hidden md:block"
@@ -63,10 +63,10 @@
 //         }}
 //       />
 
-   
+
 //       <div className="py-10 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
 //         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-start">
-          
+
 //           <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-8 md:p-10 border border-gray-100 order-1 lg:order-1">
 //             <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">
 //               Send a message
@@ -184,7 +184,7 @@
 //             </form>
 //           </div>
 
-          
+
 //           <div className="space-y-6 md:space-y-8 order-2 lg:order-2">
 //             <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-8 border border-gray-100">
 //               <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-5">
@@ -192,7 +192,7 @@
 //               </h3>
 
 //               <div className="space-y-5 sm:space-y-6">
-          
+
 //                 <div className="flex items-start space-x-3 sm:space-x-4">
 //                   <div className="flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 bg-[#2dd4bf]/10 rounded-lg flex items-center justify-center text-[#2dd4bf]">
 //                     <svg
@@ -227,7 +227,7 @@
 //                   </div>
 //                 </div>
 
-             
+
 //                 <div className="flex items-start space-x-3 sm:space-x-4">
 //                   <div className="flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 bg-[#2dd4bf]/10 rounded-lg flex items-center justify-center text-[#2dd4bf]">
 //                     <svg
@@ -257,7 +257,7 @@
 //                   </div>
 //                 </div>
 
-            
+
 //                 <div className="flex items-start space-x-3 sm:space-x-4">
 //                   <div className="flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 bg-[#2dd4bf]/10 rounded-lg flex items-center justify-center text-[#2dd4bf]">
 //                     <svg
@@ -289,7 +289,7 @@
 //               </div>
 //             </div>
 
-           
+
 //             <div className="bg-white rounded-3xl shadow-xl p-1.5 sm:p-2 border border-gray-100 overflow-hidden">
 //               <div className="rounded-2xl overflow-hidden h-56 sm:h-64 md:h-72 lg:h-64 w-full">
 //                 <iframe
@@ -374,30 +374,17 @@ const ContactUs = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
- 
 
-      <div
-        className="relative w-full py-8 sm:py-10 md:py-14 lg:py-20 overflow-hidden bg-cover bg-no-repeat hidden md:block"
-        style={{
-          backgroundImage:
-            "url('https://www.polypackenterprises.com/assets/new-images/images/banner/new-contact-us.jpg')",
-          backgroundPosition: "14% center",
-        }}
-      />
 
-      <div
-        className="relative w-full py-16 sm:py-10 md:py-12 overflow-hidden bg-cover bg-no-repeat block md:hidden"
-        style={{
-          backgroundImage:
-            "url('https://www.polypackenterprises.com/assets/new-images/images/banner/mobile-view-contact-us.jpg')", // ← change this URL
-          backgroundPosition: "center center",
-        }}
-      />
+      <div className="px-4 sm:px-8 lg:px-8 max-w-3xl mx-auto pt-20 py-4">
+        <h1 className="text-3xl sm:text-4xl md:text-2xl font-bold text-gray-900">
+          Contact Us
+        </h1>
+      </div>
 
-   
       <div className="py-6 sm:py-8 md:py-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-6 items-start">
-          
+
           <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-5 md:p-6 border border-gray-100 order-1 lg:order-1">
             <h2 className="text-lg sm:text-xl font-bold text-gray-800 mb-1">
               Send a message
@@ -515,7 +502,7 @@ const ContactUs = () => {
             </form>
           </div>
 
-          
+
           <div className="space-y-4 md:space-y-5 order-2 lg:order-2">
             <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-5 border border-gray-100">
               <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-3 sm:mb-4">
@@ -523,7 +510,7 @@ const ContactUs = () => {
               </h3>
 
               <div className="space-y-3 sm:space-y-4">
-          
+
                 <div className="flex items-start space-x-2.5 sm:space-x-3">
                   <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 bg-[#2dd4bf]/10 rounded-lg flex items-center justify-center text-[#2dd4bf]">
                     <svg
@@ -558,7 +545,7 @@ const ContactUs = () => {
                   </div>
                 </div>
 
-             
+
                 <div className="flex items-start space-x-2.5 sm:space-x-3">
                   <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 bg-[#2dd4bf]/10 rounded-lg flex items-center justify-center text-[#2dd4bf]">
                     <svg
@@ -588,7 +575,7 @@ const ContactUs = () => {
                   </div>
                 </div>
 
-            
+
                 <div className="flex items-start space-x-2.5 sm:space-x-3">
                   <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 bg-[#2dd4bf]/10 rounded-lg flex items-center justify-center text-[#2dd4bf]">
                     <svg
@@ -620,7 +607,7 @@ const ContactUs = () => {
               </div>
             </div>
 
-           
+
             <div className="bg-white rounded-2xl shadow-lg p-1 sm:p-1.5 border border-gray-100 overflow-hidden">
               <div className="rounded-xl overflow-hidden h-40 sm:h-48 md:h-52 lg:h-44 w-full">
                 <iframe

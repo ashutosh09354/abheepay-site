@@ -190,7 +190,7 @@ const Navbar = () => {
           <nav className="hidden lg:flex flex-1 justify-center items-center gap-5 text-gray-700">
             <div className="relative inline-block" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <Link
-                to="/services"
+                to="#"
                 className="text-sm font-semibold transition-colors hover:text-[#00C4C7]"
               >
                 Services
@@ -314,7 +314,7 @@ const Navbar = () => {
             </div>
 
             <Link
-              to="/join-as-retailer"
+              to="/services"
               className="text-xs font-semibold transition-colors hover:text-[#00C4C7]"
             >
               Solutions

@@ -129,21 +129,11 @@ const ServiceCardWithImage = ({
 const Services = () => {
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative overflow-hidden">
-        <motion.div
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.2 }}
-          className="relative"
-        >
-          <img
-            src="public/assets/image/logo/abheepays.jpeg"
-            alt="Hero"
-            className="w-full h-auto object-cover"
-          />
-          <div className="absolute inset-0 bg-black/30" />
-        </motion.div>
-      </section>
+      <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pt-8 sm:pt-10 md:pt-12">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+          All Services
+        </h1>
+      </div>
 
       <section className="py-10 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -153,9 +143,6 @@ const Services = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="inline-block text-[#2DD4BF] font-semibold text-sm tracking-wider uppercase bg-purple-100 px-6 py-2 rounded-full mb-6">
-              🚀 All Services
-            </span>
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
               Complete Financial Ecosystem
             </h2>

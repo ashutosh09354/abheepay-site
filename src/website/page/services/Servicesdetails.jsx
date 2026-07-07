@@ -1,12 +1,10 @@
-import React, { useRef } from "react";
+import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import servicesData from "./Servicesdata.json";
-import EnquiryPopup from "../../components/Enquiryform";
 
 const ServicesDetail = () => {
   const { id } = useParams();
-  const popupRef = useRef();
 
   const service = servicesData.find(
     (s) => s.id?.toLowerCase() === id?.toLowerCase()
@@ -184,18 +182,9 @@ const ServicesDetail = () => {
             — BACK TO SERVICES
           </Link>
 
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => popupRef.current?.openPopup()}
-            className="bg-[#00D3CD] text-white font-bold px-8 py-3 rounded-full shadow-[0_8px_16px_rgba(0,211,205,0.25)] hover:shadow-[0_12px_30px_rgba(0,211,205,0.4)] transition-all"
-          >
-            ENQUIRE NOW
-          </motion.button>
         </motion.div>
       </div>
 
-      <EnquiryPopup ref={popupRef} />
     </motion.div>
   );
 };

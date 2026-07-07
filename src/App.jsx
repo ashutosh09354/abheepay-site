@@ -7,7 +7,6 @@ import ContactUs from "./page/contact/Contact";
 import AboutPage from "./page/about/About-us";
 import BlogPage from "./page/blog/Blog";
 import BlogDetails from "./page/blog/Blogdetails";
-import EnquiryPopup from "./components/Enquiryform";
 import InsurancePage from "./page/insurance/Insurance";
 import PrivacyPolicy from "./page/privacy-policy/Privacy-Policy";
 import TermsConditions from "./page/term-condition/Terms-conditions";
@@ -27,8 +26,6 @@ const Layout = () => {
       <Navbar />
       <Outlet />
       <Footer />
-      {/* Optional: Enquiry Popup globally */}
-      <EnquiryPopup />
     </>
   );
 };

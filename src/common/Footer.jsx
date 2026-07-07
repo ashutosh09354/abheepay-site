@@ -313,7 +313,7 @@ const Footer = () => {
   const socialLinks = [
     {
       name: "LinkedIn",
-      href: "#",
+      href: "https://www.linkedin.com/company/abheepay/posts/?feedView=all",
       svg: (
         <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.24 8.25h4.53V23H.24V8.25zM8.5 8.25h4.34v2.02h.06c.6-1.14 2.08-2.34 4.28-2.34 4.58 0 5.42 3.02 5.42 6.95V23h-4.53v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.8-2.65 3.65V23H8.5V8.25z" />
       ),
@@ -327,14 +327,14 @@ const Footer = () => {
     },
     {
       name: "Facebook",
-      href: "#",
+      href: "https://www.facebook.com/p/Abheepay-61572426264287/",
       svg: (
         <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.13 8.44 9.88v-6.99H7.9v-2.89h2.54V9.84c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.89h-2.33v6.99C18.34 21.13 22 16.99 22 12z" />
       ),
     },
     {
       name: "Instagram",
-      href: "#",
+      href: "https://www.instagram.com/abheepayofficial/",
       svg: (
         <path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.05.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.05.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 01-1.38-.9 3.72 3.72 0 01-.9-1.38c-.16-.42-.36-1.05-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.05-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zM12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.15.26-2.91.56a5.9 5.9 0 00-2.13 1.39A5.9 5.9 0 00.62 4.15c-.3.76-.5 1.63-.56 2.91C0 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91.31.79.72 1.46 1.39 2.13.67.67 1.34 1.08 2.13 1.39.76.3 1.63.5 2.91.56C8.33 24 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56a5.9 5.9 0 002.13-1.39 5.9 5.9 0 001.39-2.13c.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91a5.9 5.9 0 00-1.39-2.13A5.9 5.9 0 0019.86.63c-.76-.3-1.63-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1012 18.16 6.16 6.16 0 0012 5.84zm0 10.16a4 4 0 110-8 4 4 0 010 8zm6.41-10.4a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z" />
       ),
@@ -349,7 +349,141 @@ const Footer = () => {
           'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif',
       }}
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10 pt-8 pb-5">
+      <div className="md:hidden relative z-10 px-5 pt-8 pb-6">
+        <div className="flex flex-col items-start gap-4">
+          <img
+            src="/assets/image/logo/logos.png"
+            alt="logo"
+            loading="lazy"
+            width="100"
+            height="100"
+            className="h-16 w-16 object-contain"
+          />
+
+          <p className="text-sm leading-6 text-gray-300">
+            Powering digital payments across India with secure and reliable
+            infrastructure.
+          </p>
+
+          <Link
+            to="/about"
+            className="inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-[#00BCB7]"
+          >
+            Read more
+            <svg
+              className="ml-1 h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </Link>
+        </div>
+
+        <div className="mt-7 grid grid-cols-2 gap-6">
+          <div>
+            <h4 className="mb-3 text-base font-bold text-white">Company</h4>
+            <ul className="space-y-3">
+              {quickLinks.map((item) => (
+                <li key={item.text}>
+                  <Link
+                    to={item.to}
+                    className="block text-sm leading-5 text-gray-300 hover:text-[#00BCB7]"
+                  >
+                    {item.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="mb-3 text-base font-bold text-white">Services</h4>
+            <ul className="space-y-3">
+              {productLinks.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    to={item.link}
+                    className="block text-sm leading-5 text-gray-300 hover:text-[#00BCB7]"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-7 rounded-2xl border border-white/10 bg-white/5 p-4">
+          <h4 className="mb-4 text-base font-bold text-white">Contact Us</h4>
+          <div className="space-y-4">
+            <div>
+              <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                Call Us
+              </p>
+              <a
+                href="tel:+918860037218"
+                className="text-base font-semibold text-gray-200 hover:text-[#00BCB7]"
+              >
+                +91 88600 37218
+              </a>
+            </div>
+
+            <div>
+              <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                Email Us
+              </p>
+              <a
+                href="mailto:care@abheepay.com"
+                className="text-base font-semibold text-gray-200 hover:text-[#00BCB7]"
+              >
+                care@abheepay.com
+              </a>
+            </div>
+
+            <div>
+              <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                Visit Us
+              </p>
+              <p className="text-sm leading-6 text-gray-300">
+                2nd Floor, Plot No - 3, KH. NO. 33/6 AMBERHAI, SECTOR-19,
+                DWARKA, NEW DELHI- 110043
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-6 flex items-center gap-3">
+          {socialLinks.map((social) => (
+            <a
+              key={social.name}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={social.name}
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-gray-200 hover:bg-[#00BCB7] hover:text-white"
+            >
+              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                {social.svg}
+              </svg>
+            </a>
+          ))}
+        </div>
+
+        <div className="mt-6 border-t border-gray-700/60 pt-4">
+          <p className="text-center text-xs text-gray-500">
+            &copy; 2026 AbheePay. All rights reserved.
+          </p>
+        </div>
+      </div>
+
+      <div className="hidden md:block mx-auto max-w-7xl px-6 lg:px-8 relative z-10 pt-8 pb-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Company Info */}
           <div>

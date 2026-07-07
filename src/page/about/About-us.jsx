@@ -84,7 +84,7 @@
 
 //   return (
 //     <div className="font-sans text-gray-800 min-h-screen">
-    
+
 //       <section
 //         className="relative h-[320px] sm:h-[500px] flex items-center justify-center bg-cover bg-center"
 //         style={{
@@ -98,10 +98,10 @@
 //         </div>
 //       </section>
 
-    
+
 //       <section className="py-10 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
 //         <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
-         
+
 //           <div className="relative mx-auto md:mx-0 max-w-md md:max-w-none">
 //             <div className="w-full sm:w-10/12 overflow-hidden rounded-[40px] shadow-lg mx-auto md:mx-0">
 //               <img
@@ -205,7 +205,7 @@
 //         </div>
 //       </section>
 
- 
+
 //       <section className="py-10 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
 //         <div className="grid md:grid-cols-2 gap-10 lg:gap-12 items-center">
 //           <div className="space-y-6 text-center md:text-left">
@@ -257,7 +257,7 @@
 //         </div>
 //       </section>
 
-     
+
 //       <section className="py-10 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
 //         <div className="max-w-7xl mx-auto">
 //           <div className="text-center mb-10 sm:mb-12">
@@ -447,21 +447,11 @@ const AboutPage = () => {
         }
       `}</style>
 
-      {/* Hero */}
-      <section className="relative min-h-[120px] sm:min-h-[170px] flex items-center bg-gray-50 pt-16 sm:pt-20 pb-4 sm:pb-6 overflow-hidden">
-        <div
-          className="absolute -top-10 left-10 w-40 h-40 sm:w-56 sm:h-56 rounded-full bg-[#00D3CD]/20 blur-3xl ap-drift"
-          aria-hidden="true"
-        />
-        <div
-          className="absolute -bottom-16 left-1/3 w-32 h-32 sm:w-44 sm:h-44 rounded-full bg-[#2DD4BF]/15 blur-3xl ap-drift"
-          style={{ animationDelay: "1.2s" }}
-          aria-hidden="true"
-        />
-        <div className="relative text-left text-slate-800 z-10 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full ap-fade-up">
-          <h1 className="text-xl sm:text-2xl font-bold">About Us</h1>
-        </div>
-      </section>
+      <div className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto pt-20">
+        <h1 className="text-3xl sm:text-4xl md:text-3xl font-bold text-gray-900">
+          About Us
+        </h1>
+      </div>
 
       {/* Intro */}
       <section className="py-4 sm:py-6 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
@@ -586,21 +576,19 @@ const AboutPage = () => {
             <div className="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-3 my-2">
               <button
                 onClick={() => setActiveTab("mission")}
-                className={`px-3.5 sm:px-4 py-1 rounded-full text-[11px] font-semibold transition ${
-                  activeTab === "mission"
+                className={`px-3.5 sm:px-4 py-1 rounded-full text-[11px] font-semibold transition ${activeTab === "mission"
                     ? "bg-[#00D3CD] text-white shadow-md"
                     : "bg-gray-100 hover:bg-gray-200"
-                }`}
+                  }`}
               >
                 Our Mission
               </button>
               <button
                 onClick={() => setActiveTab("vision")}
-                className={`px-3.5 sm:px-4 py-1 rounded-full text-[11px] font-semibold transition ${
-                  activeTab === "vision"
+                className={`px-3.5 sm:px-4 py-1 rounded-full text-[11px] font-semibold transition ${activeTab === "vision"
                     ? "bg-[#00D3CD] text-white shadow-md"
                     : "bg-gray-100 hover:bg-gray-200"
-                }`}
+                  }`}
               >
                 Our Vision
               </button>

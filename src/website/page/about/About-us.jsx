@@ -85,11 +85,11 @@ const AboutPage = () => {
   return (
     <div className="font-sans text-gray-800 min-h-screen">
     
-      <section className="relative h-[100px] sm:h-[100px] flex items-center justify-center bg-gray-50">
-        <div className="relative text-center text-slate-800 z-5 px-2">
-          <h1 className="text-2xl sm:text-2xl font-bold mb-1">About Us</h1>
-        </div>
-      </section>
+      <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pt-8 sm:pt-10 md:pt-12">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+          About Us
+        </h1>
+      </div>
 
     
       <section className="py-6 sm:py-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
