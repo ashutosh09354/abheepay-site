@@ -1386,7 +1386,7 @@ const ServiceList = () => (
             <p className="mt-1 text-[11px] text-white/90 sm:text-xs">Join thousands of businesses already growing with ABHEEPAY.</p>
           </div>
           <Link to="/contact" className="inline-flex items-center gap-1 rounded-lg bg-white px-3 py-2 text-[11px] font-bold text-[#10366e]">
-            Create Account Now <ArrowRight size={10} />
+            Join Us Now <ArrowRight size={10} />
           </Link>
         </div>
       </section>
