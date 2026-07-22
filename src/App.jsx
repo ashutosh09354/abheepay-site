@@ -11,7 +11,6 @@ import InsurancePage from "./page/insurance/Insurance";
 import PrivacyPolicy from "./page/privacy-policy/Privacy-Policy";
 import TermsConditions from "./page/term-condition/Terms-conditions";
 import Services from "./page/services/Services";
-import ServicesDetail from "./page/services/Servicesdetails";
 import Join from "./page/join-as-retailer/Join-as-retailer";
 import Joins from "./page/join-as-distributor/Join-as-distributor";
 import LoginPage from "./page/login/login-form";
@@ -73,7 +72,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/services/:id",
-        element: <ServicesDetail />,
+        element: <Services />,
       },
       {
         path: "/privacy-policy",

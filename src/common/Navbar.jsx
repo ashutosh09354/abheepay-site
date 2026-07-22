@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Search, X, Menu, ChevronDown, ChevronUp } from "lucide-react";
+import { Banknote, ChevronDown, ChevronUp, Code2, Landmark, Menu, Plane, Search, WalletCards, X } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
@@ -10,6 +10,7 @@ const Navbar = () => {
 
   // Desktop services dropdown control
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const [activeSolution, setActiveSolution] = useState("Payment Solutions");
   const timeoutRef = useRef(null);
 
   // Search logic states
@@ -177,6 +178,15 @@ const Navbar = () => {
     }, 200);
   };
 
+  const solutionCategories = [
+    { name: "Payment Solutions", description: "Accept payments seamlessly", icon: WalletCards, target: "payment-solutions", services: allServices.slice(0, 1).flatMap((service) => service.items || [service]) },
+    { name: "Banking Services", description: "Banking closer to customers", icon: Landmark, target: "banking-services", services: allServices.slice(1, 3).flatMap((service) => service.items || [service]) },
+    { name: "Financial Services", description: "Grow with smart finance", icon: Banknote, target: "financial-services", services: allServices.slice(3, 5).flatMap((service) => service.items || [service]) },
+    { name: "Travel Services", description: "Flights, buses, trains & hotels", icon: Plane, target: "travel-services", services: allServices.slice(5, 6).flatMap((service) => service.items || [service]) },
+    { name: "Technology Solutions", description: "Build, scale and automate", icon: Code2, target: "technology-solutions", services: allServices.slice(6).flatMap((service) => service.items || [service]) },
+  ];
+  const activeSolutionCategory = solutionCategories.find((category) => category.name === activeSolution) || solutionCategories[0];
+
   return (
     <header className="fixed top-0 left-0 right-0 w-full z-[100] bg-white border-b border-gray-100 shadow-sm transition-all duration-300 overflow-visible">
       <div className="max-w-5xl mx-auto px-4 sm:px-4 lg:px-6 ">
@@ -188,25 +198,65 @@ const Navbar = () => {
           </div>
 
           <nav className="hidden lg:flex flex-1 justify-center items-center gap-5 text-gray-700">
+            <Link to="/services" className="text-xs font-semibold transition-colors hover:text-[#00C4C7]">
+              Services
+            </Link>
             <div className="relative inline-block" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <Link
-                to="#"
-                className="text-sm font-semibold transition-colors hover:text-[#00C4C7]"
+                to="/services"
+                className="flex items-center gap-1 text-xs font-semibold transition-colors hover:text-[#00C4C7]"
               >
-                Services
+                Solutions <ChevronDown size={15} strokeWidth={2.5} />
               </Link>
 
               {/* ✅ CHANGE #1: absolute → fixed (live clipping issue fix) */}
               <div
-                className={`fixed top-16 left-1/2 -translate-x-1/2  w-[950px] max-w-[95vw] transition-all duration-200 ease-out z-[9999] lg:block
+                className={`fixed top-16 left-1/2 -translate-x-1/2 w-[600px] max-w-[95vw] transition-all duration-200 ease-out z-[9999] lg:block
                   ${
                     servicesDropdownOpen
                       ? "opacity-100 visible translate-y-0"
                       : "opacity-0 invisible -translate-y-2 pointer-events-none"
                   }`}
               >
-                {/* Extra padding-top to create safe hover area between link and dropdown */}
-                <div>
+                <div className="rounded-xl border border-slate-100 bg-white p-2 shadow-2xl">
+                  <div className="grid grid-cols-5 gap-1.5">
+                    {solutionCategories.map(({ name, icon: Icon, target }) => (
+                      <Link
+                        key={name}
+                        to={`/services#${target}`}
+                        onMouseEnter={() => setActiveSolution(name)}
+                        onClick={() => setServicesDropdownOpen(false)}
+                        className="group rounded-lg bg-[#f5f7fb] p-2 transition hover:-translate-y-0.5 hover:bg-[#e7f6ff]"
+                      >
+                        <span className="mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white text-[#2DD4BF] shadow-sm transition group-hover:scale-105">
+                          <Icon size={17} strokeWidth={2.8} />
+                        </span>
+                        <span className="block text-[8px] font-bold leading-3 text-[#111827]">{name}</span>
+                      </Link>
+                    ))}
+                  </div>
+                  <div className="mt-2 max-h-16 overflow-y-auto rounded-lg bg-[#f7f9fc] px-2 py-2">
+                    <p className="mb-1 text-[8px] font-bold uppercase tracking-wide text-[#40617d]">{activeSolutionCategory.name}</p>
+                    <div className="grid grid-cols-3 gap-x-2 gap-y-0">
+                      {activeSolutionCategory.services.map((service) => (
+                        <Link
+                          key={service.path || service.name}
+                          to={service.path || "/services"}
+                          onClick={() => setServicesDropdownOpen(false)}
+                          className="truncate py-0.5 text-[8px] font-medium text-slate-600 transition hover:text-[#00aeb2]"
+                          title={service.name}
+                        >
+                          <span className="mr-1 text-cyan-500">•</span>{service.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="mt-2 flex overflow-hidden rounded-lg">
+                    <Link to="/contact" onClick={() => setServicesDropdownOpen(false)} className="flex flex-1 items-center justify-between bg-[#d9f0ff] px-3 py-2 text-[8px] font-medium text-[#25466f] hover:bg-[#c8e8fc]">Contact Sales <span>→</span></Link>
+                    <Link to="/join-as-retailer" onClick={() => setServicesDropdownOpen(false)} className="flex flex-1 items-center justify-between bg-[#7489c5] px-3 py-2 text-[8px] font-medium text-white hover:bg-[#6378b5]">Get Started <span>→</span></Link>
+                  </div>
+                </div>
+                <div className="hidden">
                   <div className="grid grid-cols-3 gap-5 bg-white p-5 rounded-2xl shadow-xl border border-gray-100 max-h-[85vh] overflow-y-auto">
                     {/* API COLUMN */}
                     <div className="bg-[#F6FAFF] rounded-xl p-5">
@@ -313,12 +363,6 @@ const Navbar = () => {
               </div>
             </div>
 
-            <Link
-              to="/services"
-              className="text-xs font-semibold transition-colors hover:text-[#00C4C7]"
-            >
-              Solutions
-            </Link>
             <Link to="/join-as-retailer" className="text-xs font-semibold transition-colors hover:text-[#00C4C7]">
               Partners
             </Link>

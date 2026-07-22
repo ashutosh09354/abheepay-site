@@ -42,7 +42,7 @@
 
 //   return (
 //     <div className="font-sans text-gray-800 bg-white overflow-x-hidden">
-      
+
 //       {/* Hero Section */}
 //       <section className="relative py-10 sm:py-10 md:py-20 px-3 sm:px-6 text-center">
 //         <motion.div
@@ -109,7 +109,7 @@
 //             <div className="w-16 sm:w-20 h-1.5 bg-cyan-400 mx-auto rounded-full mb-4 sm:mb-6"></div>
 //             <p className="text-gray-500 text-base sm:text-lg">Comprehensive banking and financial solutions</p>
 //           </div>
-          
+
 //           <motion.div 
 //             variants={staggerContainer} 
 //             initial="hidden" 
@@ -146,7 +146,7 @@
 //             Aapka business Humara investment
 //           </motion.p>
 //           <h2 className="text-4xl sm:text-5xl font-extrabold mb-10 sm:mb-16">Abheepay Benefits</h2>
-          
+
 //           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
 //             {benefits.map((benefit, index) => (
 //               <motion.div 
@@ -177,7 +177,7 @@
 //           >
 //             Aapka business • Humara investment
 //           </motion.p>
-          
+
 //           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 mb-10 sm:mb-16 tracking-tight">
 //             Abheepay <span className="text-[#2dd4bf]">Benefits</span>
 //           </h2>
@@ -202,7 +202,7 @@
 //                 <h3 className="text-lg sm:text-xl font-extrabold text-slate-800 leading-tight">
 //                   {benefit.title}
 //                 </h3>
-                
+
 //                 <div className="mt-3 sm:mt-4 h-1 w-10 sm:w-12 bg-indigo-100 mx-auto rounded-full group-hover:w-16 sm:group-hover:w-20 group-hover:bg-[#2dd4bf] transition-all duration-300" />
 //               </motion.div>
 //             ))}
@@ -320,10 +320,11 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  CreditCard, Smartphone, Wallet, Zap, DollarSign, ShieldCheck, 
-  Headphones, LayoutGrid, TrendingUp, UserPlus, CheckCircle, 
-  IndianRupee, Mail, Phone, MapPin, Globe, ArrowRight 
+import { Link } from "react-router-dom";
+import {
+  CreditCard, Smartphone, Wallet, Zap, DollarSign, ShieldCheck,
+  Headphones, LayoutGrid, TrendingUp, UserPlus, CheckCircle,
+  IndianRupee, Mail, Phone, MapPin, Globe, ArrowRight
 } from 'lucide-react';
 
 // Animation Variants
@@ -362,7 +363,7 @@ const Join = () => {
 
   return (
     <div className="font-sans text-gray-800 bg-white overflow-x-hidden">
-      
+
       {/* Hero Section */}
       <section className="relative py-5 sm:py-5 md:py-10 px-2 sm:px-3 text-center">
         <motion.div
@@ -384,13 +385,11 @@ const Join = () => {
             Join the revolution of digital finance.
           </p>
 
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-cyan-500 hover:bg-cyan-600 text-white px-2.5 sm:px-2.5 py-1.5 sm:py-1 rounded-full font-bold flex items-center mx-auto shadow-lg shadow-cyan-200 transition text-sm sm:text-sm"
-          >
-            Get Started <ArrowRight className="ml-2" size={10} />
-          </motion.button>
+          <Link to="/contact">
+            <button className="px-6 py-3 bg-[#00C4C7] text-white rounded-lg hover:bg-[#00b2b5]">
+              Get Started
+            </button>
+          </Link>
         </motion.div>
 
         {/* Background Decor */}
@@ -402,7 +401,7 @@ const Join = () => {
 
       {/* Partner CTA */}
       <section className="bg-[#1e2736] py-6 sm:py-8 px-2.5 sm:px-4">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -412,7 +411,7 @@ const Join = () => {
           <p className="text-gray-400 mb-3 sm:mb-4 text-sm sm:text-sm max-w-2xl mx-auto">
             Join thousands of successful retailers who have transformed their business with AbheePay. Earn up to <span className="text-cyan-400 font-bold">₹12 Lakh</span> annually!
           </p>
-          <motion.button 
+          <motion.button
             whileHover={{ y: -3 }}
             className="bg-cyan-400 hover:bg-cyan-300 text-[#1e2736] px-4 sm:px-6 py-1.5 sm:py-2 rounded-xl font-black uppercase tracking-tight transition shadow-xl text-xs sm:text-sm"
           >
@@ -429,17 +428,17 @@ const Join = () => {
             <div className="w-8 sm:w-10 h-1 bg-cyan-400 mx-auto rounded-full mb-2 sm:mb-3"></div>
             <p className="text-gray-500 text-sm sm:text-sm font-bold">Comprehensive banking and financial solutions</p>
           </div>
-          
-          <motion.div 
-            variants={staggerContainer} 
-            initial="hidden" 
-            whileInView="visible" 
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4"
           >
             {services.map((service, index) => (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 variants={fadeInUp}
                 whileHover={{ y: -10 }}
                 className="bg-white p-3 sm:p-4 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group"
@@ -458,18 +457,18 @@ const Join = () => {
       {/* Benefits Section – first one (dark) */}
       <section className="bg-[#0f172a] py-6 sm:py-8 px-2.5 sm:px-4 text-center text-white relative overflow-hidden">
         <div className="max-w-6xl mx-auto relative z-10">
-          <motion.p 
-            initial={{ opacity: 0 }} 
+          <motion.p
+            initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="text-cyan-400 font-bold mb-1.5 sm:mb-2 uppercase tracking-[0.2em] text-[0.65rem] sm:text-xs"
           >
             Aapka business Humara investment
           </motion.p>
           <h2 className="text-xl sm:text-2xl font-extrabold mb-5 sm:mb-8">Abheepay Benefits</h2>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             {benefits.map((benefit, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -490,14 +489,14 @@ const Join = () => {
         <div className="absolute bottom-0 right-1/4 w-24 sm:w-32 h-24 sm:h-32 bg-indigo-100/50 rounded-full blur-3xl" />
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-[#2dd4bf] font-bold mb-1 sm:mb-1.5 uppercase tracking-widest text-[0.65rem] sm:text-xs"
           >
             Aapka business • Humara investment
           </motion.p>
-          
+
           <h2 className="text-lg sm:text-xl md:text-2xl font-black text-slate-900 mb-5 sm:mb-8 tracking-tight">
             Abheepay <span className="text-[#2dd4bf]">Benefits</span>
           </h2>
@@ -522,7 +521,7 @@ const Join = () => {
                 <h3 className="text-sm sm:text-base font-extrabold text-slate-800 leading-tight">
                   {benefit.title}
                 </h3>
-                
+
                 <div className="mt-1.5 sm:mt-2 h-0.5 w-5 sm:w-6 bg-indigo-100 mx-auto rounded-full group-hover:w-8 sm:group-hover:w-10 group-hover:bg-[#2dd4bf] transition-all duration-300" />
               </motion.div>
             ))}
@@ -539,39 +538,39 @@ const Join = () => {
               <form className="space-y-2.5 sm:space-y-3">
                 <div className="space-y-1">
                   <label className="text-xs font-semibold text-gray-600 ml-1">Full Name</label>
-                  <input 
-                    type="text" 
-                    placeholder="John Doe" 
-                  className="w-full p-4 bg-white border border-gray-200 rounded-xl focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/40 outline-none transition text-base text-slate-900 placeholder:text-slate-400" 
+                  <input
+                    type="text"
+                    placeholder="John Doe"
+                    className="w-full p-4 bg-white border border-gray-200 rounded-xl focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/40 outline-none transition text-base text-slate-900 placeholder:text-slate-400"
                   />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
                   <div className="space-y-1">
                     <label className="text-xs font-semibold text-gray-600 ml-1">Email</label>
-                    <input 
-                      type="email" 
-                      placeholder="john@example.com" 
-                       className="w-full p-4 bg-white border border-gray-200 rounded-xl focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/40 outline-none transition text-base text-slate-900 placeholder:text-slate-400" 
+                    <input
+                      type="email"
+                      placeholder="john@example.com"
+                      className="w-full p-4 bg-white border border-gray-200 rounded-xl focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/40 outline-none transition text-base text-slate-900 placeholder:text-slate-400"
                     />
                   </div>
                   <div className="space-y-1">
                     <label className="text-xs font-semibold text-gray-600 ml-1">Phone</label>
-                    <input 
-                      type="tel" 
-                      placeholder="+91 00000 00000" 
-                      className="w-full p-4 bg-white border border-gray-200 rounded-xl focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/40 outline-none transition text-base text-slate-900 placeholder:text-slate-400" 
+                    <input
+                      type="tel"
+                      placeholder="+91 00000 00000"
+                      className="w-full p-4 bg-white border border-gray-200 rounded-xl focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/40 outline-none transition text-base text-slate-900 placeholder:text-slate-400"
                     />
                   </div>
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-gray-600 ml-1">City</label>
-                  <input 
-                    type="text" 
-                    placeholder="New Delhi" 
-                    className="w-full p-4 bg-white border border-gray-200 rounded-xl focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/40 outline-none transition text-base text-slate-900 placeholder:text-slate-400" 
+                  <input
+                    type="text"
+                    placeholder="New Delhi"
+                    className="w-full p-4 bg-white border border-gray-200 rounded-xl focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/40 outline-none transition text-base text-slate-900 placeholder:text-slate-400"
                   />
                 </div>
-                <motion.button 
+                <motion.button
                   whileTap={{ scale: 0.98 }}
                   className="w-full bg-cyan-400 text-white font-black py-2 sm:py-2.5 rounded-lg hover:bg-cyan-500 transition-colors mt-2 text-sm sm:text-sm shadow-lg shadow-cyan-100"
                 >
