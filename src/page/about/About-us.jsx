@@ -317,16 +317,362 @@
 
 
 
+// import React, { useState, useEffect } from "react";
+// import {
+//   CheckCircle,
+//   Users,
+//   Briefcase,
+//   Lock,
+//   Globe,
+//   MoveRight,
+//   Shield,
+//   Zap,
+// } from "lucide-react";
+// import Ourclient from "../home/Ourclient";
+
+// const AnimatedNumber = ({ value }) => {
+//   const [count, setCount] = useState(0);
+
+//   const target = parseInt(value.replace(/[^0-9]/g, ""));
+//   const symbol = value.replace(/[0-9]/g, "");
+
+//   useEffect(() => {
+//     let start = 0;
+//     const duration = 2000;
+//     const increment = target / (duration / 16);
+
+//     const timer = setInterval(() => {
+//       start += increment;
+//       if (start >= target) {
+//         setCount(target);
+//         clearInterval(timer);
+//       } else {
+//         setCount(Math.floor(start));
+//       }
+//     }, 16);
+
+//     return () => clearInterval(timer);
+//   }, [target]);
+
+//   return (
+//     <>
+//       {count}
+//       {symbol}
+//     </>
+//   );
+// };
+
+// const AboutPage = () => {
+//   const [activeTab, setActiveTab] = useState("mission");
+
+//   const tabData = {
+//     mission: {
+//       quote:
+//         "To build a secure, intelligent, and inclusive digital ecosystem that enables financial services for all.",
+//       desc: "Our mission is to build a secure, intelligent, and inclusive digital ecosystem that seamlessly enables payments, banking, credit, insurance, travel, and API-driven financial services. We focus on creating technology-led solutions that are reliable, compliant, and easy to use, empowering both businesses and individuals to access essential financial services. By simplifying complex financial processes and ensuring trust at every level, we help our partners, merchants, and users grow with confidence and long-term stability in an evolving digital economy.",
+//     },
+//     vision: {
+//       quote: "To become a trusted digital financial backbone for India.",
+//       desc: "Our vision is to become a trusted digital financial backbone for India by delivering secure, scalable, and compliant fintech and service platforms. We aim to support the nation’s growing digital economy by enabling sustainable financial access for businesses, merchants, and individuals across urban and rural regions alike. Through innovation, strong infrastructure, and long-term impact-driven solutions, we strive to contribute to inclusive economic growth and build lasting trust in digital financial services.",
+//     },
+//   };
+
+//   const values = [
+//     {
+//       title: "Security First",
+//       desc: "Bank-grade security protocols ensuring safe transactions",
+//       icon: <Shield className="w-5 h-5 text-white" />,
+//       style: "bg-slate-50 text-slate-800",
+//       iconBg: "bg-[#2DD4BF]",
+//     },
+//     {
+//       title: "Innovation",
+//       desc: "Cutting-edge technology driving financial solutions",
+//       icon: <Zap className="w-5 h-5 text-white" />,
+//       style: "bg-slate-50 text-slate-800",
+//       iconBg: "bg-[#2DD4BF]",
+//     },
+//     {
+//       title: "Customer Focus",
+//       desc: "Dedicated to retailer success and satisfaction",
+//       icon: <Users className="w-5 h-5 text-white" />,
+//       style: "bg-slate-50 text-slate-800",
+//       iconBg: "bg-[#2DD4BF]",
+//     },
+//   ];
+
+//   return (
+//     <div className="font-sans text-gray-800 min-h-screen text-[13px] overflow-x-hidden">
+//       <style>{`
+//         @keyframes ap-fadeUp {
+//           0% { opacity: 0; transform: translateY(14px); }
+//           100% { opacity: 1; transform: translateY(0); }
+//         }
+//         @keyframes ap-float {
+//           0%, 100% { transform: translateY(0px); }
+//           50% { transform: translateY(-10px); }
+//         }
+//         @keyframes ap-pulseRing {
+//           0% { box-shadow: 0 0 0 0 rgba(0, 211, 205, 0.45); }
+//           70% { box-shadow: 0 0 0 10px rgba(0, 211, 205, 0); }
+//           100% { box-shadow: 0 0 0 0 rgba(0, 211, 205, 0); }
+//         }
+//         @keyframes ap-shimmer {
+//           0% { transform: translateX(-120%); }
+//           100% { transform: translateX(120%); }
+//         }
+//         @keyframes ap-drift {
+//           0% { transform: translate(0, 0) scale(1); }
+//           50% { transform: translate(20px, -15px) scale(1.08); }
+//           100% { transform: translate(0, 0) scale(1); }
+//         }
+//         .ap-fade-up { animation: ap-fadeUp 0.7s ease-out both; }
+//         .ap-fade-up-1 { animation: ap-fadeUp 0.7s 0.08s ease-out both; }
+//         .ap-fade-up-2 { animation: ap-fadeUp 0.7s 0.16s ease-out both; }
+//         .ap-fade-up-3 { animation: ap-fadeUp 0.7s 0.24s ease-out both; }
+//         .ap-float { animation: ap-float 4s ease-in-out infinite; }
+//         .ap-pulse-ring { animation: ap-pulseRing 2.4s ease-out infinite; }
+//         .ap-drift { animation: ap-drift 8s ease-in-out infinite; }
+//         .ap-card:hover .ap-card-glow { opacity: 1; }
+//         .ap-card-glow {
+//           opacity: 0;
+//           transition: opacity 0.35s ease;
+//           background: linear-gradient(135deg, rgba(0,211,205,0.18), rgba(45,212,191,0) 60%);
+//         }
+//         .ap-shine {
+//           position: absolute;
+//           top: 0; left: 0; height: 100%; width: 40%;
+//           background: linear-gradient(115deg, transparent, rgba(255,255,255,0.35), transparent);
+//           animation: ap-shimmer 3.2s ease-in-out infinite;
+//         }
+//       `}</style>
+
+//       <div className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto pt-20">
+//         <h1 className="text-3xl sm:text-4xl md:text-3xl font-bold text-gray-900">
+//           About Us
+//         </h1>
+//       </div>
+
+//       {/* Intro */}
+//       <section className="py-4 sm:py-6 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+//         <div className="grid md:grid-cols-2 gap-5 lg:gap-8 items-center">
+
+//           <div className="relative mx-auto md:mx-0 max-w-sm md:max-w-none ap-fade-up">
+//             <div className="w-full sm:w-10/12 overflow-hidden rounded-xl shadow-md mx-auto md:mx-0">
+//               <img
+//                 src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80"
+//                 alt="Digital financial services"
+//                 className="w-full h-[160px] sm:h-[200px] object-cover"
+//               />
+//             </div>
+
+//             <div className="absolute -bottom-4 sm:-bottom-5 right-4 sm:right-1 w-9/12 sm:w-5/12 rounded-xl overflow-hidden shadow-sm">
+//               <img
+//                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80"
+//                 alt="Merchant empowerment"
+//                 className="w-full h-20 sm:h-28 object-cover"
+//               />
+//             </div>
+
+//             <div
+//               className="absolute top-3 sm:top-4 right-2 sm:right-4 bg-[#00D3CD] text-white p-2 sm:p-3 rounded-lg shadow-md min-w-[80px] sm:min-w-[100px] text-center ap-float ap-pulse-ring"
+//               style={{
+//                 clipPath: "polygon(0 0, 100% 0, 100% 82%, 18% 100%, 0 100%)",
+//               }}
+//             >
+//               <h3 className="text-base sm:text-lg font-bold">30K+</h3>
+//               <p className="text-[8px] font-bold uppercase tracking-[0.1em] mt-0.5">
+//                 Active <br /> Partners
+//               </p>
+//             </div>
+//           </div>
+
+//           <div className="space-y-3 sm:space-y-4 text-center md:text-left mt-8 md:mt-0 ap-fade-up-1">
+//             <div>
+//               <h4 className="text-[#00D3CD] font-bold tracking-[0.18em] uppercase text-[10px] mb-1.5">
+//                 About AbheePay
+//               </h4>
+//               <h2 className="text-xl sm:text-2xl lg:text-[26px] font-serif font-medium leading-tight sm:leading-[1.15] text-slate-800">
+//                 Powering Digital Finance for{" "}
+//                 <span className="font-bold">Modern Indian Businesses</span>
+//               </h2>
+//             </div>
+
+//             <p className="text-gray-600 max-w-lg mx-auto md:mx-0 text-xs">
+//               AbheePay is a technology-driven fintech and digital financial
+//               services company delivering secure, scalable, and compliance-ready
+//               solutions across India.
+//             </p>
+
+//             <p className="text-gray-600 max-w-lg mx-auto md:mx-0 text-xs">
+//               Designed to serve merchants, MSMEs, enterprises, partners, and
+//               consumers, AbheePay combines robust financial infrastructure with
+//               innovation-led technology to simplify transactions and enable
+//               sustainable business growth.
+//             </p>
+
+//             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mt-3">
+//               {[
+//                 "Secure & Scalable Payment Solutions",
+//                 "Banking, Credit & Insurance Services",
+//                 "API-Led Financial Infrastructure",
+//                 "Trusted Platform for MSMEs & Enterprises",
+//               ].map((item, i) => (
+//                 <div key={i} className="flex items-center gap-2 justify-center md:justify-start transition-transform duration-200 hover:translate-x-1">
+//                   <CheckCircle className="text-[#00D3CD] w-3.5 h-3.5 flex-shrink-0" />
+//                   <span className="text-[11px] font-semibold text-gray-700">
+//                     {item}
+//                   </span>
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Stats */}
+//       <section className="relative bg-[#00D3CD] py-4 sm:py-5 overflow-hidden">
+//         <div className="ap-shine" aria-hidden="true" />
+//         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+//           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5 text-white text-center">
+//             {[
+//               { icon: <Briefcase className="w-4 h-4" />, count: "1000+", label: "Partner Retailers" },
+//               { icon: <Globe className="w-4 h-4" />, count: "50+", label: "Cities Covered" },
+//               { icon: <Users className="w-4 h-4" />, count: "10k", label: "Happy Customers" },
+//               { icon: <Lock className="w-4 h-4" />, count: "100%", label: "Secure Transactions" },
+//             ].map((stat, i) => (
+//               <div
+//                 key={i}
+//                 className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 border-b sm:border-r border-white/20 last:border-0 pb-3 sm:pb-0"
+//               >
+//                 <div className="bg-white/15 backdrop-blur-sm ring-1 ring-white/25 p-2 rounded-full shrink-0">
+//                   {stat.icon}
+//                 </div>
+//                 <div>
+//                   <h3 className="text-lg sm:text-xl font-bold">
+//                     <AnimatedNumber value={stat.count} />
+//                   </h3>
+//                   <p className="text-[8px] sm:text-[9px] text-[#feffff] uppercase mt-0.5">
+//                     {stat.label}
+//                   </p>
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Mission & Vision */}
+//       <section className="py-4 sm:py-6 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+//         <div className="grid md:grid-cols-2 gap-5 lg:gap-6 items-center">
+//           <div className="space-y-3 text-center md:text-left">
+//             <h4 className="text-[#00D3CD] font-bold uppercase text-[10px] tracking-wide">
+//               Our Mission & Vision
+//             </h4>
+//             <h2 className="text-xl sm:text-2xl font-serif font-bold leading-tight">
+//               Our Main Goal to Satisfied Local & Global Clients
+//             </h2>
+
+//             <div className="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-3 my-2">
+//               <button
+//                 onClick={() => setActiveTab("mission")}
+//                 className={`px-3.5 sm:px-4 py-1 rounded-full text-[11px] font-semibold transition ${activeTab === "mission"
+//                     ? "bg-[#00D3CD] text-white shadow-md"
+//                     : "bg-gray-100 hover:bg-gray-200"
+//                   }`}
+//               >
+//                 Our Mission
+//               </button>
+//               <button
+//                 onClick={() => setActiveTab("vision")}
+//                 className={`px-3.5 sm:px-4 py-1 rounded-full text-[11px] font-semibold transition ${activeTab === "vision"
+//                     ? "bg-[#00D3CD] text-white shadow-md"
+//                     : "bg-gray-100 hover:bg-gray-200"
+//                   }`}
+//               >
+//                 Our Vision
+//               </button>
+//             </div>
+
+//             <p className="text-gray-600 italic text-xs max-w-xl mx-auto md:mx-0">
+//               {tabData[activeTab].quote}
+//             </p>
+//             <p className="text-gray-500 text-[11px] sm:text-xs leading-relaxed max-w-xl mx-auto md:mx-0">
+//               {tabData[activeTab].desc}
+//             </p>
+//           </div>
+
+//           <div className="mt-4 md:mt-0 relative group">
+//             <div className="absolute -inset-1.5 rounded-xl bg-gradient-to-br from-[#00D3CD]/30 to-transparent blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true" />
+//             <img
+//               src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80"
+//               alt="Global Office"
+//               className="relative rounded-xl shadow-lg w-full h-auto aspect-[16/10] object-cover"
+//             />
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Core Values */}
+//       <section className="py-4 sm:py-6 px-4 sm:px-6 lg:px-8 bg-white">
+//         <div className="max-w-4xl mx-auto">
+//           <div className="text-center mb-4 sm:mb-5">
+//             <h2 className="text-lg sm:text-xl font-bold text-slate-900 mb-1.5">
+//               Our Core Values
+//             </h2>
+//             <p className="text-slate-500 text-[11px] sm:text-xs max-w-2xl mx-auto">
+//               Built on the foundation of trust, innovation, and excellence
+//             </p>
+//           </div>
+
+//           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+//             {values.map((item, i) => (
+//               <div
+//                 key={i}
+//                 className={`ap-card relative overflow-hidden p-3 sm:p-4 rounded-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer shadow-sm border border-transparent hover:border-[#00D3CD]/40 ${item.style}`}
+//               >
+//                 <div className="ap-card-glow absolute inset-0 pointer-events-none" aria-hidden="true" />
+//                 <div
+//                   className={`relative w-8 h-8 sm:w-9 sm:h-9 rounded-lg ${item.iconBg} flex items-center justify-center mb-3 sm:mb-4 shadow-sm transition-transform duration-300 group-hover:scale-110`}
+//                 >
+//                   {item.icon}
+//                 </div>
+//                 <h3 className="relative text-sm sm:text-base font-bold mb-1">{item.title}</h3>
+//                 <p className="relative text-[11px] leading-relaxed text-slate-500">
+//                   {item.desc}
+//                 </p>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+
+//       <Ourclient />
+//     </div>
+//   );
+// };
+
+// export default AboutPage;
+
+
+
+
+
+
+
 import React, { useState, useEffect } from "react";
 import {
-  CheckCircle,
   Users,
   Briefcase,
   Lock,
   Globe,
-  MoveRight,
   Shield,
   Zap,
+  ShieldCheck,
+  Landmark,
+  Code2,
+  UserCheck,
+  Target,
 } from "lucide-react";
 import Ourclient from "../home/Ourclient";
 
@@ -377,32 +723,45 @@ const AboutPage = () => {
     },
   };
 
+  const featureBadges = [
+    {
+      title: "Secure & Scalable Payment Solutions",
+      icon: <ShieldCheck className="w-5 h-5" />,
+    },
+    {
+      title: "Banking, Credit & Insurance Services",
+      icon: <Landmark className="w-5 h-5" />,
+    },
+    {
+      title: "API-Led Financial Infrastructure",
+      icon: <Code2 className="w-5 h-5" />,
+    },
+    {
+      title: "Trusted Platform for MSMEs & Enterprises",
+      icon: <UserCheck className="w-5 h-5" />,
+    },
+  ];
+
   const values = [
     {
       title: "Security First",
-      desc: "Bank-grade security protocols ensuring safe transactions",
-      icon: <Shield className="w-5 h-5 text-white" />,
-      style: "bg-slate-50 text-slate-800",
-      iconBg: "bg-[#2DD4BF]",
+      desc: "Bank-grade security protocols ensuring safe transactions and data protection.",
+      icon: <Shield className="w-5 h-5 text-[#00D3CD]" />,
     },
     {
       title: "Innovation",
-      desc: "Cutting-edge technology driving financial solutions",
-      icon: <Zap className="w-5 h-5 text-white" />,
-      style: "bg-slate-50 text-slate-800",
-      iconBg: "bg-[#2DD4BF]",
+      desc: "Cutting-edge technology driving next-generation financial solutions.",
+      icon: <Zap className="w-5 h-5 text-[#00D3CD]" />,
     },
     {
       title: "Customer Focus",
-      desc: "Dedicated to retailer success and satisfaction",
-      icon: <Users className="w-5 h-5 text-white" />,
-      style: "bg-slate-50 text-slate-800",
-      iconBg: "bg-[#2DD4BF]",
+      desc: "Dedicated to retailer success and satisfaction with reliable 24/7 support.",
+      icon: <Users className="w-5 h-5 text-[#00D3CD]" />,
     },
   ];
 
   return (
-    <div className="font-sans text-gray-800 min-h-screen text-[13px] overflow-x-hidden">
+    <div className="font-sans text-gray-800 min-h-screen text-[13px] overflow-x-hidden bg-white">
       <style>{`
         @keyframes ap-fadeUp {
           0% { opacity: 0; transform: translateY(14px); }
@@ -421,23 +780,16 @@ const AboutPage = () => {
           0% { transform: translateX(-120%); }
           100% { transform: translateX(120%); }
         }
-        @keyframes ap-drift {
-          0% { transform: translate(0, 0) scale(1); }
-          50% { transform: translate(20px, -15px) scale(1.08); }
-          100% { transform: translate(0, 0) scale(1); }
-        }
         .ap-fade-up { animation: ap-fadeUp 0.7s ease-out both; }
         .ap-fade-up-1 { animation: ap-fadeUp 0.7s 0.08s ease-out both; }
         .ap-fade-up-2 { animation: ap-fadeUp 0.7s 0.16s ease-out both; }
-        .ap-fade-up-3 { animation: ap-fadeUp 0.7s 0.24s ease-out both; }
         .ap-float { animation: ap-float 4s ease-in-out infinite; }
         .ap-pulse-ring { animation: ap-pulseRing 2.4s ease-out infinite; }
-        .ap-drift { animation: ap-drift 8s ease-in-out infinite; }
         .ap-card:hover .ap-card-glow { opacity: 1; }
         .ap-card-glow {
           opacity: 0;
           transition: opacity 0.35s ease;
-          background: linear-gradient(135deg, rgba(0,211,205,0.18), rgba(45,212,191,0) 60%);
+          background: linear-gradient(135deg, rgba(0,211,205,0.10), rgba(45,212,191,0) 60%);
         }
         .ap-shine {
           position: absolute;
@@ -447,94 +799,77 @@ const AboutPage = () => {
         }
       `}</style>
 
-      <div className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto pt-20">
-        <h1 className="text-3xl sm:text-4xl md:text-3xl font-bold text-gray-900">
-          About Us
-        </h1>
+      <div className="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto pt-16">
+        <h4 className="text-[#00D3CD] font-bold tracking-[0.18em] uppercase text-[10px] mb-2">
+          About AbheePay
+        </h4>
       </div>
 
       {/* Intro */}
-      <section className="py-4 sm:py-6 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-5 lg:gap-8 items-center">
+      <section className="pb-8 sm:pb-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-14 items-center">
+          <div className="space-y-4 ap-fade-up-1 order-2 md:order-1">
+            <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-bold leading-tight text-slate-900">
+              Powering Digital Finance for Modern{" "}
+              <span className="text-[#00D3CD]">Indian Businesses</span>
+            </h2>
 
-          <div className="relative mx-auto md:mx-0 max-w-sm md:max-w-none ap-fade-up">
-            <div className="w-full sm:w-10/12 overflow-hidden rounded-xl shadow-md mx-auto md:mx-0">
+            <p className="text-gray-600 max-w-lg text-[13px] leading-relaxed">
+              AbheePay is a technology-driven fintech and digital financial
+              services company delivering secure, scalable, and
+              compliance-ready solutions across India.
+            </p>
+
+            <p className="text-gray-600 max-w-lg text-[13px] leading-relaxed">
+              Designed to serve merchants, MSMEs, enterprises, partners, and
+              consumers, AbheePay combines robust financial infrastructure
+              with innovation-led technology to simplify transactions and
+              enable sustainable business growth.
+            </p>
+
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-3 pt-3">
+              {featureBadges.map((item, i) => (
+                <div
+                  key={i}
+                  className="flex flex-col items-center text-center gap-2 group"
+                >
+                  <div className="w-11 h-11 rounded-xl border border-[#00D3CD]/50 text-[#00D3CD] flex items-center justify-center bg-[#00D3CD]/5 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:bg-[#00D3CD]/10">
+                    {item.icon}
+                  </div>
+                  <span className="text-[10.5px] font-semibold text-slate-700 leading-snug">
+                    {item.title}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative mx-auto md:mx-0 max-w-md md:max-w-none ap-fade-up order-1 md:order-2">
+            <div className="w-full overflow-hidden rounded-2xl shadow-lg">
               <img
                 src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80"
                 alt="Digital financial services"
-                className="w-full h-[160px] sm:h-[200px] object-cover"
-              />
-            </div>
-
-            <div className="absolute -bottom-4 sm:-bottom-5 right-4 sm:right-1 w-9/12 sm:w-5/12 rounded-xl overflow-hidden shadow-sm">
-              <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80"
-                alt="Merchant empowerment"
-                className="w-full h-20 sm:h-28 object-cover"
+                className="w-full h-[220px] sm:h-[300px] object-cover"
               />
             </div>
 
             <div
-              className="absolute top-3 sm:top-4 right-2 sm:right-4 bg-[#00D3CD] text-white p-2 sm:p-3 rounded-lg shadow-md min-w-[80px] sm:min-w-[100px] text-center ap-float ap-pulse-ring"
-              style={{
-                clipPath: "polygon(0 0, 100% 0, 100% 82%, 18% 100%, 0 100%)",
-              }}
+              className="absolute -bottom-5 right-4 sm:right-6 bg-[#00D3CD] text-white px-4 py-3 rounded-xl shadow-lg min-w-[110px] text-center ap-float ap-pulse-ring"
             >
-              <h3 className="text-base sm:text-lg font-bold">30K+</h3>
-              <p className="text-[8px] font-bold uppercase tracking-[0.1em] mt-0.5">
-                Active <br /> Partners
+              <h3 className="text-lg sm:text-xl font-bold">30K+</h3>
+              <p className="text-[8.5px] font-bold uppercase tracking-[0.1em] mt-0.5 leading-tight">
+                Active Partners
               </p>
-            </div>
-          </div>
-
-          <div className="space-y-3 sm:space-y-4 text-center md:text-left mt-8 md:mt-0 ap-fade-up-1">
-            <div>
-              <h4 className="text-[#00D3CD] font-bold tracking-[0.18em] uppercase text-[10px] mb-1.5">
-                About AbheePay
-              </h4>
-              <h2 className="text-xl sm:text-2xl lg:text-[26px] font-serif font-medium leading-tight sm:leading-[1.15] text-slate-800">
-                Powering Digital Finance for{" "}
-                <span className="font-bold">Modern Indian Businesses</span>
-              </h2>
-            </div>
-
-            <p className="text-gray-600 max-w-lg mx-auto md:mx-0 text-xs">
-              AbheePay is a technology-driven fintech and digital financial
-              services company delivering secure, scalable, and compliance-ready
-              solutions across India.
-            </p>
-
-            <p className="text-gray-600 max-w-lg mx-auto md:mx-0 text-xs">
-              Designed to serve merchants, MSMEs, enterprises, partners, and
-              consumers, AbheePay combines robust financial infrastructure with
-              innovation-led technology to simplify transactions and enable
-              sustainable business growth.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mt-3">
-              {[
-                "Secure & Scalable Payment Solutions",
-                "Banking, Credit & Insurance Services",
-                "API-Led Financial Infrastructure",
-                "Trusted Platform for MSMEs & Enterprises",
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-2 justify-center md:justify-start transition-transform duration-200 hover:translate-x-1">
-                  <CheckCircle className="text-[#00D3CD] w-3.5 h-3.5 flex-shrink-0" />
-                  <span className="text-[11px] font-semibold text-gray-700">
-                    {item}
-                  </span>
-                </div>
-              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* Stats */}
-      <section className="relative bg-[#00D3CD] py-4 sm:py-5 overflow-hidden">
-        <div className="ap-shine" aria-hidden="true" />
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5 text-white text-center">
+      <section className="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto -mt-2 mb-8 sm:mb-10">
+        <div className="relative bg-white rounded-2xl shadow-[0_10px_40px_-12px_rgba(0,0,0,0.15)] border border-slate-100 overflow-hidden py-5 sm:py-6 px-5 sm:px-8">
+          <div className="ap-shine opacity-30" aria-hidden="true" />
+          <div className="relative grid grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-4">
             {[
               { icon: <Briefcase className="w-4 h-4" />, count: "1000+", label: "Partner Retailers" },
               { icon: <Globe className="w-4 h-4" />, count: "50+", label: "Cities Covered" },
@@ -543,16 +878,16 @@ const AboutPage = () => {
             ].map((stat, i) => (
               <div
                 key={i}
-                className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 border-b sm:border-r border-white/20 last:border-0 pb-3 sm:pb-0"
+                className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 sm:border-r border-slate-100 last:border-0"
               >
-                <div className="bg-white/15 backdrop-blur-sm ring-1 ring-white/25 p-2 rounded-full shrink-0">
+                <div className="bg-[#00D3CD]/10 text-[#00D3CD] p-2.5 rounded-full shrink-0">
                   {stat.icon}
                 </div>
-                <div>
-                  <h3 className="text-lg sm:text-xl font-bold">
+                <div className="text-center sm:text-left">
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-900">
                     <AnimatedNumber value={stat.count} />
                   </h3>
-                  <p className="text-[8px] sm:text-[9px] text-[#feffff] uppercase mt-0.5">
+                  <p className="text-[8px] sm:text-[9px] text-slate-500 uppercase mt-0.5 tracking-wide">
                     {stat.label}
                   </p>
                 </div>
@@ -563,38 +898,40 @@ const AboutPage = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-4 sm:py-6 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-5 lg:gap-6 items-center">
+      <section className="py-6 sm:py-8 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-10 items-center">
           <div className="space-y-3 text-center md:text-left">
             <h4 className="text-[#00D3CD] font-bold uppercase text-[10px] tracking-wide">
-              Our Mission & Vision
+              Mission & Vision
             </h4>
-            <h2 className="text-xl sm:text-2xl font-serif font-bold leading-tight">
+            <h2 className="text-xl sm:text-2xl font-bold leading-tight text-slate-900">
               Our Main Goal to Satisfied Local & Global Clients
             </h2>
 
             <div className="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-3 my-2">
               <button
                 onClick={() => setActiveTab("mission")}
-                className={`px-3.5 sm:px-4 py-1 rounded-full text-[11px] font-semibold transition ${activeTab === "mission"
+                className={`px-4 sm:px-5 py-1.5 rounded-full text-[11px] font-semibold transition ${
+                  activeTab === "mission"
                     ? "bg-[#00D3CD] text-white shadow-md"
-                    : "bg-gray-100 hover:bg-gray-200"
-                  }`}
+                    : "bg-gray-100 hover:bg-gray-200 text-slate-600"
+                }`}
               >
-                Our Mission
+                Mission
               </button>
               <button
                 onClick={() => setActiveTab("vision")}
-                className={`px-3.5 sm:px-4 py-1 rounded-full text-[11px] font-semibold transition ${activeTab === "vision"
+                className={`px-4 sm:px-5 py-1.5 rounded-full text-[11px] font-semibold transition ${
+                  activeTab === "vision"
                     ? "bg-[#00D3CD] text-white shadow-md"
-                    : "bg-gray-100 hover:bg-gray-200"
-                  }`}
+                    : "bg-gray-100 hover:bg-gray-200 text-slate-600"
+                }`}
               >
                 Our Vision
               </button>
             </div>
 
-            <p className="text-gray-600 italic text-xs max-w-xl mx-auto md:mx-0">
+            <p className="text-gray-700 italic text-xs max-w-xl mx-auto md:mx-0">
               {tabData[activeTab].quote}
             </p>
             <p className="text-gray-500 text-[11px] sm:text-xs leading-relaxed max-w-xl mx-auto md:mx-0">
@@ -602,45 +939,71 @@ const AboutPage = () => {
             </p>
           </div>
 
-          <div className="mt-4 md:mt-0 relative group">
-            <div className="absolute -inset-1.5 rounded-xl bg-gradient-to-br from-[#00D3CD]/30 to-transparent blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true" />
-            <img
-              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80"
-              alt="Global Office"
-              className="relative rounded-xl shadow-lg w-full h-auto aspect-[16/10] object-cover"
-            />
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 mt-2 md:mt-0">
+            <div className="relative rounded-xl overflow-hidden shadow-lg self-start">
+              <img
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80"
+                alt="Our office"
+                className="w-full h-[220px] sm:h-[280px] object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-[#00D3CD] text-white p-3 sm:p-4">
+                <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center mb-2">
+                  <Target className="w-4 h-4" />
+                </div>
+                <h5 className="text-xs sm:text-sm font-bold mb-1">
+                  Our Commitment
+                </h5>
+                <p className="text-[9.5px] sm:text-[10px] leading-snug text-white/90">
+                  Empowering businesses and individuals with secure,
+                  innovative and inclusive financial solutions.
+                </p>
+              </div>
+            </div>
+
+            <div className="rounded-xl overflow-hidden shadow-lg mt-6 sm:mt-8">
+              <img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80"
+                alt="Team collaboration"
+                className="w-full h-[220px] sm:h-[280px] object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Core Values */}
-      <section className="py-4 sm:py-6 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-4 sm:mb-5">
-            <h2 className="text-lg sm:text-xl font-bold text-slate-900 mb-1.5">
+      <section className="py-8 sm:py-10 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-6 sm:mb-8">
+            <h4 className="text-[#00D3CD] font-bold uppercase text-[10px] tracking-wide mb-1.5">
               Our Core Values
+            </h4>
+            <h2 className="text-lg sm:text-2xl font-bold text-slate-900">
+              Built on the foundation of{" "}
+              <span className="relative inline-block">
+                trust, innovation, and excellence
+                <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#00D3CD]/40" />
+              </span>
             </h2>
-            <p className="text-slate-500 text-[11px] sm:text-xs max-w-2xl mx-auto">
-              Built on the foundation of trust, innovation, and excellence
-            </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {values.map((item, i) => (
               <div
                 key={i}
-                className={`ap-card relative overflow-hidden p-3 sm:p-4 rounded-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer shadow-sm border border-transparent hover:border-[#00D3CD]/40 ${item.style}`}
+                className="ap-card relative overflow-hidden p-4 sm:p-5 rounded-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer shadow-sm border border-slate-100 bg-white"
               >
                 <div className="ap-card-glow absolute inset-0 pointer-events-none" aria-hidden="true" />
-                <div
-                  className={`relative w-8 h-8 sm:w-9 sm:h-9 rounded-lg ${item.iconBg} flex items-center justify-center mb-3 sm:mb-4 shadow-sm transition-transform duration-300 group-hover:scale-110`}
-                >
+                <div className="relative w-11 h-11 rounded-full bg-[#00D3CD]/10 flex items-center justify-center mb-3 sm:mb-4">
                   {item.icon}
                 </div>
-                <h3 className="relative text-sm sm:text-base font-bold mb-1">{item.title}</h3>
-                <p className="relative text-[11px] leading-relaxed text-slate-500">
+                <h3 className="relative text-sm sm:text-base font-bold mb-1.5 text-slate-900">
+                  {item.title}
+                </h3>
+                <p className="relative text-[11px] leading-relaxed text-slate-500 mb-3">
                   {item.desc}
                 </p>
+                <span className="block h-[2px] w-8 bg-[#00D3CD] rounded-full" />
               </div>
             ))}
           </div>
