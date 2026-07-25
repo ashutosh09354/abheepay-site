@@ -4,8 +4,8 @@ const steps = [
   { 
     id: 1, 
     title: 'Prospect', 
-    color: 'bg-[#2DD4BF]',    
-    border: 'border-[#2DD4BF]', 
+    color: 'bg-[#14B8A6]',    
+    border: 'border-[#14B8A6]', 
     img: 'public/assets/image/logo/logos.png' 
   },
   { 
@@ -50,7 +50,7 @@ const Journey = () => {
     <div className="py-12 bg-white font-sans">
       <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
         Let the Journey Begins...
-        <div className="w-12 h-0.5 bg-[#2dd4bf] mx-auto mt-2"></div>
+        <div className="w-12 h-0.5 bg-[#14B8A6] mx-auto mt-2"></div>
       </h2>
 
       <div className="flex flex-wrap justify-center gap-4 px-4">

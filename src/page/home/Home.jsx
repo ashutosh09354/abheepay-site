@@ -19,15 +19,16 @@ const Home = () => {
     <div>
       {/* All Sections */}
       <Herosection />
-      <About />
-      <Whatwedo />
+      {/* <About /> */}
+      <Benefites />
       {/* <Services /> */}
       <Whychooseus />
-      <Ourclient />
+      {/* <Ourclient /> */}
       <Join />
       <Journey />
       <Testimonial />
-      {/* <Benefites /> */}
+      {/* <Whatwedo /> */}
+      
       {/* < Team /> */}
       <Blog />
       <FaqSection />

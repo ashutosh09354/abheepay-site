@@ -36,7 +36,7 @@ const Join = () => {
          
             <a
               href="#bottomform"
-              className="bg-[#2DD4BF] text-white font-bold py-3.5 px-8 sm:py-4 sm:px-10 rounded-full text-base sm:text-lg transition-all duration-300 shadow-lg inline-block hover:bg-[#2cc8b5] active:scale-95"
+              className="bg-[#14B8A6] text-white font-bold py-3.5 px-8 sm:py-4 sm:px-10 rounded-full text-base sm:text-lg transition-all duration-300 shadow-lg inline-block hover:bg-[#2cc8b5] active:scale-95"
             >
               Join Us
             </a>

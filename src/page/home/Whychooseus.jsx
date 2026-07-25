@@ -569,8 +569,9 @@ const Whychooseus = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-4 sm:mb-6"
         >
-          <h2 className="text-sm sm:text-lg font-bold text-gray-900">
-            Why Businesses Trust AbheePay
+          <h2 className="text-3xl sm:text-4xl lg:text-[1.5rem] font-black tracking-[-0.03em] leading-tight text-slate-900">
+            Why Businesses Trust Abheepay
+
           </h2>
         </motion.div>
 
@@ -604,10 +605,10 @@ const Whychooseus = () => {
                 scale: 1.02,
                 transition: { duration: 0.3, ease: "easeOut" },
               }}
-              className="group relative flex flex-col items-start text-left p-2 sm:p-3 rounded-2xl overflow-hidden min-h-[100px] sm:min-h-[100px]
-                bg-white/40 backdrop-blur-xl border border-white/60
-                shadow-[0_8px_32px_rgba(15,55,52,0.08)]
-                hover:shadow-[0_16px_40px_rgba(20,200,192,0.18)]
+              className="group relative flex flex-col items-start text-left p-2 sm:p-3 rounded-3xl overflow-hidden min-h-[100px] sm:min-h-[100px]
+                bg-white/85 backdrop-blur-xl border border-white/60
+                shadow-[0_20px_50px_rgba(15,23,42,.08)]
+                hover:shadow-[0_30px_60px_rgba(20,184,166,.15)]
                 hover:border-[#14C8C0]/40
                 transition-shadow transition-colors duration-300"
             >
@@ -640,7 +641,7 @@ const Whychooseus = () => {
                   {card.icon}
                 </motion.div>
 
-                <h3 className="w-full text-[11px] font-semibold text-gray-900 text-center mb-2">
+                <h3 className="w-full text-[14px] font-bold tracking-tight leading-5 text-slate-900 text-center mb-2 group-hover:text-[#14B8A6] transition-colors duration-300">
                   {card.title}
                 </h3>
 

@@ -220,7 +220,7 @@ const BlogSection = () => {
       author: "Abheepay Team",
       date: "2025",
       title: "How the Right Insurance Plan Builds Long-Term Financial Security",
-      img: "https://fintekdiary.com/wp-content/uploads/2022/11/close-up-hand-putting-money-coins-stack-saving-money-growing-business-concept-1300x731-1.jpg",
+      img: "#",
       url: "/blog/how-the-right-insurance-plan-builds-long-term-financial-security"
     },
     {
@@ -228,7 +228,7 @@ const BlogSection = () => {
       author: "Abheepay Team",
       date: "2025",
       title: "Why Digital Credit Card Bill Payments are Safer Than Cash",
-      img: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1000&auto=format&fit=crop",
+      img: "#",
       url: "/blog/why-digital-credit-card-bill-payments-are-safer-than-cash"
     },
     {
@@ -236,7 +236,7 @@ const BlogSection = () => {
       author: "Abheepay Team",
       date: "2025",
       title: "Digital Banking Solutions Empowering Small Businesses",
-      img: "https://fintekdiary.com/wp-content/uploads/2023/01/working-computer-graphing-cryptocurrenciesfinance-background-1300x731-1.jpg",
+      img: "#",
       url: "/blog/digital-banking-solutions-empowering-small-businesses"
     },
     {
@@ -244,7 +244,7 @@ const BlogSection = () => {
       author: "Abheepay Team",
       date: "2025",
       title: "Smart Cash Flow Management for Growing Retailers",
-      img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1000&auto=format&fit=crop",
+      img: "#",
       url: "/blog/smart-cash-flow-management-for-growing-retailers"
     },
     {
@@ -252,7 +252,7 @@ const BlogSection = () => {
       author: "Abheepay Team",
       date: "2025",
       title: "Domestic Money Transfer Made Simple with Digital Platforms",
-      img: "https://fintekdiary.com/wp-content/uploads/2023/03/woman-looking-smartphone-screen-while-transferring-money-online-1300x731-1.jpg",
+      img: "#",
       url: "/blog/domestic-money-transfer-made-simple-with-digital-platforms"
     },
     {
@@ -260,7 +260,7 @@ const BlogSection = () => {
       author: "Abheepay Team",
       date: "2024",
       title: "Utility Bill Payments: A Convenient Digital Experience",
-      img: "https://fintekdiary.com/wp-content/uploads/2022/12/attractive-casual-smart-asian-female-woman-online-shopping-purchase-online-with-credit-card-data-laptop-technology-lifestyle-1300x731-1.jpg",
+      img: "#",
       url: "/blog/utility-bill-payments-a-convenient-digital-experience"
     },
     {
@@ -268,7 +268,7 @@ const BlogSection = () => {
       author: "Abheepay Team",
       date: "2024",
       title: "How Digital Loan Services Help Businesses Scale Faster",
-      img: "https://fintekdiary.com/wp-content/uploads/2022/11/focused-indian-young-couple-accounting-calculating-bills-discussing-planning-budget-together-using-online-banking-services-calculator-checking-finances-1300x731-1.jpg",
+      img: "#",
       url: "/blog/how-digital-loan-services-help-businesses-scale-faster"
     },
     {
@@ -276,7 +276,7 @@ const BlogSection = () => {
       author: "Abheepay Team",
       date: "2024",
       title: "How Digital Financial Services Increase Retail Store Footfall",
-      img: "https://fintekdiary.com/wp-content/uploads/2023/02/real-estate-agent-working-table-1300x731-1.jpg",
+      img: "#",
       url: "/blog/how-digital-financial-services-increase-retail-store-footfall"
     }
   ];
@@ -353,7 +353,7 @@ const BlogSection = () => {
                 {/* Image with category-style badge */}
                 <div className="relative h-[100px] overflow-hidden">
                   <img
-                    src={blog.img}
+                    // src={blog.img}
                     alt={blog.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />

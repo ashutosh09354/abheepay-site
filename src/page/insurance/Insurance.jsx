@@ -359,7 +359,7 @@ const InsurancePage = () => {
           {/* image collage */}
           <div className="lg:w-1/2 relative w-full max-w-[13rem] mx-auto lg:mx-0">
             <img
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=600"
+              // src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=600"
               alt="Hands protecting a family"
               className="rounded-xl shadow-xl w-full h-28 object-cover"
             />
@@ -377,7 +377,7 @@ const InsurancePage = () => {
                 </div>
               </div>
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600"
+                // src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600"
                 alt="Team meeting"
                 className="rounded-xl shadow-xl h-20 flex-1 object-cover"
               />
@@ -525,28 +525,28 @@ const InsurancePage = () => {
                 title: '5 Reasons Why Health Insurance is Essential',
                 date: 'May 12, 2025',
                 read: '3 min read',
-                img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=400',
+                img: '#',
               },
               {
                 tag: 'Life Insurance',
                 title: "How Life Insurance Secures Your Family's Future",
                 date: 'May 10, 2025',
                 read: '4 min read',
-                img: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=400',
+                img: '#',
               },
               {
                 tag: 'Motor Insurance',
                 title: 'Motor Insurance Claim Process Explained',
                 date: 'May 8, 2025',
                 read: '2 min read',
-                img: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=400',
+                img: '#',
               },
               {
                 tag: 'Travel',
                 title: 'Top Benefits of Travel Insurance for International Trips',
                 date: 'May 5, 2025',
                 read: '2 min read',
-                img: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=400',
+                img: '#',
               },
             ].map((post, i) => (
               <div key={i} className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">

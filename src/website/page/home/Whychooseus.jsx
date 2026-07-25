@@ -51,7 +51,7 @@ const Whychooseus = () => {
               className="absolute top-10 left-[-20px] w-10 h-10 opacity-30"
               style={{
                 backgroundImage:
-                  "radial-gradient(#2DD4BF 1.2px, transparent 1.2px)",
+                  "radial-gradient(#14B8A6 1.2px, transparent 1.2px)",
                 backgroundSize: "8px 8px",
               }}
             ></div>
@@ -59,13 +59,13 @@ const Whychooseus = () => {
               className="absolute top-[-20px] right-[45%] w-10 h-10 opacity-30"
               style={{
                 backgroundImage:
-                  "radial-gradient(#2DD4BF 1.2px, transparent 1.2px)",
+                  "radial-gradient(#14B8A6 1.2px, transparent 1.2px)",
                 backgroundSize: "8px 8px",
               }}
             ></div>
 
             <div
-              className="absolute left-[-120px] top-[-30px] w-[450px] h-[400px] bg-[#2DD4BF1A] -z-10"
+              className="absolute left-[-120px] top-[-30px] w-[450px] h-[400px] bg-[#14B8A61A] -z-10"
               style={{
                 borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%",
               }}
@@ -99,7 +99,7 @@ const Whychooseus = () => {
               className="relative bg-white shadow-xl rounded-sm flex flex-col items-center text-center pb-6 pt-10 border border-gray-50 overflow-hidden min-h-[170px]"
             >
              
-              <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-36 h-36 bg-[#2DD4BF1A] rounded-full"></div>
+              <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-36 h-36 bg-[#14B8A61A] rounded-full"></div>
 
               <div className="relative z-10 mb-3 flex items-center justify-center">
                 <div className="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center border border-gray-50">

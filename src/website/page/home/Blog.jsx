@@ -146,20 +146,20 @@ const BlogSection = () => {
                
                 <div className="absolute inset-0 p-7 flex flex-col justify-end">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="bg-[#2DD4BF] text-white text-[10px] px-3 py-1 rounded font-bold tracking-widest">
+                    <span className="bg-[#14B8A6] text-white text-[10px] px-3 py-1 rounded font-bold tracking-widest">
                       {blog.author.toUpperCase()}
                     </span>
                     <span className="text-gray-300 text-xs font-medium">{blog.date}</span>
                   </div>
 
-                  <h3 className="text-white text-xl font-bold leading-tight mb-6 group-hover:text-[#2DD4BF] transition duration-300">
+                  <h3 className="text-white text-xl font-bold leading-tight mb-6 group-hover:text-[#14B8A6] transition duration-300">
                     {blog.title}
                   </h3>
 
                 
                   <a 
                     href={blog.url} 
-                    className="flex items-center justify-between bg-white text-[#3b4b94] px-5 py-2.5 rounded-full w-fit gap-3 font-bold text-[13px] hover:bg-[#2DD4BF] hover:text-white transition-all duration-300 group/btn shadow-md no-underline"
+                    className="flex items-center justify-between bg-white text-[#3b4b94] px-5 py-2.5 rounded-full w-fit gap-3 font-bold text-[13px] hover:bg-[#14B8A6] hover:text-white transition-all duration-300 group/btn shadow-md no-underline"
                   >
                     Continue Reading
                     <svg 

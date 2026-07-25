@@ -21,7 +21,7 @@
   {
     "id": "sound-box",
     "name": "Sound Box Services",
-    "imageUrl": "/assets/image/services/soundbox.png",
+    "imageUrl": "#",
     "description": "Voice confirmation for all your transactions in real-time.",
     "longDescription": "Never miss a payment with our Sound Box Services. It provides clear, audible voice alerts for every successful transaction, ensuring peace of mind for both merchants and customers in busy environments.",
     "features": [
@@ -40,7 +40,7 @@
   {
     "id": "online-payment-gateway–upi-cards-net-banking-wallets",
     "name": "Online Payment Gateway – UPI, Cards, Net Banking, Wallets",
-    "imageUrl": "https://bsmedia.business-standard.com/_media/bs/img/article/2024-04/04/full/1712210336-0132.jpg",
+    "imageUrl": "#",
     "description": "Comprehensive online payment gateway and smart routing solutions.",
     "longDescription": "Our Digital Payment Solutions offer a robust Online Payment Gateway supporting UPI, Cards, Net Banking, and Wallets. We provide POS & Android POS Devices along with QR-Based Contactless Payments. The system features smart routing with high success rates, real-time monitoring, and a PCI-DSS compliant architecture to ensure maximum security.",
     "features": [
@@ -61,7 +61,7 @@
   {
     "id": "pos-devices",
     "name": "POS  Devices",
-    "imageUrl": "https://i.pinimg.com/1200x/3f/53/40/3f534029a8d3c5b3ca0f9adf77251de4.jpg",
+    "imageUrl": "#",
     "description": "Comprehensive online payment gateway and smart routing solutions.",
     "longDescription": "Our Digital Payment Solutions offer a robust Online Payment Gateway supporting UPI, Cards, Net Banking, and Wallets. We provide POS & Android POS Devices along with QR-Based Contactless Payments. The system features smart routing with high success rates, real-time monitoring, and a PCI-DSS compliant architecture to ensure maximum security.",
     "features": [
@@ -105,7 +105,7 @@
   {
     "id": "assisted-banking-cash-management",
     "name": "Assisted Banking & Cash Management",
-    "imageUrl": "https://i.pinimg.com/736x/97/f7/15/97f715e910a20e722598d48a4972b809.jpg",
+    "imageUrl": "#",
     "description": "Doorstep banking and cash management services including AEPS.",
     "longDescription": "We bridge the gap in financial inclusion through Assisted Banking. This includes AEPS (Cash withdrawal, balance inquiry, mini statement), Micro ATM (mATM) services to ensure cash accessibility anywhere.",
     "features": [
@@ -121,7 +121,7 @@
   {
     "id": "aeps-cash-withdrawal-balance-inquiry-mini-statement",
     "name": "AEPS – Cash Withdrawal, Balance Inquiry, Mini Statement",
-    "imageUrl": "https://i.pinimg.com/736x/e8/ad/fe/e8adfe418e1f720928148674b8d23b9b.jpg",
+    "imageUrl": "#",
     "description": "Doorstep banking and cash management services including AEPS.",
     "longDescription": "We bridge the gap in financial inclusion through Assisted Banking. This includes AEPS (Cash withdrawal, balance inquiry, mini statement), Micro ATM (mATM) services to ensure cash accessibility anywhere.",
     "features": [
@@ -137,7 +137,7 @@
   {
     "id": "micro-atm-matm-services",
     "name": " Micro ATM (mATM) services",
-    "imageUrl": "https://i.pinimg.com/736x/f5/96/df/f596df5d5536c0c1b478086f97064185.jpg",
+    "imageUrl": "#",
     "description": "Doorstep banking and cash management services including AEPS.",
     "longDescription": "We bridge the gap in financial inclusion through Assisted Banking. This includes AEPS (Cash withdrawal, balance inquiry, mini statement), Micro ATM (mATM) services to ensure cash accessibility anywhere.",
     "features": [
@@ -153,7 +153,7 @@
   {
     "id": "bbps-electricity-gas-water-fastag",
     "name": "BBPS – electricity, gas, water, FASTag",
-    "imageUrl": "https://i.pinimg.com/1200x/b8/13/67/b81367cdb9fb9c48c12ec0ff636b7477.jpg",
+    "imageUrl": "#",
     "description": "One-stop solution for all utility bills and mobile recharges.",
     "longDescription": "Our platform supports the Bharat Bill Payment System (BBPS) for utility bill payments including electricity, gas, water, and FASTag. We also provide Mobile, DTH, data card recharges, and Credit card bill payments.",
     "features": [
@@ -170,7 +170,7 @@
   {
     "id": "mobile-dth-data-card-recharges",
     "name": "Mobile, DTH & data card recharges",
-    "imageUrl": "https://i.pinimg.com/736x/2c/5a/65/2c5a65b1f8eb48bfe96f4fa408e0eb6a.jpg",
+    "imageUrl": "#",
     "description": "One-stop solution for all utility bills and mobile recharges.",
     "longDescription": "Our platform supports the Bharat Bill Payment System (BBPS) for utility bill payments including electricity, gas, water, and FASTag. We also provide Mobile, DTH, data card recharges, and Credit card bill payments.",
     "features": [
@@ -187,7 +187,7 @@
   {
     "id": "credit-card-bill-payments",
     "name": "Credit card bill payments",
-    "imageUrl": "https://i.pinimg.com/1200x/bf/65/af/bf65af58dff266620fff7a4efbef71a0.jpg",
+    "imageUrl": "#",
     "description": "One-stop solution for all utility bills and mobile recharges.",
     "longDescription": "Our platform supports the Bharat Bill Payment System (BBPS) for utility bill payments including electricity, gas, water, and FASTag. We also provide Mobile, DTH, data card recharges, and Credit card bill payments.",
     "features": [

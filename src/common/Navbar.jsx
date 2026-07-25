@@ -212,10 +212,9 @@ const Navbar = () => {
               {/* ✅ CHANGE #1: absolute → fixed (live clipping issue fix) */}
               <div
                 className={`fixed top-16 left-1/2 -translate-x-1/2 w-[600px] max-w-[95vw] transition-all duration-200 ease-out z-[9999] lg:block
-                  ${
-                    servicesDropdownOpen
-                      ? "opacity-100 visible translate-y-0"
-                      : "opacity-0 invisible -translate-y-2 pointer-events-none"
+                  ${servicesDropdownOpen
+                    ? "opacity-100 visible translate-y-0"
+                    : "opacity-0 invisible -translate-y-2 pointer-events-none"
                   }`}
               >
                 <div className="rounded-xl border border-slate-100 bg-white p-2 shadow-2xl">
@@ -363,9 +362,28 @@ const Navbar = () => {
               </div>
             </div>
 
-            <Link to="/join-as-retailer" className="text-xs font-semibold transition-colors hover:text-[#00C4C7]">
-              Partners
-            </Link>
+            <div className="relative group">
+              <button className="flex items-center gap-1 text-xs font-semibold transition-colors hover:text-[#00C4C7]">
+                Partner
+                <ChevronDown size={14} strokeWidth={2.5} />
+              </button>
+
+              <div className="absolute left-0 top-full mt-2 w-52 rounded-xl border border-gray-200 bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <Link
+                  to="/join-as-distributor"
+                  className="block px-4 py-3 text-xs font-medium text-gray-700 hover:bg-[#14B8A6]/10 hover:text-[#14B8A6] rounded-t-xl"
+                >
+                  Join as Distributor
+                </Link>
+
+                <Link
+                  to="/join-as-retailer"
+                  className="block px-4 py-3 text-xs font-medium text-gray-700 hover:bg-[#14B8A6]/10 hover:text-[#14B8A6] rounded-b-xl"
+                >
+                  Join as Retailer
+                </Link>
+              </div>
+            </div>
             <Link to="/about" className="text-xs font-semibold transition-colors hover:text-[#00C4C7]">
               About Us
             </Link>
@@ -405,9 +423,8 @@ const Navbar = () => {
 
       {/* MOBILE MENU */}
       <div
-        className={`lg:hidden fixed inset-y-0 left-0 z-50 w-4/5 max-w-xs transform transition-transform duration-300 ease-in-out ${
-          mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-        } bg-[#0F172A] text-white`}
+        className={`lg:hidden fixed inset-y-0 left-0 z-50 w-4/5 max-w-xs transform transition-transform duration-300 ease-in-out ${mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+          } bg-[#0F172A] text-white`}
       >
         <div className="h-full flex flex-col overflow-y-auto">
           <div className="p-6 border-b border-gray-700">

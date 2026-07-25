@@ -178,7 +178,7 @@ const Services = () => {
             alt="CTA"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-[#2DD4BF]" />
+          <div className="absolute inset-0 bg-[#14B8A6]" />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto text-center text-white">

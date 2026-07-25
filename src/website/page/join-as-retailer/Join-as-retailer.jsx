@@ -173,13 +173,13 @@ const Join = () => {
           <motion.p 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-[#2dd4bf] font-bold mb-2 sm:mb-3 uppercase tracking-widest text-xs sm:text-sm"
+            className="text-[#14B8A6] font-bold mb-2 sm:mb-3 uppercase tracking-widest text-xs sm:text-sm"
           >
             Aapka business • Humara investment
           </motion.p>
           
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 mb-10 sm:mb-16 tracking-tight">
-            Abheepay <span className="text-[#2dd4bf]">Benefits</span>
+            Abheepay <span className="text-[#14B8A6]">Benefits</span>
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
@@ -193,8 +193,8 @@ const Join = () => {
                 className="group bg-white p-6 sm:p-10 rounded-[2rem] shadow-[0_10px_40px_-15px_rgba(0,0,0,0.08)] border border-slate-100 hover:border-indigo-200 transition-all duration-300"
               >
                 <div className="relative w-16 sm:w-20 h-16 sm:h-20 mx-auto mb-6 sm:mb-8 flex items-center justify-center">
-                  <div className="absolute inset-0 bg-indigo-50 rounded-3xl rotate-6 group-hover:rotate-12 group-hover:bg-[#2dd4bf] transition-all duration-300"></div>
-                  <div className="relative text-[#2dd4bf] group-hover:text-white transition-colors duration-300 text-3xl sm:text-4xl">
+                  <div className="absolute inset-0 bg-indigo-50 rounded-3xl rotate-6 group-hover:rotate-12 group-hover:bg-[#14B8A6] transition-all duration-300"></div>
+                  <div className="relative text-[#14B8A6] group-hover:text-white transition-colors duration-300 text-3xl sm:text-4xl">
                     {benefit.icon}
                   </div>
                 </div>
@@ -203,7 +203,7 @@ const Join = () => {
                   {benefit.title}
                 </h3>
                 
-                <div className="mt-3 sm:mt-4 h-1 w-10 sm:w-12 bg-indigo-100 mx-auto rounded-full group-hover:w-16 sm:group-hover:w-20 group-hover:bg-[#2dd4bf] transition-all duration-300" />
+                <div className="mt-3 sm:mt-4 h-1 w-10 sm:w-12 bg-indigo-100 mx-auto rounded-full group-hover:w-16 sm:group-hover:w-20 group-hover:bg-[#14B8A6] transition-all duration-300" />
               </motion.div>
             ))}
           </div>

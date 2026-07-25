@@ -245,7 +245,7 @@ const Whatwedo = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
             What we do?
           </h2>
-          <div className="w-12 h-0.5 bg-[#2dd4bf] mx-auto"></div>
+          <div className="w-12 h-0.5 bg-[#14B8A6] mx-auto"></div>
         </div>
 
         
@@ -266,8 +266,8 @@ const Whatwedo = () => {
               height: 45px;
               border-radius: 50%;
               background: #fff;
-              border: 2px solid #2dd4bf;
-              color: #2dd4bf;
+              border: 2px solid #14B8A6;
+              color: #14B8A6;
               display: flex;
               align-items: center;
               justify-content: center;
@@ -276,7 +276,7 @@ const Whatwedo = () => {
               font-weight: bold;
             }
             .nav-btn:hover {
-              background: #2dd4bf;
+              background: #14B8A6;
               color: #fff;
             }
             /* Swiper default arrows hide karne ke liye */
@@ -306,13 +306,13 @@ const Whatwedo = () => {
             {services.map((service) => (
               <SwiperSlide key={service.id}>
                 <div className="flex flex-col items-center group cursor-pointer">
-                  <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-[#2dd4bf] overflow-hidden mb-4 mt-2 transition-transform duration-500 ease-in-out origin-center group-hover:scale-105 shadow-md">
+                  <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-[#14B8A6] overflow-hidden mb-4 mt-2 transition-transform duration-500 ease-in-out origin-center group-hover:scale-105 shadow-md">
                     <img
                       src={service.image}
                       alt={service.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-[#2dd4bf]/90 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out">
+                    <div className="absolute inset-0 bg-[#14B8A6]/90 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out">
                     
                       <h3 className="text-white text-xs md:text-base font-normal mb-3 leading-tight transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
                         {service.title}
@@ -321,7 +321,7 @@ const Whatwedo = () => {
                     
                       <a
                         href={service.link}
-                        className="bg-white text-[#2dd4bf] px-2 py-0.5 rounded-full text-[10px] md:text-sm whitespace-nowrap shadow-lg hover:bg-gray-100 transition-colors"
+                        className="bg-white text-[#14B8A6] px-2 py-0.5 rounded-full text-[10px] md:text-sm whitespace-nowrap shadow-lg hover:bg-gray-100 transition-colors"
                       >
                         View More
                       </a>

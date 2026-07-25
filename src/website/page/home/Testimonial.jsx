@@ -91,7 +91,7 @@ const Testimonial = () => {
             <SwiperSlide key={idx}>
               <div className="relative bg-[#1a1a1a] text-white px-6 py-10 sm:p-8 md:p-12 rounded-sm shadow-2xl mx-2 sm:mx-4 md:mx-0">
           
-                <div className="absolute -top-4 left-6 sm:left-10 bg-[#2dd4bf] p-2 sm:p-3 rounded-sm">
+                <div className="absolute -top-4 left-6 sm:left-10 bg-[#14B8A6] p-2 sm:p-3 rounded-sm">
                   <Quote size={24} fill="white" color="white" />
                 </div>
 
@@ -120,7 +120,7 @@ const Testimonial = () => {
                   </div>
 
                   <div>
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#2dd4bf]">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#14B8A6]">
                       {t.name}
                     </h3>
                     <p className="text-gray-300 text-sm sm:text-base mt-1">
@@ -138,10 +138,10 @@ const Testimonial = () => {
 
    
         <div className="absolute right-4 bottom-4 sm:bottom-6 flex gap-2 sm:gap-3 z-50">
-          <button className="testimonial-prev bg-[#2dd4bf] text-white p-2.5 sm:p-3 rounded hover:bg-[#26b8a5] transition-colors shadow-md">
+          <button className="testimonial-prev bg-[#14B8A6] text-white p-2.5 sm:p-3 rounded hover:bg-[#26b8a5] transition-colors shadow-md">
             <ArrowLeft size={20} />
           </button>
-          <button className="testimonial-next bg-[#2dd4bf] text-white p-2.5 sm:p-3 rounded hover:bg-[#26b8a5] transition-colors shadow-md">
+          <button className="testimonial-next bg-[#14B8A6] text-white p-2.5 sm:p-3 rounded hover:bg-[#26b8a5] transition-colors shadow-md">
             <ArrowRight size={20} />
           </button>
         </div>

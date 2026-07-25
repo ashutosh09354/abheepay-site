@@ -623,11 +623,11 @@ export default function BlogDetails() {
           <div className="relative border border-[#D8DCE1] bg-white p-1.5 md:p-2">
             <Notch side="left" />
             <Notch side="right" />
-            <img
+            {/* <img
               src={post.img}
               alt={post.title}
               className="w-full h-[214px] md:h-[295px] object-cover grayscale hover:grayscale-0 transition-all duration-700"
-            />
+            /> */}
             <div
               className="absolute left-2 right-2 md:left-3 md:right-3 top-full -translate-y-4 flex justify-between text-[9px] tracking-widest text-white px-3 py-1.5 bg-[#0B1420]"
               style={{ fontFamily: FONT_MONO }}
@@ -760,11 +760,11 @@ export default function BlogDetails() {
                 <Notch side="left" />
                 <Notch side="right" />
                 <div className="relative overflow-hidden mb-3.5">
-                  <img
+                  {/* <img
                     src={posts[idx].img}
                     className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-700"
                     alt={posts[idx].title}
-                  />
+                  /> */}
                   <div className="absolute inset-0 bg-[#00D3CD]/0 group-hover:bg-[#00D3CD]/10 transition-colors" />
                 </div>
 

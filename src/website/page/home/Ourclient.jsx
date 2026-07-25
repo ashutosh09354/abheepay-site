@@ -130,7 +130,7 @@
 
         <style jsx global>{`
           .swiper-pagination-bullet-active {
-            background: #2DD4BF !important;
+            background: #14B8A6 !important;
           }
         `}</style>
       </div>

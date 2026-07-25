@@ -155,7 +155,7 @@
                       <p className="text-sm leading-relaxed text-gray-600 mb-4">
                         {service.desc}
                       </p>
-                      <button className="flex items-center text-[#2DD4BF] font-bold text-sm hover:underline mt-auto">
+                      <button className="flex items-center text-[#14B8A6] font-bold text-sm hover:underline mt-auto">
                         Read more <ArrowUpRight className="ml-1 w-4 h-4" />
                       </button>
                     </div>

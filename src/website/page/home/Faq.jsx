@@ -58,9 +58,9 @@ const FaqSection = () => {
         Frequently Asked Questions
       </h2>
       <div className="flex items-center justify-center gap-2 mt-4">
-            <div className="w-16 h-1 bg-gradient-to-r from-transparent to-[#2DD4BF]"></div>
-            <div className="w-2 h-2 bg-[#2DD4BF] rounded-full"></div>
-            <div className="w-16 h-1 bg-gradient-to-l from-transparent to-[#2DD4BF]"></div>
+            <div className="w-16 h-1 bg-gradient-to-r from-transparent to-[#14B8A6]"></div>
+            <div className="w-2 h-2 bg-[#14B8A6] rounded-full"></div>
+            <div className="w-16 h-1 bg-gradient-to-l from-transparent to-[#14B8A6]"></div>
           </div>
 
       <div className="w-full bg-[#F6F8FC] py-6  px-6 lg:px-20 flex flex-col lg:flex-row items-center justify-between gap-10">

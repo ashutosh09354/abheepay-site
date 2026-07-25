@@ -444,7 +444,7 @@
 // BlogPage.jsx (React JSX + Tailwind CSS) ✅ FULL UPDATED — redesigned to match brand reference
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import posts from "./Blogdata.json";
+// import posts from "./Blogdata.json";
 
 // ---- Design tokens ----
 // teal: #00B8A9 (brand accent)   ink: #0B1622 (headings / hero)   paper: #F7F9FA (page bg)

@@ -210,7 +210,7 @@ const BecomePartner = () => {
           className={`mb-10 text-center text-2xl sm:text-3xl font-extrabold tracking-tight text-white transition-all duration-700 ease-out sm:mb-11
             ${headingVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-6'}`}
         >
-          Become a Partner
+          Become a Partnersss
         </h2>
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">

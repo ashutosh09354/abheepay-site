@@ -11,7 +11,7 @@ const AboutSection = () => {
 
             <div
               className="absolute inset-0 rounded-full 
-                border-[5px] sm:border-[6px] border-[#2DD4BF] 
+                border-[5px] sm:border-[6px] border-[#14B8A6] 
                 border-l-transparent border-r-transparent 
                 -rotate-12 z-0"
             ></div>
@@ -30,14 +30,14 @@ const AboutSection = () => {
             </div>
 
 
-            <div className="absolute -top-3 -left-3 sm:-top-4 sm:-left-4 w-16 h-16 sm:w-20 sm:h-20 bg-[radial-gradient(circle,#2DD4BF_20%,transparent_20%)] [background-size:10px_10px] opacity-20 hidden md:block"></div>
+            <div className="absolute -top-3 -left-3 sm:-top-4 sm:-left-4 w-16 h-16 sm:w-20 sm:h-20 bg-[radial-gradient(circle,#14B8A6_20%,transparent_20%)] [background-size:10px_10px] opacity-20 hidden md:block"></div>
 
 
             <div
               className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 
                 md:bottom-10 md:right-3 lg:bottom-16 lg:right-2 
                 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 
-                rounded-full border-4 border-[#2DD4BF]
+                rounded-full border-4 border-[#14B8A6]
                 overflow-hidden shadow-lg z-20 bg-white"
             >
               <img
@@ -58,7 +58,7 @@ const AboutSection = () => {
 
           <Link to="/about">
             <button
-              className="bg-[#2DD4BF] text-white font-medium 
+              className="bg-[#14B8A6] text-white font-medium 
                 py-2.5 px-8 sm:py-3 sm:px-10 
                 text-base sm:text-lg
                 rounded-full transition-all duration-300 

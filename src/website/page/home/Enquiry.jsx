@@ -100,7 +100,7 @@ const EnquirySection = () => {
               <div className="md:col-span-2 mt-4">
                 <button
                   type="submit"
-                  className="bg-[#2DD4BF] text-white px-8 py-2.5 text-sm font-semibold"
+                  className="bg-[#14B8A6] text-white px-8 py-2.5 text-sm font-semibold"
                 >
                   SEND NOW
                 </button>

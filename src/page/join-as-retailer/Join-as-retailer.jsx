@@ -2400,17 +2400,1418 @@
 
 
 
+// import React from 'react';
+// import { motion } from 'framer-motion';
+// import { Link } from "react-router-dom";
+// import {
+//   CreditCard, Smartphone, Wallet, Zap, DollarSign, ShieldCheck,
+//   Headphones, LayoutGrid, TrendingUp, CheckCircle,
+//   IndianRupee, Mail, Phone, MapPin, Globe, ArrowRight, Play,
+//   Handshake, Landmark, User
+// } from 'lucide-react';
+
+// // Animation Variants
+// const fadeInUp = {
+//   hidden: { opacity: 0, y: 30 },
+//   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+// };
+
+// const staggerContainer = {
+//   hidden: { opacity: 0 },
+//   visible: {
+//     opacity: 1,
+//     transition: { staggerChildren: 0.1 }
+//   }
+// };
+
+// const Join = () => {
+//   const services = [
+//     { title: "MATM", desc: "Micro ATM Services", icon: <LayoutGrid size={14} /> },
+//     { title: "POS MACHINE", desc: "Point of Sale Solutions", icon: <CreditCard size={14} /> },
+//     { title: "CC BILL PAY", desc: "Credit Card Bill Payments", icon: <CreditCard size={14} /> },
+//     { title: "RECHARGE", desc: "Mobile & DTH Recharge", icon: <Smartphone size={14} /> },
+//     { title: "BBPS", desc: "Bharat Bill Payment System", icon: <Zap size={14} /> },
+//     { title: "COLLECT", desc: "Payment Collection Services", icon: <Wallet size={14} /> },
+//     { title: "CREDIT CARD", desc: "Credit Card Services", icon: <CreditCard size={14} /> },
+//     { title: "LOAN", desc: "Loan Services", icon: <TrendingUp size={14} /> },
+//     { title: "INSURANCE", desc: "Insurance", icon: <ShieldCheck size={14} /> },
+//   ];
+
+//   const benefits = [
+//     { title: "0 Investment Business", icon: <IndianRupee size={14} /> },
+//     { title: "Simple Joining Process", icon: <ShieldCheck size={14} /> },
+//     { title: "24*7 Customer Service", icon: <Headphones size={14} /> },
+//     { title: "Earn upto ₹4 Lakh to ₹12 Lakh per annum", icon: <IndianRupee size={14} /> },
+//   ];
+
+//   const whyChoose = [
+//     { title: "0 Investment Business", icon: <IndianRupee size={14} /> },
+//     { title: "Simple Joining Process", icon: <ShieldCheck size={14} /> },
+//     { title: "24*7 Customer Service", icon: <Headphones size={14} /> },
+//     { title: "Upto ₹12 Lakh Earning Potential", icon: <TrendingUp size={14} /> },
+//   ];
+
+//   return (
+//     <div className="font-sans text-gray-800 bg-white overflow-x-hidden text-[0.81rem]">
+
+//       {/* ---------------- Hero Section ---------------- */}
+//       <section className="relative pt-[6rem] sm:pt-[7.5rem] md:pt-[4rem] pb-[1.417rem] sm:pb-[2.025rem] md:pb-[2.835rem] px-[0.608rem] sm:px-[1.012rem] overflow-hidden">
+//         {/* Background Decor */}
+//         <div className="absolute inset-0 -z-0 pointer-events-none">
+//           <div className="absolute top-[1.62rem] left-0 w-[5.67rem] h-[5.67rem] sm:w-[9.72rem] sm:h-[9.72rem] bg-teal-100/60 rounded-full blur-3xl"></div>
+//           <div className="absolute bottom-0 right-0 w-[5.67rem] h-[5.67rem] sm:w-[9.72rem] sm:h-[9.72rem] bg-blue-100/50 rounded-full blur-3xl"></div>
+//         </div>
+
+//         <div className="max-w-5xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-[1.417rem] lg:gap-[1.012rem] items-center">
+//           {/* Left: copy */}
+//           <motion.div
+//             initial="hidden"
+//             animate="visible"
+//             variants={fadeInUp}
+//             className="text-center lg:text-left"
+//           >
+//             <span className="inline-block px-[0.506rem] py-[0.101rem] mb-[0.608rem] text-[0.495rem] font-semibold tracking-wider text-teal-600 uppercase bg-teal-50 rounded-full">
+//               Digital Banking Partner
+//             </span>
+
+//             <h1 className="text-[1.35rem] sm:text-[1.688rem] md:text-[1.755rem] font-extrabold mb-[0.608rem] leading-tight text-slate-900">
+//               AbheePay ke saath apna{" "}
+//               <span className="text-teal-500">banking vyapar</span> shuru karein
+//             </h1>
+
+//             <p className="text-[0.675rem] sm:text-[0.787rem] text-gray-500 mb-[0.81rem] max-w-lg mx-auto lg:mx-0">
+//               Enabling Indian SMEs to maximise their earning within a single platform.
+//               Join the revolution of digital finance.
+//             </p>
+
+//             <div className="flex items-center justify-center lg:justify-start gap-[0.608rem]">
+//               <Link to="/contact">
+//                 <button className="px-[1.012rem] py-[0.506rem] bg-[#2DD4BF] text-white rounded-lg font-semibold hover:bg-[#14B8A6] transition shadow-lg shadow-teal-100 text-[0.787rem]">
+//                   Get Started
+//                 </button>
+//               </Link>
+//               <button className="flex items-center gap-[0.304rem] text-[0.675rem] font-semibold text-slate-700 hover:text-teal-600 transition">
+//                 <span className="w-[1.417rem] h-[1.417rem] rounded-full border-2 border-slate-300 flex items-center justify-center">
+//                   <Play size={10} fill="currentColor" />
+//                 </span>
+//                 Watch Video
+//               </button>
+//             </div>
+//           </motion.div>
+
+//           {/* Right: illustration */}
+//           <motion.div
+//             initial={{ opacity: 0, scale: 0.9 }}
+//             animate={{ opacity: 1, scale: 1 }}
+//             transition={{ duration: 0.7, ease: "easeOut" }}
+//             className="relative h-[230px] sm:h-[270px] flex items-center justify-center"
+//           >
+//             {/* base platform */}
+//             <div className="absolute bottom-[0.608rem] w-[9.72rem] h-[1.417rem] sm:w-[12.15rem] sm:h-[1.823rem] bg-slate-100 rounded-full blur-sm"></div>
+
+//             {/* credit card behind phone */}
+//             <div className="absolute bottom-[1.215rem] right-[0.81rem] sm:right-[1.62rem] w-[4.725rem] h-[2.835rem] sm:w-[4.86rem] sm:h-[3.375rem] rounded-lg bg-gradient-to-br from-[#1e2736] to-teal-700 shadow-xl rotate-6"></div>
+
+//             {/* phone frame */}
+//             <div className="relative w-[7.425rem] sm:w-[8.775rem] h-[202px] sm:h-[243px] bg-slate-900 rounded-[1.35rem] p-[0.304rem] shadow-2xl z-10">
+//               <div className="w-full h-full bg-white rounded-[1.08rem] overflow-hidden flex flex-col items-center px-[0.506rem] pt-[1.012rem]">
+//                 <span className="text-teal-500 font-extrabold tracking-wide text-[0.63rem] mb-[0.608rem]">ABHEEPAY</span>
+//                 <div className="w-full bg-slate-50 rounded-lg p-[0.506rem] border border-slate-100 shadow-sm">
+//                   <p className="text-[0.405rem] text-slate-400 mb-[0.101rem]">Total Earnings</p>
+//                   <p className="text-[0.787rem] font-extrabold text-slate-800">₹12,00,000</p>
+//                   <p className="text-[0.45rem] font-semibold text-emerald-500 mb-[0.304rem]">+20% This Month</p>
+//                   <svg viewBox="0 0 100 30" className="w-full h-[1.215rem]">
+//                     <polyline
+//                       points="0,25 15,20 30,22 45,12 60,15 75,5 100,2"
+//                       fill="none"
+//                       stroke="#2dd4bf"
+//                       strokeWidth="2.5"
+//                       strokeLinecap="round"
+//                       strokeLinejoin="round"
+//                     />
+//                   </svg>
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* floating card: CC Bill Pay */}
+//             <motion.div
+//               animate={{ y: [0, -6, 0] }}
+//               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+//               className="absolute top-[1.012rem] left-0 sm:left-[0.304rem] bg-white rounded-lg shadow-lg px-[0.506rem] py-[0.405rem] flex items-center gap-[0.304rem] z-20"
+//             >
+//               <span className="w-[1.215rem] h-[1.215rem] rounded-md bg-teal-50 flex items-center justify-center text-teal-500">
+//                 <Wallet size={11} />
+//               </span>
+//               <span className="text-[0.495rem] font-semibold text-slate-700">CC Bill Pay</span>
+//             </motion.div>
+
+//             {/* floating card: BBPS */}
+//             <motion.div
+//               animate={{ y: [0, 6, 0] }}
+//               transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut" }}
+//               className="absolute bottom-[2.43rem] left-0 sm:-left-1.5 bg-white rounded-lg shadow-lg px-[0.506rem] py-[0.405rem] flex items-center gap-[0.304rem] z-20"
+//             >
+//               <span className="w-[1.215rem] h-[1.215rem] rounded-md bg-teal-500 flex items-center justify-center text-white">
+//                 <Zap size={11} />
+//               </span>
+//               <span className="text-[0.495rem] font-semibold text-slate-700">BBPS</span>
+//             </motion.div>
+
+//             {/* floating card: POS Machine */}
+//             <motion.div
+//               animate={{ y: [0, -4.5, 0] }}
+//               transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+//               className="absolute top-[4.05rem] right-0 sm:-right-1.5 bg-white rounded-lg shadow-lg px-[0.506rem] py-[0.405rem] flex flex-col items-center gap-[0.101rem] z-20"
+//             >
+//               <span className="w-[1.215rem] h-[1.215rem] rounded-md bg-teal-50 flex items-center justify-center text-teal-500">
+//                 <LayoutGrid size={11} />
+//               </span>
+//               <span className="text-[0.45rem] font-semibold text-slate-700">POS Machine</span>
+//             </motion.div>
+
+//             {/* connecting dashed lines */}
+//             <svg className="absolute inset-0 w-full h-full -z-0 hidden sm:block" viewBox="0 0 400 400">
+//               <line x1="70" y1="70" x2="180" y2="140" stroke="#7dd3fc" strokeDasharray="4 4" strokeWidth="1.5" />
+//               <line x1="60" y1="280" x2="170" y2="230" stroke="#7dd3fc" strokeDasharray="4 4" strokeWidth="1.5" />
+//               <line x1="330" y1="150" x2="240" y2="180" stroke="#7dd3fc" strokeDasharray="4 4" strokeWidth="1.5" />
+//             </svg>
+//           </motion.div>
+//         </div>
+//       </section>
+
+//       {/* ---------------- Partner CTA ---------------- */}
+//       <section className="px-[0.608rem] sm:px-[1.012rem]">
+//         <motion.div
+//           initial={{ opacity: 0, scale: 0.97 }}
+//           whileInView={{ opacity: 1, scale: 1 }}
+//           viewport={{ once: true }}
+//           className="max-w-5xl mx-auto bg-gradient-to-r from-[#2DD4BF] to-[#0D9488] rounded-2xl px-[0.81rem] sm:px-[1.215rem] py-[1.012rem] sm:py-[1.215rem] flex flex-col sm:flex-row items-center gap-[0.709rem] sm:gap-[1.012rem] text-white"
+//         >
+//           <div className="w-[2.362rem] h-[2.362rem] rounded-full bg-white/15 flex items-center justify-center shrink-0">
+//             <Handshake size={17} />
+//           </div>
+//           <div className="flex-1 text-center sm:text-left">
+//             <h2 className="text-[0.787rem] sm:text-[0.9rem] font-bold mb-[0.203rem]">Start Your Banking Journey as Partner Today</h2>
+//             <p className="text-teal-50/90 text-[0.675rem] max-w-xl">
+//               Join thousands of successful retailers who have transformed their business with AbheePay.
+//               Earn up to <span className="font-bold text-white">₹12 Lakh</span> annually!
+//             </p>
+//           </div>
+//           <Link to="/contact">
+//             <motion.button
+//               whileHover={{ y: -3 }}
+//               className="bg-white text-[#0D9488] px-[0.709rem] sm:px-[1.012rem] py-[0.405rem] rounded-lg font-bold flex items-center gap-[0.304rem] shadow-lg whitespace-nowrap text-[0.675rem]"
+//             >
+//               Join as Partner Now <ArrowRight size={11} />
+//             </motion.button>
+//           </Link>
+//         </motion.div>
+//       </section>
+
+//       {/* ---------------- Services Grid ---------------- */}
+//       <section className="py-[2.025rem] sm:py-[2.43rem] px-[0.608rem] sm:px-[1.012rem] bg-white">
+//         <div className="max-w-5xl mx-auto">
+//           <div className="text-center mb-[1.417rem]">
+//             <p className="flex items-center justify-center gap-[0.405rem] text-teal-500 text-[0.54rem] font-bold uppercase tracking-[0.2em] mb-[0.405rem]">
+//               <span className="w-[1.012rem] h-px bg-teal-300"></span>
+//               Our Services
+//               <span className="w-[1.012rem] h-px bg-teal-300"></span>
+//             </p>
+//             <h2 className="text-[1.012rem] sm:text-[1.35rem] font-extrabold text-slate-900">
+//               Comprehensive banking and <br className="hidden sm:block" />
+//               <span className="text-teal-500">financial solutions</span>
+//             </h2>
+//           </div>
+
+//           <motion.div
+//             variants={staggerContainer}
+//             initial="hidden"
+//             whileInView="visible"
+//             viewport={{ once: true }}
+//             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[0.608rem]"
+//           >
+//             {services.map((service, index) => (
+//               <motion.div
+//                 key={index}
+//                 variants={fadeInUp}
+//                 whileHover={{ y: -4.5 }}
+//                 className="bg-white p-[0.709rem] rounded-xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group flex items-center gap-[0.608rem]"
+//               >
+//                 <div className="w-[1.913rem] h-[1.913rem] shrink-0 bg-teal-50 rounded-lg flex items-center justify-center text-teal-500 group-hover:bg-teal-500 group-hover:text-white transition-colors">
+//                   {service.icon}
+//                 </div>
+//                 <div>
+//                   <h3 className="font-bold text-[0.675rem] tracking-wide mb-[0.101rem]">{service.title}</h3>
+//                   <p className="text-gray-500 text-[0.585rem] leading-relaxed">{service.desc}</p>
+//                 </div>
+//               </motion.div>
+//             ))}
+//           </motion.div>
+//         </div>
+//       </section>
+
+//       {/* ---------------- Benefits (dark, boxed) ---------------- */}
+//       <section className="px-[0.608rem] sm:px-[1.012rem] pb-[2.025rem] sm:pb-[2.43rem]">
+//         <div className="max-w-5xl mx-auto bg-gradient-to-br from-teal-50 to-slate-50 rounded-[1.35rem] py-[1.417rem] sm:py-[1.823rem] px-[0.81rem] sm:px-[1.215rem]">
+//           <div className="text-center mb-[1.215rem] sm:mb-[1.417rem]">
+//             <p className="text-teal-600 font-bold mb-[0.203rem] uppercase tracking-[0.2em] text-[0.54rem]">
+//               Aapka Business Humara Investment
+//             </p>
+//             <h2 className="text-[1.012rem] sm:text-[1.35rem] font-extrabold text-slate-900">
+//               Abheepay <span className="text-teal-500">Benefits</span>
+//             </h2>
+//           </div>
+
+//           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[0.608rem]">
+//             {benefits.map((benefit, index) => (
+//               <motion.div
+//                 key={index}
+//                 initial={{ opacity: 0, y: 20 }}
+//                 whileInView={{ opacity: 1, y: 0 }}
+//                 viewport={{ once: true }}
+//                 transition={{ delay: index * 0.1 }}
+//                 className="bg-white p-[0.709rem] rounded-xl border border-slate-100 shadow-sm text-center hover:shadow-lg transition-shadow"
+//               >
+//                 <div className="w-[1.913rem] h-[1.913rem] mx-auto rounded-full bg-teal-500 text-white flex items-center justify-center mb-[0.405rem]">
+//                   {benefit.icon}
+//                 </div>
+//                 <p className="text-[0.675rem] font-bold text-slate-800 leading-snug">{benefit.title}</p>
+//               </motion.div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* ---------------- Why Choose (light) ---------------- */}
+//       <section className="py-[2.025rem] sm:py-[2.43rem] px-[0.608rem] sm:px-[1.012rem] bg-[#f8fafc] text-center relative overflow-hidden">
+//         <div className="absolute top-0 left-1/4 w-[4.86rem] h-[4.86rem] bg-teal-100/50 rounded-full blur-3xl" />
+//         <div className="absolute bottom-0 right-1/4 w-[4.86rem] h-[4.86rem] bg-indigo-100/50 rounded-full blur-3xl" />
+
+//         <div className="max-w-5xl mx-auto relative z-10">
+//           <p className="flex items-center justify-center gap-[0.405rem] text-[#2dd4bf] font-bold mb-[0.304rem] uppercase tracking-widest text-[0.54rem]">
+//             <span className="w-[1.012rem] h-px bg-teal-300"></span>
+//             Why Choose AbheePay?
+//             <span className="w-[1.012rem] h-px bg-teal-300"></span>
+//           </p>
+
+//           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[0.608rem] mt-[1.215rem]">
+//             {whyChoose.map((item, index) => (
+//               <motion.div
+//                 key={index}
+//                 initial={{ opacity: 0, scale: 0.9 }}
+//                 whileInView={{ opacity: 1, scale: 1 }}
+//                 viewport={{ once: true }}
+//                 whileHover={{ y: -6 }}
+//                 transition={{ duration: 0.3, delay: index * 0.1 }}
+//                 className="group bg-white p-[0.709rem] sm:p-[1.012rem] rounded-[1.17rem] shadow-[0_10px_40px_-15px_rgba(0,0,0,0.08)] border border-slate-100 hover:border-teal-200 transition-all duration-300"
+//               >
+//                 <div className="relative w-[1.913rem] h-[1.913rem] mx-auto mb-[0.608rem] flex items-center justify-center">
+//                   <div className="absolute inset-0 bg-indigo-50 rounded-xl rotate-6 group-hover:rotate-12 group-hover:bg-[#2dd4bf] transition-all duration-300"></div>
+//                   <div className="relative text-[#2dd4bf] group-hover:text-white transition-colors duration-300">
+//                     {item.icon}
+//                   </div>
+//                 </div>
+
+//                 <h3 className="text-[0.675rem] sm:text-[0.787rem] font-extrabold text-slate-800 leading-tight">
+//                   {item.title}
+//                 </h3>
+
+//                 <div className="mt-[0.405rem] h-[0.101rem] w-[1.012rem] bg-indigo-100 mx-auto rounded-full group-hover:w-[1.688rem] group-hover:bg-[#2dd4bf] transition-all duration-300" />
+//               </motion.div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* ---------------- Contact Section ---------------- */}
+//       <section className="py-[2.025rem] sm:py-[2.43rem] px-[0.608rem] sm:px-[1.012rem] bg-gray-50">
+//         <div className="max-w-3xl mx-auto">
+//           <div className="grid grid-cols-1 lg:grid-cols-2 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.1)] rounded-[1.35rem] overflow-hidden">
+//             {/* form */}
+//             <div className="bg-white p-[1.012rem] sm:p-[1.215rem] order-2 lg:order-1">
+//               <div className="flex items-center gap-[0.304rem] mb-[0.709rem]">
+//                 <span className="w-[1.215rem] h-[1.215rem] rounded-md bg-teal-50 text-teal-500 flex items-center justify-center">
+//                   <User size={11} />
+//                 </span>
+//                 <h2 className="text-[0.787rem] sm:text-[0.9rem] font-bold">Join Us Today</h2>
+//               </div>
+//               <form className="space-y-2.5">
+//                 <div className="space-y-0.5">
+//                   <label className="text-[0.585rem] font-semibold text-gray-600 ml-[0.203rem]">Full Name</label>
+//                   <input
+//                     type="text"
+//                     placeholder="John Doe"
+//                     className="w-full p-[0.506rem] bg-white border border-gray-200 rounded-lg focus:border-teal-400 focus:ring-2 focus:ring-teal-400/40 outline-none transition text-[0.675rem] text-slate-900 placeholder:text-slate-400"
+//                   />
+//                 </div>
+//                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-[0.506rem]">
+//                   <div className="space-y-0.5">
+//                     <label className="text-[0.585rem] font-semibold text-gray-600 ml-[0.203rem]">Email</label>
+//                     <input
+//                       type="email"
+//                       placeholder="john@example.com"
+//                       className="w-full p-[0.506rem] bg-white border border-gray-200 rounded-lg focus:border-teal-400 focus:ring-2 focus:ring-teal-400/40 outline-none transition text-[0.675rem] text-slate-900 placeholder:text-slate-400"
+//                     />
+//                   </div>
+//                   <div className="space-y-0.5">
+//                     <label className="text-[0.585rem] font-semibold text-gray-600 ml-[0.203rem]">Phone</label>
+//                     <input
+//                       type="tel"
+//                       placeholder="+91 00000 00000"
+//                       className="w-full p-[0.506rem] bg-white border border-gray-200 rounded-lg focus:border-teal-400 focus:ring-2 focus:ring-teal-400/40 outline-none transition text-[0.675rem] text-slate-900 placeholder:text-slate-400"
+//                     />
+//                   </div>
+//                 </div>
+//                 <div className="space-y-0.5">
+//                   <label className="text-[0.585rem] font-semibold text-gray-600 ml-[0.203rem]">City</label>
+//                   <input
+//                     type="text"
+//                     placeholder="New Delhi"
+//                     className="w-full p-[0.506rem] bg-white border border-gray-200 rounded-lg focus:border-teal-400 focus:ring-2 focus:ring-teal-400/40 outline-none transition text-[0.675rem] text-slate-900 placeholder:text-slate-400"
+//                   />
+//                 </div>
+//                 <motion.button
+//                   whileTap={{ scale: 0.98 }}
+//                   className="w-full bg-teal-400 text-white font-bold py-[0.506rem] rounded-lg hover:bg-teal-500 transition-colors mt-[0.304rem] text-[0.675rem] shadow-lg shadow-teal-100 flex items-center justify-center gap-[0.304rem]"
+//                 >
+//                   Submit Application <ArrowRight size={10} />
+//                 </motion.button>
+//               </form>
+//             </div>
+
+//             {/* contact info */}
+//             <div className="bg-[#1e2736] text-white p-[1.012rem] sm:p-[1.215rem] flex flex-col justify-between relative order-1 lg:order-2 overflow-hidden">
+//               <div className="relative z-10">
+//                 <h3 className="text-[0.787rem] sm:text-[0.9rem] font-bold mb-[0.709rem]">Contact Information</h3>
+//                 <div className="space-y-3">
+//                   <div className="flex items-center gap-[0.405rem]">
+//                     <div className="w-[1.215rem] h-[1.215rem] bg-white/10 rounded-md flex items-center justify-center text-teal-400 shrink-0">
+//                       <Mail size={10} />
+//                     </div>
+//                     <span className="text-[0.675rem] text-gray-300">care@abheepay.in</span>
+//                   </div>
+//                   <div className="flex items-center gap-[0.405rem]">
+//                     <div className="w-[1.215rem] h-[1.215rem] bg-white/10 rounded-md flex items-center justify-center text-teal-400 shrink-0">
+//                       <Phone size={10} />
+//                     </div>
+//                     <span className="text-[0.675rem] text-gray-300">88600 37218</span>
+//                   </div>
+//                   <div className="flex items-start gap-[0.405rem]">
+//                     <div className="w-[1.215rem] h-[1.215rem] bg-white/10 rounded-md flex items-center justify-center text-teal-400 shrink-0">
+//                       <MapPin size={10} />
+//                     </div>
+//                     <span className="text-[0.675rem] text-gray-300 leading-relaxed">
+//                       2nd Floor, Plot No - 3, KH. NO. 33/6 AMBERHAI, SECTOR-19, DWARKA, NEW DELHI- 110043
+//                     </span>
+//                   </div>
+//                   <div className="flex items-center gap-[0.405rem]">
+//                     <div className="w-[1.215rem] h-[1.215rem] bg-white/10 rounded-md flex items-center justify-center text-teal-400 shrink-0">
+//                       <Globe size={10} />
+//                     </div>
+//                     <span className="text-[0.675rem] text-gray-300">www.abheepay.com</span>
+//                   </div>
+//                 </div>
+//               </div>
+
+//               <div className="mt-[1.012rem] pt-[0.608rem] border-t border-white/10 relative z-10">
+//                 <p className="text-gray-400 italic text-[0.585rem]">
+//                   "Empowering Rural India through Digital Innovation."
+//                 </p>
+//               </div>
+
+//               <Landmark size={94} className="absolute -bottom-[1.012rem] -right-[1.012rem] text-white/5 pointer-events-none" />
+//               <div className="absolute top-0 right-0 w-[2.43rem] h-[2.43rem] bg-teal-400/10 blur-3xl rounded-full"></div>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//     </div>
+//   );
+// };
+
+// export default Join;
+
+
+
+
+
+
+
+// import React from 'react';
+// import { motion } from 'framer-motion';
+// import { Link } from "react-router-dom";
+// import {
+//   CreditCard, Smartphone, Wallet, Zap, ShieldCheck,
+//   Headphones, LayoutGrid, TrendingUp,
+//   IndianRupee, Mail, Phone, MapPin, Globe, ArrowRight,
+//   Handshake, Landmark, FileText, Clock, GraduationCap,
+//   Banknote, Send, ReceiptText, PlaneTakeoff
+// } from 'lucide-react';
+
+// // Brand color used throughout: #14B8A6
+
+// // ---------------- Animation Variants ----------------
+// const fadeInUp = {
+//   hidden: { opacity: 0, y: 30 },
+//   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+// };
+
+// const staggerContainer = {
+//   hidden: { opacity: 0 },
+//   visible: {
+//     opacity: 1,
+//     transition: { staggerChildren: 0.1 }
+//   }
+// };
+
+// const Join = () => {
+//   // "Why Choose AbheePay?" — plain icon-over-text grid, no cards (matches reference styling)
+//   const whyChoose = [
+//     {
+//       title: "Diverse Product Portfolio",
+//       desc: "Comprehensive suite of trusted services across banking, payments, and insurance.",
+//       icon: <LayoutGrid size={20} />
+//     },
+//     {
+//       title: "Dedicated Support",
+//       desc: "Get support 24*7 for transactions, onboarding and query resolution.",
+//       icon: <Headphones size={20} />
+//     },
+//     {
+//       title: "Work Anytime, Anywhere",
+//       desc: "Operate independently with full control over your time and location.",
+//       icon: <Clock size={20} />
+//     },
+//     {
+//       title: "No Paperwork Needed",
+//       desc: "Paper-free, instant onboarding and service activation.",
+//       icon: <FileText size={20} />
+//     },
+//     {
+//       title: "Structured Training",
+//       desc: "Gain access to curated learning modules and continuous operational support.",
+//       icon: <GraduationCap size={20} />
+//     },
+//     {
+//       title: "Income from Zero Capital",
+//       desc: "Begin generating income from day one with a 0 investment, performance-driven model.",
+//       icon: <IndianRupee size={20} />
+//     },
+//   ];
+
+//   // "One Powerful Platform" category cards
+//   const categories = [
+//     {
+//       title: "Banking Services",
+//       desc: "MATM, POS machine, cash deposit and withdrawal — full banking access for your customers.",
+//       icon: <Landmark size={18} />
+//     },
+//     {
+//       title: "Payments & Recharge",
+//       desc: "BBPS, mobile & DTH recharge, utility bill payments and domestic remittance in one place.",
+//       icon: <Zap size={18} />
+//     },
+//     {
+//       title: "Insurance & Loans",
+//       desc: "Help customers protect what matters with insurance and loan services, all under one roof.",
+//       icon: <ShieldCheck size={18} />
+//     },
+//   ];
+
+//   // Onboarding steps
+//   const steps = [
+//     {
+//       no: "01",
+//       title: "Register on AbheePay",
+//       desc: "Sign up as a retail partner on our app or web dashboard by providing a few essential details."
+//     },
+//     {
+//       no: "02",
+//       title: "Complete Verification & Training",
+//       desc: "Engage in a simple onboarding process and gain expertise across our product suite."
+//     },
+//     {
+//       no: "03",
+//       title: "Start Earning",
+//       desc: "Begin offering services and earn commissions instantly, with no investment required."
+//     },
+//   ];
+
+//   // More products / opportunities grid
+//   const moreProducts = [
+//     { title: "MATM", desc: "Micro ATM Services", icon: <LayoutGrid size={14} /> },
+//     { title: "POS Machine", desc: "Point of Sale Solutions", icon: <CreditCard size={14} /> },
+//     { title: "CC Bill Pay", desc: "Credit Card Bill Payments", icon: <CreditCard size={14} /> },
+//     { title: "Recharge", desc: "Mobile & DTH Recharge", icon: <Smartphone size={14} /> },
+//     { title: "BBPS", desc: "Bharat Bill Payment System", icon: <ReceiptText size={14} /> },
+//     { title: "Cash Deposit", desc: "Instant Cash Deposit", icon: <Banknote size={14} /> },
+//     { title: "Cash Withdrawal", desc: "AEPS Cash Withdrawal", icon: <Wallet size={14} /> },
+//     { title: "Domestic Remittance", desc: "Send Money Across India", icon: <Send size={14} /> },
+//     { title: "Travel Booking", desc: "Flights, Bus & Train Tickets", icon: <PlaneTakeoff size={14} /> },
+//   ];
+
+//   return (
+//     <div className="font-sans text-gray-800 bg-white overflow-x-hidden text-[0.81rem]">
+
+//       {/* ---------------- Hero Section ---------------- */}
+//       <section className="relative bg-[#0B1220] overflow-hidden pt-[6rem] sm:pt-[7.5rem] md:pt-[6rem] pb-[3.2rem] sm:pb-[4rem] px-[0.608rem] sm:px-[1.012rem]">
+//         {/* Ambient glow */}
+//         <div className="absolute -top-[10rem] -right-[6rem] w-[24rem] h-[24rem] bg-[#14B8A6]/20 rounded-full blur-[100px] pointer-events-none"></div>
+//         <div className="absolute -bottom-[8rem] -left-[6rem] w-[20rem] h-[20rem] bg-[#14B8A6]/10 rounded-full blur-[100px] pointer-events-none"></div>
+//         {/* faint grid pattern */}
+//         <div className="absolute inset-0 opacity-[0.04] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:2.5rem_2.5rem] pointer-events-none"></div>
+
+//         <div className="max-w-5xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-[2.5rem] lg:gap-[1.417rem] items-center">
+//           {/* Left: copy */}
+//           <motion.div
+//             initial="hidden"
+//             animate="visible"
+//             variants={fadeInUp}
+//             className="text-center lg:text-left"
+//           >
+//             <span className="inline-flex items-center gap-[0.304rem] px-[0.506rem] py-[0.203rem] mb-[0.81rem] text-[0.495rem] font-semibold tracking-wider text-[#5EEAD4] uppercase bg-white/5 border border-white/10 rounded-full">
+//               <span className="w-[0.35rem] h-[0.35rem] rounded-full bg-[#14B8A6] animate-pulse"></span>
+//               Digital Banking Partner Program
+//             </span>
+
+//             <h1 className="text-[1.5rem] sm:text-[1.9rem] md:text-[2.15rem] font-extrabold mb-[0.81rem] leading-[1.15] text-white">
+//               AbheePay ke saath apna{" "}
+//               <span className="text-[#2DD4BF]">banking vyapar</span> shuru karein
+//             </h1>
+
+//             <p className="text-[0.7rem] sm:text-[0.81rem] text-slate-400 mb-[1.417rem] max-w-lg mx-auto lg:mx-0">
+//               Turn your shop into a full-service banking point. Offer MATM, POS,
+//               bill payments and insurance under one roof — and earn on every
+//               transaction, with zero investment.
+//             </p>
+
+//             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-[0.608rem] mb-[1.823rem]">
+//               <Link to="/contact" className="w-full sm:w-auto">
+//                 <button className="w-full sm:w-auto px-[1.215rem] py-[0.608rem] bg-[#14B8A6] text-white rounded-lg font-semibold hover:bg-[#0D9488] transition shadow-lg shadow-[#14B8A6]/20 text-[0.787rem]">
+//                   Start Earning Today
+//                 </button>
+//               </Link>
+//               <button className="w-full sm:w-auto px-[1.215rem] py-[0.608rem] bg-transparent border border-white/15 text-white rounded-lg font-semibold hover:bg-white/5 transition text-[0.787rem]">
+//                 See How It Works
+//               </button>
+//             </div>
+
+//             {/* stat row */}
+//             <div className="flex items-center justify-center lg:justify-start divide-x divide-white/10">
+//               <div className="pr-[1.012rem]">
+//                 <p className="text-[1.012rem] font-extrabold text-white">50K+</p>
+//                 <p className="text-[0.54rem] text-slate-400">Active Partners</p>
+//               </div>
+//               <div className="px-[1.012rem]">
+//                 <p className="text-[1.012rem] font-extrabold text-white">₹12L</p>
+//                 <p className="text-[0.54rem] text-slate-400">Avg. Annual Earning</p>
+//               </div>
+//               <div className="pl-[1.012rem]">
+//                 <p className="text-[1.012rem] font-extrabold text-white">700+</p>
+//                 <p className="text-[0.54rem] text-slate-400">Cities Covered</p>
+//               </div>
+//             </div>
+//           </motion.div>
+
+//           {/* Right: earnings dashboard mockup with orbiting service chips */}
+//           <motion.div
+//             initial={{ opacity: 0, scale: 0.92 }}
+//             animate={{ opacity: 1, scale: 1 }}
+//             transition={{ duration: 0.7, ease: "easeOut" }}
+//             className="relative h-[260px] sm:h-[320px] flex items-center justify-center"
+//           >
+//             {/* connecting lines */}
+//             <svg className="absolute inset-0 w-full h-full pointer-events-none hidden sm:block" viewBox="0 0 320 320">
+//               <line x1="70" y1="70" x2="150" y2="140" stroke="#14B8A6" strokeOpacity="0.35" strokeDasharray="4 4" strokeWidth="1.5" />
+//               <line x1="60" y1="250" x2="145" y2="190" stroke="#14B8A6" strokeOpacity="0.35" strokeDasharray="4 4" strokeWidth="1.5" />
+//               <line x1="260" y1="120" x2="190" y2="155" stroke="#14B8A6" strokeOpacity="0.35" strokeDasharray="4 4" strokeWidth="1.5" />
+//             </svg>
+
+//             {/* dashboard card */}
+//             <div className="relative w-[11.5rem] sm:w-[13rem] bg-white rounded-2xl shadow-2xl p-[0.81rem] z-10">
+//               <div className="flex items-center justify-between mb-[0.608rem]">
+//                 <span className="text-[#0F172A] font-extrabold text-[0.675rem] tracking-tight">AbheePay</span>
+//                 <span className="w-[1.012rem] h-[1.012rem] rounded-full bg-[#14B8A6]/10 flex items-center justify-center text-[#14B8A6]">
+//                   <IndianRupee size={10} />
+//                 </span>
+//               </div>
+//               <p className="text-[0.45rem] text-slate-400 mb-[0.101rem]">This Month's Earnings</p>
+//               <p className="text-[1.012rem] font-extrabold text-slate-900 mb-[0.203rem]">₹1,04,200</p>
+//               <p className="text-[0.495rem] font-semibold text-emerald-500 mb-[0.608rem]">↑ 22% vs last month</p>
+//               <svg viewBox="0 0 100 30" className="w-full h-[1.417rem]">
+//                 <polyline
+//                   points="0,25 15,20 30,22 45,12 60,15 75,5 100,2"
+//                   fill="none"
+//                   stroke="#14B8A6"
+//                   strokeWidth="2.5"
+//                   strokeLinecap="round"
+//                   strokeLinejoin="round"
+//                 />
+//               </svg>
+//             </div>
+
+//             {/* floating chip: POS Machine */}
+//             <motion.div
+//               animate={{ y: [0, -6, 0] }}
+//               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+//               className="absolute top-[0.5rem] left-0 sm:left-[0.5rem] bg-[#111827] border border-white/10 rounded-lg shadow-lg px-[0.506rem] py-[0.405rem] flex items-center gap-[0.304rem] z-20"
+//             >
+//               <span className="w-[1.215rem] h-[1.215rem] rounded-md bg-[#14B8A6]/15 flex items-center justify-center text-[#5EEAD4]">
+//                 <CreditCard size={11} />
+//               </span>
+//               <span className="text-[0.495rem] font-semibold text-white">POS Machine</span>
+//             </motion.div>
+
+//             {/* floating chip: BBPS */}
+//             <motion.div
+//               animate={{ y: [0, 6, 0] }}
+//               transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut" }}
+//               className="absolute bottom-[2.5rem] left-0 sm:-left-2 bg-[#111827] border border-white/10 rounded-lg shadow-lg px-[0.506rem] py-[0.405rem] flex items-center gap-[0.304rem] z-20"
+//             >
+//               <span className="w-[1.215rem] h-[1.215rem] rounded-md bg-[#14B8A6] flex items-center justify-center text-white">
+//                 <Zap size={11} />
+//               </span>
+//               <span className="text-[0.495rem] font-semibold text-white">BBPS</span>
+//             </motion.div>
+
+//             {/* floating chip: Insurance */}
+//             <motion.div
+//               animate={{ y: [0, -5, 0] }}
+//               transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+//               className="absolute top-[3.8rem] right-0 sm:-right-2 bg-[#111827] border border-white/10 rounded-lg shadow-lg px-[0.506rem] py-[0.405rem] flex items-center gap-[0.304rem] z-20"
+//             >
+//               <span className="w-[1.215rem] h-[1.215rem] rounded-md bg-[#14B8A6]/15 flex items-center justify-center text-[#5EEAD4]">
+//                 <ShieldCheck size={11} />
+//               </span>
+//               <span className="text-[0.495rem] font-semibold text-white">Insurance</span>
+//             </motion.div>
+//           </motion.div>
+//         </div>
+//       </section>
+
+//       {/* ---------------- Why Choose AbheePay ---------------- */}
+//       <section className="py-[2.43rem] sm:py-[2.835rem] px-[0.608rem] sm:px-[1.012rem] bg-white">
+//         <div className="max-w-5xl mx-auto">
+//           <h2 className="text-center text-[1.215rem] sm:text-[1.35rem] font-extrabold text-[#14B8A6] mb-[1.823rem]">
+//             Why Choose AbheePay?
+//           </h2>
+
+//           <motion.div
+//             variants={staggerContainer}
+//             initial="hidden"
+//             whileInView="visible"
+//             viewport={{ once: true }}
+//             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-[1.417rem] gap-y-[1.823rem]"
+//           >
+//             {whyChoose.map((item, index) => (
+//               <motion.div key={index} variants={fadeInUp} className="text-left">
+//                 <div className="text-[#14B8A6] mb-[0.506rem]">
+//                   {item.icon}
+//                 </div>
+//                 <h3 className="font-bold text-[0.787rem] text-slate-900 mb-[0.203rem]">{item.title}</h3>
+//                 <p className="text-gray-500 text-[0.675rem] leading-relaxed max-w-xs">{item.desc}</p>
+//               </motion.div>
+//             ))}
+//           </motion.div>
+//         </div>
+//       </section>
+
+//       {/* ---------------- One Powerful Platform ---------------- */}
+//       <section className="pb-[1.417rem] px-[0.608rem] sm:px-[1.012rem] bg-white">
+//         <div className="max-w-5xl mx-auto">
+//           <h2 className="text-[1.012rem] sm:text-[1.35rem] font-extrabold text-slate-900 mb-[0.203rem]">
+//             Power Every Transaction
+//           </h2>
+//           <p className="text-[1.012rem] sm:text-[1.35rem] font-extrabold text-[#14B8A6] mb-[0.81rem]">
+//             All From One Powerful Platform
+//           </p>
+//           <p className="text-gray-500 text-[0.675rem] sm:text-[0.787rem] mb-[1.417rem] max-w-2xl">
+//             From enabling banking access to securing what customers value, offer solutions that matter.
+//           </p>
+
+//           <div className="grid grid-cols-1 sm:grid-cols-3 gap-[0.608rem]">
+//             {categories.map((cat, index) => (
+//               <motion.div
+//                 key={index}
+//                 initial={{ opacity: 0, y: 20 }}
+//                 whileInView={{ opacity: 1, y: 0 }}
+//                 viewport={{ once: true }}
+//                 transition={{ delay: index * 0.1 }}
+//                 className="bg-white p-[0.81rem] rounded-xl border border-gray-100 shadow-sm"
+//               >
+//                 <span className="w-[1.72rem] h-[1.72rem] rounded-full bg-[#14B8A6] text-white flex items-center justify-center mb-[0.506rem]">
+//                   {cat.icon}
+//                 </span>
+//                 <h3 className="font-bold text-[0.75rem] text-slate-900 mb-[0.203rem]">{cat.title}</h3>
+//                 <p className="text-gray-500 text-[0.675rem] leading-relaxed">{cat.desc}</p>
+//               </motion.div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* ---------------- Onboarding: 3 Easy Steps ---------------- */}
+//       <section className="py-[2.025rem] sm:py-[2.43rem] px-[0.608rem] sm:px-[1.012rem] bg-white">
+//         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 rounded-[1.35rem] overflow-hidden shadow-[0_20px_60px_-25px_rgba(0,0,0,0.15)]">
+//           {/* left: steps */}
+//           <div className="bg-slate-50 p-[1.012rem] sm:p-[1.417rem]">
+//             <p className="text-[0.54rem] font-bold uppercase tracking-[0.2em] text-gray-400 mb-[0.304rem]">Onboarding</p>
+//             <h2 className="text-[1.012rem] sm:text-[1.215rem] font-extrabold text-slate-900 mb-[1.012rem]">
+//               Become a Partner in <br className="hidden sm:block" /> 3 Easy Steps
+//             </h2>
+
+//             <div className="space-y-0">
+//               {steps.map((s, i) => (
+//                 <div
+//                   key={i}
+//                   className={`py-[0.709rem] ${i === 1 ? "border-y border-[#14B8A6]" : "border-b border-transparent"} ${i !== 1 ? "border-b border-slate-100" : ""}`}
+//                 >
+//                   <div className="flex items-start gap-[0.608rem]">
+//                     <span className="text-[0.75rem] font-extrabold text-[#14B8A6]">{s.no}</span>
+//                     <div>
+//                       <h3 className="font-bold text-[0.75rem] text-slate-900 mb-[0.101rem]">{s.title}</h3>
+//                       <p className="text-gray-500 text-[0.675rem] leading-relaxed">{s.desc}</p>
+//                     </div>
+//                   </div>
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+
+//           {/* right: earnings mockup visual */}
+//           <div className="relative bg-gradient-to-br from-[#14B8A6] to-[#0D9488] flex items-center justify-center p-[1.012rem] min-h-[16rem]">
+//             <div className="w-full max-w-[13rem] bg-white rounded-2xl shadow-2xl p-[0.709rem]">
+//               <p className="text-center text-[#14B8A6] font-extrabold text-[0.675rem] mb-[0.101rem]">CONGRATULATIONS!</p>
+//               <p className="text-center text-gray-400 text-[0.45rem] mb-[0.608rem]">
+//                 You have successfully completed <br /> AbheePay Partner onboarding
+//               </p>
+//               <div className="flex justify-between bg-slate-50 rounded-lg p-[0.405rem] mb-[0.506rem] text-[0.45rem]">
+//                 <div>
+//                   <p className="text-gray-400">Status</p>
+//                   <p className="font-bold text-slate-800">Active</p>
+//                 </div>
+//                 <div>
+//                   <p className="text-gray-400">Result</p>
+//                   <p className="font-bold text-emerald-500">Approved</p>
+//                 </div>
+//               </div>
+//               <p className="text-[0.405rem] text-gray-400 bg-slate-50 rounded p-[0.304rem] mb-[0.506rem] text-center">
+//                 Your application has been sent for approval. Please expect a response within 2 working days.
+//               </p>
+//               <button className="w-full bg-[#14B8A6] text-white text-[0.495rem] font-bold py-[0.405rem] rounded-lg">
+//                 Start Earning
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* ---------------- More Products, More Opportunities ---------------- */}
+//       <section className="py-[2.025rem] sm:py-[2.43rem] px-[0.608rem] sm:px-[1.012rem] bg-[#f8fafc]">
+//         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-[1.417rem] items-center">
+//           <div>
+//             <h2 className="text-[1.012rem] sm:text-[1.35rem] font-extrabold text-slate-900 mb-[0.405rem] leading-tight">
+//               More Products <br /> More Opportunities
+//             </h2>
+//             <p className="text-gray-500 text-[0.675rem] sm:text-[0.787rem] mb-[0.81rem] max-w-sm">
+//               Expand your portfolio with our wide range of financial products and earn on every transaction.
+//             </p>
+//             <Link to="/contact">
+//               <button className="px-[1.012rem] py-[0.506rem] bg-[#14B8A6] text-white rounded-lg font-semibold hover:bg-[#0D9488] transition text-[0.675rem] shadow-lg shadow-teal-100">
+//                 Start Earning
+//               </button>
+//             </Link>
+//           </div>
+
+//           <motion.div
+//             variants={staggerContainer}
+//             initial="hidden"
+//             whileInView="visible"
+//             viewport={{ once: true }}
+//             className="grid grid-cols-2 sm:grid-cols-3 gap-[0.506rem]"
+//           >
+//             {moreProducts.map((service, index) => (
+//               <motion.div
+//                 key={index}
+//                 variants={fadeInUp}
+//                 whileHover={{ y: -3 }}
+//                 className="bg-white p-[0.608rem] rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex items-center gap-[0.405rem]"
+//               >
+//                 <div className="w-[1.6rem] h-[1.6rem] shrink-0 bg-[#14B8A6]/10 rounded-md flex items-center justify-center text-[#14B8A6]">
+//                   {service.icon}
+//                 </div>
+//                 <div>
+//                   <h3 className="font-bold text-[0.585rem] tracking-wide">{service.title}</h3>
+//                   <p className="text-gray-500 text-[0.45rem] leading-snug">{service.desc}</p>
+//                 </div>
+//               </motion.div>
+//             ))}
+//           </motion.div>
+//         </div>
+//       </section>
+
+//       {/* ---------------- Dark CTA Banner ---------------- */}
+//       <section className="relative bg-[#0F172A] py-[2.43rem] sm:py-[3.038rem] px-[0.608rem] sm:px-[1.012rem] text-center overflow-hidden">
+//         <div className="absolute inset-0 opacity-[0.04] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:2.5rem_2.5rem]"></div>
+//         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[3rem] h-[3rem] border-2 border-[#14B8A6]/60 rounded-2xl rotate-6"></div>
+
+//         <div className="relative z-10 max-w-2xl mx-auto pt-[3rem]">
+//           <h2 className="text-[1.215rem] sm:text-[1.485rem] font-extrabold text-white mb-[1.012rem] leading-tight">
+//             Become a Trusted <span className="text-[#14B8A6]">AbheePay Partner</span> Today
+//           </h2>
+//           <div className="flex items-center justify-center gap-[0.608rem]">
+//             <Link to="/contact">
+//               <button className="px-[1.012rem] py-[0.506rem] bg-[#14B8A6] text-white rounded-lg font-bold hover:bg-[#0D9488] transition text-[0.675rem]">
+//                 Get Started
+//               </button>
+//             </Link>
+//             <Link to="/contact">
+//               <button className="px-[1.012rem] py-[0.506rem] bg-transparent border border-white/30 text-white rounded-lg font-bold hover:bg-white/10 transition text-[0.675rem]">
+//                 Contact Sales
+//               </button>
+//             </Link>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* ---------------- Contact Section ---------------- */}
+//       <section className="py-[2.025rem] sm:py-[2.43rem] px-[0.608rem] sm:px-[1.012rem] bg-gray-50">
+//         <div className="max-w-3xl mx-auto">
+//           <div className="grid grid-cols-1 lg:grid-cols-2 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.1)] rounded-[1.35rem] overflow-hidden">
+//             {/* form */}
+//             <div className="bg-white p-[1.012rem] sm:p-[1.215rem] order-2 lg:order-1">
+//               <div className="flex items-center gap-[0.304rem] mb-[0.709rem]">
+//                 <span className="w-[1.215rem] h-[1.215rem] rounded-md bg-[#14B8A6]/10 text-[#14B8A6] flex items-center justify-center">
+//                   <Handshake size={11} />
+//                 </span>
+//                 <h2 className="text-[0.787rem] sm:text-[0.9rem] font-bold">Join Us Today</h2>
+//               </div>
+//               <form className="space-y-2.5">
+//                 <div className="space-y-0.5">
+//                   <label className="text-[0.585rem] font-semibold text-gray-600 ml-[0.203rem]">Full Name</label>
+//                   <input
+//                     type="text"
+//                     placeholder="John Doe"
+//                     className="w-full p-[0.506rem] bg-white border border-gray-200 rounded-lg focus:border-[#14B8A6] focus:ring-2 focus:ring-[#14B8A6]/30 outline-none transition text-[0.675rem] text-slate-900 placeholder:text-slate-400"
+//                   />
+//                 </div>
+//                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-[0.506rem]">
+//                   <div className="space-y-0.5">
+//                     <label className="text-[0.585rem] font-semibold text-gray-600 ml-[0.203rem]">Email</label>
+//                     <input
+//                       type="email"
+//                       placeholder="john@example.com"
+//                       className="w-full p-[0.506rem] bg-white border border-gray-200 rounded-lg focus:border-[#14B8A6] focus:ring-2 focus:ring-[#14B8A6]/30 outline-none transition text-[0.675rem] text-slate-900 placeholder:text-slate-400"
+//                     />
+//                   </div>
+//                   <div className="space-y-0.5">
+//                     <label className="text-[0.585rem] font-semibold text-gray-600 ml-[0.203rem]">Phone</label>
+//                     <input
+//                       type="tel"
+//                       placeholder="+91 00000 00000"
+//                       className="w-full p-[0.506rem] bg-white border border-gray-200 rounded-lg focus:border-[#14B8A6] focus:ring-2 focus:ring-[#14B8A6]/30 outline-none transition text-[0.675rem] text-slate-900 placeholder:text-slate-400"
+//                     />
+//                   </div>
+//                 </div>
+//                 <div className="space-y-0.5">
+//                   <label className="text-[0.585rem] font-semibold text-gray-600 ml-[0.203rem]">City</label>
+//                   <input
+//                     type="text"
+//                     placeholder="New Delhi"
+//                     className="w-full p-[0.506rem] bg-white border border-gray-200 rounded-lg focus:border-[#14B8A6] focus:ring-2 focus:ring-[#14B8A6]/30 outline-none transition text-[0.675rem] text-slate-900 placeholder:text-slate-400"
+//                   />
+//                 </div>
+//                 <motion.button
+//                   whileTap={{ scale: 0.98 }}
+//                   className="w-full bg-[#14B8A6] text-white font-bold py-[0.506rem] rounded-lg hover:bg-[#0D9488] transition-colors mt-[0.304rem] text-[0.675rem] shadow-lg shadow-teal-100 flex items-center justify-center gap-[0.304rem]"
+//                 >
+//                   Submit Application <ArrowRight size={10} />
+//                 </motion.button>
+//               </form>
+//             </div>
+
+//             {/* contact info */}
+//             <div className="bg-[#1e2736] text-white p-[1.012rem] sm:p-[1.215rem] flex flex-col justify-between relative order-1 lg:order-2 overflow-hidden">
+//               <div className="relative z-10">
+//                 <h3 className="text-[0.787rem] sm:text-[0.9rem] font-bold mb-[0.709rem]">Contact Information</h3>
+//                 <div className="space-y-3">
+//                   <div className="flex items-center gap-[0.405rem]">
+//                     <div className="w-[1.215rem] h-[1.215rem] bg-white/10 rounded-md flex items-center justify-center text-[#14B8A6] shrink-0">
+//                       <Mail size={10} />
+//                     </div>
+//                     <span className="text-[0.675rem] text-gray-300">care@abheepay.in</span>
+//                   </div>
+//                   <div className="flex items-center gap-[0.405rem]">
+//                     <div className="w-[1.215rem] h-[1.215rem] bg-white/10 rounded-md flex items-center justify-center text-[#14B8A6] shrink-0">
+//                       <Phone size={10} />
+//                     </div>
+//                     <span className="text-[0.675rem] text-gray-300">88600 37218</span>
+//                   </div>
+//                   <div className="flex items-start gap-[0.405rem]">
+//                     <div className="w-[1.215rem] h-[1.215rem] bg-white/10 rounded-md flex items-center justify-center text-[#14B8A6] shrink-0">
+//                       <MapPin size={10} />
+//                     </div>
+//                     <span className="text-[0.675rem] text-gray-300 leading-relaxed">
+//                       2nd Floor, Plot No - 3, KH. NO. 33/6 AMBERHAI, SECTOR-19, DWARKA, NEW DELHI- 110043
+//                     </span>
+//                   </div>
+//                   <div className="flex items-center gap-[0.405rem]">
+//                     <div className="w-[1.215rem] h-[1.215rem] bg-white/10 rounded-md flex items-center justify-center text-[#14B8A6] shrink-0">
+//                       <Globe size={10} />
+//                     </div>
+//                     <span className="text-[0.675rem] text-gray-300">www.abheepay.com</span>
+//                   </div>
+//                 </div>
+//               </div>
+
+//               <div className="mt-[1.012rem] pt-[0.608rem] border-t border-white/10 relative z-10">
+//                 <p className="text-gray-400 italic text-[0.585rem]">
+//                   "Empowering Rural India through Digital Innovation."
+//                 </p>
+//               </div>
+
+//               <Landmark size={94} className="absolute -bottom-[1.012rem] -right-[1.012rem] text-white/5 pointer-events-none" />
+//               <div className="absolute top-0 right-0 w-[2.43rem] h-[2.43rem] bg-[#14B8A6]/10 blur-3xl rounded-full"></div>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//     </div>
+//   );
+// };
+
+// export default Join;
+
+
+
+
+
+
+
+
+
+
+
+// import React from 'react';
+// import { motion } from 'framer-motion';
+// import { Link } from "react-router-dom";
+// import {
+//   CreditCard, Smartphone, Wallet, Zap, ShieldCheck,
+//   Headphones, LayoutGrid, IndianRupee, ArrowRight,
+//   Landmark, FileText, Clock, GraduationCap,
+//   Banknote, Send, ReceiptText, PlaneTakeoff, Building2,
+//   Users
+// } from 'lucide-react';
+
+// // Brand color used throughout: #14B8A6
+
+// // ---------------- Animation Variants ----------------
+// const fadeInUp = {
+//   hidden: { opacity: 0, y: 30 },
+//   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+// };
+
+// const staggerContainer = {
+//   hidden: { opacity: 0 },
+//   visible: {
+//     opacity: 1,
+//     transition: { staggerChildren: 0.1 }
+//   }
+// };
+
+// // Inter — loaded here so this component works even if the host app
+// // hasn't registered the font globally. If Inter is already loaded
+// // elsewhere in your app (e.g. in index.html or tailwind.config.js),
+// // you can safely delete this <link> and just keep the className below.
+// const FontLoader = () => (
+//   <link
+//     rel="stylesheet"
+//     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+//   />
+// );
+
+// const Join = () => {
+//   // "Why Choose AbheePay?" — plain icon-over-text grid, no cards
+//   const whyChoose = [
+//     {
+//       title: "Diverse Product Portfolio",
+//       desc: "Comprehensive suite of trusted services across banking, payments, and insurance.",
+//       icon: <FileText size={28} strokeWidth={1.75} />
+//     },
+//     {
+//       title: "Dedicated Support",
+//       desc: "Get support 24*7 for transactions, onboarding and query resolution.",
+//       icon: <Headphones size={28} strokeWidth={1.75} />
+//     },
+//     {
+//       title: "Work Anytime, Anywhere",
+//       desc: "Operate independently with full control over your time and location.",
+//       icon: <Users size={28} strokeWidth={1.75} />
+//     },
+//     {
+//       title: "No Paperwork Needed",
+//       desc: "Paper-free, instant onboarding and service activation.",
+//       icon: <FileText size={28} strokeWidth={1.75} />
+//     },
+//     {
+//       title: "Structured Training",
+//       desc: "Gain access to curated learning modules and continuous operational support.",
+//       icon: <GraduationCap size={28} strokeWidth={1.75} />
+//     },
+//     {
+//       title: "Income from Zero Capital",
+//       desc: "Begin generating income from day one with a 0 investment, performance-driven model.",
+//       icon: <IndianRupee size={28} strokeWidth={1.75} />
+//     },
+//   ];
+
+//   // "One Powerful Platform" category cards
+//   const categories = [
+//     {
+//       title: "Banking Services",
+//       desc: "MATM, POS machine, cash deposit and withdrawal — full banking access for your customers.",
+//       icon: <Landmark size={20} />
+//     },
+//     {
+//       title: "Payments & Recharge",
+//       desc: "BBPS, mobile & DTH recharge, utility bill payments and domestic remittance in one place.",
+//       icon: <Zap size={20} />
+//     },
+//     {
+//       title: "Insurance & Loans",
+//       desc: "Help customers protect what matters with insurance and loan services, all under one roof.",
+//       icon: <ShieldCheck size={20} />
+//     },
+//   ];
+
+//   // Onboarding steps
+//   const steps = [
+//     {
+//       no: "01",
+//       title: "Register on AbheePay",
+//       desc: "Sign up as a retail partner on our app or web dashboard by providing a few essential details."
+//     },
+//     {
+//       no: "02",
+//       title: "Complete Verification & Training",
+//       desc: "Engage in a simple onboarding process and gain expertise across our product suite."
+//     },
+//     {
+//       no: "03",
+//       title: "Start Earning",
+//       desc: "Begin offering services and earn commissions instantly, with no investment required."
+//     },
+//   ];
+
+//   // More products / opportunities — compact chip grid
+//   const moreProducts = [
+//     { title: "MATM", icon: <LayoutGrid size={16} /> },
+//     { title: "POS Machine", icon: <CreditCard size={16} /> },
+//     { title: "CC Bill Pay", icon: <CreditCard size={16} /> },
+//     { title: "Recharge", icon: <Smartphone size={16} /> },
+//     { title: "BBPS", icon: <ReceiptText size={16} /> },
+//     { title: "Cash Deposit", icon: <Banknote size={16} /> },
+//     { title: "Cash Withdrawal", icon: <Wallet size={16} /> },
+//     { title: "Domestic Remittance", icon: <Send size={16} /> },
+//     { title: "Travel Booking", icon: <PlaneTakeoff size={16} /> },
+//   ];
+
+//   return (
+//     <div
+//       className="font-sans text-gray-800 bg-white overflow-x-hidden text-[0.81rem]"
+//       style={{ fontFamily: "'Inter', ui-sans-serif, system-ui, sans-serif" }}
+//     >
+//       <FontLoader />
+
+//       {/* ---------------- Hero Section ---------------- */}
+//       <section className="relative bg-[#EFF6FF] overflow-hidden pt-[6rem] sm:pt-[7.5rem] md:pt-[6rem] pb-[4rem] sm:pb-[5rem] px-[0.608rem] sm:px-[1.012rem]">
+//         {/* decorative stacked square outlines, top-left */}
+//         <div className="absolute top-[3rem] left-[1rem] w-[6rem] h-[6rem] border border-[#14B8A6]/25 rounded-2xl hidden sm:block"></div>
+//         <div className="absolute top-[5.5rem] left-[3.5rem] w-[6rem] h-[6rem] border border-[#14B8A6]/20 rounded-2xl hidden sm:block"></div>
+//         <div className="absolute top-[8rem] left-[0.5rem] w-[6rem] h-[6rem] border border-[#14B8A6]/15 rounded-2xl hidden sm:block"></div>
+//         <div className="absolute bottom-[2rem] left-[8rem] w-[5rem] h-[5rem] border border-[#14B8A6]/15 rounded-2xl hidden lg:block"></div>
+//         <div className="absolute bottom-[2rem] left-[13rem] w-[5rem] h-[5rem] border border-[#14B8A6]/10 rounded-2xl hidden lg:block"></div>
+
+//         <div className="max-w-5xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-[2.5rem] lg:gap-[1.417rem] items-center">
+//           {/* Left: copy */}
+//           <motion.div
+//             initial="hidden"
+//             animate="visible"
+//             variants={fadeInUp}
+//             className="text-center lg:text-left"
+//           >
+//             <h1 className="text-[1.5rem] sm:text-[1.9rem] md:text-[2.15rem] font-extrabold mb-[0.81rem] leading-[1.2] text-slate-900">
+//               Become a Certified{" "}
+//               <span className="text-[#14B8A6]">Banking</span> Partner Today!
+//             </h1>
+
+//             <p className="text-[0.7rem] sm:text-[0.81rem] text-slate-500 mb-[1.417rem] max-w-lg mx-auto lg:mx-0">
+//               Join AbheePay's growing network and earn money by offering
+//               banking, payments and insurance services — all at your
+//               fingertips.
+//             </p>
+
+//             <div className="flex items-center justify-center lg:justify-start">
+//               <Link to="/contact">
+//                 <button className="px-[1.215rem] py-[0.608rem] bg-[#14B8A6] text-white rounded-lg font-semibold hover:bg-[#0D9488] transition text-[0.787rem]">
+//                   Start Earning
+//                 </button>
+//               </Link>
+//             </div>
+//           </motion.div>
+
+//           {/* Right: portrait block + service chips row */}
+//           <motion.div
+//             initial={{ opacity: 0, scale: 0.94 }}
+//             animate={{ opacity: 1, scale: 1 }}
+//             transition={{ duration: 0.7, ease: "easeOut" }}
+//             className="relative"
+//           >
+//             <div className="relative w-full max-w-[18rem] mx-auto aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-[#14B8A6] to-[#0D9488] flex items-center justify-center shadow-xl">
+//               <div className="absolute -top-3 -right-3 w-16 h-16 bg-[#0D9488] rounded-xl rotate-6"></div>
+//               <Building2 size={72} strokeWidth={1.25} className="text-white/90 relative z-10" />
+//             </div>
+
+//             {/* service chips row, overlapping bottom of image */}
+//             <div className="relative sm:absolute sm:-bottom-4 left-1/2 sm:-translate-x-1/2 mt-[0.81rem] sm:mt-0 flex flex-wrap items-center justify-center gap-[0.405rem] px-[0.5rem]">
+//               <span className="inline-flex items-center gap-[0.304rem] bg-white rounded-full shadow-md px-[0.608rem] py-[0.304rem] text-[0.585rem] font-semibold text-slate-700">
+//                 <span className="w-[1.012rem] h-[1.012rem] rounded-full bg-[#14B8A6]/10 text-[#14B8A6] flex items-center justify-center">
+//                   <Landmark size={11} />
+//                 </span>
+//                 Banking Services
+//               </span>
+//               <span className="inline-flex items-center gap-[0.304rem] bg-white rounded-full shadow-md px-[0.608rem] py-[0.304rem] text-[0.585rem] font-semibold text-slate-700">
+//                 <span className="w-[1.012rem] h-[1.012rem] rounded-full bg-[#14B8A6]/10 text-[#14B8A6] flex items-center justify-center">
+//                   <Zap size={11} />
+//                 </span>
+//                 Payments
+//               </span>
+//               <span className="inline-flex items-center gap-[0.304rem] bg-white rounded-full shadow-md px-[0.608rem] py-[0.304rem] text-[0.585rem] font-semibold text-slate-700">
+//                 <span className="w-[1.012rem] h-[1.012rem] rounded-full bg-[#14B8A6]/10 text-[#14B8A6] flex items-center justify-center">
+//                   <ShieldCheck size={11} />
+//                 </span>
+//                 Insurance
+//               </span>
+//             </div>
+//           </motion.div>
+//         </div>
+//       </section>
+
+//       {/* ---------------- Why Choose AbheePay ---------------- */}
+//       <section className="py-[2.835rem] sm:py-[3.24rem] px-[0.608rem] sm:px-[1.012rem] bg-white">
+//         <div className="max-w-5xl mx-auto">
+//           <h2 className="text-center text-[1.215rem] sm:text-[1.35rem] font-extrabold text-[#14B8A6] mb-[1.823rem]">
+//             Why Choose AbheePay?
+//           </h2>
+
+//           <motion.div
+//             variants={staggerContainer}
+//             initial="hidden"
+//             whileInView="visible"
+//             viewport={{ once: true }}
+//             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-[1.417rem] gap-y-[1.823rem]"
+//           >
+//             {whyChoose.map((item, index) => (
+//               <motion.div key={index} variants={fadeInUp} className="text-left">
+//                 <div className="text-[#14B8A6] mb-[0.608rem]">
+//                   {item.icon}
+//                 </div>
+//                 <h3 className="font-bold text-[0.787rem] text-slate-900 mb-[0.203rem]">{item.title}</h3>
+//                 <p className="text-gray-500 text-[0.675rem] leading-relaxed max-w-xs">{item.desc}</p>
+//               </motion.div>
+//             ))}
+//           </motion.div>
+//         </div>
+//       </section>
+
+//       {/* ---------------- One Powerful Platform ---------------- */}
+//       <section className="pb-[2.43rem] px-[0.608rem] sm:px-[1.012rem] bg-white">
+//         <div className="max-w-5xl mx-auto">
+//           <h2 className="text-[1.012rem] sm:text-[1.35rem] font-extrabold text-slate-900 mb-[0.203rem]">
+//             Power Every Transaction
+//           </h2>
+//           <p className="text-[1.012rem] sm:text-[1.35rem] font-extrabold text-[#14B8A6] mb-[0.81rem]">
+//             All From One Powerful Platform
+//           </p>
+//           <p className="text-gray-500 text-[0.675rem] sm:text-[0.787rem] mb-[1.417rem] max-w-2xl">
+//             From enabling banking access to securing what customers value, offer solutions that matter.
+//           </p>
+
+//           <div className="grid grid-cols-1 sm:grid-cols-3 gap-[0.608rem]">
+//             {categories.map((cat, index) => (
+//               <motion.div
+//                 key={index}
+//                 initial={{ opacity: 0, y: 20 }}
+//                 whileInView={{ opacity: 1, y: 0 }}
+//                 viewport={{ once: true }}
+//                 transition={{ delay: index * 0.1 }}
+//                 className="bg-white p-[0.81rem] rounded-xl border border-gray-100 shadow-sm"
+//               >
+//                 <span className="w-[1.72rem] h-[1.72rem] rounded-full bg-[#14B8A6] text-white flex items-center justify-center mb-[0.506rem]">
+//                   {cat.icon}
+//                 </span>
+//                 <h3 className="font-bold text-[0.75rem] text-slate-900 mb-[0.203rem]">{cat.title}</h3>
+//                 <p className="text-gray-500 text-[0.675rem] leading-relaxed">{cat.desc}</p>
+//               </motion.div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* ---------------- Onboarding: 3 Easy Steps ---------------- */}
+//       <section className="pb-[2.43rem] sm:pb-[2.835rem] px-[0.608rem] sm:px-[1.012rem] bg-white">
+//         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 rounded-[1.35rem] overflow-hidden shadow-[0_20px_60px_-25px_rgba(0,0,0,0.15)]">
+//           {/* left: steps */}
+//           <div className="bg-slate-50 p-[1.012rem] sm:p-[1.417rem]">
+//             <p className="text-[0.54rem] font-bold uppercase tracking-[0.2em] text-gray-400 mb-[0.304rem]">Onboarding</p>
+//             <h2 className="text-[1.012rem] sm:text-[1.215rem] font-extrabold text-slate-900 mb-[1.012rem]">
+//               Become a Partner in <br className="hidden sm:block" /> 3 Easy Steps
+//             </h2>
+
+//             <div className="space-y-0">
+//               {steps.map((s, i) => (
+//                 <div
+//                   key={i}
+//                   className={`py-[0.709rem] ${i === 1 ? "border-y border-[#14B8A6]" : "border-b border-slate-100"}`}
+//                 >
+//                   <div className="flex items-start gap-[0.608rem]">
+//                     <span className="text-[0.75rem] font-extrabold text-[#14B8A6]">{s.no}</span>
+//                     <div>
+//                       <h3 className="font-bold text-[0.75rem] text-slate-900 mb-[0.101rem]">{s.title}</h3>
+//                       <p className="text-gray-500 text-[0.675rem] leading-relaxed">{s.desc}</p>
+//                     </div>
+//                   </div>
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+
+//           {/* right: earnings mockup visual */}
+//           <div className="relative bg-gradient-to-br from-[#14B8A6] to-[#0D9488] flex items-center justify-center p-[1.012rem] min-h-[16rem]">
+//             <div className="w-full max-w-[13rem] bg-white rounded-2xl shadow-2xl p-[0.709rem]">
+//               <p className="text-center text-[#14B8A6] font-extrabold text-[0.675rem] mb-[0.101rem]">CONGRATULATIONS!</p>
+//               <p className="text-center text-gray-400 text-[0.45rem] mb-[0.608rem]">
+//                 You have successfully completed <br /> AbheePay Partner onboarding
+//               </p>
+//               <div className="flex justify-between bg-slate-50 rounded-lg p-[0.405rem] mb-[0.506rem] text-[0.45rem]">
+//                 <div>
+//                   <p className="text-gray-400">Status</p>
+//                   <p className="font-bold text-slate-800">Active</p>
+//                 </div>
+//                 <div>
+//                   <p className="text-gray-400">Result</p>
+//                   <p className="font-bold text-emerald-500">Approved</p>
+//                 </div>
+//               </div>
+//               <p className="text-[0.405rem] text-gray-400 bg-slate-50 rounded p-[0.304rem] mb-[0.506rem] text-center">
+//                 Your application has been sent for approval. Please expect a response within 2 working days.
+//               </p>
+//               <button className="w-full bg-[#14B8A6] text-white text-[0.495rem] font-bold py-[0.405rem] rounded-lg">
+//                 Start Earning
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* ---------------- More Products, More Opportunities ---------------- */}
+//       <section className="py-[2.025rem] sm:py-[2.43rem] px-[0.608rem] sm:px-[1.012rem] bg-white">
+//         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-[1.417rem] items-center">
+//           <div>
+//             <h2 className="text-[1.012rem] sm:text-[1.35rem] font-extrabold text-slate-900 mb-[0.405rem] leading-tight">
+//               More Products <br /> More Opportunities
+//             </h2>
+//             <p className="text-gray-500 text-[0.675rem] sm:text-[0.787rem] mb-[0.81rem] max-w-sm">
+//               Expand your portfolio with our wide range of financial products and earn on every transaction.
+//             </p>
+//             <Link to="/contact">
+//               <button className="px-[1.012rem] py-[0.506rem] bg-[#14B8A6] text-white rounded-lg font-semibold hover:bg-[#0D9488] transition text-[0.675rem]">
+//                 Start Earning
+//               </button>
+//             </Link>
+//           </div>
+
+//           <motion.div
+//             variants={staggerContainer}
+//             initial="hidden"
+//             whileInView="visible"
+//             viewport={{ once: true }}
+//             className="grid grid-cols-2 sm:grid-cols-3 gap-[0.506rem]"
+//           >
+//             {moreProducts.map((service, index) => (
+//               <motion.div
+//                 key={index}
+//                 variants={fadeInUp}
+//                 whileHover={{ y: -2 }}
+//                 className="bg-white p-[0.506rem] rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex items-center gap-[0.354rem]"
+//               >
+//                 <div className="w-[1.417rem] h-[1.417rem] shrink-0 bg-[#14B8A6]/10 rounded-md flex items-center justify-center text-[#14B8A6]">
+//                   {service.icon}
+//                 </div>
+//                 <h3 className="font-semibold text-[0.585rem] text-slate-700">{service.title}</h3>
+//               </motion.div>
+//             ))}
+//           </motion.div>
+//         </div>
+//       </section>
+
+//       {/* ---------------- Dark CTA Banner ---------------- */}
+//       <section className="relative bg-[#0F172A] py-[2.43rem] sm:py-[3.038rem] px-[0.608rem] sm:px-[1.012rem] text-center overflow-hidden">
+//         <div className="absolute inset-0 opacity-[0.04] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:2.5rem_2.5rem]"></div>
+//         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[3rem] h-[3rem] border-2 border-[#14B8A6]/60 rounded-2xl rotate-6"></div>
+
+//         <div className="relative z-10 max-w-2xl mx-auto pt-[3rem]">
+//           <h2 className="text-[1.215rem] sm:text-[1.485rem] font-extrabold text-white mb-[1.012rem] leading-tight">
+//             Become a Trusted <span className="text-[#14B8A6]">AbheePay Partner</span> Today
+//           </h2>
+//           <div className="flex items-center justify-center gap-[0.608rem]">
+//             <Link to="/contact">
+//               <button className="px-[1.012rem] py-[0.506rem] bg-[#14B8A6] text-white rounded-lg font-bold hover:bg-[#0D9488] transition text-[0.675rem]">
+//                 Get Started
+//               </button>
+//             </Link>
+//             <Link to="/contact">
+//               <button className="px-[1.012rem] py-[0.506rem] bg-transparent border border-white/30 text-white rounded-lg font-bold hover:bg-white/10 transition text-[0.675rem]">
+//                 Contact Sales
+//               </button>
+//             </Link>
+//           </div>
+//         </div>
+//       </section>
+
+//     </div>
+//   );
+// };
+
+// export default Join;
+
+
+
+
+
+
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from "react-router-dom";
 import {
-  CreditCard, Smartphone, Wallet, Zap, DollarSign, ShieldCheck,
-  Headphones, LayoutGrid, TrendingUp, CheckCircle,
-  IndianRupee, Mail, Phone, MapPin, Globe, ArrowRight, Play,
-  Handshake, Landmark, User
+  CreditCard, Smartphone, Wallet, Zap, ShieldCheck,
+  Headphones, LayoutGrid, IndianRupee, ArrowRight,
+  Landmark, FileText, GraduationCap,
+  Banknote, Send, ReceiptText, PlaneTakeoff,
+  Users, Lock, BadgeCheck, TrendingUp
 } from 'lucide-react';
 
-// Animation Variants
+// Adjust this import to wherever you place the illustration in your
+// project's asset pipeline (e.g. src/assets/abheepay-hero-illustration.png).
+import heroIllustration from '/assets/image/Hero/mainPageSlider/Abheepay.png';
+
+// Brand color used throughout: #14B8A6
+
+// ---------------- Animation Variants ----------------
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
@@ -2424,45 +3825,130 @@ const staggerContainer = {
   }
 };
 
+// Inter — loaded here so this component works even if the host app
+// hasn't registered the font globally. If Inter is already loaded
+// elsewhere in your app (e.g. in index.html or tailwind.config.js),
+// you can safely delete this <link> and just keep the className below.
+const FontLoader = () => (
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+  />
+);
+
 const Join = () => {
-  const services = [
-    { title: "MATM", desc: "Micro ATM Services", icon: <LayoutGrid size={14} /> },
-    { title: "POS MACHINE", desc: "Point of Sale Solutions", icon: <CreditCard size={14} /> },
-    { title: "CC BILL PAY", desc: "Credit Card Bill Payments", icon: <CreditCard size={14} /> },
-    { title: "RECHARGE", desc: "Mobile & DTH Recharge", icon: <Smartphone size={14} /> },
-    { title: "BBPS", desc: "Bharat Bill Payment System", icon: <Zap size={14} /> },
-    { title: "COLLECT", desc: "Payment Collection Services", icon: <Wallet size={14} /> },
-    { title: "CREDIT CARD", desc: "Credit Card Services", icon: <CreditCard size={14} /> },
-    { title: "LOAN", desc: "Loan Services", icon: <TrendingUp size={14} /> },
-    { title: "INSURANCE", desc: "Insurance", icon: <ShieldCheck size={14} /> },
-  ];
-
-  const benefits = [
-    { title: "0 Investment Business", icon: <IndianRupee size={14} /> },
-    { title: "Simple Joining Process", icon: <ShieldCheck size={14} /> },
-    { title: "24*7 Customer Service", icon: <Headphones size={14} /> },
-    { title: "Earn upto ₹4 Lakh to ₹12 Lakh per annum", icon: <IndianRupee size={14} /> },
-  ];
-
+  // "Why Choose AbheePay?" — plain icon-over-text grid, no cards
   const whyChoose = [
-    { title: "0 Investment Business", icon: <IndianRupee size={14} /> },
-    { title: "Simple Joining Process", icon: <ShieldCheck size={14} /> },
-    { title: "24*7 Customer Service", icon: <Headphones size={14} /> },
-    { title: "Upto ₹12 Lakh Earning Potential", icon: <TrendingUp size={14} /> },
+    {
+      title: "Diverse Product Portfolio",
+      desc: "Comprehensive suite of trusted services across banking, payments, and insurance.",
+      icon: <FileText size={28} strokeWidth={1.75} />
+    },
+    {
+      title: "Dedicated Support",
+      desc: "Get support 24*7 for transactions, onboarding and query resolution.",
+      icon: <Headphones size={28} strokeWidth={1.75} />
+    },
+    {
+      title: "Work Anytime, Anywhere",
+      desc: "Operate independently with full control over your time and location.",
+      icon: <Users size={28} strokeWidth={1.75} />
+    },
+    {
+      title: "No Paperwork Needed",
+      desc: "Paper-free, instant onboarding and service activation.",
+      icon: <FileText size={28} strokeWidth={1.75} />
+    },
+    {
+      title: "Structured Training",
+      desc: "Gain access to curated learning modules and continuous operational support.",
+      icon: <GraduationCap size={28} strokeWidth={1.75} />
+    },
+    {
+      title: "Income from Zero Capital",
+      desc: "Begin generating income from day one with a 0 investment, performance-driven model.",
+      icon: <IndianRupee size={28} strokeWidth={1.75} />
+    },
+  ];
+
+  // "One Powerful Platform" category cards
+  const categories = [
+    {
+      title: "Banking Services",
+      desc: "MATM, POS machine, cash deposit and withdrawal — full banking access for your customers.",
+      icon: <Landmark size={20} />
+    },
+    {
+      title: "Payments & Recharge",
+      desc: "BBPS, mobile & DTH recharge, utility bill payments and domestic remittance in one place.",
+      icon: <Zap size={20} />
+    },
+    {
+      title: "Insurance & Loans",
+      desc: "Help customers protect what matters with insurance and loan services, all under one roof.",
+      icon: <ShieldCheck size={20} />
+    },
+  ];
+
+  // Onboarding steps
+  const steps = [
+    {
+      no: "01",
+      title: "Register on AbheePay",
+      desc: "Sign up as a retail partner on our app or web dashboard by providing a few essential details."
+    },
+    {
+      no: "02",
+      title: "Complete Verification & Training",
+      desc: "Engage in a simple onboarding process and gain expertise across our product suite."
+    },
+    {
+      no: "03",
+      title: "Start Earning",
+      desc: "Begin offering services and earn commissions instantly, with no investment required."
+    },
+  ];
+
+  // More products / opportunities — compact chip grid
+  const moreProducts = [
+    { title: "MATM", icon: <LayoutGrid size={16} /> },
+    { title: "POS Machine", icon: <CreditCard size={16} /> },
+    { title: "CC Bill Pay", icon: <CreditCard size={16} /> },
+    { title: "Recharge", icon: <Smartphone size={16} /> },
+    { title: "BBPS", icon: <ReceiptText size={16} /> },
+    { title: "Cash Deposit", icon: <Banknote size={16} /> },
+    { title: "Cash Withdrawal", icon: <Wallet size={16} /> },
+    { title: "Domestic Remittance", icon: <Send size={16} /> },
+    { title: "Travel Booking", icon: <PlaneTakeoff size={16} /> },
   ];
 
   return (
-    <div className="font-sans text-gray-800 bg-white overflow-x-hidden text-[0.81rem]">
+    <div
+      className="font-sans text-gray-800 bg-white overflow-x-hidden text-[0.81rem]"
+      style={{ fontFamily: "'Inter', ui-sans-serif, system-ui, sans-serif" }}
+    >
+      <FontLoader />
 
       {/* ---------------- Hero Section ---------------- */}
-      <section className="relative pt-[6rem] sm:pt-[7.5rem] md:pt-[4rem] pb-[1.417rem] sm:pb-[2.025rem] md:pb-[2.835rem] px-[0.608rem] sm:px-[1.012rem] overflow-hidden">
-        {/* Background Decor */}
-        <div className="absolute inset-0 -z-0 pointer-events-none">
-          <div className="absolute top-[1.62rem] left-0 w-[5.67rem] h-[5.67rem] sm:w-[9.72rem] sm:h-[9.72rem] bg-teal-100/60 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-[5.67rem] h-[5.67rem] sm:w-[9.72rem] sm:h-[9.72rem] bg-blue-100/50 rounded-full blur-3xl"></div>
-        </div>
+      <section className="relative bg-[#EFF6FF] overflow-hidden pt-[6rem] sm:pt-[7.5rem] md:pt-[6rem] pb-[4rem] sm:pb-[5rem] px-[0.608rem] sm:px-[1.012rem]">
+        {/* fintech dot-grid mesh */}
+        <div
+          className="absolute inset-0 opacity-[0.5] pointer-events-none"
+          style={{
+            backgroundImage: "radial-gradient(#14B8A6 0.7px, transparent 0.7px)",
+            backgroundSize: "18px 18px",
+            maskImage: "radial-gradient(ellipse 60% 60% at 50% 30%, black 0%, transparent 75%)",
+            WebkitMaskImage: "radial-gradient(ellipse 60% 60% at 50% 30%, black 0%, transparent 75%)",
+          }}
+        ></div>
+        {/* decorative stacked square outlines, top-left */}
+        <div className="absolute top-[3rem] left-[1rem] w-[6rem] h-[6rem] border border-[#14B8A6]/25 rounded-2xl hidden sm:block"></div>
+        <div className="absolute top-[5.5rem] left-[3.5rem] w-[6rem] h-[6rem] border border-[#14B8A6]/20 rounded-2xl hidden sm:block"></div>
+        <div className="absolute top-[8rem] left-[0.5rem] w-[6rem] h-[6rem] border border-[#14B8A6]/15 rounded-2xl hidden sm:block"></div>
+        <div className="absolute bottom-[2rem] left-[8rem] w-[5rem] h-[5rem] border border-[#14B8A6]/15 rounded-2xl hidden lg:block"></div>
+        <div className="absolute bottom-[2rem] left-[13rem] w-[5rem] h-[5rem] border border-[#14B8A6]/10 rounded-2xl hidden lg:block"></div>
 
-        <div className="max-w-5xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-[1.417rem] lg:gap-[1.012rem] items-center">
+        <div className="max-w-5xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-[2.5rem] lg:gap-[1.417rem] items-center">
           {/* Left: copy */}
           <motion.div
             initial="hidden"
@@ -2470,157 +3956,141 @@ const Join = () => {
             variants={fadeInUp}
             className="text-center lg:text-left"
           >
-            <span className="inline-block px-[0.506rem] py-[0.101rem] mb-[0.608rem] text-[0.495rem] font-semibold tracking-wider text-teal-600 uppercase bg-teal-50 rounded-full">
-              Digital Banking Partner
-            </span>
-
-            <h1 className="text-[1.35rem] sm:text-[1.688rem] md:text-[1.755rem] font-extrabold mb-[0.608rem] leading-tight text-slate-900">
-              AbheePay ke saath apna{" "}
-              <span className="text-teal-500">banking vyapar</span> shuru karein
+            <h1 className="text-[1.5rem] sm:text-[1.9rem] md:text-[2.15rem] font-extrabold mb-[0.81rem] leading-[1.2] text-slate-900">
+              Become a Certified{" "}
+              <span className="text-[#14B8A6]">Banking</span> Partner Today!
             </h1>
 
-            <p className="text-[0.675rem] sm:text-[0.787rem] text-gray-500 mb-[0.81rem] max-w-lg mx-auto lg:mx-0">
-              Enabling Indian SMEs to maximise their earning within a single platform.
-              Join the revolution of digital finance.
+            <p className="text-[0.7rem] sm:text-[0.81rem] text-slate-500 mb-[1.417rem] max-w-lg mx-auto lg:mx-0">
+              Join AbheePay's growing network and earn money by offering
+              banking, payments and insurance services — all at your
+              fingertips.
             </p>
 
-            <div className="flex items-center justify-center lg:justify-start gap-[0.608rem]">
+            <div className="flex items-center justify-center lg:justify-start mb-[1.417rem]">
               <Link to="/contact">
-                <button className="px-[1.012rem] py-[0.506rem] bg-[#2DD4BF] text-white rounded-lg font-semibold hover:bg-[#14B8A6] transition shadow-lg shadow-teal-100 text-[0.787rem]">
-                  Get Started
+                <button className="px-[1.215rem] py-[0.608rem] bg-[#14B8A6] text-white rounded-lg font-semibold hover:bg-[#0D9488] transition text-[0.787rem]">
+                  Start Earning
                 </button>
               </Link>
-              <button className="flex items-center gap-[0.304rem] text-[0.675rem] font-semibold text-slate-700 hover:text-teal-600 transition">
-                <span className="w-[1.417rem] h-[1.417rem] rounded-full border-2 border-slate-300 flex items-center justify-center">
-                  <Play size={10} fill="currentColor" />
-                </span>
-                Watch Video
-              </button>
+            </div>
+
+            {/* fintech stat strip */}
+            <div className="flex items-center justify-center lg:justify-start divide-x divide-slate-300/70">
+              <div className="pr-[1.012rem]">
+                <p className="text-[1.012rem] font-extrabold text-slate-900">50K+</p>
+                <p className="text-[0.54rem] text-slate-500">Active Partners</p>
+              </div>
+              <div className="px-[1.012rem]">
+                <p className="text-[1.012rem] font-extrabold text-slate-900">₹12L</p>
+                <p className="text-[0.54rem] text-slate-500">Avg. Annual Earning</p>
+              </div>
+              <div className="pl-[1.012rem]">
+                <p className="text-[1.012rem] font-extrabold text-slate-900">700+</p>
+                <p className="text-[0.54rem] text-slate-500">Cities Covered</p>
+              </div>
             </div>
           </motion.div>
 
-          {/* Right: illustration */}
+          {/* Right: hero illustration + floating fintech chips */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.94 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="relative h-[230px] sm:h-[270px] flex items-center justify-center"
+            className="relative"
           >
-            {/* base platform */}
-            <div className="absolute bottom-[0.608rem] w-[9.72rem] h-[1.417rem] sm:w-[12.15rem] sm:h-[1.823rem] bg-slate-100 rounded-full blur-sm"></div>
-
-            {/* credit card behind phone */}
-            <div className="absolute bottom-[1.215rem] right-[0.81rem] sm:right-[1.62rem] w-[4.725rem] h-[2.835rem] sm:w-[4.86rem] sm:h-[3.375rem] rounded-lg bg-gradient-to-br from-[#1e2736] to-teal-700 shadow-xl rotate-6"></div>
-
-            {/* phone frame */}
-            <div className="relative w-[7.425rem] sm:w-[8.775rem] h-[202px] sm:h-[243px] bg-slate-900 rounded-[1.35rem] p-[0.304rem] shadow-2xl z-10">
-              <div className="w-full h-full bg-white rounded-[1.08rem] overflow-hidden flex flex-col items-center px-[0.506rem] pt-[1.012rem]">
-                <span className="text-teal-500 font-extrabold tracking-wide text-[0.63rem] mb-[0.608rem]">ABHEEPAY</span>
-                <div className="w-full bg-slate-50 rounded-lg p-[0.506rem] border border-slate-100 shadow-sm">
-                  <p className="text-[0.405rem] text-slate-400 mb-[0.101rem]">Total Earnings</p>
-                  <p className="text-[0.787rem] font-extrabold text-slate-800">₹12,00,000</p>
-                  <p className="text-[0.45rem] font-semibold text-emerald-500 mb-[0.304rem]">+20% This Month</p>
-                  <svg viewBox="0 0 100 30" className="w-full h-[1.215rem]">
-                    <polyline
-                      points="0,25 15,20 30,22 45,12 60,15 75,5 100,2"
-                      fill="none"
-                      stroke="#2dd4bf"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
+            <div className="relative w-full max-w-[24rem] mx-auto rounded-2xl overflow-hidden shadow-xl bg-white border border-[#14B8A6]/15">
+              <img
+                src={heroIllustration}
+                alt="Shopkeeper accepting an instant, secure Abheepay QR payment from a customer"
+                className="w-full h-auto object-cover"
+              />
             </div>
 
-            {/* floating card: CC Bill Pay */}
+            {/* floating live-earnings chip with sparkline */}
             <motion.div
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-[1.012rem] left-0 sm:left-[0.304rem] bg-white rounded-lg shadow-lg px-[0.506rem] py-[0.405rem] flex items-center gap-[0.304rem] z-20"
+              className="hidden sm:flex absolute -top-[0.75rem] -left-[0.75rem] items-center gap-[0.405rem] bg-white rounded-xl shadow-lg px-[0.608rem] py-[0.405rem] z-20"
             >
-              <span className="w-[1.215rem] h-[1.215rem] rounded-md bg-teal-50 flex items-center justify-center text-teal-500">
-                <Wallet size={11} />
+              <span className="w-[1.417rem] h-[1.417rem] rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center shrink-0">
+                <TrendingUp size={13} />
               </span>
-              <span className="text-[0.495rem] font-semibold text-slate-700">CC Bill Pay</span>
+              <div>
+                <p className="text-[0.585rem] font-bold text-slate-800 leading-none">₹1,04,200</p>
+                <svg viewBox="0 0 60 18" className="w-[3rem] h-[0.9rem] mt-[0.15rem]">
+                  <polyline
+                    points="0,15 10,12 20,13 30,7 40,9 50,3 60,2"
+                    fill="none"
+                    stroke="#14B8A6"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
             </motion.div>
 
-            {/* floating card: BBPS */}
+            {/* floating "verified & secure" badge */}
             <motion.div
               animate={{ y: [0, 6, 0] }}
               transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute bottom-[2.43rem] left-0 sm:-left-1.5 bg-white rounded-lg shadow-lg px-[0.506rem] py-[0.405rem] flex items-center gap-[0.304rem] z-20"
+              className="hidden sm:flex absolute -bottom-[0.75rem] -right-[0.75rem] items-center gap-[0.304rem] bg-[#0F172A] text-white rounded-xl shadow-lg px-[0.608rem] py-[0.405rem] z-20"
             >
-              <span className="w-[1.215rem] h-[1.215rem] rounded-md bg-teal-500 flex items-center justify-center text-white">
-                <Zap size={11} />
-              </span>
-              <span className="text-[0.495rem] font-semibold text-slate-700">BBPS</span>
+              <BadgeCheck size={14} className="text-[#5EEAD4]" />
+              <span className="text-[0.585rem] font-semibold">RBI &amp; IRDAI Verified</span>
             </motion.div>
 
-            {/* floating card: POS Machine */}
-            <motion.div
-              animate={{ y: [0, -4.5, 0] }}
-              transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-[4.05rem] right-0 sm:-right-1.5 bg-white rounded-lg shadow-lg px-[0.506rem] py-[0.405rem] flex flex-col items-center gap-[0.101rem] z-20"
-            >
-              <span className="w-[1.215rem] h-[1.215rem] rounded-md bg-teal-50 flex items-center justify-center text-teal-500">
-                <LayoutGrid size={11} />
+            {/* service chips row */}
+            <div className="mt-[1.417rem] flex flex-wrap items-center justify-center gap-[0.405rem] px-[0.5rem]">
+              <span className="inline-flex items-center gap-[0.304rem] bg-white rounded-full shadow-md px-[0.608rem] py-[0.304rem] text-[0.585rem] font-semibold text-slate-700">
+                <span className="w-[1.012rem] h-[1.012rem] rounded-full bg-[#14B8A6]/10 text-[#14B8A6] flex items-center justify-center">
+                  <Landmark size={11} />
+                </span>
+                Banking Services
               </span>
-              <span className="text-[0.45rem] font-semibold text-slate-700">POS Machine</span>
-            </motion.div>
-
-            {/* connecting dashed lines */}
-            <svg className="absolute inset-0 w-full h-full -z-0 hidden sm:block" viewBox="0 0 400 400">
-              <line x1="70" y1="70" x2="180" y2="140" stroke="#7dd3fc" strokeDasharray="4 4" strokeWidth="1.5" />
-              <line x1="60" y1="280" x2="170" y2="230" stroke="#7dd3fc" strokeDasharray="4 4" strokeWidth="1.5" />
-              <line x1="330" y1="150" x2="240" y2="180" stroke="#7dd3fc" strokeDasharray="4 4" strokeWidth="1.5" />
-            </svg>
+              <span className="inline-flex items-center gap-[0.304rem] bg-white rounded-full shadow-md px-[0.608rem] py-[0.304rem] text-[0.585rem] font-semibold text-slate-700">
+                <span className="w-[1.012rem] h-[1.012rem] rounded-full bg-[#14B8A6]/10 text-[#14B8A6] flex items-center justify-center">
+                  <Zap size={11} />
+                </span>
+                Payments
+              </span>
+              <span className="inline-flex items-center gap-[0.304rem] bg-white rounded-full shadow-md px-[0.608rem] py-[0.304rem] text-[0.585rem] font-semibold text-slate-700">
+                <span className="w-[1.012rem] h-[1.012rem] rounded-full bg-[#14B8A6]/10 text-[#14B8A6] flex items-center justify-center">
+                  <ShieldCheck size={11} />
+                </span>
+                Insurance
+              </span>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* ---------------- Partner CTA ---------------- */}
-      <section className="px-[0.608rem] sm:px-[1.012rem]">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.97 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="max-w-5xl mx-auto bg-gradient-to-r from-[#2DD4BF] to-[#0D9488] rounded-2xl px-[0.81rem] sm:px-[1.215rem] py-[1.012rem] sm:py-[1.215rem] flex flex-col sm:flex-row items-center gap-[0.709rem] sm:gap-[1.012rem] text-white"
-        >
-          <div className="w-[2.362rem] h-[2.362rem] rounded-full bg-white/15 flex items-center justify-center shrink-0">
-            <Handshake size={17} />
-          </div>
-          <div className="flex-1 text-center sm:text-left">
-            <h2 className="text-[0.787rem] sm:text-[0.9rem] font-bold mb-[0.203rem]">Start Your Banking Journey as Partner Today</h2>
-            <p className="text-teal-50/90 text-[0.675rem] max-w-xl">
-              Join thousands of successful retailers who have transformed their business with AbheePay.
-              Earn up to <span className="font-bold text-white">₹12 Lakh</span> annually!
-            </p>
-          </div>
-          <Link to="/contact">
-            <motion.button
-              whileHover={{ y: -3 }}
-              className="bg-white text-[#0D9488] px-[0.709rem] sm:px-[1.012rem] py-[0.405rem] rounded-lg font-bold flex items-center gap-[0.304rem] shadow-lg whitespace-nowrap text-[0.675rem]"
-            >
-              Join as Partner Now <ArrowRight size={11} />
-            </motion.button>
-          </Link>
-        </motion.div>
+      {/* ---------------- Trust & Security Bar ---------------- */}
+      <section className="bg-white border-b border-slate-100 py-[1.012rem] px-[0.608rem] sm:px-[1.012rem]">
+        <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-[0.81rem] text-center sm:text-left">
+          {[
+            { icon: <ShieldCheck size={16} />, label: "Bank-Grade Security" },
+            { icon: <Lock size={16} />, label: "256-bit Encryption" },
+            { icon: <BadgeCheck size={16} />, label: "RBI & IRDAI Compliant" },
+            { icon: <Headphones size={16} />, label: "24x7 Partner Support" },
+          ].map((t, i) => (
+            <div key={i} className="flex items-center justify-center sm:justify-start gap-[0.405rem]">
+              <span className="w-[1.72rem] h-[1.72rem] shrink-0 rounded-full bg-[#14B8A6]/10 text-[#14B8A6] flex items-center justify-center">
+                {t.icon}
+              </span>
+              <span className="text-[0.585rem] sm:text-[0.63rem] font-semibold text-slate-600">{t.label}</span>
+            </div>
+          ))}
+        </div>
       </section>
 
-      {/* ---------------- Services Grid ---------------- */}
-      <section className="py-[2.025rem] sm:py-[2.43rem] px-[0.608rem] sm:px-[1.012rem] bg-white">
+      {/* ----------------   Pay ---------------- */}
+      <section className="py-[2.835rem] sm:py-[3.24rem] px-[0.608rem] sm:px-[1.012rem] bg-white">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-[1.417rem]">
-            <p className="flex items-center justify-center gap-[0.405rem] text-teal-500 text-[0.54rem] font-bold uppercase tracking-[0.2em] mb-[0.405rem]">
-              <span className="w-[1.012rem] h-px bg-teal-300"></span>
-              Our Services
-              <span className="w-[1.012rem] h-px bg-teal-300"></span>
-            </p>
-            <h2 className="text-[1.012rem] sm:text-[1.35rem] font-extrabold text-slate-900">
-              Comprehensive banking and <br className="hidden sm:block" />
-              <span className="text-teal-500">financial solutions</span>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-[2rem] font-black tracking-[-0.03em] leading-tight text-slate-900 p-1">
+              Why Choose <span className="text-[#14B8A6]">AbheePay?</span>
             </h2>
           </div>
 
@@ -2629,200 +4099,197 @@ const Join = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[0.608rem]"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-[1.417rem] gap-y-[1.823rem]"
           >
-            {services.map((service, index) => (
+            {whyChoose.map((item, index) => (
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                whileHover={{ y: -4.5 }}
-                className="bg-white p-[0.709rem] rounded-xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group flex items-center gap-[0.608rem]"
+                whileHover={{ y: -6 }}
+                transition={{ duration: 0.25 }}
+                className="groupbg-white border border-slate-200 rounded-2xl p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)] hover:shadow-[0_12px_40px_rgba(20,184,166,0.12)] hover:border-[#14B8A6]/40 transition-all duration-300"
               >
-                <div className="w-[1.913rem] h-[1.913rem] shrink-0 bg-teal-50 rounded-lg flex items-center justify-center text-teal-500 group-hover:bg-teal-500 group-hover:text-white transition-colors">
-                  {service.icon}
+                <div className="w-14 h-14 rounded-xl  flex items-center justify-center text-[#14B8A6] mb-3 group-hover:bg-[#14B8A6] group-hover:text-white transition-all duration-300">
+                  {item.icon}
                 </div>
-                <div>
-                  <h3 className="font-bold text-[0.675rem] tracking-wide mb-[0.101rem]">{service.title}</h3>
-                  <p className="text-gray-500 text-[0.585rem] leading-relaxed">{service.desc}</p>
-                </div>
+
+                <h3 className="text-[16px] font-bold text-slate-900 mb-2">
+                  {item.title}
+                </h3>
+
+                <p className="text-[12px] leading-4 text-slate-500">
+                  {item.desc}
+                </p>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* ---------------- Benefits (dark, boxed) ---------------- */}
-      <section className="px-[0.608rem] sm:px-[1.012rem] pb-[2.025rem] sm:pb-[2.43rem]">
-        <div className="max-w-5xl mx-auto bg-gradient-to-br from-teal-50 to-slate-50 rounded-[1.35rem] py-[1.417rem] sm:py-[1.823rem] px-[0.81rem] sm:px-[1.215rem]">
-          <div className="text-center mb-[1.215rem] sm:mb-[1.417rem]">
-            <p className="text-teal-600 font-bold mb-[0.203rem] uppercase tracking-[0.2em] text-[0.54rem]">
-              Aapka Business Humara Investment
-            </p>
-            <h2 className="text-[1.012rem] sm:text-[1.35rem] font-extrabold text-slate-900">
-              Abheepay <span className="text-teal-500">Benefits</span>
-            </h2>
-          </div>
+      {/* ---------------- One Powerful Platform ---------------- */}
+      <section className="pb-[2.43rem] px-[0.608rem] sm:px-[1.012rem] bg-white">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-[1.012rem] sm:text-[1.35rem] font-extrabold text-slate-900 mb-[0.203rem]">
+            Power Every Transaction
+          </h2>
+          <p className="text-[1.012rem] sm:text-[1.35rem] font-extrabold text-[#14B8A6] mb-[0.81rem]">
+            All From One Powerful Platform
+          </p>
+          <p className="text-gray-500 text-[0.675rem] sm:text-[0.787rem] mb-[1.417rem] max-w-2xl">
+            From enabling banking access to securing what customers value, offer solutions that matter.
+          </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[0.608rem]">
-            {benefits.map((benefit, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-[0.608rem]">
+            {categories.map((cat, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white p-[0.709rem] rounded-xl border border-slate-100 shadow-sm text-center hover:shadow-lg transition-shadow"
+                className="bg-white p-[0.81rem] rounded-xl border border-gray-200 shadow-sm"
               >
-                <div className="w-[1.913rem] h-[1.913rem] mx-auto rounded-full bg-teal-500 text-white flex items-center justify-center mb-[0.405rem]">
-                  {benefit.icon}
-                </div>
-                <p className="text-[0.675rem] font-bold text-slate-800 leading-snug">{benefit.title}</p>
+                <span className="w-[1.72rem] h-[1.72rem] rounded-full bg-[#14B8A6] text-white flex items-center justify-center mb-[0.506rem]">
+                  {cat.icon}
+                </span>
+                <h3 className="font-bold text-[0.75rem] text-slate-900 mb-[0.203rem]">{cat.title}</h3>
+                <p className="text-gray-500 text-[0.675rem] leading-relaxed">{cat.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ---------------- Why Choose (light) ---------------- */}
-      <section className="py-[2.025rem] sm:py-[2.43rem] px-[0.608rem] sm:px-[1.012rem] bg-[#f8fafc] text-center relative overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-[4.86rem] h-[4.86rem] bg-teal-100/50 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-[4.86rem] h-[4.86rem] bg-indigo-100/50 rounded-full blur-3xl" />
+      {/* ---------------- Onboarding: 3 Easy Steps ---------------- */}
+      <section className="pb-[2.43rem] sm:pb-[2.835rem] px-[0.608rem] sm:px-[1.012rem] bg-white">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 rounded-[1.35rem] overflow-hidden shadow-[0_20px_60px_-25px_rgba(0,0,0,0.15)]">
+          {/* left: steps */}
+          <div className="bg-slate-50 p-[1.012rem] sm:p-[1.417rem]">
+            <p className="text-[0.54rem] font-bold uppercase tracking-[0.2em] text-gray-400 mb-[0.304rem]">Onboarding</p>
+            <h2 className="text-[1.012rem] sm:text-[1.215rem] font-extrabold text-slate-900 mb-[1.012rem]">
+              Become a Partner in <br className="hidden sm:block" /> 3 Easy Steps
+            </h2>
 
-        <div className="max-w-5xl mx-auto relative z-10">
-          <p className="flex items-center justify-center gap-[0.405rem] text-[#2dd4bf] font-bold mb-[0.304rem] uppercase tracking-widest text-[0.54rem]">
-            <span className="w-[1.012rem] h-px bg-teal-300"></span>
-            Why Choose AbheePay?
-            <span className="w-[1.012rem] h-px bg-teal-300"></span>
-          </p>
+            <div className="space-y-0">
+              {steps.map((s, i) => (
+                <div
+                  key={i}
+                  className={`py-[0.709rem] ${i === 1 ? "border-y border-[#14B8A6]" : "border-b border-slate-100"}`}
+                >
+                  <div className="flex items-start gap-[0.608rem]">
+                    <span className="text-[0.75rem] font-extrabold text-[#14B8A6]">{s.no}</span>
+                    <div>
+                      <h3 className="font-bold text-[0.75rem] text-slate-900 mb-[0.101rem]">{s.title}</h3>
+                      <p className="text-gray-500 text-[0.675rem] leading-relaxed">{s.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[0.608rem] mt-[1.215rem]">
-            {whyChoose.map((item, index) => (
+          {/* right: earnings mockup visual */}
+          <div className="relative bg-gradient-to-br from-[#14B8A6] to-[#0D9488] flex items-center justify-center p-[1.012rem] min-h-[16rem]">
+            <div className="w-full max-w-[13rem] bg-white rounded-2xl shadow-2xl p-[0.709rem]">
+              <p className="text-center text-[#14B8A6] font-extrabold text-[0.675rem] mb-[0.101rem]">CONGRATULATIONS!</p>
+              <p className="text-center text-gray-400 text-[0.45rem] mb-[0.608rem]">
+                You have successfully completed <br /> AbheePay Partner onboarding
+              </p>
+              <div className="flex justify-between bg-slate-50 rounded-lg p-[0.405rem] mb-[0.506rem] text-[0.45rem]">
+                <div>
+                  <p className="text-gray-400">Status</p>
+                  <p className="font-bold text-slate-800">Active</p>
+                </div>
+                <div>
+                  <p className="text-gray-400">Result</p>
+                  <p className="font-bold text-emerald-500">Approved</p>
+                </div>
+              </div>
+              <div className="flex items-center justify-between bg-slate-50 rounded-lg p-[0.405rem] mb-[0.506rem]">
+                <div>
+                  <p className="text-[0.405rem] text-gray-400">Projected Commission</p>
+                  <p className="text-[0.585rem] font-bold text-slate-800">₹8,400 / mo</p>
+                </div>
+                <svg viewBox="0 0 60 18" className="w-[3rem] h-[0.9rem]">
+                  <polyline
+                    points="0,15 10,13 20,14 30,8 40,10 50,4 60,3"
+                    fill="none"
+                    stroke="#14B8A6"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+              <button className="w-full bg-[#14B8A6] text-white text-[0.495rem] font-bold py-[0.405rem] rounded-lg">
+                Start Earning
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------- More Products, More Opportunities ---------------- */}
+      <section className="py-[2.025rem] sm:py-[2.43rem] px-[0.608rem] sm:px-[1.012rem] bg-white">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-[1.417rem] items-center">
+          <div>
+            <h2 className="text-[1.012rem] sm:text-[1.35rem] font-extrabold text-slate-900 mb-[0.405rem] leading-tight">
+              More Products <br /> More Opportunities
+            </h2>
+            <p className="text-gray-500 text-[0.675rem] sm:text-[0.787rem] mb-[0.81rem] max-w-sm">
+              Expand your portfolio with our wide range of financial products and earn on every transaction.
+            </p>
+            <Link to="/contact">
+              <button className="px-[1.012rem] py-[0.506rem] bg-[#14B8A6] text-white rounded-lg font-semibold hover:bg-[#0D9488] transition text-[0.675rem]">
+                Start Earning
+              </button>
+            </Link>
+          </div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-2 sm:grid-cols-3 gap-[0.506rem]"
+          >
+            {moreProducts.map((service, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -6 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="group bg-white p-[0.709rem] sm:p-[1.012rem] rounded-[1.17rem] shadow-[0_10px_40px_-15px_rgba(0,0,0,0.08)] border border-slate-100 hover:border-teal-200 transition-all duration-300"
+                variants={fadeInUp}
+                whileHover={{ y: -2 }}
+                className="bg-white p-[0.506rem] rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 flex items-center gap-[0.354rem]"
               >
-                <div className="relative w-[1.913rem] h-[1.913rem] mx-auto mb-[0.608rem] flex items-center justify-center">
-                  <div className="absolute inset-0 bg-indigo-50 rounded-xl rotate-6 group-hover:rotate-12 group-hover:bg-[#2dd4bf] transition-all duration-300"></div>
-                  <div className="relative text-[#2dd4bf] group-hover:text-white transition-colors duration-300">
-                    {item.icon}
-                  </div>
+                <div className="w-[1.417rem] h-[1.417rem] shrink-0 bg-[#14B8A6]/10 rounded-md flex items-center justify-center text-[#14B8A6]">
+                  {service.icon}
                 </div>
-
-                <h3 className="text-[0.675rem] sm:text-[0.787rem] font-extrabold text-slate-800 leading-tight">
-                  {item.title}
-                </h3>
-
-                <div className="mt-[0.405rem] h-[0.101rem] w-[1.012rem] bg-indigo-100 mx-auto rounded-full group-hover:w-[1.688rem] group-hover:bg-[#2dd4bf] transition-all duration-300" />
+                <h3 className="font-semibold text-[0.585rem] text-slate-700">{service.title}</h3>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* ---------------- Contact Section ---------------- */}
-      <section className="py-[2.025rem] sm:py-[2.43rem] px-[0.608rem] sm:px-[1.012rem] bg-gray-50">
-        <div className="max-w-3xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.1)] rounded-[1.35rem] overflow-hidden">
-            {/* form */}
-            <div className="bg-white p-[1.012rem] sm:p-[1.215rem] order-2 lg:order-1">
-              <div className="flex items-center gap-[0.304rem] mb-[0.709rem]">
-                <span className="w-[1.215rem] h-[1.215rem] rounded-md bg-teal-50 text-teal-500 flex items-center justify-center">
-                  <User size={11} />
-                </span>
-                <h2 className="text-[0.787rem] sm:text-[0.9rem] font-bold">Join Us Today</h2>
-              </div>
-              <form className="space-y-2.5">
-                <div className="space-y-0.5">
-                  <label className="text-[0.585rem] font-semibold text-gray-600 ml-[0.203rem]">Full Name</label>
-                  <input
-                    type="text"
-                    placeholder="John Doe"
-                    className="w-full p-[0.506rem] bg-white border border-gray-200 rounded-lg focus:border-teal-400 focus:ring-2 focus:ring-teal-400/40 outline-none transition text-[0.675rem] text-slate-900 placeholder:text-slate-400"
-                  />
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-[0.506rem]">
-                  <div className="space-y-0.5">
-                    <label className="text-[0.585rem] font-semibold text-gray-600 ml-[0.203rem]">Email</label>
-                    <input
-                      type="email"
-                      placeholder="john@example.com"
-                      className="w-full p-[0.506rem] bg-white border border-gray-200 rounded-lg focus:border-teal-400 focus:ring-2 focus:ring-teal-400/40 outline-none transition text-[0.675rem] text-slate-900 placeholder:text-slate-400"
-                    />
-                  </div>
-                  <div className="space-y-0.5">
-                    <label className="text-[0.585rem] font-semibold text-gray-600 ml-[0.203rem]">Phone</label>
-                    <input
-                      type="tel"
-                      placeholder="+91 00000 00000"
-                      className="w-full p-[0.506rem] bg-white border border-gray-200 rounded-lg focus:border-teal-400 focus:ring-2 focus:ring-teal-400/40 outline-none transition text-[0.675rem] text-slate-900 placeholder:text-slate-400"
-                    />
-                  </div>
-                </div>
-                <div className="space-y-0.5">
-                  <label className="text-[0.585rem] font-semibold text-gray-600 ml-[0.203rem]">City</label>
-                  <input
-                    type="text"
-                    placeholder="New Delhi"
-                    className="w-full p-[0.506rem] bg-white border border-gray-200 rounded-lg focus:border-teal-400 focus:ring-2 focus:ring-teal-400/40 outline-none transition text-[0.675rem] text-slate-900 placeholder:text-slate-400"
-                  />
-                </div>
-                <motion.button
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full bg-teal-400 text-white font-bold py-[0.506rem] rounded-lg hover:bg-teal-500 transition-colors mt-[0.304rem] text-[0.675rem] shadow-lg shadow-teal-100 flex items-center justify-center gap-[0.304rem]"
-                >
-                  Submit Application <ArrowRight size={10} />
-                </motion.button>
-              </form>
-            </div>
+      {/* ---------------- Dark CTA Banner ---------------- */}
+      <section className="relative bg-[#0F172A] py-[2.43rem] sm:py-[3.038rem] px-[0.608rem] sm:px-[1.012rem] text-center overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.04] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:2.5rem_2.5rem]"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[3rem] h-[3rem] border-2 border-[#14B8A6]/60 rounded-2xl rotate-6"></div>
 
-            {/* contact info */}
-            <div className="bg-[#1e2736] text-white p-[1.012rem] sm:p-[1.215rem] flex flex-col justify-between relative order-1 lg:order-2 overflow-hidden">
-              <div className="relative z-10">
-                <h3 className="text-[0.787rem] sm:text-[0.9rem] font-bold mb-[0.709rem]">Contact Information</h3>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-[0.405rem]">
-                    <div className="w-[1.215rem] h-[1.215rem] bg-white/10 rounded-md flex items-center justify-center text-teal-400 shrink-0">
-                      <Mail size={10} />
-                    </div>
-                    <span className="text-[0.675rem] text-gray-300">care@abheepay.in</span>
-                  </div>
-                  <div className="flex items-center gap-[0.405rem]">
-                    <div className="w-[1.215rem] h-[1.215rem] bg-white/10 rounded-md flex items-center justify-center text-teal-400 shrink-0">
-                      <Phone size={10} />
-                    </div>
-                    <span className="text-[0.675rem] text-gray-300">88600 37218</span>
-                  </div>
-                  <div className="flex items-start gap-[0.405rem]">
-                    <div className="w-[1.215rem] h-[1.215rem] bg-white/10 rounded-md flex items-center justify-center text-teal-400 shrink-0">
-                      <MapPin size={10} />
-                    </div>
-                    <span className="text-[0.675rem] text-gray-300 leading-relaxed">
-                      2nd Floor, Plot No - 3, KH. NO. 33/6 AMBERHAI, SECTOR-19, DWARKA, NEW DELHI- 110043
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-[0.405rem]">
-                    <div className="w-[1.215rem] h-[1.215rem] bg-white/10 rounded-md flex items-center justify-center text-teal-400 shrink-0">
-                      <Globe size={10} />
-                    </div>
-                    <span className="text-[0.675rem] text-gray-300">www.abheepay.com</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-[1.012rem] pt-[0.608rem] border-t border-white/10 relative z-10">
-                <p className="text-gray-400 italic text-[0.585rem]">
-                  "Empowering Rural India through Digital Innovation."
-                </p>
-              </div>
-
-              <Landmark size={94} className="absolute -bottom-[1.012rem] -right-[1.012rem] text-white/5 pointer-events-none" />
-              <div className="absolute top-0 right-0 w-[2.43rem] h-[2.43rem] bg-teal-400/10 blur-3xl rounded-full"></div>
-            </div>
+        <div className="relative z-10 max-w-2xl mx-auto pt-[3rem]">
+          <h2 className="text-[1.215rem] sm:text-[1.485rem] font-extrabold text-white mb-[1.012rem] leading-tight">
+            Become a Trusted <span className="text-[#14B8A6]">AbheePay Partner</span> Today
+          </h2>
+          <div className="flex items-center justify-center gap-[0.608rem]">
+            <Link to="/contact">
+              <button className="px-[1.012rem] py-[0.506rem] bg-[#14B8A6] text-white rounded-lg font-bold hover:bg-[#0D9488] transition text-[0.675rem]">
+                Get Started
+              </button>
+            </Link>
+            <Link to="/contact">
+              <button className="px-[1.012rem] py-[0.506rem] bg-transparent border border-white/30 text-white rounded-lg font-bold hover:bg-white/10 transition text-[0.675rem]">
+                Contact Sales
+              </button>
+            </Link>
           </div>
         </div>
       </section>
