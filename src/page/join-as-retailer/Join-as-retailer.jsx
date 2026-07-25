@@ -3807,7 +3807,7 @@ import {
 
 // Adjust this import to wherever you place the illustration in your
 // project's asset pipeline (e.g. src/assets/abheepay-hero-illustration.png).
-import heroIllustration from '/assets/image/Hero/mainPageSlider/Abheepay.png';
+import heroIllustration from '/assets/image/Hero/mainPageSlider/abheepay-hero-illustration.png';
 
 // Brand color used throughout: #14B8A6
 
