@@ -6442,7 +6442,7 @@ const HeroSection = () => {
         >
           {slides.map((slide, index) => (
             <SwiperSlide key={`m-${index}`}>
-              <div className="relative w-full px-4 pt-10 pb-5">
+              <div className="relative w-full px-4 pt-16 pb-5">
                 {/* heading + copy */}
                 <motion.div
                   initial={{ opacity: 0, y: 16 }}
@@ -6483,7 +6483,7 @@ const HeroSection = () => {
                   </div>
                 </motion.div>
 
-                {/* glassmorphic dashboard card */}
+                {/* glassmorphic dashboard card
                 <motion.div
                   initial={{ opacity: 0, y: 24 }}
                   animate={activeSlideMobile === index ? { opacity: 1, y: 0 } : {}}

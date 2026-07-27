@@ -444,7 +444,7 @@
 // BlogPage.jsx (React JSX + Tailwind CSS) ✅ FULL UPDATED — redesigned to match brand reference
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-// import posts from "./Blogdata.json";
+import posts from "./Blogdata.json";
 
 // ---- Design tokens ----
 // teal: #00B8A9 (brand accent)   ink: #0B1622 (headings / hero)   paper: #F7F9FA (page bg)
@@ -564,12 +564,12 @@ export default function BlogPage() {
               >
                 {/* image with tag badge floating on top */}
                 <div className="relative">
-                  <img
+                  {/* <img
                     src={post.img}
                     alt={post.title}
                     className="w-full h-22 object-cover"
                     style={{ height: "88px" }}
-                  />
+                  /> */}
                   <div className="absolute left-1.5 bottom-1.5">
                     <TagBadge>{post.tag}</TagBadge>
                   </div>

@@ -61,7 +61,7 @@
   {
     "id": "pos-devices",
     "name": "POS  Devices",
-    "imageUrl": "#",
+    "imageUrl": "public/assets/image/services/Pos.png",
     "description": "Comprehensive online payment gateway and smart routing solutions.",
     "longDescription": "Our Digital Payment Solutions offer a robust Online Payment Gateway supporting UPI, Cards, Net Banking, and Wallets. We provide POS & Android POS Devices along with QR-Based Contactless Payments. The system features smart routing with high success rates, real-time monitoring, and a PCI-DSS compliant architecture to ensure maximum security.",
     "features": [

@@ -53,10 +53,10 @@ const Navbar = () => {
       path: "/services/assisted-banking-cash-management",
       keywords: ["banking", "cash", "matm", "aeps"],
       items: [
-        {
-          name: "AEPS – Cash withdrawal, balance inquiry, mini statement",
-          path: "/services/aeps-cash-withdrawal-balance-inquiry-mini-statement",
-        },
+        // {
+        //   name: "AEPS – Cash withdrawal, balance inquiry, mini statement",
+        //   path: "/services/aeps-cash-withdrawal-balance-inquiry-mini-statement",
+        // },
         { name: "Micro ATM (mATM) services", path: "/services/micro-atm-matm-services" },
         // { name: "Domestic Money Transfer (DMT)", path: "/services/domestic-money-transfer" },
       ],
@@ -193,7 +193,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-12">
           <div className="flex-shrink-0">
             <Link to="/">
-              <img src="/assets/image/logo/logos.png" alt="AbheePay" className="h-3 w-20 object-contain" />
+              <img src="/assets/image/logo/logos.png" alt="AbheePay" className="h-10 w-20 object-contain" />
             </Link>
           </div>
 
@@ -477,6 +477,10 @@ const Navbar = () => {
 
             <Link to="/join-as-retailer" onClick={() => setMobileMenuOpen(false)}>
               JOIN AS RETAILER
+            </Link>
+
+            <Link to="/join-as-distributor" onClick={() => setMobileMenuOpen(false)}>
+              JOIN AS DISTRIBUTOR
             </Link>
 
             <Link to="/blog" onClick={() => setMobileMenuOpen(false)}>
