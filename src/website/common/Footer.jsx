@@ -6,7 +6,7 @@ const Footer = () => {
   const productLinks = [
     { name: "Bill Payments Solution", link: "/services/bbps" },
     { name: "Pos Machine", link: "/services/pos-android-pos-devices" },
-    { name: "Aeps Abheepay", link: "/services/aeps-cash-withdrawal-balance-inquiry-mini-statement" },
+    // { name: "Aeps Abheepay", link: "/services/aeps-cash-withdrawal-balance-inquiry-mini-statement" },
     { name: "Micro Atm Services", link: "/services/micro-atm-matm-services" },
     { name: "Credit Card", link: "/services/credit-card-bill-payments" },
     { name: "Insurance", link: "/services/insurance-solutions" },

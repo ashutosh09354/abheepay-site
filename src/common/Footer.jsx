@@ -295,7 +295,7 @@ const Footer = () => {
   const productLinks = [
     { name: "Bill Payments Solution", link: "/services/bbps-electricity-gas-water-fastag" },
     { name: "POS Machine", link: "/services/pos-devices" },
-    { name: "AEPS", link: "/services/aeps-cash-withdrawal-balance-inquiry-mini-statement" },
+    // { name: "AEPS", link: "/services/aeps-cash-withdrawal-balance-inquiry-mini-statement" },
     { name: "Micro ATM Services", link: "/services/micro-atm-matm-services" },
     { name: "Credit Card", link: "/services/credit-card-bill-payments" },
     { name: "Insurance Solutions", link: "/insurance-solutions" },
