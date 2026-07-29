@@ -82,15 +82,15 @@ const Navbar = () => {
         { name: "Credit card sourcing and lifecycle support", path: "/services/credit-card-sourcing-and-lifecycle-support" },
       ],
     },
-    {
-      name: "Insurance Solutions",
-      keywords: ["insurance", "policy", "lic"],
-      items: [
-        { name: "Health insurance", path: "/services/health-insurance" },
-        { name: "Life insurance", path: "/services/life-insurance" },
-        { name: "General & travel insurance", path: "/services/general-travel-insurance" },
-      ],
-    },
+    // {
+    //   name: "Insurance Solutions",
+    //   keywords: ["insurance", "policy", "lic"],
+    //   items: [
+    //     { name: "Health insurance", path: "/services/health-insurance" },
+    //     { name: "Life insurance", path: "/services/life-insurance" },
+    //     { name: "General & travel insurance", path: "/services/general-travel-insurance" },
+    //   ],
+    // },
     {
       name: "Travel APIs & Travel Services",
       keywords: ["travel", "flight", "hotel", "api"],
@@ -125,26 +125,26 @@ const Navbar = () => {
       path: "/services/ecommerce-websites",
       keywords: ["ecommerce", "shop", "website"],
     },
-    {
-      name: "software development",
-      path: "/services/software-development",
-      keywords: ["software", "app", "development"],
-    },
-    {
-      name: "Customised  software development",
-      path: "/services/customised-software-development",
-      keywords: ["software", "custom", "tailored", "solution"],
-    },
-    {
-      name: "White label software development",
-      path: "/services/white-label-software-development",
-      keywords: ["white label", "resell", "software", "branding"],
-    },
-    {
-      name: "App development",
-      path: "/services/app-development",
-      keywords: ["android", "ios", "mobile", "app", "development"],
-    },
+    // {
+    //   name: "software development",
+    //   path: "/services/software-development",
+    //   keywords: ["software", "app", "development"],
+    // },
+    // {
+    //   name: "Customised  software development",
+    //   path: "/services/customised-software-development",
+    //   keywords: ["software", "custom", "tailored", "solution"],
+    // },
+    // {
+    //   name: "White label software development",
+    //   path: "/services/white-label-software-development",
+    //   keywords: ["white label", "resell", "software", "branding"],
+    // },
+    // {
+    //   name: "App development",
+    //   path: "/services/app-development",
+    //   keywords: ["android", "ios", "mobile", "app", "development"],
+    // },
   ];
 
   useEffect(() => {
