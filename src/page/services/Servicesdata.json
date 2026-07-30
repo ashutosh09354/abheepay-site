@@ -21,7 +21,7 @@
   {
     "id": "sound-box",
     "name": "Sound Box Services",
-    "imageUrl": "#",
+    "imageUrl": "/assets/image/services/soundbox.png",
     "description": "Voice confirmation for all your transactions in real-time.",
     "longDescription": "Never miss a payment with our Sound Box Services. It provides clear, audible voice alerts for every successful transaction, ensuring peace of mind for both merchants and customers in busy environments.",
     "features": [
@@ -40,7 +40,7 @@
   {
     "id": "online-payment-gateway–upi-cards-net-banking-wallets",
     "name": "Payment Gateway – UPI, Cards, Net Banking, Wallets",
-    "imageUrl": "#",
+    "imageUrl": "/assets/image/services/paymentGateway.png",
     "description": "Comprehensive online payment gateway and smart routing solutions.",
     "longDescription": "Our Digital Payment Solutions offer a robust Online Payment Gateway supporting UPI, Cards, Net Banking, and Wallets. We provide POS & Android POS Devices along with QR-Based Contactless Payments. The system features smart routing with high success rates, real-time monitoring, and a PCI-DSS compliant architecture to ensure maximum security.",
     "features": [
@@ -61,7 +61,7 @@
     {
     "id": "payment-links",
     "name": "Payment Link",
-    "imageUrl": "#",
+    "imageUrl": "/assets/image/services/paymentLink.png",
     "description": "Comprehensive online payment gateway and smart routing solutions.",
     "longDescription": "Our Digital Payment Solutions offer a robust Online Payment Gateway supporting UPI, Cards, Net Banking, and Wallets. We provide POS & Android POS Devices along with QR-Based Contactless Payments. The system features smart routing with high success rates, real-time monitoring, and a PCI-DSS compliant architecture to ensure maximum security.",
     "features": [
@@ -82,7 +82,7 @@
      {
     "id": "Digital-invoice",
     "name": "Digital Invoice",
-    "imageUrl": "#",
+    "imageUrl": "/assets/image/services/digitalinvoice.png",
     "description": "Comprehensive online payment gateway and smart routing solutions.",
     "longDescription": "Our Digital Payment Solutions offer a robust Online Payment Gateway supporting UPI, Cards, Net Banking, and Wallets. We provide POS & Android POS Devices along with QR-Based Contactless Payments. The system features smart routing with high success rates, real-time monitoring, and a PCI-DSS compliant architecture to ensure maximum security.",
     "features": [
@@ -103,7 +103,7 @@
        {
     "id": "merchant-application",
     "name": "Merchant Application",
-    "imageUrl": "#",
+    "imageUrl": "/assets/image/services/merchantApplication.png",
     "description": "Comprehensive online payment gateway and smart routing solutions.",
     "longDescription": "Our Digital Payment Solutions offer a robust Online Payment Gateway supporting UPI, Cards, Net Banking, and Wallets. We provide POS & Android POS Devices along with QR-Based Contactless Payments. The system features smart routing with high success rates, real-time monitoring, and a PCI-DSS compliant architecture to ensure maximum security.",
     "features": [
@@ -124,7 +124,7 @@
          {
     "id": "Connected-Banking-Solution",
     "name": "Connected Banking Solution",
-    "imageUrl": "#",
+    "imageUrl": "public/assets/image/services/connectedBanking.png",
     "description": "Comprehensive online payment gateway and smart routing solutions.",
     "longDescription": "Our Digital Payment Solutions offer a robust Online Payment Gateway supporting UPI, Cards, Net Banking, and Wallets. We provide POS & Android POS Devices along with QR-Based Contactless Payments. The system features smart routing with high success rates, real-time monitoring, and a PCI-DSS compliant architecture to ensure maximum security.",
     "features": [
@@ -207,7 +207,7 @@
   {
     "id": "payment-banking-travel-wallet-apis",
     "name": " API Services",
-    "imageUrl": "https://i.pinimg.com/1200x/e7/24/0b/e7240bf085d8f9317a1d11ffaf0c5faf.jpg",
+    "imageUrl": "public/assets/image/services/ApiServices.png",
     "description": "White-label platforms and robust API integrations for fintech.",
     "longDescription": "We provide the backbone for fintech businesses with Payment, banking, travel & wallet APIs. Our tech stack includes Settlement & reconciliation systems, Merchant/Distributor/Admin dashboards, and White-label fintech & travel platforms.",
     "features": [
@@ -220,88 +220,11 @@
       "Scalable tech infrastructure",
       "Ready-to-use white-label solutions",
       "Automated reconciliation"
-    ]
-  },
-  {
-    "id": "Merchant-distributor-admin-dashboards",
-    "name": " Merchant, distributor & admin dashboards",
-    "imageUrl": "public/assets/image/services/Merchant-distributor-admin-dashboards.jpg",
-    "description": "White-label platforms and robust API integrations for fintech.",
-    "longDescription": "We provide the backbone for fintech businesses with Payment, banking, travel & wallet APIs. Our tech stack includes Settlement & reconciliation systems, Merchant/Distributor/Admin dashboards, and White-label fintech & travel platforms.",
-    "features": [
-      "Payment, banking, travel & wallet APIs",
-      "Settlement & reconciliation systems",
-      "Merchant, distributor & admin dashboards",
-      "White-label fintech & travel platforms"
-    ],
-    "benefits": [
-      "Scalable tech infrastructure",
-      "Ready-to-use white-label solutions",
-      "Automated reconciliation"
-    ]
-  },
-  {
-    "id": "white-label-fintech-travel-platforms",
-    "name": "White-label fintech & travel platforms",
-    "imageUrl": "public/assets/image/services/White-label-fintech-travel-platforms.jpg",
-    "description": "White-label platforms and robust API integrations for fintech.",
-    "longDescription": "We provide the backbone for fintech businesses with Payment, banking, travel & wallet APIs. Our tech stack includes Settlement & reconciliation systems, Merchant/Distributor/Admin dashboards, and White-label fintech & travel platforms.",
-    "features": [
-      "Payment, banking, travel & wallet APIs",
-      "Settlement & reconciliation systems",
-      "Merchant, distributor & admin dashboards",
-      "White-label fintech & travel platforms"
-    ],
-    "benefits": [
-      "Scalable tech infrastructure",
-      "Ready-to-use white-label solutions",
-      "Automated reconciliation"
-    ]
-  },
-  {
-    "id": "web-infrastructure-maintenance",
-    "name": "Web Infrastructure & Maintenance",
-    "imageUrl": "https://i.pinimg.com/736x/42/ad/a2/42ada2d79c2343c64bde534f5ed67c19.jpg",
-    "description": "Secure, scalable and high-performance web infrastructure with ongoing maintenance and monitoring.",
-    "longDescription": "Our Web Infrastructure & Maintenance services are designed to keep your websites and applications fast, secure, and always available. We manage cloud servers, optimize performance, apply security patches, and monitor systems 24/7. From fintech platforms to enterprise portals, we ensure stability, scalability, and uninterrupted digital operations.",
-    "features": [
-      "Cloud infrastructure setup & server management",
-      "Website & application performance optimization",
-      "24/7 uptime monitoring & issue resolution",
-      "Security patches, firewall & malware protection",
-      "Automated backups & disaster recovery planning",
-      "Database & server health monitoring"
-    ],
-    "benefits": [
-      "Reliable and always-on digital infrastructure",
-      "Improved speed, stability & performance",
-      "Reduced risk of security breaches",
-      "Lower downtime and operational costs",
-      "Focus on growth while we manage infrastructure"
-    ]
-  },
-  {
-    "id": "ecommerce-websites",
-    "name": "Ecommerce Websites",
-    "imageUrl": "https://i.pinimg.com/736x/3e/ee/0e/3eee0efd67bea0921b615676c447aac5.jpg",
-    "description": "Custom-built ecommerce websites focused on performance, security, and conversions.",
-    "longDescription": "We design and develop end-to-end ecommerce solutions that help businesses sell online with confidence. Our ecommerce websites are fast, mobile-friendly, and integrated with secure payment gateways, inventory management, and analytics tools to ensure seamless shopping experiences for customers.",
-    "features": [
-      "Custom ecommerce website design & development",
-      "Payment gateway & checkout integration",
-      "Product catalog & inventory management",
-      "Order, shipping & return management",
-      "Mobile-first & SEO-optimized design",
-      "Admin dashboard for sales & reports"
-    ],
-    "benefits": [
-      "Higher sales with improved user experience",
-      "Secure and smooth online transactions",
-      "Easy store management & scalability",
-      "Better customer engagement & retention",
-      "Growth-ready ecommerce platform"
     ]
   }
+ 
+  
+ 
   
  
  

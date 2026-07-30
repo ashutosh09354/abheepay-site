@@ -1184,31 +1184,7 @@ const AboutPage = () => {
         .fade-up-2 { animation: fadeUp 0.7s 0.2s ease-out both; }
       `}</style>
 
-      {/* ---------------- NAV ---------------- */}
-      <header className="bg-[#0A1122] text-white">
-        <div className="max-w-6xl mx-auto flex items-center justify-between px-5 sm:px-8 py-4">
-          <div className="flex items-center gap-2 font-bold text-lg">
-            <span className="inline-block w-2.5 h-2.5 bg-[#14B8A6] rounded-sm" />
-            <span className="inline-block w-2.5 h-2.5 bg-[#14B8A6] rounded-sm -ml-1 mt-1.5" />
-            AbheePay
-          </div>
-          <nav className="hidden lg:flex items-center gap-7 text-[12px] text-slate-300">
-            <span>Products</span>
-            <span>Solutions</span>
-            <span>Developer's Hub</span>
-            <span>Company</span>
-            <span>Our Blog</span>
-          </nav>
-          <div className="flex items-center gap-3">
-            <button className="text-[12px] font-medium text-white border border-white/20 rounded-full px-4 py-1.5 hover:bg-white/10 transition">
-              Login
-            </button>
-            <button className="text-[12px] font-semibold bg-[#14B8A6] text-white rounded-full px-4 py-1.5 hover:bg-[#0F9E90] transition">
-              Get Started
-            </button>
-          </div>
-        </div>
-      </header>
+
 
       {/* ---------------- HERO ---------------- */}
       <section className="bg-[#0A1122] text-white pt-12 pb-16 px-5 sm:px-8 relative overflow-hidden">
@@ -1225,12 +1201,12 @@ const AboutPage = () => {
             <span className="text-[#14B8A6]">Business Banking Platform</span>
           </h1>
 
-          <div className="relative mt-10 rounded-2xl overflow-hidden max-w-4xl mx-auto fade-up-2 shadow-2xl">
-            <img
-              src="#"
-              alt="AbheePay team"
-              className="w-full h-[220px] sm:h-[320px] object-cover"
-            />
+<div className="relative mt-10 rounded-2xl overflow-hidden max-w-4xl mx-auto fade-up-2 shadow-2xl">
+  <img
+    src="/assets/image/banner/joinourteam.png"
+    alt="AbheePay team"
+    className="w-full h-auto"
+  />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0A1122]/70 via-transparent to-transparent" />
             <span className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 text-[28px] sm:text-[56px] font-black tracking-tight text-white/25 whitespace-nowrap select-none">
               #ABHEEPAY

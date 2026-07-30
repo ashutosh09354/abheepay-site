@@ -5980,7 +5980,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import {
   motion,
@@ -6211,12 +6211,11 @@ const HeroSection = () => {
       {/* ======================= DESKTOP / TABLET ======================= */}
       <div className="hidden md:block relative z-10">
         <Swiper
-          modules={[Navigation, Autoplay]}
+          modules={[Autoplay]}
           autoplay={{ delay: 5000, disableOnInteraction: false }}
           loop
           autoHeight
           onSlideChange={(swiper) => setActiveSlide(swiper.realIndex)}
-          navigation={{ nextEl: ".hero-next", prevEl: ".hero-prev" }}
           className="relative w-full"
         >
           {slides.map((slide, index) => (
@@ -6370,26 +6369,6 @@ const HeroSection = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-
-        <div className="absolute top-6 right-6 sm:right-8 md:right-10 flex items-center gap-3 text-gray-700 z-20 hidden sm:flex">
-          <motion.button
-            whileHover={{ scale: 1.15, x: -2 }}
-            whileTap={{ scale: 0.9 }}
-            transition={{ duration: 0.3 }}
-            className="hero-prev text-xl sm:text-2xl"
-          >
-            &#8249;
-          </motion.button>
-          <span className="w-px h-4 sm:h-5 bg-gray-300"></span>
-          <motion.button
-            whileHover={{ scale: 1.15, x: 2 }}
-            whileTap={{ scale: 0.9 }}
-            transition={{ duration: 0.3 }}
-            className="hero-next text-xl sm:text-2xl"
-          >
-            &#8250;
-          </motion.button>
-        </div>
 
         {/* bottom stats strip */}
         <div className="relative z-10 border-t border-gray-100 bg-white/80 backdrop-blur-sm">
