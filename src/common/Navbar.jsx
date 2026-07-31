@@ -559,6 +559,7 @@
 
 
 import React, { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { Banknote, ChevronDown, ChevronUp, Code2, Landmark, Menu, Plane, Search, WalletCards, X } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import LanguageSwitcher from "../components/LanguageSwitcher";
@@ -587,6 +588,16 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [mobileMenuOpen]);
 
   // POORA ORIGINAL DATA (Kuch bhi nahi hataya)
   const allServices = [
@@ -757,16 +768,16 @@ const Navbar = () => {
   border-b border-white/10
   shadow-2xl
   transition-all duration-500"
->
+    >
 
 
 
 
       <div className="max-w-5xl mx-auto px-4 sm:px-4 lg:px-5 ">
-        <div className="flex h-16 items-center justify-between lg:h-10">
+        <div className="flex h-14 items-center justify-between lg:h-10">
 
 
-<div className="flex-shrink-0">
+          {/* <div className="flex-shrink-0">
   <Link to="/">
     <img
       src="/assets/image/logo/logos.png"
@@ -774,10 +785,40 @@ const Navbar = () => {
       className="h-5 w-auto object-contain"
     />
   </Link>
-</div>
+</div> */}
 
 
 
+
+          {/* Logo */}
+
+          <div className="flex-shrink-0">
+            <Link to="/" className="flex items-center">
+              <div
+                className="
+        rounded-xl
+        px-2
+        py-1
+        bg-gradient-to-r
+        from-[#081C33]
+        via-[#0B2545]
+        to-[#081C33]
+        border
+        border-[#16C7C9]/20
+        shadow-lg
+        transition-all
+        duration-300
+        hover:shadow-[0_0_30px_rgba(22,199,201,0.25)]
+      "
+              >
+                <img
+                  src="/assets/image/logo/logos.png"
+                  alt="AbheePay"
+                  className="h-4 w-auto object-contain transition-transform duration-300 hover:scale-105"
+                />
+              </div>
+            </Link>
+          </div>
 
 
 
@@ -1009,80 +1050,103 @@ const Navbar = () => {
       </div>
 
       {/* MOBILE MENU */}
-      <div
-        className={`lg:hidden fixed inset-y-0 left-0 z-50 w-4/5 max-w-xs transform transition-transform duration-300 ease-in-out ${mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-          } bg-[#0F172A] text-white`}
-      >
-        <div className="h-full flex flex-col overflow-y-auto">
-          <div className="p-5 border-b border-gray-700">
-            <Link to="/" onClick={() => setMobileMenuOpen(false)}>
-              <img src="/assets/image/logo/logos.png" alt="Logo" className="h-16 w-16 object-contain" />
-            </Link>
-          </div>
-          <div className="px-5 py-6 flex flex-col gap-5">
-            <Link to="/" onClick={() => setMobileMenuOpen(false)}>
-              HOME
-            </Link>
-            <Link to="/about" onClick={() => setMobileMenuOpen(false)}>
-              ABOUT US
-            </Link>
+      {mobileMenuOpen && createPortal(
+        <div className="lg:hidden fixed inset-0 z-[1000]">
+          <button
+            type="button"
+            aria-label="Close navigation menu"
+            className="absolute inset-0 bg-black/60"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+          <aside
+            className="absolute inset-y-0 left-0 z-10 flex h-[100dvh] w-[85vw] max-w-sm flex-col overflow-hidden bg-[#0F172A] text-white shadow-2xl"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile navigation"
+          >
+            <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
+              <div className="p-5 border-b border-gray-700">
+                <div className="flex items-center justify-between">
+                  <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+                    <img src="/assets/image/logo/logos.png" alt="Logo" className="h-16 w-16 object-contain" />
+                  </Link>
+                  <button
+                    type="button"
+                    aria-label="Close navigation menu"
+                    className="rounded-md p-2 text-white transition-colors hover:bg-white/10"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <X size={22} />
+                  </button>
+                </div>
+              </div>
+              <div className="px-5 py-6 flex flex-col gap-5">
+                <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+                  HOME
+                </Link>
+                <Link to="/about" onClick={() => setMobileMenuOpen(false)}>
+                  ABOUT US
+                </Link>
 
-            <div>
-              <button
-                className="w-full flex justify-between items-center font-semibold"
-                onClick={() => setServicesOpen(!servicesOpen)}
-              >
-                <span>SERVICES</span> {servicesOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-              </button>
+                <div>
+                  <button
+                    className="w-full flex justify-between items-center font-semibold"
+                    onClick={() => setServicesOpen(!servicesOpen)}
+                  >
+                    <span>SERVICES</span> {servicesOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                  </button>
 
-              {servicesOpen && (
-                <div className="mt-3 pl-4 flex flex-col gap-3 border-l-2 border-[#00D3CD]/30">
-                  {allServices.map((s, i) => (
-                    <div key={i}>
-                      <Link
-                        to={s.path}
-                        className="block font-bold text-[#00D3CD]"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {s.name}
-                      </Link>
-                      {s.items?.map((it, idx) => (
-                        <Link
-                          key={idx}
-                          to={it.path}
-                          className="block text-xs text-gray-400 mt-2"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          - {it.name}
-                        </Link>
+                  {servicesOpen && (
+                    <div className="mt-3 pl-4 flex flex-col gap-3 border-l-2 border-[#00D3CD]/30">
+                      {allServices.map((s, i) => (
+                        <div key={i}>
+                          <Link
+                            to={s.path}
+                            className="block font-bold text-[#00D3CD]"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {s.name}
+                          </Link>
+                          {s.items?.map((it, idx) => (
+                            <Link
+                              key={idx}
+                              to={it.path}
+                              className="block text-xs text-gray-400 mt-2"
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              - {it.name}
+                            </Link>
+                          ))}
+                        </div>
                       ))}
                     </div>
-                  ))}
+                  )}
                 </div>
-              )}
+
+                <Link to="/join-as-retailer" onClick={() => setMobileMenuOpen(false)}>
+                  JOIN AS RETAILER
+                </Link>
+
+                <Link to="/join-as-distributor" onClick={() => setMobileMenuOpen(false)}>
+                  JOIN AS DISTRIBUTOR
+                </Link>
+
+                <Link to="/blog" onClick={() => setMobileMenuOpen(false)}>
+                  BLOGS
+                </Link>
+                <Link to="/account-delete" onClick={() => setMobileMenuOpen(false)}>
+                  ACCOUNT DELETE
+                </Link>
+
+                <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
+                  CONTACT US
+                </Link>
+              </div>
             </div>
-
-            <Link to="/join-as-retailer" onClick={() => setMobileMenuOpen(false)}>
-              JOIN AS RETAILER
-            </Link>
-
-            <Link to="/join-as-distributor" onClick={() => setMobileMenuOpen(false)}>
-              JOIN AS DISTRIBUTOR
-            </Link>
-
-            <Link to="/blog" onClick={() => setMobileMenuOpen(false)}>
-              BLOGS
-            </Link>
-            <Link to="/account-delete" onClick={() => setMobileMenuOpen(false)}>
-              ACCOUNT DELETE
-            </Link>
-
-            <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
-              CONTACT US
-            </Link>
-          </div>
-        </div>
-      </div>
+          </aside>
+        </div>,
+        document.body
+      )}
 
       {/* SEARCH BAR */}
       {openSearch && (
@@ -1126,7 +1190,6 @@ const Navbar = () => {
         </div>
       )}
 
-      {mobileMenuOpen && <div className="lg:hidden fixed inset-0 bg-black/60 z-40" onClick={() => setMobileMenuOpen(false)} />}
     </header>
   );
 };
