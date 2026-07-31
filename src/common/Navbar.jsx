@@ -773,8 +773,8 @@ const Navbar = () => {
 
 
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-4 lg:px-5 ">
-        <div className="flex h-14 items-center justify-between lg:h-10">
+      <div className="max-w-8xl mx-auto px-5 sm:px-5 lg:px-6 ">
+        <div className="flex h-12 items-center justify-between lg:h-20">
 
 
           {/* <div className="flex-shrink-0">
@@ -797,8 +797,8 @@ const Navbar = () => {
               <div
                 className="
         rounded-xl
-        px-2
-        py-1
+        px-3
+        py-2
         bg-gradient-to-r
         from-[#081C33]
         via-[#0B2545]
@@ -814,7 +814,7 @@ const Navbar = () => {
                 <img
                   src="/assets/image/logo/logos.png"
                   alt="AbheePay"
-                  className="h-4 w-auto object-contain transition-transform duration-300 hover:scale-105"
+                  className="h-7 w-auto object-contain transition-transform duration-300 hover:scale-105"
                 />
               </div>
             </Link>
@@ -824,46 +824,46 @@ const Navbar = () => {
 
 
 
-          <nav className="hidden lg:flex flex-1 justify-center items-center gap-4 text-gray-700">
-            <Link to="/services" className="text-[11px] font-semibold transition-colors hover:text-[#00C4C7]">
+          <nav className="hidden lg:flex flex-1 justify-center items-center gap-8 text-gray-700">
+            <Link to="/services" className="text-[20px] font-bold transition-colors hover:text-[#00C4C7]">
               Services
             </Link>
             <div className="relative inline-block" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <Link
                 to="/services"
-                className="flex items-center gap-1 text-[11px] font-semibold transition-colors hover:text-[#00C4C7]"
+                className="flex items-center gap-1 text-[20px] font-bold transition-colors hover:text-[#00C4C7]"
               >
-                Solutions <ChevronDown size={12} strokeWidth={2.5} />
+                Solutions <ChevronDown size={21} strokeWidth={2.5} />
               </Link>
 
               {/* ✅ CHANGE #1: absolute → fixed (live clipping issue fix) */}
               <div
-                className={`fixed top-14 left-1/2 -translate-x-1/2 w-[480px] max-w-[95vw] transition-all duration-200 ease-out z-[9999] lg:block
+                className={`fixed top-14 left-1/2 -translate-x-1/2 w-[600px] max-w-[100vw] transition-all duration-200 ease-out z-[9999] lg:block
                   ${servicesDropdownOpen
                     ? "opacity-100 visible translate-y-0"
                     : "opacity-0 invisible -translate-y-2 pointer-events-none"
                   }`}
               >
-                <div className="rounded-xl border border-slate-100 bg-white p-1.5 shadow-2xl">
-                  <div className="grid grid-cols-5 gap-1">
+                <div className="rounded-xl border border-slate-200 bg-white p-3 shadow-2xl">
+                  <div className="grid grid-cols-5 gap-5 gap-y-8">
                     {solutionCategories.map(({ name, icon: Icon, target }) => (
                       <Link
                         key={name}
                         to={`/services#${target}`}
                         onMouseEnter={() => setActiveSolution(name)}
                         onClick={() => setServicesDropdownOpen(false)}
-                        className="group rounded-lg bg-[#f5f7fb] p-1.5 transition hover:-translate-y-0.5 hover:bg-[#e7f6ff]"
+                        className="group min-h-[88px] rounded-lg bg-[#f5f7fb] p-2 transition hover:-translate-y-0.5 hover:bg-[#e7f6ff]"
                       >
                         <span className="mb-1.5 flex h-6 w-6 items-center justify-center rounded-lg bg-white text-[#2DD4BF] shadow-sm transition group-hover:scale-105">
                           <Icon size={13} strokeWidth={2.8} />
                         </span>
-                        <span className="block text-[7px] font-bold leading-3 text-[#111827]">{name}</span>
+                        <span className="block text-[10px] font-bold leading-1 text-[#111827]">{name}</span>
                       </Link>
                     ))}
                   </div>
-                  <div className="mt-1.5 max-h-14 overflow-y-auto rounded-lg bg-[#f7f9fc] px-1.5 py-1.5">
+                  <div className="mt-3 max-h-24 overflow-y-auto rounded-lg bg-[#f7f9fc] px-2 py-2">
                     <p className="mb-1 text-[7px] font-bold uppercase tracking-wide text-[#40617d]">{activeSolutionCategory.name}</p>
-                    <div className="grid grid-cols-3 gap-x-2 gap-y-0">
+                    <div className="grid grid-cols-3 gap-x-3 gap-y-1">
                       {activeSolutionCategory.services.map((service) => (
                         <Link
                           key={service.path || service.name}
@@ -990,9 +990,9 @@ const Navbar = () => {
             </div>
 
             <div className="relative group">
-              <button className="flex items-center gap-1 text-[11px] font-semibold transition-colors hover:text-[#00C4C7]">
+              <button className="flex items-center gap-1 text-[20px] font-bold transition-colors hover:text-[#00C4C7]">
                 Partner
-                <ChevronDown size={11} strokeWidth={2.5} />
+                <ChevronDown size={21} strokeWidth={2.5} />
               </button>
 
               <div className="absolute left-0 top-full mt-1.5 w-44 rounded-xl border border-gray-200 bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
@@ -1011,25 +1011,25 @@ const Navbar = () => {
                 </Link>
               </div>
             </div>
-            <Link to="/about" className="text-[11px] font-semibold transition-colors hover:text-[#00C4C7]">
+            <Link to="/about" className="text-[20px] font-bold transition-colors hover:text-[#00C4C7]">
               About Us
             </Link>
-            <Link to="/contact" className="text-[11px] font-semibold transition-colors hover:text-[#00C4C7]">
+            <Link to="/contact" className="text-[20px] font-bold transition-colors hover:text-[#00C4C7]">
               Contact
             </Link>
           </nav>
 
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-3">
             <LanguageSwitcher />
             <a
               href="https://partner.abheepay.com/backend/customer/login"
-              className="hidden sm:inline-flex items-center justify-center rounded-lg border-2 border-[#00C4C7] px-2 py-0.5 text-[11px] font-semibold text-[#00AEB2] transition-colors hover:bg-[#00C4C7] hover:text-white"
+              className="hidden sm:inline-flex h-10 items-center justify-center rounded-lg border-2 border-[#00C4C7] px-4 text-[16px] font-semibold text-[#00AEB2] transition-colors hover:bg-[#00C4C7] hover:text-white"
             >
               Login
             </a>
             <Link
               to="/join-as-retailer"
-              className="hidden sm:inline-flex items-center justify-center rounded-lg bg-[#00C4C7] px-2 py-0.5 text-[11px] font-semibold text-white shadow-sm transition-colors hover:bg-[#00AEB2]"
+              className="hidden sm:inline-flex h-10 items-center justify-center rounded-lg bg-[#00C4C7] px-4 text-[16px] font-semibold text-white shadow-sm transition-colors hover:bg-[#00AEB2]"
             >
               Get Started
             </Link>

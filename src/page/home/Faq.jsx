@@ -118,6 +118,127 @@
 
 
 
+// import React, { useState } from "react";
+// import { ChevronDown } from "lucide-react";
+
+// const faqs = [
+//   {
+//     question: "When and how is the commission credited?",
+//     answer:
+//       "Commission is automatically credited to your wallet after every successful transaction. The settlement process is fast and completely transparent.",
+//   },
+//   {
+//     question: "What happens if an AePS transaction fails?",
+//     answer:
+//       "If a transaction is unsuccessful, the amount is either instantly reversed to the customer's bank account or processed through an automatic refund system.",
+//   },
+//   {
+//     question: "What services can be provided through a Micro ATM?",
+//     answer:
+//       "Micro ATM services include cash withdrawal, balance enquiry, mini statement, and Aadhaar-based banking transactions.",
+//   },
+//   {
+//     question: "How can I start offering digital financial services at my shop?",
+//     answer:
+//       "After a simple registration process, you receive the required device and training support, enabling you to start services easily from your store.",
+//   },
+//   {
+//     question: "What are the benefits of working with this platform?",
+//     answer:
+//       "Low investment, multiple earning opportunities, quick payouts, and dedicated support help merchants grow their business smoothly.",
+//   },
+//   {
+//     question: "Can I provide utility bill payments and recharge services?",
+//     answer:
+//       "Yes, you can offer electricity bill payments, mobile recharges, DTH, and many other utility services from a single platform.",
+//   },
+//   {
+//     question: "How secure are digital banking and transactions?",
+//     answer:
+//       "The platform uses advanced security standards and encrypted systems to ensure all transactions remain safe and reliable.",
+//   },
+//   {
+//     question: "Do I earn extra commission for providing financial services?",
+//     answer:
+//       "Yes, each service comes with its own commission structure, which can significantly increase your monthly income.",
+//   },
+// ];
+
+// const FaqSection = () => {
+//   const [activeIndex, setActiveIndex] = useState(null);
+
+//   const toggleFAQ = (index) => {
+//     setActiveIndex(activeIndex === index ? null : index);
+//   };
+
+//   return (
+//     <section className="bg-[#F6F8FC] py-5 px-2">
+//       <h2 className="text-xl md:text-xl text-center font-bold text-gray-800 mb-2">
+//         Frequently Asked Questions
+//       </h2>
+
+//       <div className="flex items-center justify-center gap-2 mt-3 mb-10">
+//         <div className="w-16 h-1 bg-gradient-to-r from-transparent to-[#2DD4BF]"></div>
+//         <div className="w-2 h-2 bg-[#2DD4BF] rounded-full"></div>
+//         <div className="w-16 h-1 bg-gradient-to-l from-transparent to-[#2DD4BF]"></div>
+//       </div>
+
+//       <div className="max-w-2xl mx-auto space-y-4">
+//         {faqs.map((faq, index) => {
+//           const isOpen = activeIndex === index;
+//           return (
+//             <div
+//               key={index}
+//               onClick={() => toggleFAQ(index)}
+//               className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-200 px-5 py-4 cursor-pointer"
+//             >
+//               <div className="flex justify-between items-center gap-3">
+//                 <h3 className="text-sm md:text-base font-semibold text-gray-800">
+//                   {faq.question}
+//                 </h3>
+//                 <ChevronDown
+//                   className={`flex-shrink-0 text-teal-500 w-4 h-4 transition-transform duration-300 ${
+//                     isOpen ? "rotate-180" : "rotate-0"
+//                   }`}
+//                 />
+//               </div>
+
+//               <div
+//                 className={`grid transition-all duration-300 ease-in-out ${
+//                   isOpen ? "grid-rows-[1fr] opacity-100 mt-2" : "grid-rows-[0fr] opacity-0"
+//                 }`}
+//               >
+//                 <div className="overflow-hidden">
+//                   <p className="text-gray-500 text-xs md:text-sm leading-relaxed">
+//                     {faq.answer}
+//                   </p>
+//                 </div>
+//               </div>
+//             </div>
+//           );
+//         })}
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default FaqSection;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
@@ -172,32 +293,32 @@ const FaqSection = () => {
   };
 
   return (
-    <section className="bg-[#F6F8FC] py-5 px-2">
-      <h2 className="text-xl md:text-xl text-center font-bold text-gray-800 mb-2">
+    <section className="bg-[#F6F8FC] py-[30px] px-3">
+      <h2 className="text-[30px] md:text-[30px] text-center font-bold text-gray-800 mb-3">
         Frequently Asked Questions
       </h2>
 
-      <div className="flex items-center justify-center gap-2 mt-3 mb-10">
-        <div className="w-16 h-1 bg-gradient-to-r from-transparent to-[#2DD4BF]"></div>
-        <div className="w-2 h-2 bg-[#2DD4BF] rounded-full"></div>
-        <div className="w-16 h-1 bg-gradient-to-l from-transparent to-[#2DD4BF]"></div>
+      <div className="flex items-center justify-center gap-3 mt-[18px] mb-[60px]">
+        <div className="w-24 h-[6px] bg-gradient-to-r from-transparent to-[#2DD4BF]"></div>
+        <div className="w-3 h-3 bg-[#2DD4BF] rounded-full"></div>
+        <div className="w-24 h-[6px] bg-gradient-to-l from-transparent to-[#2DD4BF]"></div>
       </div>
 
-      <div className="max-w-2xl mx-auto space-y-4">
+      <div className="max-w-[1008px] mx-auto space-y-6">
         {faqs.map((faq, index) => {
           const isOpen = activeIndex === index;
           return (
             <div
               key={index}
               onClick={() => toggleFAQ(index)}
-              className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-200 px-5 py-4 cursor-pointer"
+              className="bg-white rounded-[24px] shadow-md hover:shadow-lg transition-shadow duration-200 px-[30px] py-6 cursor-pointer"
             >
-              <div className="flex justify-between items-center gap-3">
-                <h3 className="text-sm md:text-base font-semibold text-gray-800">
+              <div className="flex justify-between items-center gap-[18px]">
+                <h3 className="text-[21px] md:text-[24px] font-semibold text-gray-800">
                   {faq.question}
                 </h3>
                 <ChevronDown
-                  className={`flex-shrink-0 text-teal-500 w-4 h-4 transition-transform duration-300 ${
+                  className={`flex-shrink-0 text-teal-500 w-6 h-6 transition-transform duration-300 ${
                     isOpen ? "rotate-180" : "rotate-0"
                   }`}
                 />
@@ -205,11 +326,11 @@ const FaqSection = () => {
 
               <div
                 className={`grid transition-all duration-300 ease-in-out ${
-                  isOpen ? "grid-rows-[1fr] opacity-100 mt-2" : "grid-rows-[0fr] opacity-0"
+                  isOpen ? "grid-rows-[1fr] opacity-100 mt-3" : "grid-rows-[0fr] opacity-0"
                 }`}
               >
                 <div className="overflow-hidden">
-                  <p className="text-gray-500 text-xs md:text-sm leading-relaxed">
+                  <p className="text-gray-500 text-[18px] md:text-[21px] leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>

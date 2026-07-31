@@ -160,6 +160,131 @@
 
 
 
+// import React, { useState } from "react";
+// import { Star, ChevronDown, ChevronUp } from "lucide-react";
+
+// const testimonials = [
+//   {
+//     text: `"Abheepay's user-friendly interface and lightning-fast transactions have helped us manage a significantly higher volume of daily walk-ins. I am extremely satisfied being an Abheepay partner."`,
+//     name: "Mr. Basit",
+//     location: "Uttar Pradesh",
+//     img: "https://i.pinimg.com/736x/da/31/38/da313829618ce49ebec8517389ff6016.jpg",
+//   },
+//   {
+//     text: `"The AEPS and withdrawal services provided by Abheepay are incredibly reliable. The success rate is the best in the industry, and the technical support is always just a call away."`,
+//     name: "Mr. Rajesh",
+//     location: "Madhya Pradesh",
+//     img: "https://i.pinimg.com/736x/05/34/06/05340637798692d3b7c4e75ce155f390.jpg",
+//   },
+//   {
+//     text: `"Since I started using Abheepay for Domestic Money Transfers, my customers' trust has grown immensely. The real-time settlement and transparency are truly unmatched."`,
+//     name: "Mr. Aman",
+//     location: "Bihar",
+//     img: "https://i.pinimg.com/736x/84/5e/44/845e442733a81758d7e9ad42db3b410f.jpg",
+//   },
+//   {
+//     text: `"Abheepay offers a seamless digital experience for all our financial services. From bill payments to recharges, everything is integrated perfectly into one powerful dashboard."`,
+//     name: "Mr. Vikram",
+//     location: "Rajasthan",
+//     img: "https://static.vecteezy.com/system/resources/thumbnails/005/346/410/small/close-up-portrait-of-smiling-handsome-young-caucasian-man-face-looking-at-camera-on-isolated-light-gray-studio-background-photo.jpg",
+//   },
+//   {
+//     text: `"I have tried several other portals, but Abheepay stands out due to its stability and high commission structure. It has significantly boosted my monthly business revenue."`,
+//     name: "Mr. Suresh",
+//     location: "Haryana",
+//     img: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?cs=srgb&dl=pexels-italo-melo-881954-2379004.jpg&fm=jpg",
+//   },
+//   {
+//     text: `"The onboarding process was smooth, and the training provided by the Abheepay team was very helpful. It is the perfect platform for any small business looking to go digital."`,
+//     name: "Mr. Ankit",
+//     location: "Uttarakhand",
+//     img: "https://i.pinimg.com/736x/07/33/ba/0733ba760b29378474dea0fdbcb97107.jpg",
+//   },
+//   {
+//     text: `"Excellent customer service and zero-hassle operations. Abheepay has transformed my shop into a complete digital banking point for my local community."`,
+//     name: "Mr. Rahul",
+//     location: "Delhi",
+//     img: "https://i.pinimg.com/736x/9a/21/2b/9a212b50601e724a3bc5bc3881a6c006.jpg",
+//   },
+// ];
+
+// const Testimonial = () => {
+//   const [showAll, setShowAll] = useState(false);
+//   const visibleTestimonials = showAll ? testimonials : testimonials.slice(0, 3);
+
+//   return (
+//     <div className="relative bg-white px-3 sm:px-4 lg:px-6 py-8 sm:py-10 font-sans">
+//       <h2 className="text-center text-sm sm:text-xl md:text-xl font-extrabold text-[#0b1f3a] mb-5 sm:mb-6">
+//         What Our Partners Say
+//       </h2>
+
+//       <div className="relative w-full max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+//         {visibleTestimonials.map((t, idx) => (
+//           <div
+//             key={idx}
+//             className="bg-white border-l-4 border-[#2dd4bf] rounded-lg shadow-sm px-2.5 py-2.5 flex flex-col"
+//           >
+//             <div className="flex gap-0.5 mb-1">
+//               {Array.from({ length: 5 }).map((_, i) => (
+//                 <Star key={i} size={8} fill="#2dd4bf" color="#2dd4bf" />
+//               ))}
+//             </div>
+
+//             <p className="italic text-gray-600 text-[9px] sm:text-[9.5px] leading-tight flex-1">
+//               {t.text}
+//             </p>
+
+//             <div className="flex items-center gap-2 mt-2">
+//               <div className="w-6 h-6 rounded-full overflow-hidden flex-shrink-0">
+//                 <img
+//                   src={t.img}
+//                   alt={t.name}
+//                   className="w-full h-full object-cover"
+//                 />
+//               </div>
+//               <div>
+//                 <h3 className="text-[9px] sm:text-[10px] font-semibold text-[#0b1f3a]">
+//                   {t.name}
+//                 </h3>
+//                 <p className="text-gray-500 text-[8px] sm:text-[9px]">
+//                   Location - {t.location}
+//                 </p>
+//               </div>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+
+//       {testimonials.length > 3 && (
+//         <div className="flex justify-center mt-6 sm:mt-8">
+//           <button
+//             onClick={() => setShowAll((prev) => !prev)}
+//             className="flex items-center gap-1.5 bg-[#2dd4bf] text-white text-[10px] font-semibold px-3 py-1.5 rounded hover:bg-[#26b8a5] transition-colors shadow-sm"
+//           >
+//             {showAll ? "View Less" : "View More"}
+//             {showAll ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+//           </button>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default Testimonial;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { useState } from "react";
 import { Star, ChevronDown, ChevronUp } from "lucide-react";
 
@@ -213,29 +338,29 @@ const Testimonial = () => {
   const visibleTestimonials = showAll ? testimonials : testimonials.slice(0, 3);
 
   return (
-    <div className="relative bg-white px-3 sm:px-4 lg:px-6 py-8 sm:py-10 font-sans">
-      <h2 className="text-center text-sm sm:text-xl md:text-xl font-extrabold text-[#0b1f3a] mb-5 sm:mb-6">
+    <div className="relative bg-white px-[16.2px] sm:px-[21.6px] lg:px-[32.4px] py-[43.2px] sm:py-[54px] font-sans">
+      <h2 className="text-center text-[18.9px] sm:text-[27px] md:text-[27px] font-extrabold text-[#0b1f3a] mb-[27px] sm:mb-[32.4px]">
         What Our Partners Say
       </h2>
 
-      <div className="relative w-full max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      <div className="relative w-full max-w-[1382px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[16.2px]">
         {visibleTestimonials.map((t, idx) => (
           <div
             key={idx}
-            className="bg-white border-l-4 border-[#2dd4bf] rounded-lg shadow-sm px-2.5 py-2.5 flex flex-col"
+            className="bg-white border-l-[5.4px] border-[#2dd4bf] rounded-[10.8px] shadow-sm px-[13.5px] py-[13.5px] flex flex-col"
           >
-            <div className="flex gap-0.5 mb-1">
+            <div className="flex gap-[2.7px] mb-[5.4px]">
               {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} size={8} fill="#2dd4bf" color="#2dd4bf" />
+                <Star key={i} size={10.8} fill="#2dd4bf" color="#2dd4bf" />
               ))}
             </div>
 
-            <p className="italic text-gray-600 text-[9px] sm:text-[9.5px] leading-tight flex-1">
+            <p className="italic text-gray-600 text-[12.15px] sm:text-[12.83px] leading-tight flex-1">
               {t.text}
             </p>
 
-            <div className="flex items-center gap-2 mt-2">
-              <div className="w-6 h-6 rounded-full overflow-hidden flex-shrink-0">
+            <div className="flex items-center gap-[10.8px] mt-[10.8px]">
+              <div className="w-[32.4px] h-[32.4px] rounded-full overflow-hidden flex-shrink-0">
                 <img
                   src={t.img}
                   alt={t.name}
@@ -243,10 +368,10 @@ const Testimonial = () => {
                 />
               </div>
               <div>
-                <h3 className="text-[9px] sm:text-[10px] font-semibold text-[#0b1f3a]">
+                <h3 className="text-[12.15px] sm:text-[13.5px] font-semibold text-[#0b1f3a]">
                   {t.name}
                 </h3>
-                <p className="text-gray-500 text-[8px] sm:text-[9px]">
+                <p className="text-gray-500 text-[10.8px] sm:text-[12.15px]">
                   Location - {t.location}
                 </p>
               </div>
@@ -256,13 +381,13 @@ const Testimonial = () => {
       </div>
 
       {testimonials.length > 3 && (
-        <div className="flex justify-center mt-6 sm:mt-8">
+        <div className="flex justify-center mt-[32.4px] sm:mt-[43.2px]">
           <button
             onClick={() => setShowAll((prev) => !prev)}
-            className="flex items-center gap-1.5 bg-[#2dd4bf] text-white text-[10px] font-semibold px-3 py-1.5 rounded hover:bg-[#26b8a5] transition-colors shadow-sm"
+            className="flex items-center gap-[8.1px] bg-[#2dd4bf] text-white text-[13.5px] font-semibold px-[16.2px] py-[8.1px] rounded-[5.4px] hover:bg-[#26b8a5] transition-colors shadow-sm"
           >
             {showAll ? "View Less" : "View More"}
-            {showAll ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+            {showAll ? <ChevronUp size={18.9} /> : <ChevronDown size={18.9} />}
           </button>
         </div>
       )}

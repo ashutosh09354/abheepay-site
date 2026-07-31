@@ -97,11 +97,11 @@ const LanguageSwitcher = () => {
 
   return (
     <label className="relative flex items-center text-gray-600" aria-label="Select site language" data-no-translate>
-      <Languages size={15} className="pointer-events-none absolute left-2" aria-hidden="true" />
+      <Languages size={18} className="pointer-events-none absolute left-3" aria-hidden="true" />
       <select
         value={language}
         onChange={changeLanguage}
-        className="h-7 rounded-md border border-gray-200 bg-white py-0 pl-7 pr-1 text-[11px] font-semibold text-gray-700 outline-none transition-colors hover:border-[#00C4C7] focus:border-[#00C4C7]"
+        className="h-10 rounded-lg border border-gray-200 bg-white py-0 pl-9 pr-3 text-[16px] font-semibold text-gray-700 outline-none transition-colors hover:border-[#00C4C7] focus:border-[#00C4C7]"
       >
         <option value="en">English</option>
         <option value="hi">Hindi</option>

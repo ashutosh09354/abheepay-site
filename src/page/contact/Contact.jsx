@@ -2452,6 +2452,412 @@
 
 
 
+// import React, { useState, useEffect, useRef } from "react";
+// import {
+//   Headphones,
+//   Briefcase,
+//   Handshake,
+//   BellRing,
+//   MapPin,
+//   Phone,
+//   Mail,
+//   X,
+//   ArrowRight,
+//   Loader2,
+// } from "lucide-react";
+
+// const CHANNELS = {
+//   support: {
+//     title: "Customer Support",
+//     subtitle: "Tell us what's going on and we'll sort it out.",
+//     queryLabel: "What do you need help with?",
+//     queryPlaceholder: "Describe the issue you're facing...",
+//   },
+//   sales: {
+//     title: "Contact Sales",
+//     subtitle: "Tell us about your business and we'll take it from there.",
+//     queryLabel: "What are you looking for?",
+//     queryPlaceholder: "Tell us about your business banking needs...",
+//   },
+//   partnership: {
+//     title: "Partner With Us",
+//     subtitle: "Tell us about the opportunity you have in mind.",
+//     queryLabel: "What kind of partnership?",
+//     queryPlaceholder: "Tell us a bit about your organisation and the idea...",
+//   },
+// };
+
+// const CARDS = [
+//   {
+//     channel: "support",
+//     icon: Headphones,
+//     title: "Customer Support",
+//     description:
+//       "Get help with any issues or questions about our services through our dedicated 24/7 customer support.",
+//     cta: "Get Support",
+//   },
+//   {
+//     channel: "sales",
+//     icon: Briefcase,
+//     title: "Sales",
+//     description:
+//       "Our sales team is ready to discuss how our services can meet your business banking needs.",
+//     cta: "Contact Sales",
+//   },
+//   {
+//     channel: "partnership",
+//     icon: Handshake,
+//     title: "Partnership",
+//     description:
+//       "Let's explore partnership opportunities to grow and innovate together in digital banking.",
+//     cta: "Partner Now",
+//   },
+// ];
+
+// const OFFICES = [
+//   {
+//     city: "New Delhi",
+//     address: (
+//       <>
+//         2nd Floor, Plot No - 3, KH. NO. 33/6 AMBERHAI,
+//         <br />
+//         SECTOR-19, DWARKA, NEW DELHI - 110043
+//       </>
+//     ),
+//   },
+// ];
+
+// function ContactModal({ channel, onClose }) {
+//   const [status, setStatus] = useState("idle"); // idle | sending | sent | error
+//   const [visible, setVisible] = useState(false);
+//   const firstFieldRef = useRef(null);
+//   const meta = CHANNELS[channel];
+
+//   useEffect(() => {
+//     const raf = requestAnimationFrame(() => setVisible(true));
+//     firstFieldRef.current?.focus();
+//     const onKey = (e) => {
+//       if (e.key === "Escape") handleClose();
+//     };
+//     document.addEventListener("keydown", onKey);
+//     document.body.style.overflow = "hidden";
+//     return () => {
+//       cancelAnimationFrame(raf);
+//       document.removeEventListener("keydown", onKey);
+//       document.body.style.overflow = "";
+//     };
+//     // eslint-disable-next-line react-hooks/exhaustive-deps
+//   }, []);
+
+//   const handleClose = () => {
+//     setVisible(false);
+//     setTimeout(onClose, 200);
+//   };
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     setStatus("sending");
+
+//     const formData = new FormData(e.target);
+//     const indiaTime = new Date().toLocaleString("en-IN", {
+//       timeZone: "Asia/Kolkata",
+//       hour12: true,
+//       weekday: "short",
+//       day: "2-digit",
+//       month: "short",
+//       year: "numeric",
+//       hour: "2-digit",
+//       minute: "2-digit",
+//       second: "2-digit",
+//     });
+//     formData.append("Submitted At (IST)", indiaTime);
+//     formData.append("Enquiry Type", meta.title);
+
+//     try {
+//       const response = await fetch("https://formsubmit.co/care@abheepay.com", {
+//         method: "POST",
+//         body: formData,
+//       });
+//       if (response.ok) {
+//         setStatus("sent");
+//         e.target.reset();
+//       } else {
+//         setStatus("error");
+//       }
+//     } catch {
+//       setStatus("error");
+//     }
+//   };
+
+//   return (
+//     <div
+//       className="fixed inset-0 z-[9999]"
+//       role="dialog"
+//       aria-modal="true"
+//       aria-labelledby="contact-modal-title"
+//     >
+//       <button
+//         aria-label="Close dialog"
+//         onClick={handleClose}
+//         className={`absolute inset-0 bg-slate-900/50 backdrop-blur-sm cursor-default transition-opacity duration-200 ${visible ? "opacity-100" : "opacity-0"
+//           }`}
+//       />
+
+//       <div
+//         className={`absolute top-0 right-0 h-full w-full sm:w-[350px] bg-white shadow-2xl flex flex-col transition-transform duration-200 ease-out ${visible ? "translate-x-0" : "translate-x-full"
+//           }`}
+//       >
+//         <div className="flex items-center justify-between px-3 pt-3 pb-2 flex-shrink-0 border-b border-gray-100">
+//           <h3 id="contact-modal-title" className="text-xs font-bold text-gray-900">
+//             Get in Touch
+//           </h3>
+//           <button
+//             onClick={handleClose}
+//             aria-label="Close"
+//             className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-gray-400 hover:text-gray-700 hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2dd4bf] transition"
+//           >
+//             <X className="w-2.5 h-2.5" />
+//           </button>
+//         </div>
+
+//         <div className="flex-1 overflow-hidden px-3 pb-3">
+//           {status === "sent" ? (
+//             <div className="h-full flex flex-col items-center justify-center text-center gap-1 py-6">
+//               <div className="w-6 h-6 rounded-full bg-[#2dd4bf]/10 flex items-center justify-center text-[#0f9c8c]">
+//                 <Handshake className="w-3 h-3" />
+//               </div>
+//               <h4 className="text-[11px] font-bold text-gray-900">Message sent</h4>
+//               <p className="text-[10px] text-gray-500 max-w-xs">
+//                 Thanks for reaching out. Our {meta.title.toLowerCase()} team
+//                 typically replies within one business day.
+//               </p>
+//               <button
+//                 onClick={handleClose}
+//                 className="mt-1 text-[10px] font-semibold text-[#0f9c8c] hover:underline"
+//               >
+//                 Close
+//               </button>
+//             </div>
+//           ) : (
+//             <form onSubmit={handleSubmit} className="space-y-2 pt-2">
+//               <input type="hidden" name="_captcha" value="false" />
+//               <input type="hidden" name="_template" value="table" />
+
+//               <input
+//                 ref={firstFieldRef}
+//                 name="name"
+//                 type="text"
+//                 required
+//                 placeholder="Full Name"
+//                 aria-label="Full Name"
+//                 className="w-full px-2.5 py-1 text-[11px] rounded border border-gray-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-[#2dd4bf] focus:ring-2 focus:ring-[#2dd4bf]/30 outline-none transition"
+//               />
+
+//               <input
+//                 name="company"
+//                 type="text"
+//                 placeholder="Company Name"
+//                 aria-label="Company Name"
+//                 className="w-full px-2.5 py-1 text-[11px] rounded border border-gray-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-[#2dd4bf] focus:ring-2 focus:ring-[#2dd4bf]/30 outline-none transition"
+//               />
+
+//               <input
+//                 name="email"
+//                 type="email"
+//                 required
+//                 placeholder="Email ID"
+//                 aria-label="Email ID"
+//                 className="w-full px-2.5 py-1 text-[11px] rounded border border-gray-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-[#2dd4bf] focus:ring-2 focus:ring-[#2dd4bf]/30 outline-none transition"
+//               />
+
+//               <input
+//                 name="phone"
+//                 type="tel"
+//                 required
+//                 placeholder="Mobile"
+//                 aria-label="Mobile"
+//                 className="w-full px-2.5 py-1 text-[11px] rounded border border-gray-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-[#2dd4bf] focus:ring-2 focus:ring-[#2dd4bf]/30 outline-none transition"
+//               />
+
+//               <textarea
+//                 name="message"
+//                 rows={2}
+//                 required
+//                 placeholder="Query"
+//                 aria-label="Query"
+//                 className="w-full px-2.5 py-3.5 text-[11px] rounded border border-gray-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-[#2dd4bf] focus:ring-2 focus:ring-[#2dd4bf]/30 outline-none transition resize-none"
+//               />
+
+//               {status === "error" && (
+//                 <p className="text-[9px] text-red-600 bg-red-50 border border-red-100 rounded-lg px-1.5 py-1">
+//                   Something went wrong. Please try again.
+//                 </p>
+//               )}
+
+//               <button
+//                 type="submit"
+//                 disabled={status === "sending"}
+//                 className="w-full bg-[#2dd4bf] text-white font-semibold py-1.5 px-2.5 rounded shadow-md hover:shadow-lg hover:bg-[#22bfab] transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed flex justify-center items-center gap-1 text-[11px]"
+//               >
+//                 {status === "sending" ? (
+//                   <>
+//                     <Loader2 className="w-3 h-3 animate-spin" />
+//                     Sending...
+//                   </>
+//                 ) : (
+//                   "Next"
+//                 )}
+//               </button>
+//             </form>
+//           )}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// const ContactUs = () => {
+//   const [activeChannel, setActiveChannel] = useState(null);
+
+//   return (
+//     <div className="min-h-screen bg-gradient-to-b from-[#2dd4bf]/[0.06] to-white pt-24 sm:pt-28">
+//       {/* hero */}
+//       <div className="px-2.5 sm:px-4 max-w-xl mx-auto pb-6 sm:pb-6 text-center">
+//         <h1 className="text-[1.5rem] sm:text-[1.5rem] lg:text-[2rem] font-black tracking-[-0.04em] leading-[1.05] text-slate-900">
+//           We'd love to <span className="text-[#14B8A6]">hear</span> from you
+//         </h1>
+//       </div>
+
+//       <div className="px-2.5 sm:px-3 lg:px-4 max-w-2xl mx-auto pb-8 sm:pb-9">
+//         {/* channels + report fraud — single bordered container like the reference */}
+//         <div className="bg-white rounded shadow-[0_20px_50px_rgba(15,23,42,.08)] hover:shadow-[0_30px_60px_rgba(20,184,166,.12)] border border-gray-200 overflow-hidden">
+//           <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
+//             {CARDS.map(({ channel, icon: Icon, title, description, cta }) => (
+//               <div key={channel} className="p-5 sm:p-3.5 flex flex-col">
+//                 <Icon className="w-4 h-4 text-gray-900 mb-2" strokeWidth={1.75} />
+//                 <h3 className="text-[16px] font-black tracking-[-0.02em] text-slate-900 text-gray-900 mb-1">
+//                   {title}
+//                 </h3>
+//                 <p className="text-[11px] text-gray-600 leading-4 mb-2.5 flex-1">
+//                   {description}
+//                 </p>
+//                 <button
+//                   onClick={() => setActiveChannel(channel)}
+//                   className="self-start w-36 inline-flex items-center justify-center gap-1 text-[10px] font-semibold text-gray-800 bg-gray-100 hover:bg-[#2dd4bf] hover:text-white rounded-xl px-3 py-2 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2dd4bf]"
+//                 >
+//                   {cta}
+//                   <ArrowRight className="w-2.5 h-2.5" />
+//                 </button>
+//               </div>
+//             ))}
+//           </div>
+
+//           {/* report fraud row */}
+//           <div className="border-t border-gray-100 px-3 sm:px-3.5 py-2.5 flex flex-col sm:flex-row sm:items-center gap-2 justify-between">
+//             <div className="flex items-start gap-3">
+//               <BellRing className="w-3.5 h-3.5 text-gray-900 flex-shrink-0" strokeWidth={1.75} />
+//               <div>
+//                 <p className="text-lg font-black tracking-tight text-gray-900">Report Fraud</p>
+//                 <p className="text-sm leading-6 text-slate-500 text-gray-600 mt-0.5">
+//                   Report any suspicious activity or unusual transactions
+//                   immediately.
+//                 </p>
+//               </div>
+//             </div>
+//             <a
+//               href="mailto:care@abheepay.com?subject=Fraud%20Report"
+//               className="flex-shrink-0 inline-flex items-center justify-center gap-1 text-[10px] font-semibold text-gray-800 bg-gray-100 hover:bg-gray-200 rounded-lg px-2.5 py-1 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-400"
+//             >
+//               Report Here
+//               <ArrowRight className="w-2.5 h-2.5" />
+//             </a>
+//           </div>
+//         </div>
+
+//         {/* our office */}
+//         <div className="mt-6 sm:mt-7">
+//           <h2 className="text-3xl font-black tracking-[-0.03em] font-extrabold text-gray-900 mb-2.5 sm:mb-3">
+//             Our <span className="text-[#0f9c8c]">Office</span>
+//           </h2>
+
+//           <div className="grid grid-cols-1 lg:grid-cols-2 gap-2.5 items-start">
+//             <div className="space-y-2">
+//               {OFFICES.map((office) => (
+//                 <div
+//                   key={office.city}
+//                   className="bg-white rounded-3xl border-l-4 border-[#2dd4bf] p-5"
+//                 >
+//                   <div className="flex items-center gap-1 mb-1">
+//                     <MapPin className="w-2.5 h-2.5 text-[#0f9c8c]" />
+//                     <p className="text-[11px] font-bold text-gray-900">{office.city}</p>
+//                   </div>
+//                   <p className="text-[10px] text-gray-900 leading-relaxed">
+//                     {office.address}
+//                   </p>
+//                 </div>
+//               ))}
+
+//               <div className="flex flex-col sm:flex-row gap-2 pt-1">
+//                 <a
+//                   href="tel:+918860037218"
+//                   className="flex items-center gap-1 text-[11px] text-gray-700 hover:text-[#0f9c8c] transition"
+//                 >
+//                   <Phone className="w-2.5 h-2.5 text-[#0f9c8c]" />
+//                   +91 88600 37218
+//                 </a>
+//                 <a
+//                   href="mailto:care@abheepay.com"
+//                   className="flex items-center gap-1 text-[11px] text-gray-700 hover:text-[#0f9c8c] transition"
+//                 >
+//                   <Mail className="w-2.5 h-2.5 text-[#0f9c8c]" />
+//                   care@abheepay.com
+//                 </a>
+//               </div>
+//             </div>
+
+//             <div className="rounded-3xl border border-gray-200 shadow-md hover:shadow-xl overflow-hidden h-32 lg:h-36">
+//               <iframe
+//                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.750984159696!2d77.0480989!3d28.5772394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1b5aa370912d%3A0x67cdd78c943f0f39!2sAbheepay!5e0!3m2!1sen!2sin!4v1770615620221!5m2!1sen!2sin"
+//                 width="100%"
+//                 height="100%"
+//                 style={{ border: 0 }}
+//                 allowFullScreen=""
+//                 loading="lazy"
+//                 referrerPolicy="no-referrer-when-downgrade"
+//                 title="Abheepay location on Google Maps"
+//               />
+//             </div>
+//           </div>
+//         </div>
+
+//         <p className="text-[9px] text-gray-400 text-center mt-4">
+//           We typically reply within one business day.
+//         </p>
+//       </div>
+
+//       {activeChannel && (
+//         <ContactModal
+//           channel={activeChannel}
+//           onClose={() => setActiveChannel(null)}
+//         />
+//       )}
+//     </div>
+//   );
+// };
+
+// export default ContactUs;
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { useState, useEffect, useRef } from "react";
 import {
   Headphones,
@@ -2604,42 +3010,42 @@ function ContactModal({ channel, onClose }) {
       />
 
       <div
-        className={`absolute top-0 right-0 h-full w-full sm:w-[350px] bg-white shadow-2xl flex flex-col transition-transform duration-200 ease-out ${visible ? "translate-x-0" : "translate-x-full"
+        className={`absolute top-0 right-0 h-full w-full sm:w-[525px] bg-white shadow-2xl flex flex-col transition-transform duration-200 ease-out ${visible ? "translate-x-0" : "translate-x-full"
           }`}
       >
-        <div className="flex items-center justify-between px-3 pt-3 pb-2 flex-shrink-0 border-b border-gray-100">
-          <h3 id="contact-modal-title" className="text-xs font-bold text-gray-900">
+        <div className="flex items-center justify-between px-[18px] pt-[18px] pb-3 flex-shrink-0 border-b border-gray-100">
+          <h3 id="contact-modal-title" className="text-[18px] font-bold text-gray-900">
             Get in Touch
           </h3>
           <button
             onClick={handleClose}
             aria-label="Close"
-            className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-gray-400 hover:text-gray-700 hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2dd4bf] transition"
+            className="flex-shrink-0 w-[30px] h-[30px] rounded-full flex items-center justify-center text-gray-400 hover:text-gray-700 hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2dd4bf] transition"
           >
-            <X className="w-2.5 h-2.5" />
+            <X className="w-[15px] h-[15px]" />
           </button>
         </div>
 
-        <div className="flex-1 overflow-hidden px-3 pb-3">
+        <div className="flex-1 overflow-hidden px-[18px] pb-[18px]">
           {status === "sent" ? (
-            <div className="h-full flex flex-col items-center justify-center text-center gap-1 py-6">
-              <div className="w-6 h-6 rounded-full bg-[#2dd4bf]/10 flex items-center justify-center text-[#0f9c8c]">
-                <Handshake className="w-3 h-3" />
+            <div className="h-full flex flex-col items-center justify-center text-center gap-[6px] py-9">
+              <div className="w-9 h-9 rounded-full bg-[#2dd4bf]/10 flex items-center justify-center text-[#0f9c8c]">
+                <Handshake className="w-[18px] h-[18px]" />
               </div>
-              <h4 className="text-[11px] font-bold text-gray-900">Message sent</h4>
-              <p className="text-[10px] text-gray-500 max-w-xs">
+              <h4 className="text-[16.5px] font-bold text-gray-900">Message sent</h4>
+              <p className="text-[15px] text-gray-500 max-w-xs">
                 Thanks for reaching out. Our {meta.title.toLowerCase()} team
                 typically replies within one business day.
               </p>
               <button
                 onClick={handleClose}
-                className="mt-1 text-[10px] font-semibold text-[#0f9c8c] hover:underline"
+                className="mt-[6px] text-[15px] font-semibold text-[#0f9c8c] hover:underline"
               >
                 Close
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-2 pt-2">
+            <form onSubmit={handleSubmit} className="space-y-3 pt-3">
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
 
@@ -2650,7 +3056,7 @@ function ContactModal({ channel, onClose }) {
                 required
                 placeholder="Full Name"
                 aria-label="Full Name"
-                className="w-full px-2.5 py-1 text-[11px] rounded border border-gray-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-[#2dd4bf] focus:ring-2 focus:ring-[#2dd4bf]/30 outline-none transition"
+                className="w-full px-[15px] py-[6px] text-[16.5px] rounded-[6px] border border-gray-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-[#2dd4bf] focus:ring-2 focus:ring-[#2dd4bf]/30 outline-none transition"
               />
 
               <input
@@ -2658,7 +3064,7 @@ function ContactModal({ channel, onClose }) {
                 type="text"
                 placeholder="Company Name"
                 aria-label="Company Name"
-                className="w-full px-2.5 py-1 text-[11px] rounded border border-gray-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-[#2dd4bf] focus:ring-2 focus:ring-[#2dd4bf]/30 outline-none transition"
+                className="w-full px-[15px] py-[6px] text-[16.5px] rounded-[6px] border border-gray-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-[#2dd4bf] focus:ring-2 focus:ring-[#2dd4bf]/30 outline-none transition"
               />
 
               <input
@@ -2667,7 +3073,7 @@ function ContactModal({ channel, onClose }) {
                 required
                 placeholder="Email ID"
                 aria-label="Email ID"
-                className="w-full px-2.5 py-1 text-[11px] rounded border border-gray-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-[#2dd4bf] focus:ring-2 focus:ring-[#2dd4bf]/30 outline-none transition"
+                className="w-full px-[15px] py-[6px] text-[16.5px] rounded-[6px] border border-gray-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-[#2dd4bf] focus:ring-2 focus:ring-[#2dd4bf]/30 outline-none transition"
               />
 
               <input
@@ -2676,20 +3082,20 @@ function ContactModal({ channel, onClose }) {
                 required
                 placeholder="Mobile"
                 aria-label="Mobile"
-                className="w-full px-2.5 py-1 text-[11px] rounded border border-gray-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-[#2dd4bf] focus:ring-2 focus:ring-[#2dd4bf]/30 outline-none transition"
+                className="w-full px-[15px] py-[6px] text-[16.5px] rounded-[6px] border border-gray-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-[#2dd4bf] focus:ring-2 focus:ring-[#2dd4bf]/30 outline-none transition"
               />
 
               <textarea
                 name="message"
-                rows={2}
+                rows={3}
                 required
                 placeholder="Query"
                 aria-label="Query"
-                className="w-full px-2.5 py-3.5 text-[11px] rounded border border-gray-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-[#2dd4bf] focus:ring-2 focus:ring-[#2dd4bf]/30 outline-none transition resize-none"
+                className="w-full px-[15px] py-[21px] text-[16.5px] rounded-[6px] border border-gray-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-[#2dd4bf] focus:ring-2 focus:ring-[#2dd4bf]/30 outline-none transition resize-none"
               />
 
               {status === "error" && (
-                <p className="text-[9px] text-red-600 bg-red-50 border border-red-100 rounded-lg px-1.5 py-1">
+                <p className="text-[13.5px] text-red-600 bg-red-50 border border-red-100 rounded-[12px] px-[9px] py-[6px]">
                   Something went wrong. Please try again.
                 </p>
               )}
@@ -2697,11 +3103,11 @@ function ContactModal({ channel, onClose }) {
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="w-full bg-[#2dd4bf] text-white font-semibold py-1.5 px-2.5 rounded shadow-md hover:shadow-lg hover:bg-[#22bfab] transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed flex justify-center items-center gap-1 text-[11px]"
+                className="w-full bg-[#2dd4bf] text-white font-semibold py-[9px] px-[15px] rounded-[6px] shadow-md hover:shadow-lg hover:bg-[#22bfab] transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed flex justify-center items-center gap-[6px] text-[16.5px]"
               >
                 {status === "sending" ? (
                   <>
-                    <Loader2 className="w-3 h-3 animate-spin" />
+                    <Loader2 className="w-[18px] h-[18px] animate-spin" />
                     Sending...
                   </>
                 ) : (
@@ -2720,45 +3126,45 @@ const ContactUs = () => {
   const [activeChannel, setActiveChannel] = useState(null);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#2dd4bf]/[0.06] to-white pt-24 sm:pt-28">
+    <div className="min-h-screen bg-gradient-to-b from-[#2dd4bf]/[0.06] to-white pt-36 sm:pt-[168px]">
       {/* hero */}
-      <div className="px-2.5 sm:px-4 max-w-xl mx-auto pb-6 sm:pb-6 text-center">
-        <h1 className="text-[1.5rem] sm:text-[1.5rem] lg:text-[2rem] font-black tracking-[-0.04em] leading-[1.05] text-slate-900">
+      <div className="px-[15px] sm:px-6 max-w-[864px] mx-auto pb-9 sm:pb-9 text-center">
+        <h1 className="text-[36px] sm:text-[36px] lg:text-[48px] font-black tracking-[-0.04em] leading-[1.05] text-slate-900">
           We'd love to <span className="text-[#14B8A6]">hear</span> from you
         </h1>
       </div>
 
-      <div className="px-2.5 sm:px-3 lg:px-4 max-w-2xl mx-auto pb-8 sm:pb-9">
+      <div className="px-[15px] sm:px-[18px] lg:px-6 max-w-[1008px] mx-auto pb-12 sm:pb-[54px]">
         {/* channels + report fraud — single bordered container like the reference */}
-        <div className="bg-white rounded shadow-[0_20px_50px_rgba(15,23,42,.08)] hover:shadow-[0_30px_60px_rgba(20,184,166,.12)] border border-gray-200 overflow-hidden">
+        <div className="bg-white rounded-[6px] shadow-[0_20px_50px_rgba(15,23,42,.08)] hover:shadow-[0_30px_60px_rgba(20,184,166,.12)] border border-gray-200 overflow-hidden">
           <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
             {CARDS.map(({ channel, icon: Icon, title, description, cta }) => (
-              <div key={channel} className="p-5 sm:p-3.5 flex flex-col">
-                <Icon className="w-4 h-4 text-gray-900 mb-2" strokeWidth={1.75} />
-                <h3 className="text-[16px] font-black tracking-[-0.02em] text-slate-900 text-gray-900 mb-1">
+              <div key={channel} className="p-[30px] sm:p-[21px] flex flex-col">
+                <Icon className="w-6 h-6 text-gray-900 mb-3" strokeWidth={1.75} />
+                <h3 className="text-[24px] font-black tracking-[-0.02em] text-slate-900 text-gray-900 mb-[6px]">
                   {title}
                 </h3>
-                <p className="text-[11px] text-gray-600 leading-4 mb-2.5 flex-1">
+                <p className="text-[16.5px] text-gray-600 leading-6 mb-[15px] flex-1">
                   {description}
                 </p>
                 <button
                   onClick={() => setActiveChannel(channel)}
-                  className="self-start w-36 inline-flex items-center justify-center gap-1 text-[10px] font-semibold text-gray-800 bg-gray-100 hover:bg-[#2dd4bf] hover:text-white rounded-xl px-3 py-2 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2dd4bf]"
+                  className="self-start w-[216px] inline-flex items-center justify-center gap-[6px] text-[15px] font-semibold text-gray-800 bg-gray-100 hover:bg-[#2dd4bf] hover:text-white rounded-[18px] px-[18px] py-3 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2dd4bf]"
                 >
                   {cta}
-                  <ArrowRight className="w-2.5 h-2.5" />
+                  <ArrowRight className="w-[15px] h-[15px]" />
                 </button>
               </div>
             ))}
           </div>
 
           {/* report fraud row */}
-          <div className="border-t border-gray-100 px-3 sm:px-3.5 py-2.5 flex flex-col sm:flex-row sm:items-center gap-2 justify-between">
-            <div className="flex items-start gap-3">
-              <BellRing className="w-3.5 h-3.5 text-gray-900 flex-shrink-0" strokeWidth={1.75} />
+          <div className="border-t border-gray-100 px-[18px] sm:px-[21px] py-[15px] flex flex-col sm:flex-row sm:items-center gap-3 justify-between">
+            <div className="flex items-start gap-[18px]">
+              <BellRing className="w-[21px] h-[21px] text-gray-900 flex-shrink-0" strokeWidth={1.75} />
               <div>
-                <p className="text-lg font-black tracking-tight text-gray-900">Report Fraud</p>
-                <p className="text-sm leading-6 text-slate-500 text-gray-600 mt-0.5">
+                <p className="text-[27px] font-black tracking-tight text-gray-900">Report Fraud</p>
+                <p className="text-[21px] leading-9 text-slate-500 text-gray-600 mt-[3px]">
                   Report any suspicious activity or unusual transactions
                   immediately.
                 </p>
@@ -2766,56 +3172,56 @@ const ContactUs = () => {
             </div>
             <a
               href="mailto:care@abheepay.com?subject=Fraud%20Report"
-              className="flex-shrink-0 inline-flex items-center justify-center gap-1 text-[10px] font-semibold text-gray-800 bg-gray-100 hover:bg-gray-200 rounded-lg px-2.5 py-1 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-400"
+              className="flex-shrink-0 inline-flex items-center justify-center gap-[6px] text-[15px] font-semibold text-gray-800 bg-gray-100 hover:bg-gray-200 rounded-[12px] px-[15px] py-[6px] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-400"
             >
               Report Here
-              <ArrowRight className="w-2.5 h-2.5" />
+              <ArrowRight className="w-[15px] h-[15px]" />
             </a>
           </div>
         </div>
 
         {/* our office */}
-        <div className="mt-6 sm:mt-7">
-          <h2 className="text-3xl font-black tracking-[-0.03em] font-extrabold text-gray-900 mb-2.5 sm:mb-3">
+        <div className="mt-9 sm:mt-[42px]">
+          <h2 className="text-[45px] font-black tracking-[-0.03em] font-extrabold text-gray-900 mb-[15px] sm:mb-[18px]">
             Our <span className="text-[#0f9c8c]">Office</span>
           </h2>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2.5 items-start">
-            <div className="space-y-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-[15px] items-start">
+            <div className="space-y-3">
               {OFFICES.map((office) => (
                 <div
                   key={office.city}
-                  className="bg-white rounded-3xl border-l-4 border-[#2dd4bf] p-5"
+                  className="bg-white rounded-[36px] border-l-[6px] border-[#2dd4bf] p-[30px]"
                 >
-                  <div className="flex items-center gap-1 mb-1">
-                    <MapPin className="w-2.5 h-2.5 text-[#0f9c8c]" />
-                    <p className="text-[11px] font-bold text-gray-900">{office.city}</p>
+                  <div className="flex items-center gap-[6px] mb-[6px]">
+                    <MapPin className="w-[15px] h-[15px] text-[#0f9c8c]" />
+                    <p className="text-[16.5px] font-bold text-gray-900">{office.city}</p>
                   </div>
-                  <p className="text-[10px] text-gray-900 leading-relaxed">
+                  <p className="text-[15px] text-gray-900 leading-relaxed">
                     {office.address}
                   </p>
                 </div>
               ))}
 
-              <div className="flex flex-col sm:flex-row gap-2 pt-1">
+              <div className="flex flex-col sm:flex-row gap-3 pt-[6px]">
                 <a
                   href="tel:+918860037218"
-                  className="flex items-center gap-1 text-[11px] text-gray-700 hover:text-[#0f9c8c] transition"
+                  className="flex items-center gap-[6px] text-[16.5px] text-gray-700 hover:text-[#0f9c8c] transition"
                 >
-                  <Phone className="w-2.5 h-2.5 text-[#0f9c8c]" />
+                  <Phone className="w-[15px] h-[15px] text-[#0f9c8c]" />
                   +91 88600 37218
                 </a>
                 <a
                   href="mailto:care@abheepay.com"
-                  className="flex items-center gap-1 text-[11px] text-gray-700 hover:text-[#0f9c8c] transition"
+                  className="flex items-center gap-[6px] text-[16.5px] text-gray-700 hover:text-[#0f9c8c] transition"
                 >
-                  <Mail className="w-2.5 h-2.5 text-[#0f9c8c]" />
+                  <Mail className="w-[15px] h-[15px] text-[#0f9c8c]" />
                   care@abheepay.com
                 </a>
               </div>
             </div>
 
-            <div className="rounded-3xl border border-gray-200 shadow-md hover:shadow-xl overflow-hidden h-32 lg:h-36">
+            <div className="rounded-[36px] border border-gray-200 shadow-md hover:shadow-xl overflow-hidden h-48 lg:h-[216px]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.750984159696!2d77.0480989!3d28.5772394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1b5aa370912d%3A0x67cdd78c943f0f39!2sAbheepay!5e0!3m2!1sen!2sin!4v1770615620221!5m2!1sen!2sin"
                 width="100%"
@@ -2830,7 +3236,7 @@ const ContactUs = () => {
           </div>
         </div>
 
-        <p className="text-[9px] text-gray-400 text-center mt-4">
+        <p className="text-[13.5px] text-gray-400 text-center mt-6">
           We typically reply within one business day.
         </p>
       </div>
