@@ -773,8 +773,8 @@ const Navbar = () => {
 
 
 
-      <div className="max-w-8xl mx-auto px-5 sm:px-5 lg:px-6 ">
-        <div className="flex h-12 items-center justify-between lg:h-20">
+      <div className="max-w-8xl mx-auto px-3 sm:px-5 lg:px-6 ">
+        <div className="flex h-14 items-center justify-between lg:h-20">
 
 
           {/* <div className="flex-shrink-0">
@@ -797,7 +797,7 @@ const Navbar = () => {
               <div
                 className="
         rounded-xl
-        px-3
+        px-2
         py-2
         bg-gradient-to-r
         from-[#081C33]
@@ -814,7 +814,7 @@ const Navbar = () => {
                 <img
                   src="/assets/image/logo/logos.png"
                   alt="AbheePay"
-                  className="h-7 w-auto object-contain transition-transform duration-300 hover:scale-105"
+                  className="h-7 w-auto max-w-[120px] object-contain transition-transform duration-300 hover:scale-105 sm:max-w-none"
                 />
               </div>
             </Link>
@@ -1019,7 +1019,7 @@ const Navbar = () => {
             </Link>
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
             <LanguageSwitcher />
             <a
               href="https://partner.abheepay.com/backend/customer/login"
@@ -1040,7 +1040,7 @@ const Navbar = () => {
               <Search size={16} />
             </button>
             <button
-              className="lg:hidden text-gray-800 p-1.5 rounded-md hover:bg-gray-100"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md text-gray-800 hover:bg-gray-100 lg:hidden"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}

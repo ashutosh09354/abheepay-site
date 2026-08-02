@@ -12191,7 +12191,10 @@ const sidebarNavIcons = [LayoutDashboard, BarChart3, WalletCards, ClipboardList,
 /* Page-wide scale. Kept as one constant so the zoom on <main> and the */
 /* pinned-hero offset below always agree with each other.             */
 /* ------------------------------------------------------------------ */
-const PAGE_ZOOM = 0.605;
+// Desktop service landing page: an additional 15% larger than its prior scale.
+// The scroll-story dimensions below derive from this value, so its pinned
+// behaviour stays aligned at the larger desktop size. Mobile does not use it.
+const PAGE_ZOOM = 1.321925;
 
 /* Real, on-screen height (in normal px, NOT affected by PAGE_ZOOM) of  */
 /* your fixed/sticky navbar that lives outside this file. The navbar   */
