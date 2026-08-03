@@ -13,6 +13,7 @@ import TermsConditions from "./page/term-condition/Terms-conditions";
 import Services from "./page/services/Services";
 import Join from "./page/join-as-retailer/Join-as-retailer";
 import Joins from "./page/join-as-distributor/Join-as-distributor";
+import TechnologyPartner from "./page/join-as-technology-partner/TechnologyPartner";
 import LoginPage from "./page/login/login-form";
 import AccountDeletion from "./page/account-deletion/AccountDeletion";
 
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: "/join-as-distributor",
         element: <Joins />,
+      },
+      {
+        path: "/join-as-technology-partner",
+        element: <TechnologyPartner />,
       },
       {
         path: "/contact",

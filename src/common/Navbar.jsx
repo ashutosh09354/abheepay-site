@@ -572,6 +572,8 @@ const Navbar = () => {
 
   // Desktop services dropdown control
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const [developerHubOpen, setDeveloperHubOpen] = useState(false);
+  const [developerApiPanelOpen, setDeveloperApiPanelOpen] = useState(false);
   const [activeSolution, setActiveSolution] = useState("Payment Solutions");
   const timeoutRef = useRef(null);
 
@@ -749,6 +751,28 @@ const Navbar = () => {
       setServicesDropdownOpen(false);
     }, 200);
   };
+
+  const handleDeveloperHubEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setDeveloperHubOpen(true);
+    setDeveloperApiPanelOpen(false);
+  };
+
+  const handleDeveloperHubLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setDeveloperHubOpen(false);
+      setDeveloperApiPanelOpen(false);
+    }, 200);
+  };
+
+  const developerApiItems = [
+    { title: "Payment Gateway API", description: "Accept UPI, cards and net banking", icon: WalletCards, to: "/services/Payment-gateway-api" },
+    { title: "POS API", description: "Move money and offer assisted banking", icon: Landmark, to: "/services/POS-api" },
+    { title: "BBPS API", description: "Manage merchants and transactions", icon: Code2, to: "/services/BBPS-api" },
+    { title: "Payout API", description: "Launch a branded fintech platform", icon: Banknote, to: "/services/Payout-api" },
+    { title: "DMT API", description: "Launch a branded fintech platform", icon: Banknote, to: "/services/DMT-api" },
+    { title: "QR API", description: "Launch a branded fintech platform", icon: Banknote, to: "/services/QR-api" },
+  ];
 
   const solutionCategories = [
     { name: "Payment Solutions", description: "Accept payments seamlessly", icon: WalletCards, target: "payment-solutions", services: allServices.slice(0, 1).flatMap((service) => service.items || [service]) },
@@ -989,6 +1013,76 @@ const Navbar = () => {
               </div>
             </div>
 
+            <div
+              className="relative inline-block"
+              onMouseEnter={handleDeveloperHubEnter}
+              onMouseLeave={handleDeveloperHubLeave}
+            >
+              <Link
+                to="#"
+                className={`flex items-center gap-1 text-[20px] font-bold transition-colors hover:text-[#00C4C7] ${developerHubOpen ? "text-[#00C4C7]" : ""}`}
+                aria-expanded={developerHubOpen}
+              >
+                Developer Hub <ChevronDown size={21} strokeWidth={2.5} className={developerHubOpen ? "rotate-180 transition-transform" : "transition-transform"} />
+              </Link>
+
+              <div
+                className={`absolute left-1/2 top-full z-[9999] mt-4 -translate-x-[230px] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl transition-all duration-200 ease-out ${developerApiPanelOpen ? "w-[760px]" : "w-[230px]"}
+                  ${developerHubOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0 pointer-events-none"}`}
+              >
+                <div className={developerApiPanelOpen ? "grid min-h-[360px] grid-cols-[230px_1fr]" : "min-h-[360px]"}>
+                  <div className="relative flex min-h-[360px] flex-col bg-[#f5f7fc] p-5 pb-[112px]">
+                    <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-[#4d75c9]">Developer's Hub</p>
+                    <Link
+                      to="/services/technology-api-services"
+                      onClick={() => setDeveloperHubOpen(false)}
+                      onMouseEnter={() => setDeveloperApiPanelOpen(false)}
+                      className="mt-5 rounded-xl bg-white px-4 py-3 text-[15px] font-bold text-[#213b75] shadow-sm transition hover:bg-[#eaf3ff]"
+                    >
+                      Documentation &amp; Guides
+                    </Link>
+                    <Link
+                      to="/services/payment-banking-travel-wallet-apis"
+                      onClick={() => setDeveloperHubOpen(false)}
+                      onMouseEnter={() => setDeveloperApiPanelOpen(true)}
+                      className={`mt-2 rounded-xl px-4 py-3 text-[15px] font-bold transition ${developerApiPanelOpen ? "bg-white text-[#213b75] shadow-sm" : "text-slate-700 hover:bg-white"}`}
+                    >
+                      Developer API
+                    </Link>
+                    <div className="absolute bottom-5 left-5 right-5 overflow-hidden rounded-xl border border-[#b8d4ec]">
+                      <Link to="/contact" onClick={() => setDeveloperHubOpen(false)} className="flex items-center justify-between bg-[#d8edff] px-4 py-3 text-[13px] font-bold text-[#17457a] transition hover:bg-[#c6e4fb]">
+                        Contact Sales <span aria-hidden="true">→</span>
+                      </Link>
+                      <Link to="/join-as-retailer" onClick={() => setDeveloperHubOpen(false)} className="block bg-[#7184bb] px-4 py-3 text-[13px] font-bold text-white transition hover:bg-[#6074ac]">
+                        Get Started
+                      </Link>
+                    </div>
+                  </div>
+
+                  {developerApiPanelOpen && <div className="max-h-[430px] overflow-y-auto bg-white p-5">
+                    <p className="text-[16px] font-bold text-slate-900">Build with AbheePay APIs</p>
+                    <p className="mt-1 text-[12px] text-slate-500">Secure APIs to power payments, banking and fintech experiences.</p>
+                    <div className="mt-4 grid grid-cols-2 gap-3">
+                      {developerApiItems.map((api) => (
+                        <Link
+                          key={api.title}
+                          to={api.to}
+                          onClick={() => setDeveloperHubOpen(false)}
+                          className="group rounded-xl bg-[#f5f7fc] p-4 transition hover:-translate-y-0.5 hover:bg-[#eaf3ff] hover:shadow-md"
+                        >
+                          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-[#00bfc2] shadow-sm">
+                            {React.createElement(api.icon, { size: 18, strokeWidth: 2.2 })}
+                          </span>
+                          <span className="mt-3 block text-[14px] font-bold text-slate-800">{api.title}</span>
+                          <span className="mt-1 block text-[11px] leading-4 text-slate-500">{api.description}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>}
+                </div>
+              </div>
+            </div>
+
             <div className="relative group">
               <button className="flex items-center gap-1 text-[20px] font-bold transition-colors hover:text-[#00C4C7]">
                 Partner
@@ -1000,14 +1094,21 @@ const Navbar = () => {
                   to="/join-as-distributor"
                   className="block px-3 py-2 text-[11px] font-medium text-gray-700 hover:bg-[#14B8A6]/10 hover:text-[#14B8A6] rounded-t-xl"
                 >
-                  Join as Distributor
+                  Distributor Program
                 </Link>
 
                 <Link
                   to="/join-as-retailer"
                   className="block px-3 py-2 text-[11px] font-medium text-gray-700 hover:bg-[#14B8A6]/10 hover:text-[#14B8A6] rounded-b-xl"
                 >
-                  Join as Retailer
+                  Retailer Program
+                </Link>
+
+                <Link
+                  to="/join-as-technology-partner"
+                  className="block px-3 py-2 text-[11px] font-medium text-gray-700 hover:bg-[#14B8A6]/10 hover:text-[#14B8A6] rounded-b-xl"
+                >
+                  Technology Partner
                 </Link>
               </div>
             </div>
@@ -1019,7 +1120,7 @@ const Navbar = () => {
             </Link>
           </nav>
 
-          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+          {/* <div className="flex shrink-0 items-center gap-2 sm:gap-3">
             <LanguageSwitcher />
             <a
               href="https://partner.abheepay.com/backend/customer/login"
@@ -1045,7 +1146,74 @@ const Navbar = () => {
             >
               {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
+          </div> */}
+
+
+
+          <div className="flex items-center gap-3">
+            <LanguageSwitcher />
+
+            <div
+              className="
+      flex items-center gap-2
+      rounded-2xl
+      bg-gradient-to-r
+      from-[#081C33]
+      via-[#0B2545]
+      to-[#081C33]
+      border border-[#16C7C9]/20
+      shadow-lg
+      p-2
+    "
+            >
+              <a
+                href="https://partner.abheepay.com/backend/customer/login"
+                className="
+inline-flex
+items-center
+justify-center
+h-10
+px-5
+rounded-xl
+bg-[#18C7C9]
+text-white
+font-semibold
+leading-none
+whitespace-nowrap
+transition
+"
+              >
+                Login
+              </a>
+
+              <Link
+                to="/join-as-retailer"
+                className="
+inline-flex
+items-center
+justify-center
+h-10
+px-5
+rounded-xl
+bg-[#18C7C9]
+text-white
+font-semibold
+leading-none
+whitespace-nowrap
+transition
+"
+              >
+                Get Started
+              </Link>
+            </div>
           </div>
+
+
+
+
+
+
+
         </div>
       </div>
 
@@ -1124,11 +1292,11 @@ const Navbar = () => {
                 </div>
 
                 <Link to="/join-as-retailer" onClick={() => setMobileMenuOpen(false)}>
-                  JOIN AS RETAILER
+                  RETAILER PROGRAM
                 </Link>
 
                 <Link to="/join-as-distributor" onClick={() => setMobileMenuOpen(false)}>
-                  JOIN AS DISTRIBUTOR
+                  DISTRIBUTOR PROGRAM
                 </Link>
 
                 <Link to="/blog" onClick={() => setMobileMenuOpen(false)}>

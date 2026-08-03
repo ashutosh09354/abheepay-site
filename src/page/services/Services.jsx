@@ -11997,7 +11997,7 @@ const SVC_INK = "#0F172A";
 const SVC_MUTED = "#64748B";
 
 const groupDefinitions = [
-    { title: "Payment Solutions", description: "Everything you need to collect payments from anywhere", icon: WalletCards, ids: ["qr", "sound-box", "pos-devices","online-payment-gateway–upi-cards-net-banking-wallets","merchant-application","payment-links","Digital-invoice", "online-payment-gatewayâ€“upi-cards-net-banking-wallets", "qr-based-contactless-payments"] },
+    { title: "Products", description: "Everything you need to collect payments from anywhere", icon: WalletCards, ids: ["qr", "sound-box", "pos-devices","online-payment-gateway–upi-cards-net-banking-wallets","merchant-application","payment-links","Digital-invoice", "online-payment-gatewayâ€“upi-cards-net-banking-wallets", "qr-based-contactless-payments"] },
     { title: "Banking Services", description: "Bring banking closer to your customers", icon: Landmark, ids: ["assisted-banking-cash-management", "Connected-Banking-Solution", "micro-atm-matm-services", "bbps-electricity-gas-water-fastag", "mobile-dth-data-card-recharges", "credit-card-bill-payments"] },
     { title: "Financial Services", description: "Financial solutions that fuel your growth", icon: Banknote, ids: ["business-loans-working-capital-finance", "personal-loans-with-digital-onboarding", "credit-card-sourcing-and-lifecycle-support",] },
     { title: "Travel Services", description: "Complete travel booking solutions", icon: Plane, ids: ["flight-booking-domestic-international", "train-ticket-booking", "bus-ticket-booking", "hotel-booking", "holiday-packages", "travel-insurance"] },
@@ -12237,34 +12237,34 @@ const heroStories = [
         ],
         notification: { icon: QrCode, title: "₹5,200 received via UPI", time: "Just now" },
     },
-    {
-        index: 1,
-        icon: Landmark,
-        title: "Banking Services",
-        heading: (
-            <>
-                Banking Services, <span style={{ color: BRAND }}>Right Next Door</span>
-            </>
-        ),
-        description: "AEPS, Micro ATM, BBPS bill payments and cash management — bring the branch to your customer's doorstep.",
-        dashboardSubtitle: "Banking desk overview",
-        chartLabel: "AEPS Volume",
-        listLabel: "Recent Withdrawals",
-        stats: [
-            { label: "AEPS Volume", value: 6.4, format: (v) => `₹${v.toFixed(1)} Cr`, delta: "15.2%" },
-            { label: "Bills Paid", value: 48300, format: (v) => Math.round(v).toLocaleString("en-IN"), delta: "12.4%" },
-            { label: "Active Kiosks", value: 2180, format: (v) => Math.round(v).toLocaleString("en-IN"), delta: "9.1%" },
-        ],
-        chartData: [
-            { a: 40, b: 30 }, { a: 55, b: 45 }, { a: 35, b: 50 }, { a: 65, b: 40 }, { a: 50, b: 35 },
-            { a: 75, b: 55 }, { a: 45, b: 40 }, { a: 60, b: 45 }, { a: 52, b: 38 },
-        ],
-        entries: [
-            { icon: Landmark, title: "₹2,400 withdrawn", meta: "AEPS · 2 min ago" },
-            { icon: Landmark, title: "₹1,150 bill paid", meta: "BBPS · 6 min ago" },
-        ],
-        notification: { icon: Fingerprint, title: "AEPS withdrawal ₹2,400 done", time: "Just now" },
-    },
+    // {
+    //     index: 1,
+    //     icon: Landmark,
+    //     title: "Banking Services",
+    //     heading: (
+    //         <>
+    //             Banking Services, <span style={{ color: BRAND }}>Right Next Door</span>
+    //         </>
+    //     ),
+    //     description: "AEPS, Micro ATM, BBPS bill payments and cash management — bring the branch to your customer's doorstep.",
+    //     dashboardSubtitle: "Banking desk overview",
+    //     chartLabel: "AEPS Volume",
+    //     listLabel: "Recent Withdrawals",
+    //     stats: [
+    //         { label: "AEPS Volume", value: 6.4, format: (v) => `₹${v.toFixed(1)} Cr`, delta: "15.2%" },
+    //         { label: "Bills Paid", value: 48300, format: (v) => Math.round(v).toLocaleString("en-IN"), delta: "12.4%" },
+    //         { label: "Active Kiosks", value: 2180, format: (v) => Math.round(v).toLocaleString("en-IN"), delta: "9.1%" },
+    //     ],
+    //     chartData: [
+    //         { a: 40, b: 30 }, { a: 55, b: 45 }, { a: 35, b: 50 }, { a: 65, b: 40 }, { a: 50, b: 35 },
+    //         { a: 75, b: 55 }, { a: 45, b: 40 }, { a: 60, b: 45 }, { a: 52, b: 38 },
+    //     ],
+    //     entries: [
+    //         { icon: Landmark, title: "₹2,400 withdrawn", meta: "AEPS · 2 min ago" },
+    //         { icon: Landmark, title: "₹1,150 bill paid", meta: "BBPS · 6 min ago" },
+    //     ],
+    //     notification: { icon: Fingerprint, title: "AEPS withdrawal ₹2,400 done", time: "Just now" },
+    // },
     {
         index: 2,
         icon: Banknote,
@@ -12638,7 +12638,6 @@ const statHighlights = [
 const liveTransactions = [
     { method: "UPI", amount: "₹5,200", from: "Rahul Kumar", time: "2 sec ago" },
     { method: "VISA", amount: "₹12,850", from: "Amazon Pay", time: "5 sec ago" },
-    { method: "AEPS", amount: "₹2,400", from: "Customer", time: "8 sec ago" },
     { method: "UPI", amount: "₹8,950", from: "PhonePe", time: "12 sec ago" },
     { method: "MC", amount: "₹1,650", from: "Credit Card", time: "15 sec ago" },
 ];
@@ -12646,7 +12645,6 @@ const liveTransactions = [
 const methodStyles = {
     UPI: { bg: BRAND_SOFT, color: BRAND },
     VISA: { bg: "rgba(11,18,32,0.08)", color: INK },
-    AEPS: { bg: "rgba(20,184,166,0.16)", color: "#0F9488" },
     MC: { bg: "rgba(249,115,22,0.12)", color: "#EA580C" },
 };
 

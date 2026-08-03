@@ -121,6 +121,30 @@
       "Real-time business monitoring"
     ]
   },
+
+
+
+
+
+   {
+    "id": "business-loans-working-capital-finance",
+    "name": "Business loans",
+    "imageUrl": "https://i.pinimg.com/736x/4a/c8/8a/4ac88a04b4c466e16f8aa077a38ac027.jpg",
+    "description": "Business and personal loans with seamless digital onboarding.",
+    "longDescription": "We offer specialized lending solutions including Business loans & working capital finance, Personal loans with digital onboarding, and comprehensive Credit card sourcing and lifecycle support.",
+    "features": [
+      "Business loans & working capital finance",
+      "Personal loans with digital onboarding",
+      "Credit card sourcing and lifecycle support"
+    ],
+    "benefits": [
+      "Quick capital access for businesses",
+      "Paperless digital onboarding",
+      "End-to-end credit management"
+    ]
+  },
+
+
          {
     "id": "Connected-Banking-Solution",
     "name": "Connected Banking Solution",
@@ -207,6 +231,127 @@
   {
     "id": "payment-banking-travel-wallet-apis",
     "name": " API Services",
+    "imageUrl": "public/assets/image/services/ApiServices.png",
+    "description": "White-label platforms and robust API integrations for fintech.",
+    "longDescription": "We provide the backbone for fintech businesses with Payment, banking, travel & wallet APIs. Our tech stack includes Settlement & reconciliation systems, Merchant/Distributor/Admin dashboards, and White-label fintech & travel platforms.",
+    "features": [
+      "Payment, banking, travel & wallet APIs",
+      "Settlement & reconciliation systems",
+      "Merchant, distributor & admin dashboards",
+      "White-label fintech & travel platforms"
+    ],
+    "benefits": [
+      "Scalable tech infrastructure",
+      "Ready-to-use white-label solutions",
+      "Automated reconciliation"
+    ]
+  },
+
+
+
+  {
+    "id": "Payment-gateway-api",
+    "name": " Payment Gateway API",
+    "imageUrl": "public/assets/image/services/ApiServices.png",
+    "description": "White-label platforms and robust API integrations for fintech.",
+    "longDescription": "We provide the backbone for fintech businesses with Payment, banking, travel & wallet APIs. Our tech stack includes Settlement & reconciliation systems, Merchant/Distributor/Admin dashboards, and White-label fintech & travel platforms.",
+    "features": [
+      "Payment, banking, travel & wallet APIs",
+      "Settlement & reconciliation systems",
+      "Merchant, distributor & admin dashboards",
+      "White-label fintech & travel platforms"
+    ],
+    "benefits": [
+      "Scalable tech infrastructure",
+      "Ready-to-use white-label solutions",
+      "Automated reconciliation"
+    ]
+  },
+
+
+    {
+    "id": "POS-api",
+    "name": " POS API",
+    "imageUrl": "public/assets/image/services/ApiServices.png",
+    "description": "White-label platforms and robust API integrations for fintech.",
+    "longDescription": "We provide the backbone for fintech businesses with Payment, banking, travel & wallet APIs. Our tech stack includes Settlement & reconciliation systems, Merchant/Distributor/Admin dashboards, and White-label fintech & travel platforms.",
+    "features": [
+      "Payment, banking, travel & wallet APIs",
+      "Settlement & reconciliation systems",
+      "Merchant, distributor & admin dashboards",
+      "White-label fintech & travel platforms"
+    ],
+    "benefits": [
+      "Scalable tech infrastructure",
+      "Ready-to-use white-label solutions",
+      "Automated reconciliation"
+    ]
+  },
+
+
+    {
+    "id": "BBPS-api",
+    "name": " BBPS API",
+    "imageUrl": "public/assets/image/services/ApiServices.png",
+    "description": "White-label platforms and robust API integrations for fintech.",
+    "longDescription": "We provide the backbone for fintech businesses with Payment, banking, travel & wallet APIs. Our tech stack includes Settlement & reconciliation systems, Merchant/Distributor/Admin dashboards, and White-label fintech & travel platforms.",
+    "features": [
+      "Payment, banking, travel & wallet APIs",
+      "Settlement & reconciliation systems",
+      "Merchant, distributor & admin dashboards",
+      "White-label fintech & travel platforms"
+    ],
+    "benefits": [
+      "Scalable tech infrastructure",
+      "Ready-to-use white-label solutions",
+      "Automated reconciliation"
+    ]
+  },
+
+    {
+    "id": "payout-api",
+    "name": " Payout API",
+    "imageUrl": "public/assets/image/services/ApiServices.png",
+    "description": "White-label platforms and robust API integrations for fintech.",
+    "longDescription": "We provide the backbone for fintech businesses with Payment, banking, travel & wallet APIs. Our tech stack includes Settlement & reconciliation systems, Merchant/Distributor/Admin dashboards, and White-label fintech & travel platforms.",
+    "features": [
+      "Payment, banking, travel & wallet APIs",
+      "Settlement & reconciliation systems",
+      "Merchant, distributor & admin dashboards",
+      "White-label fintech & travel platforms"
+    ],
+    "benefits": [
+      "Scalable tech infrastructure",
+      "Ready-to-use white-label solutions",
+      "Automated reconciliation"
+    ]
+  },
+
+
+    {
+    "id": "DMT-api",
+    "name": " DMT API",
+    "imageUrl": "public/assets/image/services/ApiServices.png",
+    "description": "White-label platforms and robust API integrations for fintech.",
+    "longDescription": "We provide the backbone for fintech businesses with Payment, banking, travel & wallet APIs. Our tech stack includes Settlement & reconciliation systems, Merchant/Distributor/Admin dashboards, and White-label fintech & travel platforms.",
+    "features": [
+      "Payment, banking, travel & wallet APIs",
+      "Settlement & reconciliation systems",
+      "Merchant, distributor & admin dashboards",
+      "White-label fintech & travel platforms"
+    ],
+    "benefits": [
+      "Scalable tech infrastructure",
+      "Ready-to-use white-label solutions",
+      "Automated reconciliation"
+    ]
+  },
+
+
+
+    {
+    "id": "qr-api",
+    "name": " QR API",
     "imageUrl": "public/assets/image/services/ApiServices.png",
     "description": "White-label platforms and robust API integrations for fintech.",
     "longDescription": "We provide the backbone for fintech businesses with Payment, banking, travel & wallet APIs. Our tech stack includes Settlement & reconciliation systems, Merchant/Distributor/Admin dashboards, and White-label fintech & travel platforms.",
