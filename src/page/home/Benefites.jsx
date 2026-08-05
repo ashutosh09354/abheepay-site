@@ -3076,7 +3076,7 @@ const Benefits = () => {
   const activePct = Math.round(progress * 100);
 
   return (
-    <section className="relative bg-white text-slate-800">
+    <section style={{ zoom: 1.3, transformOrigin: 'top' }} className="relative bg-white text-slate-800">
       {/* Intro (100vh, normal scroll) */}
       <div className="h-screen flex flex-col items-center justify-center px-6 bg-[#F8FAFC]">
         <span

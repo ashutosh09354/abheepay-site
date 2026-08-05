@@ -502,17 +502,17 @@ export default function BlogPage() {
     // ✅ FIX: pt-16 sm:pt-20 reserves space for the fixed navbar so the hero
     // banner no longer renders underneath it. Adjust these values to match
     // your navbar's actual rendered height if it differs (e.g. pt-[72px]).
-    <div className="bg-[#F7F9FA] min-h-screen pt-16 sm:pt-20" style={{ fontFamily: FONT_BODY }}>
+    <div className="bg-[#F7F9FA] min-h-screen pt-16 sm:pt-20 overflow-x-hidden" style={{ fontFamily: FONT_BODY, zoom: 1.2 }}>
       {/* ---------- Hero banner ---------- */}
       <div className="max-w-7xl mx-auto px-4 pt-4 sm:pt-5">
         <div className="relative w-full rounded-2xl overflow-hidden">
           <img
-            src="public/assets/image/blog/banner.jpg"
+            // src="public/assets/image/blog/banner.jpg"
             alt="Blog Banner"
             className="w-full h-[200px] sm:h-[250px] object-cover hidden sm:block"
           />
           <img
-            src="public/assets/image/blog/banner.jpg"
+            // src="public/assets/image/blog/banner.jpg"
             alt="Blog Banner Mobile"
             className="w-full object-cover h-[200px] sm:hidden"
           />

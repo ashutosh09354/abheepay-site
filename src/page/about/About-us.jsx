@@ -1176,7 +1176,7 @@ const AboutPage = () => {
   ];
 
   return (
-    <div className="font-sans text-slate-800 bg-white text-[13px]">
+    <div className="font-sans text-slate-800 bg-white text-[13px] pt-16">
       <style>{`
         @keyframes fadeUp { 0% { opacity:0; transform: translateY(16px);} 100% { opacity:1; transform: translateY(0);} }
         .fade-up { animation: fadeUp 0.7s ease-out both; }

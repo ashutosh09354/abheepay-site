@@ -560,7 +560,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
-import { Banknote, ChevronDown, ChevronUp, Code2, Landmark, Menu, Plane, Search, WalletCards, X } from "lucide-react";
+import { Banknote, BookOpen, ChevronDown, ChevronUp, Code2, CreditCard, FileText, Headphones, Landmark, Link2, Menu, Plane, QrCode, RefreshCcw, Search, Server, Send, ShieldCheck, Smartphone, Speaker, WalletCards, X } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import LanguageSwitcher from "../components/LanguageSwitcher";
 
@@ -574,7 +574,6 @@ const Navbar = () => {
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [developerHubOpen, setDeveloperHubOpen] = useState(false);
   const [developerApiPanelOpen, setDeveloperApiPanelOpen] = useState(false);
-  const [activeSolution, setActiveSolution] = useState("Payment Solutions");
   const timeoutRef = useRef(null);
 
   // Search logic states
@@ -683,10 +682,9 @@ const Navbar = () => {
       path: "/services/technology-api-services",
       keywords: ["technology", "api", "integration"],
       items: [
-        // { name: "Payment, banking, travel & wallet APIs", path: "/services/payment-banking-travel-wallet-apis" },
-        // // { name: "Settlement & reconciliation systems", path: "/services/settlement-reconciliation-systems" },
-        // { name: "Merchant, distributor & admin dashboards", path: "/services/Merchant-distributor-admin-dashboards" },
-        // { name: "White-label fintech & travel platforms", path: "/services/white-label-fintech-travel-platforms" },
+        { name: "Payment, banking, travel & wallet APIs", path: "/services/payment-banking-travel-wallet-apis" },
+        { name: "Merchant, distributor & admin dashboards", path: "/services/Merchant-distributor-admin-dashboards" },
+        { name: "White-label fintech & travel platforms", path: "/services/white-label-fintech-travel-platforms" },
       ],
     },
     {
@@ -755,43 +753,96 @@ const Navbar = () => {
   const handleDeveloperHubEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setDeveloperHubOpen(true);
-    setDeveloperApiPanelOpen(false);
+    setDeveloperPanel("marketplace");
   };
 
   const handleDeveloperHubLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setDeveloperHubOpen(false);
-      setDeveloperApiPanelOpen(false);
+      setDeveloperPanel(null);
     }, 200);
   };
 
   const developerApiItems = [
-    { title: "Payment Gateway API", description: "Accept UPI, cards and net banking", icon: WalletCards, to: "/services/Payment-gateway-api" },
-    { title: "POS API", description: "Move money and offer assisted banking", icon: Landmark, to: "/services/POS-api" },
-    { title: "BBPS API", description: "Manage merchants and transactions", icon: Code2, to: "/services/BBPS-api" },
-    { title: "Payout API", description: "Launch a branded fintech platform", icon: Banknote, to: "/services/Payout-api" },
-    { title: "DMT API", description: "Launch a branded fintech platform", icon: Banknote, to: "/services/DMT-api" },
-    { title: "QR API", description: "Launch a branded fintech platform", icon: Banknote, to: "/services/QR-api" },
+    { title: "Payment Gateway API", description: "Accept UPI, cards and net banking", icon: WalletCards, to: "/api/payment-gateway" },
+    { title: "BBPS API", description: "Bill payments and merchant billing workflows", icon: FileText, to: "/api/bbps" },
+    { title: "Payout API", description: "Automated vendor and partner disbursements", icon: Send, to: "/api/payout" },
+    { title: "QR API", description: "Generate QR codes for instant payments", icon: QrCode, to: "/api/qr" },
+    { title: "Wallet API", description: "Digital wallet balance and transfers", icon: CreditCard, to: "/api/wallet" },
+    { title: "Aadhaar Verification API", description: "Authenticate users with Aadhaar data", icon: ShieldCheck, to: "/api/aadhaar" },
+    { title: "Recharge API", description: "Mobile and DTH recharge integration", icon: RefreshCcw, to: "/api/recharge" },
   ];
 
-  const solutionCategories = [
-    { name: "Payment Solutions", description: "Accept payments seamlessly", icon: WalletCards, target: "payment-solutions", services: allServices.slice(0, 1).flatMap((service) => service.items || [service]) },
-    { name: "Banking Services", description: "Banking closer to customers", icon: Landmark, target: "banking-services", services: allServices.slice(1, 3).flatMap((service) => service.items || [service]) },
-    { name: "Financial Services", description: "Grow with smart finance", icon: Banknote, target: "financial-services", services: allServices.slice(3, 5).flatMap((service) => service.items || [service]) },
-    { name: "Travel Services", description: "Flights, buses, trains & hotels", icon: Plane, target: "travel-services", services: allServices.slice(5, 6).flatMap((service) => service.items || [service]) },
-    { name: "Technology Solutions", description: "Build, scale and automate", icon: Code2, target: "technology-solutions", services: allServices.slice(6).flatMap((service) => service.items || [service]) },
+  // Developer Hub quick links
+  const developerHubItems = [
+    {
+      name: "Documentation",
+      description: "Complete API reference and guides",
+      icon: FileText,
+      path: "/developers/documentation",
+    },
+    {
+      name: "SDK",
+      description: "Official SDKs for integration",
+      icon: Code2,
+      path: "/developers/sdk",
+    },
+    {
+      name: "Soundbox",
+      description: "Test your APIs safely",
+      icon: Server,
+      path: "/developers/soundbox",
+    },
+    {
+      name: "Webhooks",
+      description: "Receive real-time events",
+      icon: Link2,
+      path: "/developers/webhooks",
+    },
+    {
+      name: "Postman",
+      description: "Ready-to-use API collections",
+      icon: Send,
+      path: "/developers/postman",
+    },
+    {
+      name: "Release Notes",
+      description: "Latest updates and changes",
+      icon: BookOpen,
+      path: "/developers/release-notes",
+    },
+    {
+      name: "Support",
+      description: "Get technical assistance",
+      icon: Headphones,
+      path: "/developers/support",
+    },
   ];
-  const activeSolutionCategory = solutionCategories.find((category) => category.name === activeSolution) || solutionCategories[0];
+
+  const [developerPanel, setDeveloperPanel] = useState(null); // 'marketplace' | 'developer' | null
+
+  // Products list for dropdown
+  const products = [
+    { name: "Payment Gateway", path: "/products/payment-gateway", icon: WalletCards },
+    { name: "Payment Links", path: "/products/payment-links", icon: Link2 },
+    { name: "QR Code", path: "/products/qr-code", icon: QrCode },
+    { name: "Sound Box", path: "/products/sound-box", icon: Speaker },
+    { name: "POS Machine", path: "/products/pos-machine", icon: CreditCard },
+    { name: "Merchant App", path: "/products/merchant-app", icon: Smartphone },
+    { name: "Digital Invoice", path: "/products/digital-invoice", icon: FileText },
+  ];
+
+  // solutionCategories and activeSolutionCategory removed — products render directly in the dropdown
 
   return (
-    // <header className="fixed top-0 left-0 right-0 w-full z-[100] bg-white border-b border-gray-100 shadow-sm transition-all duration-300 overflow-visible">
-
-    <header className="fixed top-0 left-0 right-0 w-full z-[100] overflow-visible bg:linear-gradient( 180deg,#FFFFFF 0%, #F8FBFD 45%, #EEF7FA 100%
-);
-  backdrop-blur-xl
-  border-b border-white/10
-  shadow-2xl
-  transition-all duration-500"
+    <header
+      className={`fixed top-0 left-0 right-0 w-full z-[100]
+  overflow-visible
+  transition-all duration-300
+  ${scrolled
+          ? "bg-white/90 backdrop-blur-xl border-b border-slate-200 shadow-lg"
+          : "bg-white/75 backdrop-blur-lg"
+        }`}
     >
 
 
@@ -819,21 +870,7 @@ const Navbar = () => {
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center">
               <div
-                className="
-        rounded-xl
-        px-2
-        py-2
-        bg-gradient-to-r
-        from-[#081C33]
-        via-[#0B2545]
-        to-[#081C33]
-        border
-        border-[#16C7C9]/20
-        shadow-lg
-        transition-all
-        duration-300
-        hover:shadow-[0_0_30px_rgba(22,199,201,0.25)]
-      "
+                className="rounded-xl px-2 py-2 bg-gradient-to-r from-[#081C33] via-[#0B2545] to-[#081C33] border border-[#16C7C9]/20 shadow-lg transition-all duration-300 hover:shadow-[0_0_30px_rgba(22,199,201,0.25)] "
               >
                 <img
                   src="/assets/image/logo/logos.png"
@@ -849,15 +886,15 @@ const Navbar = () => {
 
 
           <nav className="hidden lg:flex flex-1 justify-center items-center gap-8 text-gray-700">
-            <Link to="/services" className="text-[20px] font-bold transition-colors hover:text-[#00C4C7]">
+            {/* <Link to="/services" className="text-[20px] font-bold transition-colors hover:text-[#00C4C7]">
               Services
-            </Link>
+            </Link> */}
             <div className="relative inline-block" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <Link
-                to="/services"
+                to="#"
                 className="flex items-center gap-1 text-[20px] font-bold transition-colors hover:text-[#00C4C7]"
               >
-                Solutions <ChevronDown size={21} strokeWidth={2.5} />
+                Products <ChevronDown size={21} strokeWidth={2.5} />
               </Link>
 
               {/* ✅ CHANGE #1: absolute → fixed (live clipping issue fix) */}
@@ -869,37 +906,23 @@ const Navbar = () => {
                   }`}
               >
                 <div className="rounded-xl border border-slate-200 bg-white p-3 shadow-2xl">
-                  <div className="grid grid-cols-5 gap-5 gap-y-8">
-                    {solutionCategories.map(({ name, icon: Icon, target }) => (
-                      <Link
-                        key={name}
-                        to={`/services#${target}`}
-                        onMouseEnter={() => setActiveSolution(name)}
-                        onClick={() => setServicesDropdownOpen(false)}
-                        className="group min-h-[88px] rounded-lg bg-[#f5f7fb] p-2 transition hover:-translate-y-0.5 hover:bg-[#e7f6ff]"
-                      >
-                        <span className="mb-1.5 flex h-6 w-6 items-center justify-center rounded-lg bg-white text-[#2DD4BF] shadow-sm transition group-hover:scale-105">
-                          <Icon size={13} strokeWidth={2.8} />
-                        </span>
-                        <span className="block text-[10px] font-bold leading-1 text-[#111827]">{name}</span>
-                      </Link>
-                    ))}
-                  </div>
-                  <div className="mt-3 max-h-24 overflow-y-auto rounded-lg bg-[#f7f9fc] px-2 py-2">
-                    <p className="mb-1 text-[7px] font-bold uppercase tracking-wide text-[#40617d]">{activeSolutionCategory.name}</p>
-                    <div className="grid grid-cols-3 gap-x-3 gap-y-1">
-                      {activeSolutionCategory.services.map((service) => (
+                  <div className="grid grid-cols-5 gap-1.5">
+                    {products.map((p) => {
+                      const Icon = p.icon;
+                      return (
                         <Link
-                          key={service.path || service.name}
-                          to={service.path || "/services"}
+                          key={p.path}
+                          to={p.path}
                           onClick={() => setServicesDropdownOpen(false)}
-                          className="truncate py-0.5 text-[7px] font-medium text-slate-600 transition hover:text-[#00aeb2]"
-                          title={service.name}
+                          className="group flex flex-col items-center rounded-lg bg-[#f5f7fb] p-3 text-center transition hover:-translate-y-0.5 hover:bg-[#e7f6ff]"
                         >
-                          <span className="mr-1 text-cyan-500">•</span>{service.name}
+                          <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-white text-[#2DD4BF] shadow-sm transition group-hover:scale-110">
+                            {Icon ? <Icon size={20} /> : null}
+                          </div>
+                          <span className="text-[12px] font-bold leading-5 text-[#111827]">{p.name}</span>
                         </Link>
-                      ))}
-                    </div>
+                      );
+                    })}
                   </div>
                   <div className="mt-1.5 flex overflow-hidden rounded-lg">
                     <Link to="/contact" onClick={() => setServicesDropdownOpen(false)} className="flex flex-1 items-center justify-between bg-[#d9f0ff] px-2.5 py-1.5 text-[7px] font-medium text-[#25466f] hover:bg-[#c8e8fc]">Contact Sales <span>→</span></Link>
@@ -1023,32 +1046,30 @@ const Navbar = () => {
                 className={`flex items-center gap-1 text-[20px] font-bold transition-colors hover:text-[#00C4C7] ${developerHubOpen ? "text-[#00C4C7]" : ""}`}
                 aria-expanded={developerHubOpen}
               >
-                Developer Hub <ChevronDown size={21} strokeWidth={2.5} className={developerHubOpen ? "rotate-180 transition-transform" : "transition-transform"} />
+                API Hub <ChevronDown size={21} strokeWidth={2.5} className={developerHubOpen ? "rotate-180 transition-transform" : "transition-transform"} />
               </Link>
 
               <div
-                className={`absolute left-1/2 top-full z-[9999] mt-4 -translate-x-[230px] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl transition-all duration-200 ease-out ${developerApiPanelOpen ? "w-[760px]" : "w-[230px]"}
+                className={`absolute left-1/2 top-full z-[9999] mt-4 -translate-x-[230px] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl transition-all duration-200 ease-out ${developerPanel === 'developer' ? "w-[1100px]" : "w-[1000px]"}
                   ${developerHubOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0 pointer-events-none"}`}
               >
-                <div className={developerApiPanelOpen ? "grid min-h-[360px] grid-cols-[230px_1fr]" : "min-h-[360px]"}>
+                <div className={developerPanel ? "grid min-h-[360px] grid-cols-[230px_1fr]" : "min-h-[360px]"}>
                   <div className="relative flex min-h-[360px] flex-col bg-[#f5f7fc] p-5 pb-[112px]">
-                    <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-[#4d75c9]">Developer's Hub</p>
-                    <Link
-                      to="/services/technology-api-services"
-                      onClick={() => setDeveloperHubOpen(false)}
-                      onMouseEnter={() => setDeveloperApiPanelOpen(false)}
-                      className="mt-5 rounded-xl bg-white px-4 py-3 text-[15px] font-bold text-[#213b75] shadow-sm transition hover:bg-[#eaf3ff]"
+                    <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-[#4d75c9]">API Hub</p>
+                    <button
+                      onClick={() => setDeveloperPanel('marketplace')}
+                      onMouseEnter={() => setDeveloperPanel('marketplace')}
+                      className={`mt-5 rounded-xl px-4 py-3 text-[15px] font-bold transition ${developerPanel === 'marketplace' ? "bg-white text-[#213b75] shadow-sm" : "text-slate-700 hover:bg-white"}`}
                     >
-                      Documentation &amp; Guides
-                    </Link>
-                    <Link
-                      to="/services/payment-banking-travel-wallet-apis"
-                      onClick={() => setDeveloperHubOpen(false)}
-                      onMouseEnter={() => setDeveloperApiPanelOpen(true)}
-                      className={`mt-2 rounded-xl px-4 py-3 text-[15px] font-bold transition ${developerApiPanelOpen ? "bg-white text-[#213b75] shadow-sm" : "text-slate-700 hover:bg-white"}`}
+                      API Marketplace
+                    </button>
+                    <button
+                      onClick={() => setDeveloperPanel('developer')}
+                      onMouseEnter={() => setDeveloperPanel('developer')}
+                      className={`mt-2 rounded-xl px-4 py-3 text-[15px] font-bold transition ${developerPanel === 'developer' ? "bg-white text-[#213b75] shadow-sm" : "text-slate-700 hover:bg-white"}`}
                     >
-                      Developer API
-                    </Link>
+                      Developer Hub
+                    </button>
                     <div className="absolute bottom-5 left-5 right-5 overflow-hidden rounded-xl border border-[#b8d4ec]">
                       <Link to="/contact" onClick={() => setDeveloperHubOpen(false)} className="flex items-center justify-between bg-[#d8edff] px-4 py-3 text-[13px] font-bold text-[#17457a] transition hover:bg-[#c6e4fb]">
                         Contact Sales <span aria-hidden="true">→</span>
@@ -1059,65 +1080,120 @@ const Navbar = () => {
                     </div>
                   </div>
 
-                  {developerApiPanelOpen && <div className="max-h-[430px] overflow-y-auto bg-white p-5">
-                    <p className="text-[16px] font-bold text-slate-900">Build with AbheePay APIs</p>
-                    <p className="mt-1 text-[12px] text-slate-500">Secure APIs to power payments, banking and fintech experiences.</p>
-                    <div className="mt-4 grid grid-cols-2 gap-3">
-                      {developerApiItems.map((api) => (
-                        <Link
-                          key={api.title}
-                          to={api.to}
-                          onClick={() => setDeveloperHubOpen(false)}
-                          className="group rounded-xl bg-[#f5f7fc] p-4 transition hover:-translate-y-0.5 hover:bg-[#eaf3ff] hover:shadow-md"
-                        >
-                          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-[#00bfc2] shadow-sm">
-                            {React.createElement(api.icon, { size: 18, strokeWidth: 2.2 })}
-                          </span>
-                          <span className="mt-3 block text-[14px] font-bold text-slate-800">{api.title}</span>
-                          <span className="mt-1 block text-[11px] leading-4 text-slate-500">{api.description}</span>
-                        </Link>
-                      ))}
+                  {/* Marketplace panel */}
+                  {developerPanel === 'marketplace' && (
+                    <div className="max-h-[430px] overflow-y-auto bg-white p-5">
+                      <p className="text-[16px] font-bold text-slate-900">API Marketplace</p>
+                      <p className="mt-1 text-[12px] text-slate-500">Browse available APIs to integrate payments and services.</p>
+                      <div className="mt-4 grid grid-cols-2 gap-4">
+                        {developerApiItems.map((api) => (
+                          <Link
+                            key={api.title}
+                            to={api.to}
+                            onClick={() => setDeveloperHubOpen(false)}
+                            className="group rounded-xl bg-[#f5f7fc] p-4 transition hover:-translate-y-0.5 hover:bg-[#eaf3ff] hover:shadow-md"
+                          >
+                            <div className="flex items-start gap-4">
+                              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-[#00bfc2] shadow-sm">{React.createElement(api.icon, { size: 18, strokeWidth: 2.2 })}</span>
+                              <div>
+                                <div className="text-[14px] font-bold text-slate-800">{api.title}</div>
+                                <div className="mt-1 text-[11px] leading-4 text-slate-500">{api.description}</div>
+                              </div>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
                     </div>
-                  </div>}
+                  )}
+
+                  {/* Developer Hub panel */}
+                  {developerPanel === 'developer' && (
+                    <div className="max-h-[430px] overflow-y-auto bg-white p-5">
+                      <p className="text-[16px] font-bold text-slate-900">Developer Hub</p>
+                      <p className="mt-1 text-[12px] text-slate-500">Tools and docs for building with AbheePay.</p>
+                      <div className="mt-4 grid grid-cols-2 gap-4">
+                        {developerHubItems.map((d) => {
+                          const Icon = d.icon;
+                          return (
+                            <Link
+                              key={d.path}
+                              to={d.path}
+                              onClick={() => setDeveloperHubOpen(false)}
+                              className="group rounded-xl bg-[#f5f7fc] p-4 transition hover:-translate-y-0.5 hover:bg-[#eaf3ff] hover:shadow-md"
+                            >
+                              <div className="flex items-start gap-4">
+                                <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white text-[#2DD4BF] shadow-sm">
+                                  {Icon ? <Icon size={18} /> : null}
+                                </span>
+                                <div>
+                                  <div className="text-[14px] font-bold text-slate-900">{d.name}</div>
+                                  <p className="mt-1 text-xs text-slate-900">{d.description}</p>
+                                </div>
+                              </div>
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
 
             <div className="relative group">
               <button className="flex items-center gap-1 text-[20px] font-bold transition-colors hover:text-[#00C4C7]">
-                Partner
+                Partner Program
                 <ChevronDown size={21} strokeWidth={2.5} />
               </button>
 
               <div className="absolute left-0 top-full mt-1.5 w-44 rounded-xl border border-gray-200 bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+
                 <Link
-                  to="/join-as-distributor"
+                  to="/overview"
+                  className="block px-3 py-2 text-[11px] font-medium text-gray-700 hover:bg-[#14B8A6]/10 hover:text-[#14B8A6] rounded-t-xl"
+                >
+                  Overview
+                </Link>
+
+                <Link
+                  to="/Distributor"
                   className="block px-3 py-2 text-[11px] font-medium text-gray-700 hover:bg-[#14B8A6]/10 hover:text-[#14B8A6] rounded-t-xl"
                 >
                   Distributor Program
                 </Link>
 
                 <Link
-                  to="/join-as-retailer"
+                  to="/Retailer"
                   className="block px-3 py-2 text-[11px] font-medium text-gray-700 hover:bg-[#14B8A6]/10 hover:text-[#14B8A6] rounded-b-xl"
                 >
                   Retailer Program
                 </Link>
 
                 <Link
-                  to="/join-as-technology-partner"
+                  to="/whiteLabel"
                   className="block px-3 py-2 text-[11px] font-medium text-gray-700 hover:bg-[#14B8A6]/10 hover:text-[#14B8A6] rounded-b-xl"
                 >
-                  Technology Partner
+                  White Label Program
                 </Link>
+
+                <Link
+                  to="/Enterprise"
+                  className="block px-3 py-2 text-[11px] font-medium text-gray-700 hover:bg-[#14B8A6]/10 hover:text-[#14B8A6] rounded-b-xl"
+                >
+                  Enterprise Program
+                </Link>
+
               </div>
             </div>
             <Link to="/about" className="text-[20px] font-bold transition-colors hover:text-[#00C4C7]">
               About Us
             </Link>
-            <Link to="/contact" className="text-[20px] font-bold transition-colors hover:text-[#00C4C7]">
-              Contact
+            <Link to="/blog" className="text-[20px] font-bold transition-colors hover:text-[#00C4C7]">
+              Blog
             </Link>
+            {/* <Link to="/contact" className="text-[20px] font-bold transition-colors hover:text-[#00C4C7]">
+              Contact
+            </Link> */}
           </nav>
 
           {/* <div className="flex shrink-0 items-center gap-2 sm:gap-3">
@@ -1265,12 +1341,12 @@ transition
                   </button>
 
                   {servicesOpen && (
-                    <div className="mt-3 pl-4 flex flex-col gap-3 border-l-2 border-[#00D3CD]/30">
+                    <div className="mt-3 pl-4 flex flex-col gap-3 border-l-2 border-[#14B8A6]/30">
                       {allServices.map((s, i) => (
                         <div key={i}>
                           <Link
                             to={s.path}
-                            className="block font-bold text-[#00D3CD]"
+                            className="block font-bold text-[#14B8A6]"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {s.name}
@@ -1295,7 +1371,7 @@ transition
                   RETAILER PROGRAM
                 </Link>
 
-                <Link to="/join-as-distributor" onClick={() => setMobileMenuOpen(false)}>
+                <Link to="/Distributor" onClick={() => setMobileMenuOpen(false)}>
                   DISTRIBUTOR PROGRAM
                 </Link>
 

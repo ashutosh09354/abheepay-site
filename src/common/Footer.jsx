@@ -993,6 +993,7 @@ const Footer = () => {
   const quickLinks = [
     { text: "Home", to: "/" },
     { text: "About Us", to: "/about" },
+    { text: "Contact Us", to: "/contact" },
     { text: "Join as Retailer", to: "/join-as-retailer" },
     { text: "Join as Distributor", to: "/join-as-distributor" },
     { text: "Privacy Policy", to: "/privacy-policy" },

@@ -18,6 +18,37 @@ import LoginPage from "./page/login/login-form";
 import AccountDeletion from "./page/account-deletion/AccountDeletion";
 
 
+import PaymentGateway from "./page/Products/PaymentGateway";
+import SoundBox from "./page/Products/SoundBox";
+import QRCode from "./page/Products/QRCode";
+import PosMachine from "./page/Products/PosMachine";
+// import PaymentLink from "./page/Products/PaymentLink";
+import DigitalInvoice from "./page/Products/DigitalInvoice";
+import MerchantApp from "./page/Products/MerchantApp";
+import PaymentLinks from "./page/Products/PaymentLinks";
+import ErrorPage from "./common/ErrorPage";
+
+import PaymentGatewayAPI from "./page/API/PaymentGatewayAPI";
+import BBPSAPI from "./page/API/BBPSAPI";
+import PayoutAPI from "./page/API/PayoutAPI";
+import QRAPI from "./page/API/QRAPI";
+import RechargeAPI from "./page/API/RechargeAPI";
+import WalletAPI from "./page/API/WalletAPI";
+import AadhaarAPI from "./page/API/AadhaarAPI";
+
+import Documentation from "./page/Developers/Documentation";
+import SDK from "./page/Developers/SDK";
+import Sandbox from "./page/Developers/Soundbox";
+import Webhooks from "./page/Developers/Webhooks";
+import Postman from "./page/Developers/Postman";
+import ReleaseNotes from "./page/Developers/ReleaseNotes";
+import Support from "./page/Developers/Support";
+
+import Retailer from "./page/Partners/Retailer";
+import Enterprise from "./page/Partners/Enterprise";
+import Overview from "./page/Partners/Overview";
+import Distributor from "./page/Partners/Distributor";
+import WhiteLabel from "./page/Partners/WhiteLabel";
 
 const Layout = () => {
   return (
@@ -51,8 +82,28 @@ const router = createBrowserRouter([
         element: <Join />,
       },
       {
+        path: "/Retailer",
+        element: <Retailer />,
+      },
+      {
+        path: "/Enterprise",
+        element: <Enterprise />,
+      },
+      {
+        path: "/overview",
+        element: <Overview />,
+      },
+      {
+        path: "/WhiteLabel",
+        element: <WhiteLabel />,
+      },
+      {
         path: "/join-as-distributor",
         element: <Joins />,
+      },
+      {
+        path: "/Distributor",
+        element: <Distributor />,
       },
       {
         path: "/join-as-technology-partner",
@@ -62,7 +113,7 @@ const router = createBrowserRouter([
         path: "/contact",
         element: <ContactUs />,
       },
-    
+
       {
         path: "/blog",
         element: <BlogPage />,
@@ -95,9 +146,92 @@ const router = createBrowserRouter([
         path: "/account-delete",
         element: <AccountDeletion />,
       },
-      
+      {
+        path: "/products/payment-gateway",
+        element: <PaymentGateway />,
+      },
+      {
+        path: "/products/payment-links",
+        element: <PaymentLinks />,
+      },
+      {
+        path: "/products/qr-code",
+        element: <QRCode />,
+      },
+      {
+        path: "/products/sound-box",
+        element: <SoundBox />,
+      },
+      {
+        path: "/products/pos-machine",
+        element: <PosMachine />,
+      },
+      {
+        path: "/products/merchant-app",
+        element: <MerchantApp />,
+      },
+      {
+        path: "/products/digital-invoice",
+        element: <DigitalInvoice />,
+      },
+      {
+        path: "/api/payment-gateway",
+        element: <PaymentGatewayAPI />,
+      },
+      {
+        path: "/api/bbps",
+        element: <BBPSAPI />,
+      },
+      {
+        path: "/api/payout",
+        element: <PayoutAPI />,
+      },
+      {
+        path: "/api/qr",
+        element: <QRAPI />,
+      },
+      {
+        path: "/api/recharge",
+        element: <RechargeAPI />,
+      },
+      {
+        path: "/api/wallet",
+        element: <WalletAPI />,
+      },
+      {
+        path: "/api/aadhaar",
+        element: <AadhaarAPI />,
+      },
+      {
+        path: "/developers/documentation",
+        element: <Documentation />,
+      },
+      {
+        path: "/developers/sdk",
+        element: <SDK />,
+      },
+      {
+        path: "/developers/soundbox",
+        element: <Sandbox />,
+      },
+      {
+        path: "/developers/webhooks",
+        element: <Webhooks />,
+      },
+      {
+        path: "/developers/postman",
+        element: <Postman />,
+      },
+      {
+        path: "/developers/release-notes",
+        element: <ReleaseNotes />,
+      },
+      {
+        path: "/developers/support",
+        element: <Support />,
+      },
     ],
-
+    errorElement: <ErrorPage />,
   },
 ]);
 

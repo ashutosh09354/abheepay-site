@@ -26,128 +26,45 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // POORA ORIGINAL DATA (Kuch bhi nahi hataya)
-  const allServices = [
-    {
-      name: "Digital Payment Solutions",
-      path: "/services/digital-payment-solutions",
-      keywords: ["digital", "payment", "upi", "qr", "gateway"],
-      items: [
-        {
-          name: "Online Payment Gateway – UPI, Cards, Net Banking, Wallets",
-          path: "/services/online-payment-gateway–upi-cards-net-banking-wallets",
-        },
-        { name: "POS & Android POS Devices", path: "/services/pos-devices" },
-        { name: "QR-Based Contactless Payments", path: "/services/qr-based-contactless-payments" },
-        { name: "Smart routing with high success rates", path: "/services/Smart-routing-with-high-success-rates" },
-        {
-          name: "Real-time monitoring and PCI-DSS compliant architecture",
-          path: "/services/real-time-monitoring-and-pci-dss-compliant-architecture",
-        },
-      ],
-    },
-    {
-      name: "Assisted Banking & Cash Management",
-      path: "/services/assisted-banking-cash-management",
-      keywords: ["banking", "cash", "matm", "aeps"],
-      items: [
-        {
-          name: "AEPS – Cash withdrawal, balance inquiry, mini statement",
-          path: "/services/aeps-cash-withdrawal-balance-inquiry-mini-statement",
-        },
-        { name: "Micro ATM (mATM) services", path: "/services/micro-atm-matm-services" },
-        { name: "Domestic Money Transfer (DMT)", path: "/services/domestic-money-transfer" },
-      ],
-    },
-    {
-      name: "BBPS, Recharge & Bill Payments",
-      path: "/services/bbps-recharge-bill-payments",
-      keywords: ["bbps", "bill", "payment", "recharge", "dth", "mobile", "bill"],
-      items: [
-        {
-          name: "Utility bill payments – electricity, gas, water, FASTag",
-          path: "/services/utility-bill-payments-electricity-gas-water-fastag",
-        },
-        { name: "Mobile, DTH & data card recharges", path: "/services/mobile-dth-data-card-recharges" },
-        { name: "Credit card bill payments", path: "/services/credit-card-bill-payments" },
-      ],
-    },
-    {
-      name: "Lending & Credit Solutions",
-      path: "/services/lending-credit-solutions",
-      keywords: ["loan", "credit", "finance", "lending"],
-      items: [
-        { name: "Business loans & working capital finance", path: "/services/business-loans-working-capital-finance" },
-        { name: "Personal loans with digital onboarding", path: "/services/personal-loans-with-digital-onboarding" },
-        { name: "Credit card sourcing and lifecycle support", path: "/services/credit-card-sourcing-and-lifecycle-support" },
-      ],
-    },
-    {
-      name: "Insurance Solutions",
-      path: "/services/insurance-solutions",
-      keywords: ["insurance", "policy", "lic"],
-      items: [
-        { name: "Health insurance", path: "/services/health-insurance" },
-        { name: "Life insurance", path: "/services/life-insurance" },
-        { name: "General & travel insurance", path: "/services/general-travel-insurance" },
-      ],
-    },
-    {
-      name: "Travel APIs & Travel Services",
-      path: "/services/travel-apis-travel-services",
-      keywords: ["travel", "flight", "hotel", "api"],
-      items: [
-        { name: "Flight booking (Domestic & International)", path: "/services/flight-booking-domestic-international" },
-        { name: "Bus ticket booking", path: "/services/bus-ticket-booking" },
-        { name: "Train ticket booking", path: "/services/train-ticket-booking" },
-        { name: "Hotel booking", path: "/services/hotel-booking" },
-        { name: "Holiday packages", path: "/services/holiday-packages" },
-        { name: "Travel insurance integration", path: "/services/travel-insurance-integration" },
-        { name: "Commission-based travel services", path: "/services/commission-based-travel-services" },
-      ],
-    },
-    {
-      name: "Technology & API Services",
-      path: "/services/technology-api-services",
-      keywords: ["technology", "api", "integration"],
-      items: [
-        { name: "Payment, banking, travel & wallet APIs", path: "/services/payment-banking-travel-wallet-apis" },
-        { name: "Settlement & reconciliation systems", path: "/services/settlement-reconciliation-systems" },
-        { name: "Merchant, distributor & admin dashboards", path: "/services/Merchant-distributor-admin-dashboards" },
-        { name: "White-label fintech & travel platforms", path: "/services/white-label-fintech-travel-platforms" },
-      ],
-    },
-    {
-      name: "Web Infrastructure & Maintenance",
-      path: "/services/web-infrastructure-maintenance",
-      keywords: ["web", "maintenance", "hosting", "server"],
-    },
-    {
-      name: "Ecommerece websites",
-      path: "/services/ecommerce-websites",
-      keywords: ["ecommerce", "shop", "website"],
-    },
-    {
-      name: "software development",
-      path: "/services/software-development",
-      keywords: ["software", "app", "development"],
-    },
-    {
-      name: "Customised  software development",
-      path: "/services/customised-software-development",
-      keywords: ["software", "custom", "tailored", "solution"],
-    },
-    {
-      name: "White label software development",
-      path: "/services/white-label-software-development",
-      keywords: ["white label", "resell", "software", "branding"],
-    },
-    {
-      name: "App development",
-      path: "/services/app-development",
-      keywords: ["android", "ios", "mobile", "app", "development"],
-    },
+  const products = [
+    { name: "Payment Gateway", path: "/products/payment-gateway" },
+    { name: "Payment Links", path: "/products/payment-links" },
+    { name: "QR Code", path: "/products/qr-code" },
+    { name: "Sound Box", path: "/products/sound-box" },
+    { name: "POS Machine", path: "/products/pos-machine" },
+    { name: "Merchant App", path: "/products/merchant-app" },
+    { name: "Digital Invoice", path: "/products/digital-invoice" },
   ];
+
+  const apiMarketplace = [
+    { name: "Payment Gateway API", path: "/api/payment-gateway" },
+    { name: "Payout API", path: "/api/payout" },
+    { name: "BBPS API", path: "/api/bbps" },
+    { name: "Wallet API", path: "/api/wallet" },
+    { name: "QR API", path: "/api/qr" },
+    { name: "Aadhaar Verification API", path: "/api/aadhaar" },
+    { name: "Recharge API", path: "/api/recharge" },
+  ];
+
+  const developerHub = [
+    { name: "Documentation", path: "/developers/docs" },
+    { name: "SDK", path: "/developers/sdk" },
+    { name: "Sandbox", path: "/developers/sandbox" },
+    { name: "Webhooks", path: "/developers/webhooks" },
+    { name: "Postman", path: "/developers/postman" },
+    { name: "Release Notes", path: "/developers/releases" },
+    { name: "Support", path: "/developers/support" },
+  ];
+
+  const partners = [
+    { name: "Overview", path: "/partners" },
+    { name: "Retailer Program", path: "/partners/retailer" },
+    { name: "Distributor Program", path: "/partners/distributor" },
+    { name: "White Label Program", path: "/partners/white-label" },
+    { name: "Enterprise Program", path: "/partners/enterprise" },
+  ];
+
+  const allServices = [...products, ...apiMarketplace, ...developerHub, ...partners];
 
   useEffect(() => {
     if (searchQuery.trim() === "") {
@@ -155,8 +72,7 @@ const Navbar = () => {
     } else {
       const filtered = allServices.filter(
         (s) =>
-          s.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          s.keywords.some((k) => k.toLowerCase().includes(searchQuery.toLowerCase()))
+          s.name.toLowerCase().includes(searchQuery.toLowerCase())
       );
       setSuggestions(filtered);
     }
@@ -209,102 +125,77 @@ const Navbar = () => {
               >
                 {/* Extra padding-top to create safe hover area between link and dropdown */}
                 <div>
-                  <div className="grid grid-cols-3 gap-5 bg-white p-5 rounded-2xl shadow-xl border border-gray-100 max-h-[85vh] overflow-y-auto">
-                    {/* API COLUMN */}
+                  <div className="grid grid-cols-4 gap-5 bg-white p-5 rounded-2xl shadow-xl border border-gray-100 max-h-[85vh] overflow-y-auto">
                     <div className="bg-[#F6FAFF] rounded-xl p-5">
                       <div className="w-full flex justify-center">
-                        <h3 className="text-xl font-semibold mb-4 text-[#00C6C9]">API</h3>
+                        <h3 className="text-xl font-semibold mb-4 text-[#00C6C9]">Products</h3>
                       </div>
                       <div className="space-y-3">
-                        {allServices.slice(0, 7).map((s, i) => (
-                          <div key={i} className="group/item">
+                        {products.map((product, index) => (
+                          <div key={index} className="group/item">
                             <Link
-                              to={s.path}
+                              to={product.path}
                               className="flex items-center gap-4 transition-all hover:translate-x-1.5 hover:text-[#00D3CD]"
                               onClick={() => setServicesDropdownOpen(false)}
                             >
-
-                              <p className="font-semibold text-gray-900 leading-tight">{s.name}</p>
+                              <p className="font-semibold text-gray-900 leading-tight">{product.name}</p>
                             </Link>
-
-                            {s.items?.length > 0 && (
-                              <div className="ml-10 mt-2 hidden group-hover/item:block">
-                                <ul className="space-y-1 text-sm text-gray-700">
-                                  {s.items.map((it, idx) => (
-                                    <li key={idx}>
-                                      <Link
-                                        to={it.path}
-                                        className="flex gap-2 hover:text-[#00D3CD] py-0.5"
-                                        onClick={() => setServicesDropdownOpen(false)}
-                                      >
-                                        <span className="text-[#00D3CD]">•</span>
-                                        <span>{it.name}</span>
-                                      </Link>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            )}
                           </div>
                         ))}
                       </div>
                     </div>
 
-                    {/* BANKING COLUMN */}
                     <div className="bg-[#F5FBF6] rounded-xl p-5">
                       <div className="w-full flex justify-center">
-                        <h3 className="text-xl font-semibold mb-4 text-[#00C6C9]">Banking</h3>
+                        <h3 className="text-xl font-semibold mb-4 text-[#00C6C9]">API Marketplace</h3>
                       </div>
                       <div className="space-y-3">
-                        {allServices.slice(0, 7).map((s, i) => (
-                          <div key={i} className="group/item">
+                        {apiMarketplace.map((api, index) => (
+                          <div key={index} className="group/item">
                             <Link
-                              to={s.path}
+                              to={api.path}
                               className="flex items-center gap-4 transition-all hover:translate-x-1.5 hover:text-[#00D3CD]"
                               onClick={() => setServicesDropdownOpen(false)}
                             >
-
-                              <p className="font-semibold text-gray-900 leading-tight">{s.name}</p>
+                              <p className="font-semibold text-gray-900 leading-tight">{api.name}</p>
                             </Link>
-
-                            {s.items?.length > 0 && (
-                              <div className="ml-10 mt-2 hidden group-hover/item:block">
-                                <ul className="space-y-1 text-sm text-gray-700">
-                                  {s.items.map((it, idx) => (
-                                    <li key={idx}>
-                                      <Link
-                                        to={it.path}
-                                        className="flex gap-2 hover:text-[#00D3CD] py-0.5"
-                                        onClick={() => setServicesDropdownOpen(false)}
-                                      >
-                                        <span className="text-[#00D3CD]">•</span>
-                                        <span>{it.name}</span>
-                                      </Link>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            )}
                           </div>
                         ))}
                       </div>
                     </div>
 
-                    {/* DEVELOPMENT COLUMN */}
                     <div className="bg-[#FFF7ED] rounded-xl p-5">
                       <div className="w-full flex justify-center">
-                        <h3 className="text-xl font-semibold mb-4 text-[#00C6C9]">Development</h3>
+                        <h3 className="text-xl font-semibold mb-4 text-[#00C6C9]">Developer Hub</h3>
                       </div>
                       <div className="space-y-3">
-                        {allServices.slice(7).map((s, i) => (
-                          <div key={i} className="group/item">
+                        {developerHub.map((item, index) => (
+                          <div key={index} className="group/item">
                             <Link
-                              to={s.path}
+                              to={item.path}
                               className="flex items-center gap-4 transition-all hover:translate-x-1.5 hover:text-[#00D3CD]"
                               onClick={() => setServicesDropdownOpen(false)}
                             >
+                              <p className="font-semibold text-gray-900 leading-tight">{item.name}</p>
+                            </Link>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
 
-                              <p className="font-semibold text-gray-900 leading-tight">{s.name}</p>
+                    <div className="bg-[#EFF6FF] rounded-xl p-5">
+                      <div className="w-full flex justify-center">
+                        <h3 className="text-xl font-semibold mb-4 text-[#00C6C9]">Partners</h3>
+                      </div>
+                      <div className="space-y-3">
+                        {partners.map((partner, index) => (
+                          <div key={index} className="group/item">
+                            <Link
+                              to={partner.path}
+                              className="flex items-center gap-4 transition-all hover:translate-x-1.5 hover:text-[#00D3CD]"
+                              onClick={() => setServicesDropdownOpen(false)}
+                            >
+                              <p className="font-semibold text-gray-900 leading-tight">{partner.name}</p>
                             </Link>
                           </div>
                         ))}
