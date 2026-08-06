@@ -1,4 +1,6 @@
-﻿const Support = () => {
+﻿import { Link } from "react-router-dom";
+
+const Support = () => {
   return (
     <div className="font-sans text-slate-900 bg-white min-h-screen px-5 py-20 sm:px-8">
       <div className="mx-auto max-w-6xl">
@@ -13,6 +15,9 @@
           <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
             <h2 className="text-xl font-bold text-slate-900">Contact</h2>
             <p className="mt-3 text-sm leading-7 text-slate-600">Reach out to our developer support team for technical integration questions and API issues.</p>
+            <Link to="/contact" className="mt-6 inline-flex rounded-full bg-[#14B8A6] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#14B8A6]/20 transition hover:bg-[#0e9a8d]">
+              Contact Us
+            </Link>
           </div>
           <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
             <h2 className="text-xl font-bold text-slate-900">Resources</h2>

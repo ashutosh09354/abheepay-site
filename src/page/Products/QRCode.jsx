@@ -18,10 +18,10 @@ import {
 // when you have a real packshot of the QR stand — this is a free-to-use
 // sample in the meantime.
 const QR_CODE_IMAGE =
-  "https://images.unsplash.com/photo-1550482768-88b710a445fd?fm=jpg&q=80&w=900&auto=format&fit=crop";
+  "/assets/image/services/qr_stand.png";
 
 const QRCodeDevice = () => (
-  <div className="relative mx-auto flex w-full max-w-sm items-center justify-center">
+  <div className="relative mx-auto flex w-full max-w-[32rem] items-center justify-center sm:max-w-[36rem]">
     {/* ambient scan rings */}
     <div className="pointer-events-none absolute -top-6 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full border border-[#00C4C7]/20"></div>
     <div className="pointer-events-none absolute top-4 left-1/2 h-48 w-48 -translate-x-1/2 rounded-full border border-[#00C4C7]/15"></div>
@@ -33,11 +33,11 @@ const QRCodeDevice = () => (
     <div className="absolute bottom-2 right-2 h-6 w-6 rounded-br-xl border-b-2 border-r-2 border-[#00C4C7]/50"></div>
 
     {/* QR code photo */}
-    <div className="relative z-10 w-72 overflow-hidden rounded-[2rem] border border-white bg-white p-3 shadow-2xl shadow-[#00C4C7]/20">
+    <div className="relative z-10 w-full overflow-hidden rounded-[2rem] border border-white bg-white p-5 shadow-2xl shadow-[#00C4C7]/20">
       <img
         src={QR_CODE_IMAGE}
         alt="QR Code payment stand for retail checkout"
-        className="aspect-square w-full rounded-[1.5rem] object-cover"
+        className="w-full max-h-[34rem] rounded-[1.5rem] object-contain"
         loading="lazy"
       />
     </div>
@@ -54,21 +54,21 @@ const QRCode = () => {
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#E8FEFF] via-white to-[#F6FBFF] py-20">
         <div className="absolute inset-x-0 top-0 h-48 bg-[radial-gradient(circle_at_top,_rgba(0,196,199,0.25),_transparent_55%)]"></div>
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_auto_1fr] lg:items-center lg:gap-6 lg:px-8">
+        <div className="relative mx-auto grid max-w-8xl gap-8 px-4 sm:px-6 lg:grid-cols-[1.3fr_520px_280px] lg:items-center lg:px-8">
           {/* Left copy */}
-          <div className="max-w-xl">
+          <div className="max-w-3xl">
             <p className="mb-4 inline-flex rounded-full border border-[#00C4C7]/20 bg-[#E9FEFF] px-4 py-2 text-sm font-semibold uppercase tracking-[0.24em] text-[#0F5562]">
               Product Spotlight
             </p>
             <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
               QR Code
             </h1>
-            <h2 className="mt-4 text-xl font-bold leading-snug text-[#00AEB2] sm:text-2xl">
+            <h2 className="mt-4 text-xl font-bold leading-snug text-[#00AEB2] sm:text-xl">
               Instant payments. Zero hardware.
               <br />
               Every scan counts.
             </h2>
-            <p className="mt-6 max-w-md text-base leading-8 text-slate-600">
+            <p className="mt-6 max-w-2xl text-lg leading-9 text-slate-600">
               A durable, weatherproof QR stand that lets customers pay you
               instantly from any UPI app. No terminals, no setup fees — just
               print, place, and start getting paid.
@@ -92,12 +92,12 @@ const QRCode = () => {
           </div>
 
           {/* Device */}
-          <div className="flex justify-center py-6 lg:py-0">
+          <div className="flex justify-end py-6 lg:py-0 lg:translate-x-3">
             <QRCodeDevice />
           </div>
 
           {/* Floating cards */}
-          <div className="flex flex-col gap-4 lg:max-w-xs">
+          <div className="ml-auto flex flex-col gap-4 lg:w-[300px] lg:justify-self-end">
             <div className="rounded-[1.5rem] border border-white/60 bg-[#0F172A] p-6 text-white shadow-xl shadow-slate-900/20">
               <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10">
                 <ShieldCheck className="h-5 w-5 text-[#7EE2E6]" />

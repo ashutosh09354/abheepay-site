@@ -507,12 +507,12 @@ export default function BlogPage() {
       <div className="max-w-7xl mx-auto px-4 pt-4 sm:pt-5">
         <div className="relative w-full rounded-2xl overflow-hidden">
           <img
-            // src="public/assets/image/blog/banner.jpg"
+            src="public/assets/image/blog/banner.jpg"
             alt="Blog Banner"
             className="w-full h-[200px] sm:h-[250px] object-cover hidden sm:block"
           />
           <img
-            // src="public/assets/image/blog/banner.jpg"
+            src="public/assets/image/blog/banner.jpg"
             alt="Blog Banner Mobile"
             className="w-full object-cover h-[200px] sm:hidden"
           />
@@ -564,12 +564,12 @@ export default function BlogPage() {
               >
                 {/* image with tag badge floating on top */}
                 <div className="relative">
-                  {/* <img
+                  <img
                     src={post.img}
                     alt={post.title}
                     className="w-full h-22 object-cover"
                     style={{ height: "88px" }}
-                  /> */}
+                  />
                   <div className="absolute left-1.5 bottom-1.5">
                     <TagBadge>{post.tag}</TagBadge>
                   </div>

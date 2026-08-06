@@ -425,7 +425,7 @@ const BlogSection = () => {
       author: "Abheepay Team",
       date: "2025",
       title: "How the Right Insurance Plan Builds Long-Term Financial Security",
-      img: "#",
+      img: "/assets/image/services/Blog.png",
       url: "/blog/how-the-right-insurance-plan-builds-long-term-financial-security"
     },
     {
@@ -433,7 +433,7 @@ const BlogSection = () => {
       author: "Abheepay Team",
       date: "2025",
       title: "Why Digital Credit Card Bill Payments are Safer Than Cash",
-      img: "#",
+      img: "/assets/image/services/Blog.png",
       url: "/blog/why-digital-credit-card-bill-payments-are-safer-than-cash"
     },
     {
@@ -441,7 +441,7 @@ const BlogSection = () => {
       author: "Abheepay Team",
       date: "2025",
       title: "Digital Banking Solutions Empowering Small Businesses",
-      img: "#",
+      img: "/assets/image/services/Blog.png",
       url: "/blog/digital-banking-solutions-empowering-small-businesses"
     },
     {
@@ -449,7 +449,7 @@ const BlogSection = () => {
       author: "Abheepay Team",
       date: "2025",
       title: "Smart Cash Flow Management for Growing Retailers",
-      img: "#",
+      img: "/assets/image/services/Blog.png",
       url: "/blog/smart-cash-flow-management-for-growing-retailers"
     },
     {
@@ -457,7 +457,7 @@ const BlogSection = () => {
       author: "Abheepay Team",
       date: "2025",
       title: "Domestic Money Transfer Made Simple with Digital Platforms",
-      img: "#",
+      img: "/assets/image/services/Blog.png",
       url: "/blog/domestic-money-transfer-made-simple-with-digital-platforms"
     },
     {
@@ -465,7 +465,7 @@ const BlogSection = () => {
       author: "Abheepay Team",
       date: "2024",
       title: "Utility Bill Payments: A Convenient Digital Experience",
-      img: "#",
+      img: "/assets/image/services/Blog.png",
       url: "/blog/utility-bill-payments-a-convenient-digital-experience"
     },
     {
@@ -473,7 +473,7 @@ const BlogSection = () => {
       author: "Abheepay Team",
       date: "2024",
       title: "How Digital Loan Services Help Businesses Scale Faster",
-      img: "#",
+      img: "/assets/image/services/Blog.png",
       url: "/blog/how-digital-loan-services-help-businesses-scale-faster"
     },
     {
@@ -481,7 +481,7 @@ const BlogSection = () => {
       author: "Abheepay Team",
       date: "2024",
       title: "How Digital Financial Services Increase Retail Store Footfall",
-      img: "#",
+      img: "/assets/image/services/Blog.png",
       url: "/blog/how-digital-financial-services-increase-retail-store-footfall"
     }
   ];

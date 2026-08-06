@@ -1074,7 +1074,7 @@ const Navbar = () => {
                       <Link to="/contact" onClick={() => setDeveloperHubOpen(false)} className="flex items-center justify-between bg-[#d8edff] px-4 py-3 text-[13px] font-bold text-[#17457a] transition hover:bg-[#c6e4fb]">
                         Contact Sales <span aria-hidden="true">→</span>
                       </Link>
-                      <Link to="/join-as-retailer" onClick={() => setDeveloperHubOpen(false)} className="block bg-[#7184bb] px-4 py-3 text-[13px] font-bold text-white transition hover:bg-[#6074ac]">
+                      <Link to="/Retailer" onClick={() => setDeveloperHubOpen(false)} className="block bg-[#7184bb] px-4 py-3 text-[13px] font-bold text-white transition hover:bg-[#6074ac]">
                         Get Started
                       </Link>
                     </div>
@@ -1230,8 +1230,8 @@ const Navbar = () => {
             <LanguageSwitcher />
 
             <div
-              className="
-      flex items-center gap-2
+              className="hidden sm:flex
+      items-center gap-2
       rounded-2xl
       bg-gradient-to-r
       from-[#081C33]
@@ -1262,8 +1262,8 @@ transition
                 Login
               </a>
 
-              <Link
-                to="/join-as-retailer"
+              {/* <Link
+                to="/Retailer"
                 className="
 inline-flex
 items-center
@@ -1280,8 +1280,17 @@ transition
 "
               >
                 Get Started
-              </Link>
+              </Link> */}
             </div>
+
+            {/* Mobile burger button - visible only on small screens */}
+            <button
+              className="sm:hidden p-2 rounded-md text-gray-800 hover:bg-slate-100"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Open navigation menu"
+            >
+              {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
           </div>
 
 
@@ -1332,7 +1341,7 @@ transition
                   ABOUT US
                 </Link>
 
-                <div>
+                {/* <div>
                   <button
                     className="w-full flex justify-between items-center font-semibold"
                     onClick={() => setServicesOpen(!servicesOpen)}
@@ -1365,9 +1374,9 @@ transition
                       ))}
                     </div>
                   )}
-                </div>
+                </div> */}
 
-                <Link to="/join-as-retailer" onClick={() => setMobileMenuOpen(false)}>
+                <Link to="/Retailer" onClick={() => setMobileMenuOpen(false)}>
                   RETAILER PROGRAM
                 </Link>
 
@@ -1375,12 +1384,15 @@ transition
                   DISTRIBUTOR PROGRAM
                 </Link>
 
+
                 <Link to="/blog" onClick={() => setMobileMenuOpen(false)}>
                   BLOGS
                 </Link>
-                <Link to="/account-delete" onClick={() => setMobileMenuOpen(false)}>
+                {/* <Link to="/account-delete" onClick={() => setMobileMenuOpen(false)}>
                   ACCOUNT DELETE
-                </Link>
+                </Link> */}
+
+                
 
                 <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
                   CONTACT US
