@@ -6688,7 +6688,7 @@ const HeroSection = () => {
       titleMain: "Powering India's",
       titleAccent: "Digital Payment Ecosystem",
       desc: "Secure, scalable and reliable payment infrastructure for merchants, businesses and enterprises.",
-      link: "/services/micro-atm-matm-services",
+      link: "#",
       dashboard: {
         revenue: "\u20b912.5Cr",
         revenueGrowth: "+23.5% this month",

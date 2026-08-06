@@ -982,11 +982,11 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   const productLinks = [
-    { name: "Bill Payments Solution", link: "/services/bbps-electricity-gas-water-fastag" },
-    { name: "POS Machine", link: "/services/pos-devices" },
+    // { name: "Bill Payments Solution", link: "/services/bbps-electricity-gas-water-fastag" },
+    { name: "POS Machine", link: "/products/pos-machine" },
     // { name: "AEPS", link: "/services/aeps-cash-withdrawal-balance-inquiry-mini-statement" },
-    { name: "Micro ATM Services", link: "/services/micro-atm-matm-services" },
-    { name: "Credit Card", link: "/services/credit-card-bill-payments" },
+    // { name: "Micro ATM Services", link: "/services/micro-atm-matm-services" },
+    // { name: "Credit Card", link: "/services/credit-card-bill-payments" },
     { name: "Insurance Solutions", link: "/insurance-solutions" },
   ];
 
@@ -994,8 +994,8 @@ const Footer = () => {
     { text: "Home", to: "/" },
     { text: "About Us", to: "/about" },
     { text: "Contact Us", to: "/contact" },
-    { text: "Join as Retailer", to: "/join-as-retailer" },
-    { text: "Join as Distributor", to: "/join-as-distributor" },
+    { text: "Retailer Progrram", to: "/Retailer" },
+    { text: "Distributor Program", to: "/Distributor" },
     { text: "Privacy Policy", to: "/privacy-policy" },
     { text: "Terms & Conditions", to: "/term-condition" },
   ];
