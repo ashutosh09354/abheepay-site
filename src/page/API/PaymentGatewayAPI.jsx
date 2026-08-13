@@ -440,7 +440,7 @@ const PaymentGatewayAPI = () => {
             </motion.div>
 
             <div className="flex items-center justify-center">
-              <img src="/assets/image/services/ApiServices.png" alt="Payment Gateway API services" className="w-full max-w-[672px] rounded-[17px] shadow-lg" />
+              <img src="/assets/image/services/ApiServices2.png" alt="Payment Gateway API services" className="w-full max-w-[672px] rounded-[17px] shadow-lg" />
             </div>
           </div>
         </div>

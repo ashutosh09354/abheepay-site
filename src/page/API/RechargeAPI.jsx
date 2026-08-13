@@ -433,7 +433,7 @@ const RechargeAPI = () => {
             </motion.div>
 
             <div className="flex items-center justify-center">
-              <img src="/assets/image/services/ApiServices.png" alt="AbheePay Recharge API dashboard for mobile, DTH and FASTag recharge integration" className="w-full max-w-[672px] rounded-[16.8px] shadow-lg" />
+              <img src="/assets/image/services/ApiServices6.png" alt="AbheePay Recharge API dashboard for mobile, DTH and FASTag recharge integration" className="w-full max-w-[672px] rounded-[16.8px] shadow-lg" />
             </div>
           </div>
         </div>

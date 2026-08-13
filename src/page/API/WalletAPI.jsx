@@ -102,7 +102,7 @@ const WalletAPI = () => {
             </motion.div>
 
             <div className="flex items-center justify-center">
-              <img src="/assets/image/services/ApiServices.png" alt="API services" className="w-full max-w-[560px] rounded-[14px] shadow-lg" />
+              <img src="/assets/image/services/ApiServices5.png" alt="API services" className="w-full max-w-[560px] rounded-[14px] shadow-lg" />
             </div>
           </div>
         </div>
