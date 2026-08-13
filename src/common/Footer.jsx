@@ -993,11 +993,21 @@ const Footer = () => {
   const quickLinks = [
     { text: "Home", to: "/" },
     { text: "About Us", to: "/about" },
+    { text: "Mission & Vision", to: "/company/mission-vision" },
     { text: "Contact Us", to: "/contact" },
     { text: "Retailer Progrram", to: "/Retailer" },
     { text: "Distributor Program", to: "/Distributor" },
     { text: "Privacy Policy", to: "/privacy-policy" },
     { text: "Terms & Conditions", to: "/term-condition" },
+    { text: "Refund & Cancellation Policy", to: "/refund-cancellation-policy" },
+    { text: "User Agreement", to: "/user-agreement" },
+    { text: "Merchant Terms", to: "/merchant-terms" },
+    { text: "Developer Terms of Use", to: "/developer-terms" },
+    { text: "Acceptable Use Policy", to: "/acceptable-use-policy" },
+    { text: "Cookie Policy", to: "/cookie-policy" },
+    { text: "Disclaimer", to: "/disclaimer" },
+    { text: "Grievance Redressal Policy", to: "/grievance-redressal-policy" },
+    { text: "Delete Your Account", to: "/account-delete" },
   ];
 
   const socialLinks = [
@@ -1211,7 +1221,7 @@ const Footer = () => {
             {/* Company / Quick Links */}
             <div>
               <h4 className="text-[15.6px] font-semibold text-white mb-[18.72px]">Company</h4>
-              <ul className="space-y-[15.6px]">
+              <ul className="grid grid-cols-2 gap-x-[31.2px] gap-y-[15.6px]">
                 {quickLinks.map((item, index) => (
                   <li key={index}>
                     <Link

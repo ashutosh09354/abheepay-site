@@ -10,7 +10,15 @@ import BlogDetails from "./page/blog/Blogdetails";
 import InsurancePage from "./page/insurance/Insurance";
 import PrivacyPolicy from "./page/privacy-policy/Privacy-Policy";
 import TermsConditions from "./page/term-condition/Terms-conditions";
-import Services from "./page/services/Services";
+import RefundCancellationPolicy from "./page/refund-cancellation-policy/RefundCancellationPolicy";
+import UserAgreement from "./page/user-agreement/UserAgreement";
+import MerchantTerms from "./page/merchant-terms/MerchantTerms";
+import DeveloperTerms from "./page/developer-terms/DeveloperTerms";
+import AcceptableUsePolicy from "./page/acceptable-use-policy/AcceptableUsePolicy";
+import CookiePolicy from "./page/cookie-policy/CookiePolicy";
+import Disclaimer from "./page/disclaimer/Disclaimer";
+import GrievanceRedressalPolicy from "./page/grievance-redressal-policy/GrievanceRedressalPolicy";
+// import Services from "./page/services/Services";
 import Join from "./page/join-as-retailer/Join-as-retailer";
 import Joins from "./page/join-as-distributor/Join-as-distributor";
 import TechnologyPartner from "./page/join-as-technology-partner/TechnologyPartner";
@@ -50,6 +58,13 @@ import Overview from "./page/Partners/Overview";
 import Distributor from "./page/Partners/Distributor";
 import WhiteLabel from "./page/Partners/WhiteLabel";
 
+
+import OurStory from "./page/Company/our-story";
+import LeadershipTeam from "./page/Company/LeadershipTeam";
+import NewsUpdates from "./page/Company/News&updates";
+import Careers from "./page/Company/Careers";
+import MissionVision from "./page/Company/Mission&Vision";
+
 const Layout = () => {
   return (
     <>
@@ -76,6 +91,38 @@ const router = createBrowserRouter([
       {
         path: "/insurance-solutions",
         element: <InsurancePage />,
+      },
+      {
+        path: "/company/about-us",
+        element: <AboutPage />,
+      },
+      {
+        path: "/company/leadership-team",
+        element: <LeadershipTeam />,
+      },
+      {
+        path: "/company/careers",
+        element: <Careers />,
+      },
+      {
+        path: "/company/mission-vision",
+        element: <MissionVision />,
+      },
+      {
+        path: "/company/news-updates",
+        element: <NewsUpdates />,
+      },
+      {
+        path: "/company/blog",
+        element: <BlogPage />,
+      },
+      {
+        path: "/company/contact-us",
+        element: <ContactUs />,
+      },
+      {
+        path: "/company/our-story",
+        element: <OurStory />,
       },
       {
         path: "/join-as-retailer",
@@ -122,14 +169,14 @@ const router = createBrowserRouter([
         path: "/blog/:id",
         element: <BlogDetails />,
       },
-      {
-        path: "/services",
-        element: <Services />,
-      },
-      {
-        path: "/services/:id",
-        element: <Services />,
-      },
+      // {
+      //   path: "/services",
+      //   element: <Services />,
+      // },
+      // {
+      //   path: "/services/:id",
+      //   element: <Services />,
+      // },
       {
         path: "/privacy-policy",
         element: <PrivacyPolicy />,
@@ -137,6 +184,38 @@ const router = createBrowserRouter([
       {
         path: "/term-condition",
         element: <TermsConditions />,
+      },
+      {
+        path: "/refund-cancellation-policy",
+        element: <RefundCancellationPolicy />,
+      },
+      {
+        path: "/user-agreement",
+        element: <UserAgreement />,
+      },
+      {
+        path: "/merchant-terms",
+        element: <MerchantTerms />,
+      },
+      {
+        path: "/developer-terms",
+        element: <DeveloperTerms />,
+      },
+      {
+        path: "/acceptable-use-policy",
+        element: <AcceptableUsePolicy />,
+      },
+      {
+        path: "/cookie-policy",
+        element: <CookiePolicy />,
+      },
+      {
+        path: "/disclaimer",
+        element: <Disclaimer />,
+      },
+      {
+        path: "/grievance-redressal-policy",
+        element: <GrievanceRedressalPolicy />,
       },
       {
         path: "/login",

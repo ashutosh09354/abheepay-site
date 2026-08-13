@@ -572,6 +572,7 @@ const Navbar = () => {
 
   // Desktop services dropdown control
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const [companyDropdownOpen, setCompanyDropdownOpen] = useState(false);
   const [developerHubOpen, setDeveloperHubOpen] = useState(false);
   const [developerApiPanelOpen, setDeveloperApiPanelOpen] = useState(false);
   const timeoutRef = useRef(null);
@@ -749,6 +750,16 @@ const Navbar = () => {
       setServicesDropdownOpen(false);
     }, 200);
   };
+
+  const companyLinks = [
+    { name: "About Us", path: "/company/about-us" },
+    { name: "Leadership Team", path: "/company/leadership-team" },
+    { name: "Careers", path: "/company/careers" },
+    { name: "News & Updates", path: "/company/news-updates" },
+    { name: "Blog", path: "/company/blog" },
+    { name: "Contact Us", path: "/company/contact-us" },
+    { name: "Our Story", path: "/company/our-story" },
+  ];
 
   const handleDeveloperHubEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -1188,9 +1199,27 @@ const Navbar = () => {
             <Link to="/about" className="text-[20px] font-bold transition-colors hover:text-[#00C4C7]">
               About Us
             </Link>
-            <Link to="/blog" className="text-[20px] font-bold transition-colors hover:text-[#00C4C7]">
-              Blog
-            </Link>
+            <div
+              className="relative"
+              onMouseEnter={() => setCompanyDropdownOpen(true)}
+              onMouseLeave={() => setCompanyDropdownOpen(false)}
+            >
+              <button
+                type="button"
+                className="flex items-center gap-1 text-[20px] font-bold transition-colors hover:text-[#00C4C7]"
+                aria-expanded={companyDropdownOpen}
+              >
+                Company
+                <ChevronDown size={21} strokeWidth={2.5} className={companyDropdownOpen ? "rotate-180 transition-transform" : "transition-transform"} />
+              </button>
+              <div className={`absolute right-0 top-full z-50 mt-2 w-52 overflow-hidden rounded-xl border border-gray-200 bg-white py-1 shadow-xl transition-all duration-200 ${companyDropdownOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0 pointer-events-none"}`}>
+                {companyLinks.map((item) => (
+                  <Link key={item.path} to={item.path} onClick={() => setCompanyDropdownOpen(false)} className="block px-4 py-2.5 text-sm font-medium text-gray-700 transition-colors hover:bg-[#14B8A6]/10 hover:text-[#14B8A6]">
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
             {/* <Link to="/contact" className="text-[20px] font-bold transition-colors hover:text-[#00C4C7]">
               Contact
             </Link> */}
@@ -1337,9 +1366,16 @@ transition
                 <Link to="/" onClick={() => setMobileMenuOpen(false)}>
                   HOME
                 </Link>
-                <Link to="/about" onClick={() => setMobileMenuOpen(false)}>
-                  ABOUT US
-                </Link>
+                <div className="border-y border-white/10 py-4">
+                  <p className="mb-3 font-semibold text-[#18C7C9]">COMPANY</p>
+                  <div className="flex flex-col gap-3 pl-3 text-sm">
+                    {companyLinks.map((item) => (
+                      <Link key={item.path} to={item.path} onClick={() => setMobileMenuOpen(false)}>
+                        {item.name.toUpperCase()}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
 
                 {/* <div>
                   <button
@@ -1384,19 +1420,10 @@ transition
                   DISTRIBUTOR PROGRAM
                 </Link>
 
-
-                <Link to="/blog" onClick={() => setMobileMenuOpen(false)}>
-                  BLOGS
-                </Link>
                 {/* <Link to="/account-delete" onClick={() => setMobileMenuOpen(false)}>
                   ACCOUNT DELETE
                 </Link> */}
 
-                
-
-                <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
-                  CONTACT US
-                </Link>
               </div>
             </div>
           </aside>
