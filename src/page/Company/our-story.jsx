@@ -1,10 +1,32 @@
-
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 const OurStory = () => {
+  // Scroll-reveal: fades/lifts sections into view as the reader scrolls.
+  // Respects prefers-reduced-motion and only runs once per element.
+  useEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const els = document.querySelectorAll('[data-reveal]');
+    if (prefersReduced || !els.length) {
+      els.forEach((el) => el.classList.add('in-view'));
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
+    );
+    els.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   const pageMarkup = `
 <style>
 
@@ -12,8 +34,10 @@ const OurStory = () => {
     --ink:#FFFFFF;
     --panel:#F3F6FA;
     --panel-2:#E7EDF5;
+    --panel-3:#DCE6F0;
     --gold:#14B8A6;
     --gold-soft:#0E7F73;
+    --gold-glow:rgba(20,184,166,0.35);
     --teal:#14B8A6;
     --paper:#0D1B36;
     --paper-dim:#55617A;
@@ -48,14 +72,17 @@ const OurStory = () => {
     color:var(--gold);
     display:flex;
     align-items:center;
-    gap:0.6em;
+    gap:0.65em;
   }
   .eyebrow::before{
     content:"";
-    width:22px;
-    height:1px;
+    width:7px;
+    height:7px;
+    border-radius:50%;
     background:var(--gold);
+    box-shadow:0 0 0 3px rgba(20,184,166,0.16);
     display:inline-block;
+    flex:none;
   }
   .wrap{
     max-width:1080px;
@@ -64,38 +91,101 @@ const OurStory = () => {
   }
   a{color:inherit;}
 
+  /* SCROLL REVEAL */
+  [data-reveal]{
+    opacity:0;
+    transform:translateY(26px);
+    transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1);
+  }
+  [data-reveal].in-view{ opacity:1; transform:translateY(0); }
+  [data-reveal-child]{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .6s ease, transform .6s ease;
+    transition-delay:var(--d, 0ms);
+  }
+  [data-reveal].in-view [data-reveal-child]{ opacity:1; transform:translateY(0); }
+
   /* HERO */
   .hero{
-    padding:120px 0 96px;
+    padding:130px 0 100px;
     position:relative;
     overflow:hidden;
     border-bottom:1px solid var(--line);
   }
   .hero .wrap{position:relative; z-index:2;}
+  .hero .eyebrow{
+    opacity:0; animation:heroFade .7s ease forwards; animation-delay:.05s;
+  }
   .hero h1{
     font-size:clamp(2.4rem, 5vw, 4rem);
     max-width:820px;
     margin-top:22px;
     line-height:1.08;
+    opacity:0; animation:heroFade .8s ease forwards; animation-delay:.2s;
+  }
+  .hero h1 .accent{
+    background:linear-gradient(100deg, var(--gold) 0%, var(--gold-soft) 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
   }
   .hero p.lede{
     max-width:560px;
     margin-top:26px;
     font-size:1.08rem;
     color:var(--paper-dim);
+    opacity:0; animation:heroFade .8s ease forwards; animation-delay:.36s;
   }
-  .hero-graphic{
+  @keyframes heroFade{
+    from{ opacity:0; transform:translateY(16px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .hero .eyebrow, .hero h1, .hero p.lede{ animation:none; opacity:1; transform:none; }
+  }
+
+  .hero-graphic-wrap{
     position:absolute;
     right:-60px; top:50%; transform:translateY(-46%);
     width:520px; height:520px;
-    opacity:0.9;
     z-index:1;
   }
-  @media (max-width:900px){ .hero-graphic{display:none;} }
+  .hero-graphic-wrap::before{
+    content:"";
+    position:absolute;
+    inset:16%;
+    background:radial-gradient(circle, var(--gold-glow) 0%, rgba(20,184,166,0) 70%);
+    filter:blur(6px);
+    pointer-events:none;
+  }
+  .hero-graphic{ position:relative; width:100%; height:100%; opacity:0.95; }
+  @media (max-width:900px){ .hero-graphic-wrap{display:none;} }
 
   /* CONVERGE NODE ANIMATION */
   .node{ fill:var(--panel-2); stroke:var(--line); stroke-width:1; }
   .node-core{ fill:var(--gold); }
+  .node-ring{
+    fill:none;
+    stroke:var(--gold);
+    stroke-width:1;
+    opacity:0.35;
+    animation:ringPulse 3.2s ease-out infinite;
+    transform-origin:300px 260px;
+  }
+  @keyframes ringPulse{
+    0%{ transform:scale(0.7); opacity:0.5; }
+    100%{ transform:scale(1.9); opacity:0; }
+  }
+  .orbit-ring{
+    fill:none;
+    stroke:var(--line);
+    stroke-width:1;
+    stroke-dasharray:2 8;
+    transform-origin:300px 260px;
+    animation:spin 90s linear infinite;
+  }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
   .path-line{
     stroke:var(--gold-soft);
     stroke-width:1;
@@ -116,6 +206,7 @@ const OurStory = () => {
   }
   @media (prefers-reduced-motion: reduce){
     .pulse{animation:none; opacity:0;}
+    .node-ring, .orbit-ring{animation:none;}
   }
 
   /* SECTION SCAFFOLD */
@@ -143,7 +234,6 @@ const OurStory = () => {
     font-style:normal;
     color:var(--gold);
   }
-  .fragment-diagram{ width:100%; height:auto; }
 
   /* PILLARS */
   .pillars{
@@ -157,13 +247,29 @@ const OurStory = () => {
   .pillar{
     background:var(--panel);
     padding:36px 32px 40px;
+    position:relative;
+    border-top:2px solid transparent;
+    transition:background .25s ease, border-color .25s ease, transform .25s ease, box-shadow .25s ease;
   }
+  .pillar:hover{
+    background:var(--ink);
+    border-top-color:var(--gold);
+    transform:translateY(-4px);
+    box-shadow:0 20px 40px -24px rgba(13,27,54,0.28);
+  }
+  .pillar .icon{
+    width:34px; height:34px;
+    color:var(--teal);
+  }
+  .pillar .icon svg{ width:100%; height:100%; }
   .pillar .tag{
     font-family:'IBM Plex Mono', monospace;
     font-size:0.7rem;
     letter-spacing:0.12em;
     text-transform:uppercase;
     color:var(--teal);
+    margin-top:16px;
+    display:block;
   }
   .pillar h3{
     font-size:1.28rem;
@@ -203,20 +309,39 @@ const OurStory = () => {
   .quote-panel{
     background:var(--panel);
     padding:56px;
+    padding-left:76px;
     border-left:2px solid var(--gold);
+    position:relative;
+    overflow:hidden;
   }
-  @media (max-width:600px){ .quote-panel{padding:36px 24px;} }
+  .quote-panel::before{
+    content:"\\201C";
+    position:absolute;
+    top:-38px; left:14px;
+    font-family:'Fraunces', serif;
+    font-size:11rem;
+    line-height:1;
+    color:var(--gold);
+    opacity:0.09;
+    pointer-events:none;
+  }
+  @media (max-width:600px){
+    .quote-panel{padding:36px 24px 36px 44px;}
+    .quote-panel::before{font-size:7rem; top:-18px; left:2px;}
+  }
   .quote-panel p.big{
     font-family:'Fraunces', serif;
     font-size:clamp(1.3rem,2.6vw,1.7rem);
     line-height:1.45;
     max-width:760px;
+    position:relative;
   }
   .quote-panel p.support{
     margin-top:22px;
     color:var(--paper-dim);
     max-width:640px;
     font-size:0.98rem;
+    position:relative;
   }
 
   /* MORE THAN + LOOKING AHEAD split */
@@ -244,9 +369,29 @@ const OurStory = () => {
     font-size:0.85rem;
     color:var(--paper);
     background:var(--panel);
-    transition:border-color .2s, color .2s;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    transition:border-color .2s, color .2s, background .2s, transform .2s;
   }
-  .value-chip:hover{ border-color:var(--gold); color:var(--gold); }
+  .value-chip::before{
+    content:"";
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--paper-dim);
+    transition:background .2s, box-shadow .2s;
+    flex:none;
+  }
+  .value-chip:hover{
+    border-color:var(--gold);
+    color:var(--gold-soft);
+    background:var(--ink);
+    transform:translateY(-2px);
+  }
+  .value-chip:hover::before{
+    background:var(--gold);
+    box-shadow:0 0 0 4px rgba(20,184,166,0.15);
+  }
 
   /* EXPLORE LINKS */
   .explore-grid{
@@ -267,14 +412,19 @@ const OurStory = () => {
     justify-content:space-between;
     transition:background .2s, color .2s;
   }
-  .explore-grid a:hover{ background:var(--panel-2); color:var(--gold); }
-  .explore-grid a::after{ content:"→"; opacity:0.5; }
+  .explore-grid a:hover{ background:var(--panel-3); color:var(--gold-soft); }
+  .explore-grid a::after{
+    content:"\\2192";
+    opacity:0.5;
+    transition:transform .2s ease, opacity .2s ease;
+  }
+  .explore-grid a:hover::after{ transform:translateX(4px); opacity:1; }
 
   /* CTA FOOTER */
   footer.cta{
     padding:110px 0 90px;
     text-align:center;
-    background:radial-gradient(ellipse at 50% 0%, rgba(20,184,166,0.10), transparent 60%);
+    background:radial-gradient(ellipse at 50% 0%, rgba(20,184,166,0.12), transparent 60%);
     border-bottom:none;
   }
   footer.cta h2{
@@ -300,7 +450,7 @@ const OurStory = () => {
     font-weight:500;
     text-decoration:none;
     border-radius:var(--radius);
-    transition:transform .2s, background .2s, color .2s;
+    transition:transform .2s, background .2s, color .2s, box-shadow .2s;
     display:inline-block;
   }
   .btn:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
@@ -308,12 +458,15 @@ const OurStory = () => {
     background:var(--gold);
     color:var(--ink);
   }
-  .btn-primary:hover{ transform:translateY(-2px); }
+  .btn-primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 28px -10px rgba(20,184,166,0.55);
+  }
   .btn-ghost{
     border:1px solid var(--line);
     color:var(--paper);
   }
-  .btn-ghost:hover{ border-color:var(--gold); color:var(--gold); }
+  .btn-ghost:hover{ border-color:var(--gold); color:var(--gold-soft); transform:translateY(-2px); }
 
   .foot-note{
     margin-top:64px;
@@ -329,43 +482,49 @@ const OurStory = () => {
 <header class="hero">
   <div class="wrap">
     <div class="eyebrow">Our Story</div>
-    <h1>Building technology<br>that helps businesses grow.</h1>
+    <h1>Building technology<br>that helps businesses <span class="accent">grow</span>.</h1>
     <p class="lede">Every successful business starts with a simple idea. For AbheePay, that idea was to make digital payments and business technology easier, more accessible, and more reliable — for businesses across India.</p>
   </div>
 
-  <svg class="hero-graphic" viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <path id="p1" d="M 90 90 C 150 150, 200 200, 300 260"/>
-      <path id="p2" d="M 90 430 C 150 380, 200 320, 300 260"/>
-      <path id="p3" d="M 430 90 C 370 150, 330 200, 300 260"/>
-      <path id="p4" d="M 470 300 C 400 290, 350 275, 300 260"/>
-      <path id="p5" d="M 60 260 C 150 260, 220 260, 300 260"/>
-    </defs>
-    <path class="path-line" d="M 90 90 C 150 150, 200 200, 300 260"/>
-    <path class="path-line" d="M 90 430 C 150 380, 200 320, 300 260"/>
-    <path class="path-line" d="M 430 90 C 370 150, 330 200, 300 260"/>
-    <path class="path-line" d="M 470 300 C 400 290, 350 275, 300 260"/>
-    <path class="path-line" d="M 60 260 C 150 260, 220 260, 300 260"/>
+  <div class="hero-graphic-wrap">
+    <svg class="hero-graphic" viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <path id="p1" d="M 90 90 C 150 150, 200 200, 300 260"/>
+        <path id="p2" d="M 90 430 C 150 380, 200 320, 300 260"/>
+        <path id="p3" d="M 430 90 C 370 150, 330 200, 300 260"/>
+        <path id="p4" d="M 470 300 C 400 290, 350 275, 300 260"/>
+        <path id="p5" d="M 60 260 C 150 260, 220 260, 300 260"/>
+      </defs>
 
-    <circle class="node" cx="90" cy="90" r="9"/>
-    <circle class="node" cx="90" cy="430" r="9"/>
-    <circle class="node" cx="430" cy="90" r="9"/>
-    <circle class="node" cx="470" cy="300" r="9"/>
-    <circle class="node" cx="60" cy="260" r="9"/>
+      <circle class="orbit-ring" cx="300" cy="260" r="185"/>
 
-    <circle class="node-core" cx="300" cy="260" r="20"/>
+      <path class="path-line" d="M 90 90 C 150 150, 200 200, 300 260"/>
+      <path class="path-line" d="M 90 430 C 150 380, 200 320, 300 260"/>
+      <path class="path-line" d="M 430 90 C 370 150, 330 200, 300 260"/>
+      <path class="path-line" d="M 470 300 C 400 290, 350 275, 300 260"/>
+      <path class="path-line" d="M 60 260 C 150 260, 220 260, 300 260"/>
 
-    <circle class="pulse" r="3.4" style="offset-path:url(#p1)"/>
-    <circle class="pulse" r="3.4" style="offset-path:url(#p2); animation-delay:0.9s;"/>
-    <circle class="pulse" r="3.4" style="offset-path:url(#p3); animation-delay:1.8s;"/>
-    <circle class="pulse" r="3.4" style="offset-path:url(#p4); animation-delay:2.7s;"/>
-    <circle class="pulse" r="3.4" style="offset-path:url(#p5); animation-delay:3.6s;"/>
-  </svg>
+      <circle class="node" cx="90" cy="90" r="9"/>
+      <circle class="node" cx="90" cy="430" r="9"/>
+      <circle class="node" cx="430" cy="90" r="9"/>
+      <circle class="node" cx="470" cy="300" r="9"/>
+      <circle class="node" cx="60" cy="260" r="9"/>
+
+      <circle class="node-ring" cx="300" cy="260" r="20"/>
+      <circle class="node-core" cx="300" cy="260" r="20"/>
+
+      <circle class="pulse" r="3.4" style="offset-path:url(#p1)"/>
+      <circle class="pulse" r="3.4" style="offset-path:url(#p2); animation-delay:0.9s;"/>
+      <circle class="pulse" r="3.4" style="offset-path:url(#p3); animation-delay:1.8s;"/>
+      <circle class="pulse" r="3.4" style="offset-path:url(#p4); animation-delay:2.7s;"/>
+      <circle class="pulse" r="3.4" style="offset-path:url(#p5); animation-delay:3.6s;"/>
+    </svg>
+  </div>
 </header>
 
 <section id="why">
   <div class="wrap">
-    <div class="why-grid">
+    <div class="why-grid" data-reveal>
       <div>
         <div class="eyebrow">Why We Started</div>
         <p class="statement" style="margin-top:20px;">Our journey began with one clear objective: to help businesses access everything they need to grow through <em>one trusted technology platform.</em></p>
@@ -380,15 +539,22 @@ const OurStory = () => {
 
 <section id="building">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head" data-reveal>
       <div class="eyebrow">What We Are Building</div>
       <h2>One ecosystem, built for every stage of growth.</h2>
       <p>AbheePay continues to develop solutions that support businesses at every stage of their digital journey.</p>
     </div>
   </div>
   <div class="wrap" style="padding:0 32px;">
-    <div class="pillars">
+    <div class="pillars" data-reveal>
       <div class="pillar">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="6" width="20" height="13" rx="2"/>
+            <path d="M2 10h20"/>
+            <path d="M6 15h4"/>
+          </svg>
+        </div>
         <div class="tag">Payments</div>
         <h3>Digital Payment Solutions</h3>
         <p class="desc">Helping businesses collect payments securely through modern payment technologies.</p>
@@ -403,6 +569,12 @@ const OurStory = () => {
         </ul>
       </div>
       <div class="pillar">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 4 3 12l5 8"/>
+            <path d="M16 4l5 8-5 8"/>
+          </svg>
+        </div>
         <div class="tag">Developers</div>
         <h3>API Platform</h3>
         <p class="desc">Secure APIs for developers and businesses to integrate financial and payment services into their applications.</p>
@@ -417,6 +589,13 @@ const OurStory = () => {
         </ul>
       </div>
       <div class="pillar">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="10" width="7" height="11"/>
+            <rect x="14" y="3" width="7" height="18"/>
+            <path d="M6.5 14v.01M6.5 17v.01M17.5 7v.01M17.5 10v.01M17.5 13v.01"/>
+          </svg>
+        </div>
         <div class="tag">Enterprise</div>
         <h3>Business Technology</h3>
         <p class="desc">Custom technology solutions that improve efficiency and accelerate digital transformation.</p>
@@ -436,7 +615,7 @@ const OurStory = () => {
 <section id="customers">
   <div class="wrap">
     <div class="eyebrow" style="margin-bottom:20px;">Growing With Our Customers</div>
-    <div class="quote-panel">
+    <div class="quote-panel" data-reveal>
       <p class="big">Every business is unique — a neighbourhood retailer, an expanding distributor, a growing startup, or a large enterprise all have different goals and challenges.</p>
       <p class="support">That's why we focus on building flexible technology that adapts to different business models while providing reliable performance and long-term scalability. As our customers grow, we keep improving our products, expanding our services, and investing in new technology to support their success.</p>
     </div>
@@ -445,7 +624,7 @@ const OurStory = () => {
 
 <section class="tight">
   <div class="wrap">
-    <div class="split">
+    <div class="split" data-reveal>
       <div>
         <div class="eyebrow">More Than a Provider</div>
         <h3 style="margin-top:16px;">A long-term business partner.</h3>
@@ -461,7 +640,7 @@ const OurStory = () => {
 </section>
 
 <section id="values">
-  <div class="wrap">
+  <div class="wrap" data-reveal>
     <div class="eyebrow">Our Journey</div>
     <h2 style="margin-top:16px; font-size:clamp(1.6rem,3vw,2.1rem);">Our journey has only just begun.</h2>
     <p style="color:var(--paper-dim); max-width:560px; margin-top:16px; font-size:0.98rem;">As we continue to grow, we remain committed to the same principles that inspired AbheePay from the beginning.</p>
@@ -476,7 +655,7 @@ const OurStory = () => {
 </section>
 
 <section class="tight" style="border-bottom:none;">
-  <div class="wrap">
+  <div class="wrap" data-reveal>
     <div class="eyebrow" style="margin-bottom:20px;">Continue Exploring</div>
     <div class="explore-grid">
       <a href="#">Mission &amp; Vision</a>

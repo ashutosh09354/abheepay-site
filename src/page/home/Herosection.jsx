@@ -6702,7 +6702,7 @@ const HeroSection = () => {
       titleMain: "Accept Payments Anywhere with",
       titleAccent: "POS Solutions",
       desc: "Fast, secure, and reliable POS machines built for high-volume retail businesses.",
-      link: "/services/pos-devices",
+      link: "/products/pos-machine",
       dashboard: {
         revenue: "\u20b98.1Cr",
         revenueGrowth: "+15.2% this month",

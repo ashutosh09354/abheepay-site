@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import {
   CheckCircle2,
@@ -68,9 +69,8 @@ const getInitials = (role) =>
 
 const SectionEyebrow = ({ children, dark }) => (
   <span
-    className={`inline-block rounded-full px-4 py-1 text-xs font-bold uppercase tracking-widest ${
-      dark ? "bg-teal-500/15 text-teal-400" : "bg-teal-50 text-teal-600"
-    }`}
+    className={`inline-block rounded-full px-4 py-1 text-xs font-bold uppercase tracking-widest ${dark ? "bg-teal-500/15 text-teal-400" : "bg-teal-50 text-teal-600"
+      }`}
   >
     {children}
   </span>
@@ -221,9 +221,11 @@ const LeadershipTeam = () => {
             of digital payments and business technology.
           </p>
           <div className="mt-8">
-            <button className="rounded-lg bg-white px-6 py-3 font-bold text-teal-600 transition hover:bg-teal-50">
-              Explore Careers
-            </button>
+            <Link to="/company/careers">
+              <button className="rounded-lg bg-white px-6 py-3 font-bold text-teal-600 transition hover:bg-teal-50">
+                Explore Careers
+              </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -240,10 +242,12 @@ const LeadershipTeam = () => {
             infrastructure, enterprise technology, and digital transformation solutions.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <button  to="/company/contact-us" className="rounded-lg bg-teal-500 px-6 py-3 font-bold text-white transition hover:bg-teal-600">
+            <Link
+              to="/company/contact-us"
+              className="rounded-lg bg-teal-500 px-6 py-3 font-bold text-white transition hover:bg-teal-600"
+            >
               Contact Sales
-            </button>
-
+            </Link>
           </div>
         </div>
       </section>

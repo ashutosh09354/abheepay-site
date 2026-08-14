@@ -665,6 +665,8 @@
 
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -685,6 +687,8 @@ import {
   GraduationCap,
   Layers,
 } from "lucide-react";
+
+
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -797,6 +801,8 @@ const partnershipModels = [
   },
 ];
 
+
+
 const whatYouGet = [
   { label: "Digital Payment Solutions", icon: CreditCard },
   { label: "QR Code & Sound Box", icon: QrCode },
@@ -811,6 +817,8 @@ const whatYouGet = [
 
 const Overview = () => {
   useSEO(SEO);
+
+  const [showMore, setShowMore] = useState(false);
 
   const metrics = [
     { label: "Active partners", value: "2,500+", icon: Users },
@@ -830,27 +838,50 @@ const Overview = () => {
               <span className="inline-flex items-center gap-2 rounded-full border border-teal-500/30 bg-teal-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-teal-700">
                 <ShieldCheck size={16} /> Partner Program
               </span>
-              <div className="space-y-5">
-                <h1 className="text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl">
-                  Grow Your Business with the <span className="text-[#0d9488]">AbheePay Partner Program</span>
-                </h1>
-                <p className="max-w-2xl text-base font-semibold text-teal-700 sm:text-lg">
-                  Build, Expand &amp; Scale Your Business with AbheePay
-                </p>
-                <p className="max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-                  The AbheePay Partner Program is designed for entrepreneurs, retailers,
-                  distributors, fintech companies, and enterprises looking to grow their
-                  business through digital payment and business solutions.
-                </p>
-                <p className="max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-                  Whether you want to offer payment services, build your own merchant
-                  network, launch a branded payment business, or integrate financial
-                  services into your platform, AbheePay provides the products,
-                  technology, and support you need to succeed. Choose the partnership
-                  model that best fits your business goals and grow with a trusted
-                  technology partner.
-                </p>
-              </div>
+             <div className="space-y-5">
+  <h1 className="text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl">
+    Grow Your Business with the{" "}
+    <span className="text-[#0d9488]">AbheePay Partner Program</span>
+  </h1>
+
+  <p className="max-w-2xl text-base font-semibold text-teal-700 sm:text-lg">
+    Build, Expand &amp; Scale Your Business with AbheePay
+  </p>
+
+  {/* First paragraph - always visible */}
+  <p className="max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+    The AbheePay Partner Program is designed for entrepreneurs, retailers,
+    distributors, fintech companies, and enterprises looking to grow their
+    business through digital payment and business solutions.
+  </p>
+
+  {/* Second paragraph - hidden initially */}
+  {showMore && (
+    <p className="max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+      Whether you want to offer payment services, build your own merchant
+      network, launch a branded payment business, or integrate financial
+      services into your platform, AbheePay provides the products,
+      technology, and support you need to succeed. Choose the partnership
+      model that best fits your business goals and grow with a trusted
+      technology partner.
+    </p>
+  )}
+
+  {/* Read More */}
+  <button
+    type="button"
+    onClick={() => setShowMore(!showMore)}
+    className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0d9488] transition-colors hover:text-[#0f766e]"
+  >
+    {showMore ? "Read Less" : "Read More"}
+
+    {showMore ? (
+      <ChevronUp size={18} />
+    ) : (
+      <ChevronDown size={18} />
+    )}
+  </button>
+</div>
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
                 <Link
                   to="/join-as-distributor"

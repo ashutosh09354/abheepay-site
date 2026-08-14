@@ -514,6 +514,7 @@
 
 
 import React, { useEffect } from 'react';
+import { useState } from "react";
 import { motion } from 'framer-motion';
 import { Link } from "react-router-dom";
 import {
@@ -523,6 +524,7 @@ import {
   ReceiptText,
   Lock, BadgeCheck, TrendingUp,
   QrCode, Volume2, Link as LinkIcon,
+  ChevronDown, ChevronUp,
 } from 'lucide-react';
 
 // Adjust this import to wherever you place the illustration in your
@@ -555,6 +557,7 @@ const FontLoader = () => (
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
   />
 );
+
 
 const SEO = {
   title: "Retailer Program | Offer Digital Payment & Business Banking Services | AbheePay",
@@ -603,7 +606,8 @@ function useSEO({ title, description, path }) {
 
 const Retailer = () => {
   useSEO(SEO);
-
+  const [showMore, setShowMore] = useState(false);
+  const [openFaq, setOpenFaq] = useState(null);
   // "Everything Your Business Needs in One Platform" — available services
   const services = [
     { title: "QR Code Payments", icon: <QrCode size={24} /> },
@@ -740,13 +744,28 @@ const Retailer = () => {
               and business banking services to their customers.
             </p>
 
-            <p className="text-[1.013rem] text-slate-500 mb-[2.126rem] max-w-lg mx-auto lg:mx-0">
-              With one AbheePay account, you can accept digital payments, provide bill
-              payment services, mobile recharges, FASTag recharge, QR payments, and
-              other merchant solutions from a single platform. Whether you run a small
-              retail shop or a growing business, the AbheePay Retailer Program helps
-              you serve more customers while expanding your business opportunities.
-            </p>
+            {showMore && (
+              <p className="text-[1.013rem] text-slate-500 mb-[1rem] max-w-lg mx-auto lg:mx-0">
+                With one AbheePay account, you can accept digital payments, provide bill
+                payment services, mobile recharges, FASTag recharge, QR payments, and
+                other merchant solutions from a single platform. Whether you run a small
+                retail shop or a growing business, the AbheePay Retailer Program helps
+                you serve more customers while expanding your business opportunities.
+              </p>
+            )}
+
+            <button
+              type="button"
+              onClick={() => setShowMore(!showMore)}
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-teal-600 hover:text-teal-700 transition-colors"
+            >
+              {showMore ? "Read Less" : "Read More"}
+              {showMore ? (
+                <ChevronUp size={18} />
+              ) : (
+                <ChevronDown size={18} />
+              )}
+            </button>
 
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-[0.912rem] mb-[2.126rem]">
               <Link to="/contact">
@@ -1056,29 +1075,67 @@ const Retailer = () => {
           </div>
         </div>
       </section>
+{/* ---------------- FAQ ---------------- */}
+<section className="py-[3.038rem] sm:py-[3.645rem] px-[0.912rem] sm:px-[1.518rem] bg-white">
+  <div className="max-w-[864px] mx-auto">
 
-      {/* ---------------- FAQ ---------------- */}
-      <section className="py-[3.038rem] sm:py-[3.645rem] px-[0.912rem] sm:px-[1.518rem] bg-white">
-        <div className="max-w-[864px] mx-auto">
-          <div className="text-center mb-[1.823rem]">
-            <p className="text-[#14B8A6] text-[0.81rem] font-bold uppercase tracking-[0.2em] mb-[0.608rem]">
-              Frequently Asked Questions
-            </p>
-            <h2 className="text-[1.518rem] sm:text-[2.025rem] font-extrabold text-slate-900">
-              Common questions about the <span className="text-[#14B8A6]">Retailer Program</span>
-            </h2>
-          </div>
+    <div className="text-center mb-[1.823rem]">
+      <p className="text-[#14B8A6] text-[0.81rem] font-bold uppercase tracking-[0.2em] mb-[0.608rem]">
+        Frequently Asked Questions
+      </p>
 
-          <div className="divide-y divide-slate-100 rounded-[1.755rem] border border-slate-100 shadow-sm overflow-hidden">
-            {faqs.map((faq) => (
-              <div key={faq.q} className="p-[1.215rem] sm:p-[1.518rem] bg-white">
-                <h3 className="text-[1.013rem] font-bold text-slate-900">{faq.q}</h3>
-                <p className="mt-[0.456rem] text-[0.913rem] leading-relaxed text-gray-500">{faq.a}</p>
+      <h2 className="text-[1.518rem] sm:text-[2.025rem] font-extrabold text-slate-900">
+        Common questions about the{" "}
+        <span className="text-[#14B8A6]">
+          Retailer Program
+        </span>
+      </h2>
+    </div>
+
+    <div className="divide-y divide-slate-100 rounded-[1.755rem] border border-slate-100 shadow-sm overflow-hidden">
+      {faqs.map((faq, index) => {
+        const isOpen = openFaq === index;
+
+        return (
+          <div key={faq.q} className="bg-white">
+
+            <button
+              type="button"
+              onClick={() => setOpenFaq(isOpen ? null : index)}
+              className="w-full flex items-center justify-between gap-4 p-[1.215rem] sm:p-[1.518rem] text-left hover:bg-slate-50 transition-colors"
+            >
+              <h3 className="text-[1.013rem] font-bold text-slate-900">
+                {faq.q}
+              </h3>
+
+              {isOpen ? (
+                <ChevronUp
+                  size={20}
+                  className="shrink-0 text-[#14B8A6]"
+                />
+              ) : (
+                <ChevronDown
+                  size={20}
+                  className="shrink-0 text-[#14B8A6]"
+                />
+              )}
+            </button>
+
+            {isOpen && (
+              <div className="px-[1.215rem] pb-[1.215rem] sm:px-[1.518rem] sm:pb-[1.518rem]">
+                <p className="text-[0.913rem] leading-relaxed text-gray-500">
+                  {faq.a}
+                </p>
               </div>
-            ))}
+            )}
+
           </div>
-        </div>
-      </section>
+        );
+      })}
+    </div>
+
+  </div>
+</section>
 
       {/* ---------------- Dark CTA Banner ---------------- */}
       <section className="relative bg-[#0F172A] py-[3.645rem] sm:py-[4.557rem] px-[0.912rem] sm:px-[1.518rem] text-center overflow-hidden">
@@ -1102,12 +1159,6 @@ const Retailer = () => {
             <Link to="/contact">
               <button className="px-[1.518rem] py-[0.759rem] bg-[#14B8A6] text-white rounded-lg font-bold hover:bg-[#0D9488] transition text-[1.013rem]">
                 Become a Retailer
-              </button>
-            </Link>
-            <span className="text-slate-400 text-[0.913rem] font-medium">or</span>
-            <Link to="/contact">
-              <button className="px-[1.518rem] py-[0.759rem] bg-transparent border border-white/30 text-white rounded-lg font-bold hover:bg-white/10 transition text-[1.013rem]">
-                Talk to Our Partnership Team
               </button>
             </Link>
           </div>

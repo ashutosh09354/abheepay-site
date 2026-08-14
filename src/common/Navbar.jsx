@@ -3014,7 +3014,6 @@ const Navbar = () => {
     { title: "Aadhaar Verification API", description: "Authenticate users with Aadhaar data", icon: ShieldCheck, to: "/api/aadhaar" },
     { title: "Recharge API", description: "Mobile and DTH recharge integration", icon: Smartphone, to: "/api/recharge" },
     { title: "Account Verification API", description: "Verify bank account and IFSC details", icon: Landmark, to: "/api/account-verification" },
-    { title: "UPI VPA API", description: "Validate UPI virtual payment addresses", icon: ChevronsRight, to: "/api/upi-vpa" },
   ];
 
   // Developer Hub quick links
@@ -3074,7 +3073,7 @@ const Navbar = () => {
     { name: "Merchant App", path: "/products/merchant-app", icon: Smartphone },
     { name: "Digital Invoice", path: "/products/digital-invoice", icon: FileText },
     { name: "Payment Gateway", path: "/products/payment-gateway", icon: WalletCards },
-    { name: "Contact Sales", path: "/contact", icon: Headphones },
+
   ];
 
   // solutionCategories and activeSolutionCategory removed — products render directly in the dropdown
