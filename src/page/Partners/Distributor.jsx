@@ -448,6 +448,9 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from "react-router-dom";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import { useState } from "react";
+
 import {
   CreditCard, Smartphone, Zap,
   Headphones, LayoutGrid, TrendingUp,
@@ -532,6 +535,7 @@ const Distributor = () => {
     { title: "API Solutions", icon: <Code2 size={21} /> },
     { title: "Business Banking Services", icon: <Landmark size={21} /> },
   ];
+  const [showMore, setShowMore] = useState(false);
 
   const retailerNetwork = [
     "Kirana Stores", "Mobile Shops", "Medical Stores", "Restaurants",
@@ -647,14 +651,29 @@ const Distributor = () => {
               manage their own network of retailers and merchants.
             </p>
 
-            <p className="text-[1.013rem] text-gray-500 mb-[1.215rem] max-w-lg mx-auto lg:mx-0">
-              As an AbheePay Distributor, you can onboard retailers, expand your
-              business across multiple locations, and provide a wide range of digital
-              payment and business solutions through one platform. Whether you are
-              building a regional distribution network or expanding your existing
-              business, AbheePay provides the technology, products, and dedicated
-              support to help you grow.
-            </p>
+            {showMore && (
+              <p className="text-[1.013rem] text-gray-500 mb-[0.8rem] max-w-lg mx-auto lg:mx-0">
+                As an AbheePay Distributor, you can onboard retailers, expand your
+                business across multiple locations, and provide a wide range of digital
+                payment and business solutions through one platform. Whether you are
+                building a regional distribution network or expanding your existing
+                business, AbheePay provides the technology, products, and dedicated
+                support to help you grow.
+              </p>
+            )}
+
+            <button
+              onClick={() => setShowMore(!showMore)}
+              className="inline-flex items-center gap-2 text-teal-600 font-semibold text-sm hover:text-teal-700 transition-all"
+            >
+              {showMore ? "Read Less" : "Read More"}
+
+              {showMore ? (
+                <ChevronUp size={18} />
+              ) : (
+                <ChevronDown size={18} />
+              )}
+            </button>
 
             <div className="flex items-center justify-center lg:justify-start gap-[0.912rem]">
               <Link to="/contact">
@@ -686,7 +705,11 @@ const Distributor = () => {
             {/* phone frame */}
             <div className="relative w-[11.138rem] sm:w-[13.163rem] h-[303px] sm:h-[364.5px] bg-slate-900 rounded-[2.025rem] p-[0.456rem] shadow-2xl z-10">
               <div className="w-full h-full bg-white rounded-[1.62rem] overflow-hidden flex flex-col items-center px-[0.759rem] pt-[1.518rem]">
-                <span className="text-teal-500 font-extrabold tracking-wide text-[0.945rem] mb-[0.912rem]">ABHEEPAY</span>
+                <span className="text-teal-500 font-extrabold tracking-wide text-[0.945rem] mb-[0.912rem]"><img
+                  src="/assets/image/logo//logos.png"
+                  alt="AbheePay"
+                  className="w-[6rem] h-auto object-contain mb-[0.912rem]"
+                /></span>
                 <div className="w-full bg-slate-50 rounded-lg p-[0.759rem] border border-slate-100 shadow-sm">
                   <p className="text-[0.608rem] text-slate-400 mb-[0.152rem]">Merchant Network</p>
                   <p className="text-[1.181rem] font-extrabold text-slate-800">1,240 Retailers</p>
@@ -1013,7 +1036,7 @@ const Distributor = () => {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-[0.912rem]">
 
-            
+
             <Link to="/contact">
               <button className="px-[1.518rem] py-[0.759rem] border-2 border-slate-200 text-slate-700 rounded-lg font-semibold hover:border-teal-300 hover:text-teal-600 transition text-[0.913rem]">
                 Talk to Our Partnership Team

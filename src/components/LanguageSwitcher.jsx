@@ -14,11 +14,11 @@ const shouldTranslate = (node) => {
   );
 };
 
-const translateText = async (text) => {
+const translateText = async (text, targetLanguage) => {
   const query = new URLSearchParams({
     client: "gtx",
     sl: "en",
-    tl: "hi",
+    tl: targetLanguage,
     dt: "t",
     q: text,
   });
@@ -60,7 +60,7 @@ const LanguageSwitcher = () => {
       return undefined;
     }
 
-    document.documentElement.lang = "hi";
+    document.documentElement.lang = language;
     let cancelled = false;
     const translatePage = async () => {
       // A small worker pool avoids overwhelming the translation endpoint on long pages.
@@ -73,7 +73,7 @@ const LanguageSwitcher = () => {
           const textNode = queue.shift();
           const original = originals.current.get(textNode);
           try {
-            const translated = await translateText(original);
+            const translated = await translateText(original, language);
             if (!cancelled && textNode.isConnected) textNode.nodeValue = translated;
           } catch {
             // Keep the original English copy visible if an individual request fails.
@@ -105,6 +105,18 @@ const LanguageSwitcher = () => {
       >
         <option value="en">English</option>
         <option value="hi">Hindi</option>
+        <option value="bn">Bengali</option>
+        <option value="te">Telugu</option>
+        <option value="mr">Marathi</option>
+        <option value="ta">Tamil</option>
+        <option value="gu">Gujarati</option>
+        <option value="kn">Kannada</option>
+        <option value="ml">Malayalam</option>
+        <option value="or">Odia</option>
+        <option value="pa">Punjabi</option>
+        <option value="as">Assamese</option>
+        <option value="ur">Urdu</option>
+        <option value="ne">Nepali</option>
       </select>
     </label>
   );

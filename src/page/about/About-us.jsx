@@ -1116,7 +1116,7 @@
 //       { name: "XYZ", role: "Associate Director | Marketing" },
 //       { name: "XYZ", role: "Associate Director | Finance" },
 //       { name: "XYZ", role: "Developer | IT" },
-      
+
 //     ],
 
 //   ];
@@ -1451,6 +1451,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import {
   Shield,
   Zap,
@@ -1546,7 +1547,7 @@ const AboutPage = () => {
       { name: "XYZ", role: "Associate Director | Marketing" },
       { name: "XYZ", role: "Associate Director | Finance" },
       { name: "XYZ", role: "Developer | IT" },
-      
+
     ],
 
   ];
@@ -1636,6 +1637,8 @@ const AboutPage = () => {
     { icon: <Headphones className="w-5 h-5" />, title: "Dedicated Support", desc: "From onboarding to implementation and ongoing assistance, our team works with you to help you achieve your business goals." },
   ];
 
+
+  const [showMore, setShowMore] = useState(false);
   // "Business Highlights" — categories from the brief; figures are illustrative placeholders
   const businessHighlights = [
     { label: "Payment & Business Solutions", value: "15+" },
@@ -1716,12 +1719,12 @@ const AboutPage = () => {
             </Link>
           </div>
 
-<div className="relative mt-10 rounded-2xl overflow-hidden max-w-4xl mx-auto fade-up-2 shadow-2xl">
-  <img
-    src="/assets/image/banner/joinourteam.png"
-    alt="AbheePay team"
-    className="w-full h-auto"
-  />
+          <div className="relative mt-10 rounded-2xl overflow-hidden max-w-4xl mx-auto fade-up-2 shadow-2xl">
+            <img
+              src="/assets/image/banner/joinourteam.png"
+              alt="AbheePay team"
+              className="w-full h-auto"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0A1122]/70 via-transparent to-transparent" />
             <span className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 text-[28px] sm:text-[56px] font-black tracking-tight text-white/25 whitespace-nowrap select-none">
               #ABHEEPAY
@@ -1733,40 +1736,74 @@ const AboutPage = () => {
       {/* ---------------- MODERN BUSINESS BANKING ---------------- */}
       <section className="px-5 sm:px-8 py-14 sm:py-20">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start">
+
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 leading-tight">
               Modern Business <span className="text-[#14B8A6]">Banking</span>
             </h2>
+
             <p className="text-[12px] font-semibold text-slate-500 mt-2">
               Empowering Startups, SME's & Enterprises
             </p>
           </div>
-          <div className="space-y-4 text-[12.5px] leading-relaxed text-slate-600">
+
+          <div className="text-[12.5px] leading-relaxed text-slate-600">
+
+            {/* First paragraph - Always visible */}
             <p>
               We provide secure payment solutions, business banking services, API integrations,
               and enterprise technology that support businesses at every stage of their journey —
               from API banking solutions, payouts, collections, and expense management, to gift
               cards, identity verification, and enterprise utility payments.
             </p>
-            <p>
-              Our platform is designed for{" "}
-              <span className="font-bold text-slate-800">
-                retailers, distributors, startups, enterprises, developers, and financial institutions
-              </span>{" "}
-              looking for reliable technology and modern payment infrastructure. Whether you need to
-              accept online payments, manage merchants, integrate APIs, or build a custom business
-              solution, AbheePay delivers practical technology backed by dedicated support.
-            </p>
-            <p>
-              <span className="font-bold text-slate-800">Trust is our foundation,</span> maintained
-              through the highest standards of integrity and transparency. We use state-of-the-art
-              security to protect every transaction and keep customer data secure.
-            </p>
-            <p>
-              <span className="font-bold text-slate-800">Join us</span> on our journey to transform
-              the financial landscape of India, making it more inclusive, sustainable, efficient, and
-              forward-thinking.
-            </p>
+
+            {/* Remaining paragraphs - Hidden initially */}
+            {showMore && (
+              <div className="space-y-4 mt-4">
+
+                <p>
+                  Our platform is designed for{" "}
+                  <span className="font-bold text-slate-800">
+                    retailers, distributors, startups, enterprises, developers, and financial institutions
+                  </span>{" "}
+                  looking for reliable technology and modern payment infrastructure. Whether you need to
+                  accept online payments, manage merchants, integrate APIs, or build a custom business
+                  solution, AbheePay delivers practical technology backed by dedicated support.
+                </p>
+
+                <p>
+                  <span className="font-bold text-slate-800">
+                    Trust is our foundation,
+                  </span>{" "}
+                  maintained through the highest standards of integrity and transparency. We use
+                  state-of-the-art security to protect every transaction and keep customer data secure.
+                </p>
+
+                <p>
+                  <span className="font-bold text-slate-800">
+                    Join us
+                  </span>{" "}
+                  on our journey to transform the financial landscape of India, making it more
+                  inclusive, sustainable, efficient, and forward-thinking.
+                </p>
+
+              </div>
+            )}
+
+            {/* Read More / Read Less */}
+            <button
+              onClick={() => setShowMore(!showMore)}
+              className="mt-4 inline-flex items-center gap-1.5 text-[#14B8A6] font-semibold text-[12.5px] hover:text-[#0f9f91] transition-colors"
+            >
+              {showMore ? "Read Less" : "Read More"}
+
+              {showMore ? (
+                <ChevronUp size={16} />
+              ) : (
+                <ChevronDown size={16} />
+              )}
+            </button>
+
           </div>
         </div>
       </section>

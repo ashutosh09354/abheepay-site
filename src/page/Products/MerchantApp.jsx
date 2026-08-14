@@ -732,7 +732,7 @@ import {
 // import from /assets) when you have one — this is a free-to-use sample
 // placeholder in the meantime.
 const MERCHANT_APP_IMAGE =
-  "/assets/image/services/merchantApplication.png";
+  "/assets/image/services/merchantApplication.png0";
 
 const MerchantAppDevice = () => (
   <div className="relative mx-auto flex w-full max-w-[32rem] items-center justify-center sm:max-w-[36rem]">

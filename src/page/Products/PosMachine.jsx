@@ -374,7 +374,7 @@ import {
 // Swap POS_MACHINE_IMAGE for your own product photo (e.g. an import from
 // /assets) when you have a real packshot of the terminal — this is a
 // free-to-use sample in the meantime.
-const POS_MACHINE_IMAGE = "/assets/image/services/Pos.png";
+const POS_MACHINE_IMAGE = "/assets/image/services/Pos.png0";
 
 const PosMachineDevice = () => (
   <div className="relative mx-auto flex w-full max-w-[28rem] items-center justify-center">

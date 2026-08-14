@@ -560,11 +560,11 @@ const industries = [
 
 const relatedSolutions = [
   { name: "Payment Gateway", to: "/products/payment-gateway" },
-  { name: "QR & Sound Box", to: "/products/qr-sound-box" },
+  { name: "QR", to: "/products/qr-code" },
   { name: "POS Machine", to: "/products/pos-machine" },
-  { name: "Merchant Application", to: "/products/merchant-application" },
+  { name: "Merchant Application", to: "/products/merchant-app" },
   { name: "Digital Invoice", to: "/products/digital-invoice" },
-  { name: "Payment Gateway API", to: "/products/payment-gateway-api" },
+  { name: "Sound Box", to: "/products/sound-box" },
 ];
 
 // Payment Links has no physical product, so the hero uses a phone-mockup UI

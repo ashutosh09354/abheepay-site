@@ -703,7 +703,7 @@ const relatedSolutions = [
 
 // Swap SOUND_BOX_IMAGE for your own product photo (e.g. an import from /assets)
 // when you have real packshots — this is a free-to-use sample in the meantime.
-const SOUND_BOX_IMAGE = "/assets/image/services/soundbox.png";
+const SOUND_BOX_IMAGE = "/assets/image/services/soundbox.png0";
 
 const SoundBoxDevice = () => (
   <div className="relative mx-auto flex w-full max-w-[32rem] items-center justify-center sm:max-w-[36rem]">

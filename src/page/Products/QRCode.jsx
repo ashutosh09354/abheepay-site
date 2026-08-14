@@ -584,7 +584,7 @@ const relatedSolutions = [
 // Swap QR_CODE_IMAGE for your own product photo (e.g. an import from /assets)
 // when you have a real packshot of the QR stand — this is a free-to-use
 // sample in the meantime.
-const QR_CODE_IMAGE = "/assets/image/services/qr_stand.png";
+const QR_CODE_IMAGE = "/assets/image/services/qr_stand.png0";
 
 const QRCodeDevice = () => (
   <div className="relative mx-auto flex w-full max-w-[32rem] items-center justify-center sm:max-w-[36rem]">

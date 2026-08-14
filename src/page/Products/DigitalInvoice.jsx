@@ -377,7 +377,7 @@ import {
 // import from /assets) when you have one — this is a free-to-use sample
 // photo in the meantime.
 const DIGITAL_INVOICE_IMAGE =
-  "/assets/image/services/digitalinvoice.png";
+  "/assets/image/services/digitalinvoice.png0";
 
 const DigitalInvoiceVisual = () => (
   <div className="relative mx-auto flex w-full max-w-[44rem] items-center justify-center">
