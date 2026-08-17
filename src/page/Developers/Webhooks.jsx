@@ -334,12 +334,12 @@ const Webhooks = () => {
             Whether you're integrating the Payment Gateway API, Payout API, BBPS API, Wallet API, QR API, Recharge API, or Aadhaar Verification API, webhooks provide instant notifications for supported events.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link to="/developer-hub/webhooks-guide" className="inline-flex items-center justify-center rounded-full bg-[#00C4C7] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#00C4C7]/20 transition hover:bg-[#0cc9cb]">
+            {/* <Link to="/developer-hub/webhooks-guide" className="inline-flex items-center justify-center rounded-full bg-[#00C4C7] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#00C4C7]/20 transition hover:bg-[#0cc9cb]">
               View Webhook Documentation
             </Link>
             <Link to="/developer-hub/api-reference" className="inline-flex items-center justify-center rounded-full border border-[#00C4C7] bg-white px-6 py-3 text-sm font-semibold text-[#0F172A] transition hover:border-[#0A9B9F] hover:text-[#0A9B9F]">
               View API Reference
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>
@@ -487,13 +487,13 @@ const Webhooks = () => {
             Use AbheePay Webhooks to automate workflows, receive instant event notifications, and keep your applications synchronized with real-time transaction updates.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link to="/developer-hub/get-access" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0A9B9F] transition hover:bg-white/90">
+            {/* <Link to="/developer-hub/get-access" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0A9B9F] transition hover:bg-white/90">
               Get Started
             </Link>
             <Link to="/developer-hub/webhooks-guide" className="inline-flex items-center justify-center rounded-full border border-white/70 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
               View Webhook Documentation
-            </Link>
-            <Link to="/developer-hub/support" className="inline-flex items-center justify-center px-2 py-3 text-sm font-semibold text-white underline underline-offset-4 transition hover:text-white/80">
+            </Link> */}
+            <Link to="/company/contact-us" className="inline-flex items-center justify-center px-2 py-3 text-sm font-semibold text-white underline underline-offset-4 transition hover:text-white/80">
               Contact Developer Support
             </Link>
           </div>

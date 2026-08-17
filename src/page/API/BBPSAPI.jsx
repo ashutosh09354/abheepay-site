@@ -407,12 +407,20 @@ const BBPSAPI = () => {
               </p>
 
               <div className="flex flex-wrap items-center gap-[0.96rem] mb-[2.16rem]">
-                <button className="inline-flex items-center gap-[0.6rem] px-[1.8rem] py-[1.02rem] bg-[#14B8A6] text-white rounded-lg font-semibold hover:bg-[#0D9488] transition text-[1.104rem]">
-                  Get API Access<ArrowRight size={19} />
-                </button>
-                <button className="inline-flex items-center gap-[0.6rem] px-[1.8rem] py-[1.02rem] bg-white border border-slate-200 text-slate-700 rounded-lg font-semibold hover:border-[#14B8A6]/50 transition text-[1.104rem]">
+                {/* <Link
+                  to="/api-access"
+                  className="inline-flex items-center gap-[0.6rem] px-[1.8rem] py-[1.02rem] bg-[#14B8A6] text-white rounded-lg font-semibold hover:bg-[#0D9488] transition text-[1.104rem]"
+                >
+                  Get API Access
+                  <ArrowRight size={19} />
+                </Link> */}
+
+                <Link
+                  to="/company/contact-us"
+                  className="inline-flex items-center gap-[0.6rem] px-[1.8rem] py-[1.02rem] bg-white border border-slate-200 text-slate-700 rounded-lg font-semibold hover:border-[#14B8A6]/50 transition text-[1.104rem]"
+                >
                   Contact Sales
-                </button>
+                </Link>
               </div>
 
               <div className="flex items-center gap-[0.73rem]">
@@ -484,9 +492,13 @@ const BBPSAPI = () => {
             <p className="text-slate-500 text-[1.14rem] mb-[2.16rem] max-w-[33.6rem]">
               Getting started is simple. For complete API documentation, sample requests, SDKs, and implementation guides, visit our Developer Hub.
             </p>
-            <button className="inline-flex items-center gap-[0.6rem] px-[1.68rem] py-[0.96rem] bg-white border border-slate-200 text-slate-700 rounded-lg font-semibold hover:border-[#14B8A6]/50 transition text-[1.08rem]">
-              Visit Developer Hub<ArrowRight size={19} />
-            </button>
+            <Link
+              to="/developers/documentation"
+              className="inline-flex items-center gap-[0.6rem] px-[1.68rem] py-[0.96rem] bg-white border border-slate-200 text-slate-700 rounded-lg font-semibold hover:border-[#14B8A6]/50 transition text-[1.08rem]"
+            >
+              Visit Developer Hub
+              <ArrowRight size={19} />
+            </Link>
           </div>
 
           <motion.ol variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }} className="space-y-[1.2rem]">
@@ -534,7 +546,7 @@ const BBPSAPI = () => {
                 <p className="text-slate-500 text-[1.104rem]">Connect to Bharat Bill Payment System and enable seamless bill payments.</p>
               </div>
             </div>
-            <Link to="/docs" className="relative z-10 shrink-0"><button className="inline-flex items-center gap-[0.6rem] px-[1.68rem] py-[0.9rem] bg-[#14B8A6] text-white rounded-lg font-semibold hover:bg-[#0D9488] transition text-[1.104rem]">View API Documentation<ArrowRight size={19} /></button></Link>
+            <Link to="/developers/documentation" className="relative z-10 shrink-0"><button className="inline-flex items-center gap-[0.6rem] px-[1.68rem] py-[0.9rem] bg-[#14B8A6] text-white rounded-lg font-semibold hover:bg-[#0D9488] transition text-[1.104rem]">View API Documentation<ArrowRight size={19} /></button></Link>
           </div>
         </div>
       </section>
@@ -586,14 +598,14 @@ const BBPSAPI = () => {
             <p className="relative z-10 text-white/85 text-[1.176rem] max-w-[43.2rem] mx-auto mb-[2.16rem]">
               Integrate the AbheePay BBPS API to provide secure and reliable bill payment services through your website, mobile application, or business platform.
             </p>
-            <div className="relative z-10 flex flex-wrap items-center justify-center gap-[1.08rem]">
+            {/* <div className="relative z-10 flex flex-wrap items-center justify-center gap-[1.08rem]">
               <button className="inline-flex items-center gap-[0.6rem] px-[1.92rem] py-[1.08rem] bg-white text-[#0D9488] rounded-lg font-bold hover:bg-slate-100 transition text-[1.14rem]">
                 Request API Access<ArrowRight size={19} />
               </button>
               <button className="inline-flex items-center gap-[0.6rem] px-[1.92rem] py-[1.08rem] bg-white/10 border border-white/40 text-white rounded-lg font-bold hover:bg-white/20 transition text-[1.14rem]">
                 Talk to Our API Experts
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

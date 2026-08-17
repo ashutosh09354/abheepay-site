@@ -721,15 +721,22 @@ const QRAPI = () => {
                 receive real-time payment updates, and manage QR-based
                 transactions from one platform.
               </p>
+<div className="flex flex-wrap items-center gap-[0.96rem] mb-[2.16rem]">
+  <Link
+    to="/developers/documentation"
+    className="inline-flex items-center gap-[0.6rem] px-[1.8rem] py-[1.02rem] bg-[#14B8A6] text-white rounded-lg font-semibold hover:bg-[#0D9488] transition text-[1.104rem]"
+  >
+    Get API Access
+    <ArrowRight size={19} />
+  </Link>
 
-              <div className="flex flex-wrap items-center gap-[0.96rem] mb-[2.16rem]">
-                <button className="inline-flex items-center gap-[0.6rem] px-[1.8rem] py-[1.02rem] bg-[#14B8A6] text-white rounded-lg font-semibold hover:bg-[#0D9488] transition text-[1.104rem]">
-                  Get API Access<ArrowRight size={19} />
-                </button>
-                <button className="inline-flex items-center gap-[0.6rem] px-[1.8rem] py-[1.02rem] bg-white border border-slate-200 text-slate-700 rounded-lg font-semibold hover:border-[#14B8A6]/50 transition text-[1.104rem]">
-                  Contact Sales
-                </button>
-              </div>
+  {/* <Link
+    to="/contact-us"
+    className="inline-flex items-center gap-[0.6rem] px-[1.8rem] py-[1.02rem] bg-white border border-slate-200 text-slate-700 rounded-lg font-semibold hover:border-[#14B8A6]/50 transition text-[1.104rem]"
+  >
+    Contact Sales
+  </Link> */}
+</div>
 
               <div className="flex items-center gap-[0.73rem]">
                 <div className="w-[2.551rem] h-[2.551rem] rounded-full bg-[#14B8A6]/10 flex items-center justify-center text-[#14B8A6]">
@@ -1047,7 +1054,7 @@ const QRAPI = () => {
                 </p>
               </div>
             </div>
-            <Link to="/docs" className="relative z-10 shrink-0">
+            <Link to="/developers/documentation" className="relative z-10 shrink-0">
               <button className="inline-flex items-center gap-[0.6rem] px-[1.68rem] py-[0.9rem] bg-[#14B8A6] text-white rounded-lg font-semibold hover:bg-[#0D9488] transition text-[1.104rem]">
                 View API Documentation
                 <ArrowRight size={19} />
@@ -1119,14 +1126,22 @@ const QRAPI = () => {
             <p className="relative z-10 text-white/85 text-[1.176rem] max-w-[43.2rem] mx-auto mb-[2.16rem]">
               Whether you're developing a fintech platform, billing software, retail application, or enterprise solution, our API helps you generate QR Codes, collect UPI payments, and manage transactions through one reliable platform.
             </p>
-            <div className="relative z-10 flex flex-wrap items-center justify-center gap-[1.08rem]">
-              <button className="inline-flex items-center gap-[0.6rem] px-[1.92rem] py-[1.08rem] bg-white text-[#0D9488] rounded-lg font-bold hover:bg-slate-100 transition text-[1.14rem]">
-                Request API Access<ArrowRight size={19} />
-              </button>
-              <button className="inline-flex items-center gap-[0.6rem] px-[1.92rem] py-[1.08rem] bg-white/10 border border-white/40 text-white rounded-lg font-bold hover:bg-white/20 transition text-[1.14rem]">
-                Talk to Our API Experts
-              </button>
-            </div>
+<div className="relative z-10 flex flex-wrap items-center justify-center gap-[1.08rem]">
+  {/* <Link
+    to="/api-access"
+    className="inline-flex items-center gap-[0.6rem] px-[1.92rem] py-[1.08rem] bg-white text-[#0D9488] rounded-lg font-bold hover:bg-slate-100 transition text-[1.14rem]"
+  >
+    Request API Access
+    <ArrowRight size={19} />
+  </Link> */}
+
+  <Link
+    to="/company/contact-us"
+    className="inline-flex items-center gap-[0.6rem] px-[1.92rem] py-[1.08rem] bg-white/10 border border-white/40 text-white rounded-lg font-bold hover:bg-white/20 transition text-[1.14rem]"
+  >
+    Talk to Our API Experts
+  </Link>
+</div>
           </div>
         </div>
       </section>

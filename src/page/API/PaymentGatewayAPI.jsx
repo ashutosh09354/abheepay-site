@@ -596,7 +596,7 @@ const PaymentGatewayAPI = () => {
                 <p className="text-slate-500 text-[1.104rem]">Start accepting payments securely and at scale with AbheePay.</p>
               </div>
             </div>
-            <Link to="/docs" className="relative z-10 shrink-0"><button className="inline-flex items-center gap-[0.6rem] px-[1.68rem] py-[0.9rem] bg-[#14B8A6] text-white rounded-lg font-semibold hover:bg-[#0D9488] transition text-[1.104rem]">View API Documentation<ArrowRight size={19} /></button></Link>
+            <Link to="/developers/documentation" className="relative z-10 shrink-0"><button className="inline-flex items-center gap-[0.6rem] px-[1.68rem] py-[0.9rem] bg-[#14B8A6] text-white rounded-lg font-semibold hover:bg-[#0D9488] transition text-[1.104rem]">View API Documentation<ArrowRight size={19} /></button></Link>
           </div>
         </div>
       </section>

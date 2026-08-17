@@ -209,7 +209,7 @@ const Support = () => {
               Contact Developer Support
             </Link>
             <Link
-              to="/developer-hub/documentation"
+              to="/developers/documentation"
               className="inline-flex rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-800 transition hover:border-slate-400 hover:bg-slate-50"
             >
               View Documentation
@@ -356,13 +356,8 @@ const Support = () => {
             >
               Contact Developer Support
             </Link>
-            <span className="text-sm font-medium text-slate-400">or</span>
-            <Link
-              to="/developer-hub/documentation"
-              className="inline-flex rounded-full border border-slate-600 px-5 py-3 text-sm font-semibold text-white transition hover:border-slate-400 hover:bg-slate-800"
-            >
-              View API Documentation
-            </Link>
+
+
           </div>
         </div>
       </section>

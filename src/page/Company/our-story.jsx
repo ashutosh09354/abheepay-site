@@ -672,8 +672,8 @@ const OurStory = () => {
     <h2 style="margin-top:18px;">Every business deserves technology that works for them — not technology they have to work around.</h2>
     <p>Whether you're looking for secure payment solutions, enterprise technology, API integration, or a trusted business partner, AbheePay is committed to helping you build, grow, and succeed.</p>
     <div class="cta-buttons">
-      <a href="#" class="btn btn-primary">Contact Sales</a>
-      <a href="#" class="btn btn-ghost">Become a Partner</a>
+      <a href="company/contact-us" class="btn btn-primary">Contact Sales</a>
+      <a href="/overview" class="btn btn-ghost">Become a Partner</a>
     </div>
     <div class="foot-note">ABHEEPAY — DIGITAL PAYMENTS &amp; BUSINESS TECHNOLOGY, INDIA</div>
   </div>

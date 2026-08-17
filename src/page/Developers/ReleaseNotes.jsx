@@ -266,12 +266,12 @@ const ReleaseNotes = () => {
             Developers can use this page to stay informed about changes that may affect their applications and to take advantage of new capabilities as they become available.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link to="/developer-hub/release-notes/latest" className="inline-flex items-center justify-center rounded-full bg-[#00C4C7] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#00C4C7]/20 transition hover:bg-[#0cc9cb]">
+            {/* <Link to="/developer-hub/release-notes/latest" className="inline-flex items-center justify-center rounded-full bg-[#00C4C7] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#00C4C7]/20 transition hover:bg-[#0cc9cb]">
               View Latest Release
             </Link>
             <Link to="/developer-hub/subscribe" className="inline-flex items-center justify-center rounded-full border border-[#00C4C7] bg-white px-6 py-3 text-sm font-semibold text-[#0F172A] transition hover:border-[#0A9B9F] hover:text-[#0A9B9F]">
               Subscribe for Updates
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>
@@ -419,15 +419,15 @@ const ReleaseNotes = () => {
             Follow the AbheePay Release Notes to keep your applications compatible with the latest platform improvements, security updates, and API enhancements.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link to="/developer-hub/get-access" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0A9B9F] transition hover:bg-white/90">
+            <Link to="/company/contact-us" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0A9B9F] transition hover:bg-white/90">
               Get Started
             </Link>
-            <Link to="/developer-hub/release-notes/latest" className="inline-flex items-center justify-center rounded-full border border-white/70 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+            {/* <Link to="/developer-hub/release-notes/latest" className="inline-flex items-center justify-center rounded-full border border-white/70 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
               View Latest Release
             </Link>
             <Link to="/developer-hub/support" className="inline-flex items-center justify-center px-2 py-3 text-sm font-semibold text-white underline underline-offset-4 transition hover:text-white/80">
               Contact Developer Support
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>

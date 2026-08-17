@@ -157,7 +157,7 @@ const WalletAPI = () => {
                 <p className="text-slate-500 text-[0.92rem]">Issue wallets, accept top-ups and enable transfers in one platform.</p>
               </div>
             </div>
-            <Link to="/docs" className="relative z-10 shrink-0"><button className="inline-flex items-center gap-[0.5rem] px-[1.4rem] py-[0.75rem] bg-[#14B8A6] text-white rounded-lg font-semibold hover:bg-[#0D9488] transition text-[0.92rem]">View API Documentation<ArrowRight size={16} /></button></Link>
+            <Link to="/developers/documentation" className="relative z-10 shrink-0"><button className="inline-flex items-center gap-[0.5rem] px-[1.4rem] py-[0.75rem] bg-[#14B8A6] text-white rounded-lg font-semibold hover:bg-[#0D9488] transition text-[0.92rem]">View API Documentation<ArrowRight size={16} /></button></Link>
           </div>
         </div>
       </section>

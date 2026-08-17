@@ -336,12 +336,12 @@ const Postman = () => {
             Whether you are integrating the Payment Gateway API, Payout API, BBPS API, Wallet API, QR API, Recharge API, or Aadhaar Verification API, the Postman Collection provides a fast and convenient way to validate your API integration.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link to="/developer-hub/postman-download" className="inline-flex items-center justify-center rounded-full bg-[#00C4C7] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#00C4C7]/20 transition hover:bg-[#0cc9cb]">
+            {/* <Link to="/developer-hub/postman-download" className="inline-flex items-center justify-center rounded-full bg-[#00C4C7] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#00C4C7]/20 transition hover:bg-[#0cc9cb]">
               Download Postman Collection
             </Link>
             <Link to="/developer-hub/documentation" className="inline-flex items-center justify-center rounded-full border border-[#00C4C7] bg-white px-6 py-3 text-sm font-semibold text-[#0F172A] transition hover:border-[#0A9B9F] hover:text-[#0A9B9F]">
               View Documentation
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>
@@ -489,15 +489,15 @@ const Postman = () => {
             Download the AbheePay Postman Collection and accelerate your API integration with ready-to-use requests, sample responses, and developer-friendly testing tools.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link to="/developer-hub/get-access" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0A9B9F] transition hover:bg-white/90">
+            <Link to="/company/contact-us" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0A9B9F] transition hover:bg-white/90">
               Get Started
             </Link>
-            <Link to="/developer-hub/postman-download" className="inline-flex items-center justify-center rounded-full border border-white/70 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+            {/* <Link to="/developer-hub/postman-download" className="inline-flex items-center justify-center rounded-full border border-white/70 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
               Download Postman Collection
             </Link>
             <Link to="/developer-hub/support" className="inline-flex items-center justify-center px-2 py-3 text-sm font-semibold text-white underline underline-offset-4 transition hover:text-white/80">
               Contact Developer Support
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>

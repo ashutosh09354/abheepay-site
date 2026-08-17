@@ -117,6 +117,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
+  ArrowRight,
   CreditCard,
   Send,
   Receipt,
@@ -249,22 +250,50 @@ const Documentation = () => {
 
   const integrationSteps = [
     { title: 'Register for API access', description: 'Sign up for an AbheePay developer account to get started.' },
-    { title: 'Receive your API credentials', description: 'Get your sandbox and production API keys.' },
+    { title: 'Receive your API credentials', description: 'Get your soundbox and production API keys.' },
     { title: 'Review the API documentation', description: 'Read through endpoints, auth, and examples for your chosen API.' },
     { title: 'Integrate your chosen API', description: 'Build the integration using our docs, SDKs, and sample code.' },
     { title: 'Test in the Sandbox environment', description: 'Validate your implementation safely before going live.' },
     { title: 'Go live after verification', description: 'Move to production once testing and verification are complete.' },
   ];
 
-  const resources = [
-    { name: 'API Documentation', icon: FileText },
-    { name: 'SDK Downloads', icon: Download },
-    { name: 'Sandbox Environment', icon: FlaskConical },
-    { name: 'Webhooks Guide', icon: Webhook },
-    { name: 'Postman Collection', icon: Package },
-    { name: 'Release Notes', icon: ScrollText },
-    { name: 'Technical Support', icon: LifeBuoy },
-  ];
+const resources = [
+  {
+    name: 'API Documentation',
+    icon: FileText,
+    link: '/developers/documentation',
+  },
+  {
+    name: 'SDK Downloads',
+    icon: Download,
+    link: '/developers/sdk',
+  },
+  {
+    name: 'Soundbox Environment',
+    icon: FlaskConical,
+    link: '/developers/soundbox',
+  },
+  {
+    name: 'Webhooks Guide',
+    icon: Webhook,
+    link: '/developers/webhooks',
+  },
+  {
+    name: 'Postman Collection',
+    icon: Package,
+    link: '/developers/postman',
+  },
+  {
+    name: 'Release Notes',
+    icon: ScrollText,
+    link: '/developers/release-notes',
+  },
+  {
+    name: 'Technical Support',
+    icon: LifeBuoy,
+    link: '/developers/support',
+  },
+];
 
   const faqs = [
     {
@@ -340,10 +369,10 @@ const Documentation = () => {
             Whether you're integrating a Payment Gateway, Payout API, BBPS API, Wallet API, QR API, Recharge API, or Aadhaar Verification API, you'll find clear documentation, sample requests, and implementation guides to help you get started.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link to="/developer-hub/api-reference" className="inline-flex items-center justify-center rounded-full bg-[#00C4C7] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#00C4C7]/20 transition hover:bg-[#0cc9cb]">
+            {/* <Link to="/developer-hub/api-reference" className="inline-flex items-center justify-center rounded-full bg-[#00C4C7] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#00C4C7]/20 transition hover:bg-[#0cc9cb]">
               View API Reference
-            </Link>
-            <Link to="/developer-hub/get-access" className="inline-flex items-center justify-center rounded-full border border-[#00C4C7] bg-white px-6 py-3 text-sm font-semibold text-[#0F172A] transition hover:border-[#0A9B9F] hover:text-[#0A9B9F]">
+            </Link> */}
+            <Link to="/company/contact-us" className="inline-flex items-center justify-center rounded-full border border-[#00C4C7] bg-white px-6 py-3 text-sm font-semibold text-[#0F172A] transition hover:border-[#0A9B9F] hover:text-[#0A9B9F]">
               Get API Access
             </Link>
           </div>
@@ -424,27 +453,44 @@ const Documentation = () => {
       </section>
 
       {/* Developer Resources */}
-      <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10">
-        <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/20">
-          <h2 className="text-2xl font-bold text-slate-900">Developer Resources</h2>
-          <p className="mt-3 text-sm leading-7 text-slate-600">
-            The Developer Hub provides additional resources to support your integration.
-          </p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {resources.map((resource) => {
-              const Icon = resource.icon;
-              return (
-                <div key={resource.name} className="flex items-center gap-3 rounded-2xl bg-[#F8FEFF] p-4">
-                  <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-white text-[#0F5562] shadow-sm">
-                    <Icon className="h-4 w-4" />
-                  </span>
-                  <span className="text-sm font-semibold text-slate-800">{resource.name}</span>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+{/* Developer Resources */}
+<section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10">
+  <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/20">
+    <h2 className="text-2xl font-bold text-slate-900">
+      Developer Resources
+    </h2>
+
+    <p className="mt-3 text-sm leading-7 text-slate-600">
+      The Developer Hub provides additional resources to support your integration.
+    </p>
+
+    <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {resources.map((resource) => {
+        const Icon = resource.icon;
+
+        return (
+          <Link
+            key={resource.name}
+            to={resource.link}
+            className="group flex items-center gap-3 rounded-2xl bg-[#F8FEFF] p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-md hover:ring-1 hover:ring-[#14B8A6]/30"
+          >
+            <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-white text-[#0F5562] shadow-sm transition-colors duration-300 group-hover:bg-[#14B8A6] group-hover:text-white">
+              <Icon className="h-4 w-4" />
+            </span>
+
+            <span className="text-sm font-semibold text-slate-800 transition-colors duration-300 group-hover:text-[#0D9488]">
+              {resource.name}
+            </span>
+
+            <ArrowRight
+              className="ml-auto h-4 w-4 text-slate-400 opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#14B8A6] group-hover:opacity-100"
+            />
+          </Link>
+        );
+      })}
+    </div>
+  </div>
+</section>
 
       {/* FAQ */}
       <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10">
@@ -469,15 +515,15 @@ const Documentation = () => {
             Build secure payment, payout, billing, recharge, QR, wallet, and verification solutions using the AbheePay API platform. Explore our documentation, test your integration, and launch your application with confidence.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link to="/developer-hub/get-access" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0A9B9F] transition hover:bg-white/90">
+            <Link to="/company/contact-us" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0A9B9F] transition hover:bg-white/90">
               Get Started
             </Link>
-            <Link to="/developer-hub/documentation" className="inline-flex items-center justify-center rounded-full border border-white/70 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+            {/* <Link to="/developer-hub/documentation" className="inline-flex items-center justify-center rounded-full border border-white/70 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
               View API Documentation
             </Link>
             <Link to="/developer-hub/support" className="inline-flex items-center justify-center px-2 py-3 text-sm font-semibold text-white underline underline-offset-4 transition hover:text-white/80">
               Contact Developer Support
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>

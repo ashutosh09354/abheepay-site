@@ -428,13 +428,13 @@ const PayoutAPI = () => {
               </p>
 
               <div className="flex flex-wrap items-center gap-[1rem] mb-[1.6rem]">
-                <Link to="/contact">
+                {/* <Link to="/contact">
                   <button className="inline-flex items-center gap-[0.6rem] px-[1.68rem] py-[0.9rem] bg-[#14B8A6] text-white rounded-lg font-semibold hover:bg-[#0D9488] transition text-[1.104rem]">
                     Get API Access
                     <ArrowRight size={19} />
                   </button>
-                </Link>
-                <Link to="/contact">
+                </Link> */}
+                <Link to="/company/contact-us">
                   <button className="inline-flex items-center gap-[0.6rem] px-[1.68rem] py-[0.9rem] border border-slate-200 text-slate-700 rounded-lg font-semibold hover:border-[#14B8A6] hover:text-[#14B8A6] transition text-[1.104rem]">
                     Contact Sales
                   </button>
@@ -608,7 +608,7 @@ const PayoutAPI = () => {
                 <p className="text-slate-500 text-[1.104rem]">Automate payrolls, commissions and vendor payouts at scale.</p>
               </div>
             </div>
-            <Link to="/docs" className="relative z-10 shrink-0"><button className="inline-flex items-center gap-[0.6rem] px-[1.68rem] py-[0.9rem] bg-[#14B8A6] text-white rounded-lg font-semibold hover:bg-[#0D9488] transition text-[1.104rem]">View API Documentation<ArrowRight size={19} /></button></Link>
+            <Link to="/developers/documentation" className="relative z-10 shrink-0"><button className="inline-flex items-center gap-[0.6rem] px-[1.68rem] py-[0.9rem] bg-[#14B8A6] text-white rounded-lg font-semibold hover:bg-[#0D9488] transition text-[1.104rem]">View API Documentation<ArrowRight size={19} /></button></Link>
           </div>
         </div>
       </section>
@@ -699,13 +699,8 @@ const PayoutAPI = () => {
             business payouts from one secure platform.
           </p>
           <div className="mt-[2.16rem] flex flex-col items-center justify-center gap-[1.2rem] sm:flex-row">
-            <Link to="/contact">
-              <button className="inline-flex items-center justify-center gap-[0.6rem] rounded-full bg-[#14B8A6] px-[1.92rem] py-[0.9rem] text-[1.104rem] font-semibold text-white shadow-lg transition hover:bg-[#0D9488]">
-                Request API Access
-                <ArrowRight size={19} />
-              </button>
-            </Link>
-            <Link to="/contact">
+
+            <Link to="/company/contact-us">
               <button className="inline-flex items-center justify-center gap-[0.6rem] rounded-full border border-white/30 px-[1.92rem] py-[0.9rem] text-[1.104rem] font-semibold text-white transition hover:border-white hover:bg-white/10">
                 Talk to Our API Experts
               </button>

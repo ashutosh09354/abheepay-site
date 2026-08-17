@@ -3013,7 +3013,7 @@ const Navbar = () => {
     { title: "Wallet API", description: "Digital wallet balance and transfers", icon: WalletCards, to: "/api/wallet" },
     { title: "Aadhaar Verification API", description: "Authenticate users with Aadhaar data", icon: ShieldCheck, to: "/api/aadhaar" },
     { title: "Recharge API", description: "Mobile and DTH recharge integration", icon: Smartphone, to: "/api/recharge" },
-    { title: "Account Verification API", description: "Verify bank account and IFSC details", icon: Landmark, to: "/api/account-verification" },
+    // { title: "Account Verification API", description: "Verify bank account and IFSC details", icon: Landmark, to: "/api/account-verification" },
   ];
 
   // Developer Hub quick links

@@ -594,21 +594,15 @@ const AadhaarAPI = () => {
               audit-ready logs.
             </p>
 
-            <div className="flex flex-wrap items-center gap-[0.86rem] mb-[2.188rem]">
-              <a
-                href="#get-access"
-                className="inline-flex items-center gap-[0.6rem] px-[1.68rem] py-[0.9rem] bg-[#14B8A6] text-white rounded-lg font-semibold hover:bg-[#0D9488] transition text-[0.98rem]"
-              >
-                Get API Access
-                <ArrowRight size={18} />
-              </a>
-              <a
-                href="#contact-sales"
-                className="inline-flex items-center gap-[0.6rem] px-[1.68rem] py-[0.9rem] bg-white border border-slate-200 text-slate-700 rounded-lg font-semibold hover:border-[#14B8A6] hover:text-[#0D9488] transition text-[0.98rem]"
-              >
-                Contact Sales
-              </a>
-            </div>
+<div className="flex flex-wrap items-center gap-[0.86rem] mb-[2.188rem]">
+  <Link
+    to="/company/contact-us"
+    className="inline-flex items-center gap-[0.6rem] px-[1.68rem] py-[0.9rem] bg-[#14B8A6] text-white rounded-lg font-semibold hover:bg-[#0D9488] transition text-[0.98rem]"
+  >
+    Get API Access
+    <ArrowRight size={18} />
+  </Link>
+</div>
 
             <div className="flex items-center gap-[0.73rem]">
               <div className="w-[2.551rem] h-[2.551rem] rounded-full bg-[#14B8A6]/10 flex items-center justify-center text-[#14B8A6]">
@@ -853,7 +847,7 @@ const AadhaarAPI = () => {
             <p className="text-slate-500 text-[0.936rem] leading-relaxed">
               For implementation guides, SDKs, Postman collections, API
               documentation and sample requests, visit our{" "}
-              <Link to="/developer-hub" className="text-[#14B8A6] font-semibold hover:underline">
+              <Link to="/developers/documentation" className="text-[#14B8A6] font-semibold hover:underline">
                 Developer Hub
               </Link>.
             </p>
@@ -943,12 +937,12 @@ const AadhaarAPI = () => {
                 </p>
               </div>
             </div>
-            <Link to="/services" className="relative z-10 shrink-0">
+            {/* <Link to="/services" className="relative z-10 shrink-0">
               <button className="inline-flex items-center gap-[0.6rem] px-[1.68rem] py-[0.9rem] bg-[#14B8A6] text-white rounded-lg font-semibold hover:bg-[#0D9488] transition text-[1.104rem]">
                 Back to Services
                 <ArrowRight size={19} />
               </button>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>
@@ -1076,28 +1070,29 @@ const AadhaarAPI = () => {
                 banking applications, lending solutions and enterprise
                 systems alike.
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-[0.96rem]">
-                <a
-                  href="#get-access"
-                  className="inline-flex items-center gap-[0.6rem] px-[1.68rem] py-[0.9rem] bg-white text-[#0D9488] rounded-lg font-semibold hover:bg-slate-100 transition text-[0.984rem]"
-                >
-                  Get Started Today
-                  <ArrowRight size={19} />
-                </a>
-                <a
-                  href="#request-access"
-                  className="inline-flex items-center gap-[0.6rem] px-[1.68rem] py-[0.9rem] bg-white/10 border border-white/40 text-white rounded-lg font-semibold hover:bg-white/20 transition text-[0.984rem]"
-                >
-                  Request API Access
-                </a>
-                <a
-                  id="contact-sales"
-                  href="#talk-to-experts"
-                  className="inline-flex items-center gap-[0.6rem] px-[1.68rem] py-[0.9rem] text-white font-semibold hover:underline transition text-[0.984rem]"
-                >
-                  Talk to Our API Experts
-                </a>
-              </div>
+<div className="flex flex-wrap items-center justify-center gap-[0.96rem]">
+  <Link
+    to="/company/contact-us"
+    className="inline-flex items-center gap-[0.6rem] px-[1.68rem] py-[0.9rem] bg-white text-[#0D9488] rounded-lg font-semibold hover:bg-slate-100 transition text-[0.984rem]"
+  >
+    Get Started Today
+    <ArrowRight size={19} />
+  </Link>
+
+  {/* <Link
+    to="/company/contact-us"
+    className="inline-flex items-center gap-[0.6rem] px-[1.68rem] py-[0.9rem] bg-white/10 border border-white/40 text-white rounded-lg font-semibold hover:bg-white/20 transition text-[0.984rem]"
+  >
+    Request API Access
+  </Link>
+
+  <Link
+    to="/company/contact-us"
+    className="inline-flex items-center gap-[0.6rem] px-[1.68rem] py-[0.9rem] text-white font-semibold hover:underline transition text-[0.984rem]"
+  >
+    Talk to Our API Experts
+  </Link> */}
+</div>
             </div>
           </div>
         </div>
