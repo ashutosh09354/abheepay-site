@@ -884,7 +884,7 @@ const Overview = () => {
 </div>
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
                 <Link
-                  to="/join-as-distributor"
+                  to="/Distributor"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-[#2DD4BF] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-teal-200/60 transition hover:bg-[#14b8a6]"
                 >
                   Become a Partner <ArrowRight size={18} />
@@ -1012,7 +1012,7 @@ const Overview = () => {
                 the technology, products, and support to help you grow with confidence.
               </p>
               <Link
-                to="/join-as-distributor"
+                to="/Distributor"
                 className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#2DD4BF] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-teal-200/40 transition hover:bg-[#14b8a6]"
               >
                 Become a Partner <ArrowRight size={18} />
@@ -1056,7 +1056,7 @@ const Overview = () => {
               </p>
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <Link
-                  to="/join-as-distributor"
+                  to="/Distributor"
                   className="inline-flex items-center gap-2 rounded-full bg-[#2DD4BF] px-7 py-3.5 text-sm font-bold text-[#071d48] transition hover:bg-[#14b8a6]"
                 >
                   Become a Partner <ArrowRight size={18} />

@@ -366,12 +366,16 @@ const RechargeAPI = () => {
 
   // "Explore Other APIs"
   const otherApis = [
-    { title: "Payment Gateway API", icon: <CreditCard size={24} />, href: "/api-marketplace/payment-gateway-api" },
+
+
+
+
+    { title: "Payment Gateway API", icon: <CreditCard size={24} />, href: "/api/payment-gateway" },
     { title: "Payout API", icon: <Send size={24} />, href: "/api-marketplace/payout-api" },
-    { title: "BBPS API", icon: <Repeat size={24} />, href: "/api-marketplace/bbps-api" },
-    { title: "Wallet API", icon: <Wallet size={24} />, href: "/api-marketplace/wallet-api" },
+    { title: "BBPS API", icon: <Repeat size={24} />, href: "/api/bbps" },
+    { title: "Wallet API", icon: <Wallet size={24} />, href: "/api/wallet" },
     { title: "QR API", icon: <QrCode size={24} />, href: "/api-marketplace/qr-api" },
-    { title: "Aadhaar Verification API", icon: <AadhaarIcon size={24} />, href: "/api-marketplace/aadhaar-verification-api" },
+    { title: "Aadhaar Verification API", icon: <AadhaarIcon size={24} />, href: "/api/aadhaar" },
   ];
 
   const [openFaq, setOpenFaq] = useState(0);

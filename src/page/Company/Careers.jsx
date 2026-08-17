@@ -713,14 +713,14 @@ const Careers = () => {
             building payments and business tools used across India. If that sounds like your
             kind of work, we'd love to hear from you.
           </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+          {/* <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <button className="w-full rounded-lg bg-teal-500 px-6 py-3 font-bold text-white transition hover:bg-teal-600 sm:w-auto">
               View open positions
             </button>
             <button className="w-full rounded-lg border-2 border-teal-500 px-6 py-3 font-bold text-teal-600 transition hover:bg-teal-50 sm:w-auto">
               Submit your resume
             </button>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -955,14 +955,21 @@ const Careers = () => {
             We're building more than products — we're building a team that's passionate about
             innovation, technology, and helping businesses succeed.
           </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-            <button className="w-full rounded-lg bg-white px-6 py-3 font-bold text-teal-600 transition hover:bg-teal-50 sm:w-auto">
-              View open positions
-            </button>
-            <button className="w-full rounded-lg border-2 border-white px-6 py-3 font-bold text-white transition hover:bg-white/10 sm:w-auto">
-              Submit your resume
-            </button>
-          </div>
+<div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+  {/* <Link
+    to="/careers"
+    className="w-full rounded-lg bg-white px-6 py-3 text-center font-bold text-teal-600 transition hover:bg-teal-50 sm:w-auto"
+  >
+    View open positions
+  </Link> */}
+
+  <a
+    href="mailto:careers@abheepay.com?subject=Resume Submission - Job Application"
+    className="w-full rounded-lg border-2 border-white px-6 py-3 text-center font-bold text-white transition hover:bg-white/10 sm:w-auto"
+  >
+    Share your resume
+  </a>
+</div>
         </div>
       </section>
     </main>

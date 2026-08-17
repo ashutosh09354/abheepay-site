@@ -411,6 +411,7 @@
 
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import {
   Rocket,
@@ -583,14 +584,14 @@ const HeroSection = () => (
         Whether you&apos;re an existing customer or exploring AbheePay for the first time,
         this page helps you stay up to date with our latest developments.
       </p>
-      <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-        <button className="rounded-lg bg-teal-500 px-6 py-3 font-bold text-white transition hover:bg-teal-600">
-          View Latest Updates
-        </button>
-        <button className="rounded-lg border-2 border-teal-500 px-6 py-3 font-bold text-teal-600 transition hover:bg-teal-50">
-          Contact Us
-        </button>
-      </div>
+<div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+  <Link
+    to="/company/contact-us"
+    className="rounded-lg border-2 border-teal-500 px-6 py-3 font-bold text-teal-600 transition hover:bg-teal-50"
+  >
+    Contact Us
+  </Link>
+</div>
     </div>
   </section>
 );

@@ -693,12 +693,13 @@ const idealFor = [
 ];
 
 const relatedSolutions = [
-  { name: "QR Payment Solution", to: "/products/qr-code" },
-  { name: "Payment Gateway", to: "/products/payment-gateway" },
-  { name: "Payment Links", to: "/products/payment-links" },
-  { name: "POS Machine", to: "/products/pos-machine" },
-  { name: "Merchant Application", to: "/products/merchant-application" },
-  { name: "Digital Invoice", to: "/products/digital-invoice" },
+  { name: "Payment Gateway API", to: "/api/payment-gateway" },
+  { name: "Payout API", to: "/api/payout" },
+  { name: "BBPS API", to: "/api/bbps" },
+  { name: "Wallet API", to: "/api/wallet" },
+  { name: "QR API", to: "/products/qr-code" },
+  { name: "Recharge API", to: "/api/recharge" },
+  { name: "Aadhaar Verification API", to: "/api/aadhaar" },
 ];
 
 // Swap SOUND_BOX_IMAGE for your own product photo (e.g. an import from /assets)
@@ -810,19 +811,19 @@ const SoundBox = () => {
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <Link
-                  to="/get-started"
+                  to="/contact"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-[#00C4C7] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#00C4C7]/20 transition hover:bg-[#14d0d4]"
                 >
                   <Volume2 className="h-4 w-4" />
                   Get Sound Box
                 </Link>
-                <Link
+                {/* <Link
                   to="/contact"
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-[#00C4C7] bg-white px-6 py-3 text-sm font-semibold text-[#0F172A] transition hover:border-[#00AEB2] hover:text-[#00AEB2]"
                 >
                   <MessageSquareText className="h-4 w-4" />
                   Contact Sales
-                </Link>
+                </Link> */}
               </div>
             </div>
 
@@ -1330,13 +1331,7 @@ const SoundBox = () => {
                 management.
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <Link
-                  to="/get-started"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0F172A] shadow-lg transition hover:bg-white/90"
-                >
-                  <Phone className="h-4 w-4" />
-                  Request a Demo
-                </Link>
+
                 <Link
                   to="/contact"
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-white/60 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"

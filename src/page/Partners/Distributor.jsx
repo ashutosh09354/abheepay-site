@@ -539,7 +539,7 @@ const Distributor = () => {
 
   const retailerNetwork = [
     "Kirana Stores", "Mobile Shops", "Medical Stores", "Restaurants",
-    "Supermarkets", "Fuel Stations", "Cyber Cafés", "Service Centres",
+    "Supermarkets", "Fuel Stations", "Cyber Cafes", "Service Centres",
     "Small Businesses", "MSMEs",
   ];
 

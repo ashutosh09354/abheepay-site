@@ -309,12 +309,12 @@ const FAQS = [
 ];
 
 const OTHER_APIS = [
-  { label: "Payment Gateway API", to: "/api-marketplace/payment-gateway-api" },
-  { label: "BBPS API", to: "/api-marketplace/bbps-api" },
-  { label: "Wallet API", to: "/api-marketplace/wallet-api" },
+  { label: "Payment Gateway API", to: "/api/payment-gateway" },
+  { label: "BBPS API", to: "/api/bbps" },
+  { label: "Wallet API", to: "/api/wallet" },
   { label: "QR API", to: "/api-marketplace/qr-api" },
-  { label: "Recharge API", to: "/api-marketplace/recharge-api" },
-  { label: "Aadhaar Verification API", to: "/api-marketplace/aadhaar-verification-api" },
+  { label: "Recharge API", to: "/api/recharge" },
+  { label: "Aadhaar Verification API", to: "/api/aadhaar" },
 ];
 
 const FaqItem = ({ q, a, defaultOpen = false }) => {

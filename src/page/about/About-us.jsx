@@ -1714,7 +1714,7 @@ const AboutPage = () => {
             <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-[#14B8A6] hover:bg-[#0F9E90] transition text-white text-[12px] font-semibold px-5 py-2.5">
               Contact Sales
             </Link>
-            <Link to="/partner-program" className="inline-flex items-center gap-2 rounded-full border border-white/25 hover:bg-white/10 transition text-white text-[12px] font-semibold px-5 py-2.5">
+            <Link to="/overview" className="inline-flex items-center gap-2 rounded-full border border-white/25 hover:bg-white/10 transition text-white text-[12px] font-semibold px-5 py-2.5">
               Become a Partner
             </Link>
           </div>
@@ -1970,8 +1970,8 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* ---------------- TEAM ---------------- */}
-      <section className="px-5 sm:px-8 py-16 sm:py-20">
+
+      {/* <section className="px-5 sm:px-8 py-16 sm:py-20">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-12">
             One <span className="text-[#14B8A6]">TEAM.</span> One VISION.
@@ -2001,7 +2001,7 @@ const AboutPage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ---------------- OUR VALUES ---------------- */}
       <section className="px-5 sm:px-8 py-16 sm:py-20 bg-[#F7FDFC]">
@@ -2111,7 +2111,7 @@ const AboutPage = () => {
             <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-[#14B8A6] hover:bg-[#0F9E90] transition text-white text-[12px] font-semibold px-5 py-2.5">
               Contact Sales <ArrowRight className="w-3.5 h-3.5" />
             </Link>
-            <Link to="/partner-program" className="inline-flex items-center gap-2 rounded-full border border-white/25 hover:bg-white/10 transition text-white text-[12px] font-semibold px-5 py-2.5">
+            <Link to="/overview" className="inline-flex items-center gap-2 rounded-full border border-white/25 hover:bg-white/10 transition text-white text-[12px] font-semibold px-5 py-2.5">
               Become a Partner
             </Link>
           </div>
@@ -2131,9 +2131,12 @@ const AboutPage = () => {
             <br />
             Growing Team
           </h2>
-          <button className="mt-5 w-fit bg-[#14B8A6] hover:bg-[#0F9E90] transition text-white text-[12px] font-semibold rounded-full px-5 py-2">
+          <Link
+            to="/company/careers"
+            className="mt-5 inline-block w-fit bg-[#14B8A6] hover:bg-[#0F9E90] transition text-white text-[12px] font-semibold rounded-full px-5 py-2"
+          >
             Find your calling
-          </button>
+          </Link>
         </div>
       </section>
 
