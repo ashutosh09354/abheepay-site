@@ -1,15 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-/**
- * Wrap any section, card, or element to make it fade + slide in as it
- * scrolls into view. Reuse this everywhere instead of writing custom
- * scroll-trigger logic per section.
- *
- * Usage:
- *   <ScrollReveal><YourSection /></ScrollReveal>
- *   <ScrollReveal delay={0.15} direction="left"><Card /></ScrollReveal>
- */
 const directionOffsets = {
   up: { y: 48, x: 0 },
   down: { y: -48, x: 0 },
@@ -41,15 +32,7 @@ const ScrollReveal = ({
   );
 };
 
-/**
- * Stagger a group of children (e.g. a row of cards) so each one reveals
- * slightly after the last, instead of all at once.
- *
- * Usage:
- *   <ScrollRevealGroup className="grid grid-cols-3 gap-6">
- *     <Card /><Card /><Card />
- *   </ScrollRevealGroup>
- */
+
 const containerVariants = {
   hidden: {},
   show: {

@@ -1,13 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 
-/**
- * Counts up from 0 to `value` when it scrolls into view.
- *
- * Usage:
- *   <AnimatedCounter value={25000} suffix="+" label="Active Merchants" />
- *   <AnimatedCounter value={99.9} decimals={1} suffix="%" label="Uptime" />
- */
 const AnimatedCounter = ({
   value,
   duration = 1.6,

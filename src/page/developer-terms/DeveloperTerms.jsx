@@ -23,9 +23,6 @@ const SEO_DESCRIPTION =
 // Update this whenever the terms are revised — shown in the header.
 const EFFECTIVE_DATE = "01 August 2026";
 
-/* ------------------------------------------------------------------ */
-/*  CONTENT                                                             */
-/* ------------------------------------------------------------------ */
 
 const sections = [
   {

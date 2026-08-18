@@ -14,13 +14,10 @@ const SEO_DESCRIPTION =
   "Read the AbheePay Disclaimer regarding the use of our website, products, APIs, payment solutions, and business services.";
 
 // Update this whenever the disclaimer is revised — shown in the header.
-// No date was specified for this page, so it's set to match the other legal pages; change if this one is dated separately.
+
 const EFFECTIVE_DATE = "01 August 2026";
 const EFFECTIVE_DATE_ISO = "2026-08-01";
 
-/* ------------------------------------------------------------------ */
-/*  CONTENT                                                             */
-/* ------------------------------------------------------------------ */
 
 const sections = [
   {

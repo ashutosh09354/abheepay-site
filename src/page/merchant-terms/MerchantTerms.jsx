@@ -22,18 +22,6 @@ import {
   Info
 } from "lucide-react";
 
-/**
- * SEO DETAILS (for the page this component is mounted on):
- * URL: /merchant-terms
- * <title>Merchant Terms | AbheePay</title>
- * <meta name="description" content="Read the AbheePay Merchant Terms
- *   governing merchant onboarding, payment acceptance, settlements,
- *   compliance, account responsibilities, and use of merchant services." />
- * <link rel="canonical" href="https://www.abheepay.com/merchant-terms" />
- * Keep this page's single <h1> as the primary heading for the route, and
- * consider a BreadcrumbList / WebPage JSON-LD block in <head>.
- */
-
 const sections = [
   {
     id: "eligibility",

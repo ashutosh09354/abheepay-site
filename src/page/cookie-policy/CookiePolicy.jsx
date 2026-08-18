@@ -21,14 +21,11 @@ const SEO_TITLE = "Cookie Policy | AbheePay";
 const SEO_DESCRIPTION =
   "Read the AbheePay Cookie Policy to understand how we use cookies and similar technologies on our website, applications, and online services, and how to manage them.";
 
-// Update this whenever the policy is revised — shown in the header.
-// No date was specified for this page, so it's set to match the other legal pages; change if this policy is dated separately.
+
 const EFFECTIVE_DATE = "01 August 2026";
 const EFFECTIVE_DATE_ISO = "2026-08-01";
 
-/* ------------------------------------------------------------------ */
-/*  CONTENT                                                             */
-/* ------------------------------------------------------------------ */
+
 
 const sections = [
   {
